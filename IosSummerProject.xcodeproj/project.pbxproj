@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
+		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
+		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
+		71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -26,10 +30,6 @@
 		A4E8F0C524C1026900B7A26F /* CommsDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0C424C1026900B7A26F /* CommsDetailsPresenterProtocol.swift */; };
 		A4E8F0C824C1029400B7A26F /* CommsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */; };
 		A4E8F0CB24C102A900B7A26F /* CommsDetailsPresenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */; };
-		A4E8F0D024C1039C00B7A26F /* AddCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */; };
-		A4E8F0D224C103AB00B7A26F /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */; };
-		A4E8F0D424C103BA00B7A26F /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */; };
-		A4E8F0D624C103CE00B7A26F /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */; };
 		A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */; };
 		A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */; };
 		A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */; };
@@ -53,6 +53,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
+		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
+		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
+		71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterProtocol.swift; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -76,11 +80,7 @@
 		A4E8F0C224C1025C00B7A26F /* CommsDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsPresenter.swift; path = ../../../../../../../../Documents/CommsDetailsPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0C424C1026900B7A26F /* CommsDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsPresenterProtocol.swift; path = ../../../../../../../../Documents/CommsDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
 		A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsViewController.swift; path = ../../../../../../../../Documents/CommsDetailsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CommsDetailsPresenter.storyboard; path = ../../../../../../../../Documents/CommsDetailsPresenter.storyboard; sourceTree = "<group>"; };
-		A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsPresenterProtocol.swift; path = ../../../../../../../../Documents/AddCommsPresenterProtocol.swift; sourceTree = "<group>"; };
-		A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsPresenter.swift; path = ../../../../../../../../Documents/AddCommsPresenter.swift; sourceTree = "<group>"; };
-		A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsViewController.swift; path = ../../../../../../../../Documents/AddCommsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AddComms.storyboard; path = ../../../../../../../../Documents/AddComms.storyboard; sourceTree = "<group>"; };
+		A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsPresenter.storyboard; path = ../../../../../../../../Documents/CommsDetailsPresenter.storyboard; sourceTree = "<group>"; };
 		A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -114,6 +114,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71ABAD7D24C324AF00E48992 /* AddComms */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8324C3252D00E48992 /* Presenter */,
+				71ABAD7E24C324BA00E48992 /* View */,
+			);
+			path = AddComms;
+			sourceTree = "<group>";
+		};
+		71ABAD7E24C324BA00E48992 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */,
+				71ABAD8124C324E700E48992 /* AddComms.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71ABAD8324C3252D00E48992 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */,
+				71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		A4E8F08324C0FC5C00B7A26F = {
 			isa = PBXGroup;
 			children = (
@@ -210,7 +237,7 @@
 		A4E8F0B224C0FE4300B7A26F /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0CC24C1036D00B7A26F /* AddComms */,
+				71ABAD7D24C324AF00E48992 /* AddComms */,
 				A4E8F0C024C101AF00B7A26F /* CommsDetail */,
 				A4E8F0B324C0FFD100B7A26F /* Coordinator */,
 				A4E8F0B424C0FFDA00B7A26F /* Presenter */,
@@ -268,33 +295,6 @@
 			children = (
 				A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */,
 				A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A4E8F0CC24C1036D00B7A26F /* AddComms */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0CE24C1038000B7A26F /* View */,
-				A4E8F0CD24C1037900B7A26F /* Presenter */,
-			);
-			path = AddComms;
-			sourceTree = "<group>";
-		};
-		A4E8F0CD24C1037900B7A26F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */,
-				A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A4E8F0CE24C1038000B7A26F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */,
-				A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -501,9 +501,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4E8F0CB24C102A900B7A26F /* CommsDetailsPresenter.storyboard in Resources */,
+				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
-				A4E8F0D624C103CE00B7A26F /* AddComms.storyboard in Resources */,
 				A4E8F0BF24C1012D00B7A26F /* CommsStoryboard.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
@@ -585,19 +585,19 @@
 				A4E8F0A824C0FD3300B7A26F /* Coordinator.swift in Sources */,
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
+				71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */,
 				A4E8F0F724C108A100B7A26F /* AddTagViewController.swift in Sources */,
-				A4E8F0D224C103AB00B7A26F /* AddCommsPresenter.swift in Sources */,
 				A4E8F0C824C1029400B7A26F /* CommsDetailsViewController.swift in Sources */,
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
+				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
+				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
 				A4E8F0BD24C1006400B7A26F /* CommsViewController.swift in Sources */,
-				A4E8F0D424C103BA00B7A26F /* AddCommsViewController.swift in Sources */,
 				A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */,
-				A4E8F0D024C1039C00B7A26F /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */,
 				A4E8F0B924C1002E00B7A26F /* CommsPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
