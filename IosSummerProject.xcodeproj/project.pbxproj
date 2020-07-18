@@ -15,6 +15,8 @@
 		71ABAD8D24C325D900E48992 /* CommsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8C24C325D900E48992 /* CommsDetail.storyboard */; };
 		71ABAD9024C325F100E48992 /* CommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8F24C325F100E48992 /* CommsPresenter.swift */; };
 		71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */; };
+		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
+		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -28,8 +30,6 @@
 		A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0B624C1001B00B7A26F /* CommsCoordinator.swift */; };
 		A4E8F0B924C1002E00B7A26F /* CommsPresenterProcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0B824C1002E00B7A26F /* CommsPresenterProcol.swift */; };
 		A4E8F0BB24C1004600B7A26F /* CommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0BA24C1004600B7A26F /* CommsPresenter.swift */; };
-		A4E8F0BD24C1006400B7A26F /* CommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */; };
-		A4E8F0BF24C1012D00B7A26F /* CommsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */; };
 		A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */; };
 		A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */; };
 		A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */; };
@@ -61,6 +61,8 @@
 		71ABAD8C24C325D900E48992 /* CommsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommsDetail.storyboard; sourceTree = "<group>"; };
 		71ABAD8F24C325F100E48992 /* CommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenter.swift; sourceTree = "<group>"; };
 		71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenterProtocol.swift; sourceTree = "<group>"; };
+		71ABAD9324C3267C00E48992 /* CommsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewController.swift; sourceTree = "<group>"; };
+		71ABAD9524C3269600E48992 /* CommsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommsList.storyboard; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -79,8 +81,6 @@
 		A4E8F0B624C1001B00B7A26F /* CommsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F0B824C1002E00B7A26F /* CommsPresenterProcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenterProcol.swift; sourceTree = "<group>"; };
 		A4E8F0BA24C1004600B7A26F /* CommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenter.swift; sourceTree = "<group>"; };
-		A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CommsStoryboard.storyboard; path = ../../../../../../../Documents/CommsStoryboard.storyboard; sourceTree = "<group>"; };
 		A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -293,8 +293,8 @@
 		A4E8F0B524C0FFE400B7A26F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */,
-				A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */,
+				71ABAD9324C3267C00E48992 /* CommsListViewController.swift */,
+				71ABAD9524C3269600E48992 /* CommsList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,10 +500,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
-				A4E8F0BF24C1012D00B7A26F /* CommsStoryboard.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
 				A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */,
@@ -595,7 +595,6 @@
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
 				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
-				A4E8F0BD24C1006400B7A26F /* CommsViewController.swift in Sources */,
 				A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */,
 				A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */,
 				A4E8F0B924C1002E00B7A26F /* CommsPresenterProcol.swift in Sources */,
@@ -608,6 +607,7 @@
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
 				71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */,
+				71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */,
 				A4E8F0BB24C1004600B7A26F /* CommsPresenter.swift in Sources */,
 				A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */,
 				A4E8F0E824C1079200B7A26F /* EditTagsPresenter.swift in Sources */,
