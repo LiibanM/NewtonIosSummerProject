@@ -11,7 +11,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
-    override init(navigationController: UINavigationController) {
+    init(_ navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
     }
     
