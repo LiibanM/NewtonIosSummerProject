@@ -7,3 +7,19 @@
 //
 
 import Foundation
+import UIKit
+
+class AppCoordinator: Coordinator {
+    
+    override init(navigationController: UINavigationController) {
+        super.init(navigationController: navigationController)
+    }
+    
+    override func start() {
+        showLogin()
+    }
+    
+    func showLogin() {
+        
+    }
+}
