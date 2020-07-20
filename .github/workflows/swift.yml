@@ -1,14 +1,11 @@
-name: Newton Summer Project Pipeline
+name: Newton Summer Project CI Pipeline
 
 on: [push]
 
 jobs:
   test:
     runs-on: macos-latest
-    strategy:
-      matrix:
-        destination: ['platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro']
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
-      run: xcodebuild test -project IosSummerProject.xcodeproj -scheme ProjTests -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro"
+      run: xcodebuild test -project IosSummerProject.xcodeproj -scheme IosSummerProjectTests -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.6,name=iPhone 11 Pro"
