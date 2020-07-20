@@ -23,7 +23,7 @@ Now, navigate to the project folder in Terminal and type install the pods, this 
 
 ### Step 2
 
-Once the pods have installed, open Xcode and click 'Open an existing project'. You will need to navigate into the project folder and select the file 'IosSummerProject.xcworkspace'.
+Once the pods have installed, open Xcode and click *Open an existing project*. You will need to navigate into the project folder and select the file *IosSummerProject.xcworkspace*.
 
 ### Step 3
 
