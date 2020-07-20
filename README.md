@@ -15,11 +15,11 @@ Checklist:
 
 Clone the latest version of 'Development' to your local machine.
 
-Run: `git clone https://github.com/LiibanM/NewtonIosSummerProject.git`
+`git clone https://github.com/LiibanM/NewtonIosSummerProject.git`
 
 Now, navigate to the project folder in Terminal and type install the pods, this will begin to download all of the pods required to run the project.
 
-Run: `pod install`
+`pod install`
 
 ### Step 2
 
