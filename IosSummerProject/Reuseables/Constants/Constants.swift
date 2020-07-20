@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+
+struct Constants {
+    static let commsCellIdentifier = "CommsCell"
+    static let commsCellNibName = "CommsCell"
+}
