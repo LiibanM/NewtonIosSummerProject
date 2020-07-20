@@ -18,15 +18,16 @@ enum NetworkError: Error {
 }
 
 class ApiService: ApiServiceProtocol {
+    
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
         Void) {
         guard let url = URL(string: url) else {
             completion(.failure(.badUrl))
             return
         }
-        let token = ""
-        var request = URLRequest(url: url)
-        request.addValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
+//        let token = ""
+        let _ = URLRequest(url)
+//        request.addValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
         
         let session = URLSession(configuration: .default)
      
@@ -45,5 +46,14 @@ class ApiService: ApiServiceProtocol {
             }
         }
         task.resume()
+    }
+}
+
+
+extension URLRequest {
+    init(_ url: URL) {
+        self.init(url: url)
+        let token = ""
+        self.setValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
     }
 }

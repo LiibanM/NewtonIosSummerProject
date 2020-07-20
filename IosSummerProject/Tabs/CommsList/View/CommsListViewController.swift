@@ -23,7 +23,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         commsListTableView.delegate = self
         
         commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
-        self.navigationItem.title = "The title"
+        self.navigationItem.title = "Comms"
     }
     
 

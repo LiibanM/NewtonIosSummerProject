@@ -18,7 +18,7 @@ class AppCoordinator: Coordinator {
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
         super.init(navigationController: navigationController)
-        self.navigationController.navigationBar.isHidden = true
+//        self.navigationController.navigationBar.isHidden = true
 
     }
     
