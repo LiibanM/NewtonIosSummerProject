@@ -17,6 +17,10 @@ class CommsListViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        commsListTableView.dataSource = self
+        
+        commsListTableView.register(UINib.init(nibName: "CommsCell", bundle: nil), forCellReuseIdentifier:"CommsCell" )
 
         // Do any additional setup after loading the view.
     }
@@ -51,6 +55,7 @@ extension CommsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CommsCell", for: indexPath) as! CommsCell
         
         cell.commsTitleLabel.text = "Kash Money"
+        
         
         return cell
         

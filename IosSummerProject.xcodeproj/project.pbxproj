@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702C115724C5B5FB00799497 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115624C5B5FB00799497 /* Article.swift */; };
+		702C115924C5B73200799497 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115824C5B73200799497 /* User.swift */; };
+		702C115B24C5B73F00799497 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115A24C5B73F00799497 /* Category.swift */; };
 		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
 		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
 		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
@@ -66,6 +69,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		702C115624C5B5FB00799497 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		702C115824C5B73200799497 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		702C115A24C5B73F00799497 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
 		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
@@ -139,6 +145,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702C115524C5B5CB00799497 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				702C115624C5B5FB00799497 /* Article.swift */,
+				702C115824C5B73200799497 /* User.swift */,
+				702C115A24C5B73F00799497 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		71ABAD7D24C324AF00E48992 /* AddComms */ = {
 			isa = PBXGroup;
 			children = (
@@ -464,6 +480,7 @@
 		A4E8F10B24C10C7E00B7A26F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				702C115524C5B5CB00799497 /* Models */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -677,7 +694,9 @@
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
 				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
+				702C115924C5B73200799497 /* User.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
+				702C115724C5B5FB00799497 /* Article.swift in Sources */,
 				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
 				A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */,
@@ -685,6 +704,7 @@
 				A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
 				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
+				702C115B24C5B73F00799497 /* Category.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
