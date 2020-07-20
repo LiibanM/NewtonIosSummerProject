@@ -7,3 +7,24 @@
 //
 
 import Foundation
+
+protocol CommsListPresenterDelegate {
+    
+}
+
+protocol CommsListPresenterView {
+    func errorOccured(message: String)
+//    func loadComms()
+}
+
+class CommsListPresenter: CommsListPresenterProtocol {
+    
+    var delegate: CommsListPresenterDelegate
+    var view: CommsListPresenterView
+    
+    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate) {
+        self.delegate = delegate
+        self.view = view
+    }
+    
+}

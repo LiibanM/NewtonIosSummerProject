@@ -8,8 +8,10 @@
 
 import UIKit
 
-class CommsListViewController: UIViewController {
-
+class CommsListViewController: UIViewController, Storyboarded {
+    
+    var commsListPresenter: CommsListPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -27,4 +29,12 @@ class CommsListViewController: UIViewController {
     }
     */
 
+}
+
+extension CommsListViewController: CommsListPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
+    
+    
 }
