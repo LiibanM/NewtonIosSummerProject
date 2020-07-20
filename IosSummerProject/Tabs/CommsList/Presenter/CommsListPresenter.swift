@@ -35,22 +35,17 @@ class CommsListPresenter: CommsListPresenterProtocol {
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
-                    print("Given Url was bad")
                 case .failure(.failedToDecode):
                     self.view.errorOccured(message: "Failed to decode data" )
-                    print("Failed to decode data")
                 case .failure(.requestFailed):
                     self.view.errorOccured(message: "request failed")
-                    print("request failed")
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
-                    print("Unauthenticated")
                 case .success(let articles):
                     self.view.setCommsData(with: articles)
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")
-                    print("error")
                 }
         }
     }
