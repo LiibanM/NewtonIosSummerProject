@@ -26,7 +26,7 @@ class ApiService: ApiServiceProtocol {
         }
         let token = ""
         var request = URLRequest(url: url)
-        request.addValue("\(Constants.bearer) \(token)", forHTTPHeaderField: Constants.forHTTPHeaderField)
+        request.addValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
         
         let session = URLSession(configuration: .default)
      

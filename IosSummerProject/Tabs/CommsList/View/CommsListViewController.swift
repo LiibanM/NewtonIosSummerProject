@@ -22,7 +22,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         commsListTableView.delegate = self
         
-        commsListTableView.register(UINib.init(nibName: Constants.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.commsCellIdentifier )
+        commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
         self.navigationItem.title = "The title"
     }
     
@@ -47,7 +47,7 @@ extension CommsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.commsCellIdentifier, for: indexPath) as! CommsCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
         
         cell.commsTitleLabel.text = "Kash Money"
         cell.commsCategoryLabel.text = "Awesome"
