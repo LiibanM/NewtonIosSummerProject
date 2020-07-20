@@ -18,6 +18,8 @@
 		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
 		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
 		71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */; };
+		71ABADB824C5A99400E48992 /* CommsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADB624C5A99400E48992 /* CommsCell.swift */; };
+		71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ABADB724C5A99400E48992 /* CommsCell.xib */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -77,6 +79,8 @@
 		71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosSummerProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSummerProjectTests.swift; sourceTree = "<group>"; };
 		71ABADAF24C57EDF00E48992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71ABADB624C5A99400E48992 /* CommsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsCell.swift; sourceTree = "<group>"; };
+		71ABADB724C5A99400E48992 /* CommsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommsCell.xib; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,6 +200,15 @@
 				71ABADAF24C57EDF00E48992 /* Info.plist */,
 			);
 			path = IosSummerProjectTests;
+			sourceTree = "<group>";
+		};
+		71ABADB524C5A95A00E48992 /* CommsCell */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADB624C5A99400E48992 /* CommsCell.swift */,
+				71ABADB724C5A99400E48992 /* CommsCell.xib */,
+			);
+			path = CommsCell;
 			sourceTree = "<group>";
 		};
 		A4E8F08324C0FC5C00B7A26F = {
@@ -325,6 +338,7 @@
 		A4E8F0B524C0FFE400B7A26F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71ABADB524C5A95A00E48992 /* CommsCell */,
 				71ABAD9324C3267C00E48992 /* CommsListViewController.swift */,
 				71ABAD9524C3269600E48992 /* CommsList.storyboard */,
 			);
@@ -562,6 +576,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */,
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
@@ -675,6 +690,7 @@
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
+				71ABADB824C5A99400E48992 /* CommsCell.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
 				71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */,
 				71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */,
