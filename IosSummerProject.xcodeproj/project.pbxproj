@@ -17,6 +17,7 @@
 		71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */; };
 		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
 		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
+		71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -52,6 +53,16 @@
 		C2F73737EF78BCDD37FA16F7 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		71ABADB024C57EDF00E48992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4E8F08424C0FC5C00B7A26F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E8F08B24C0FC5C00B7A26F;
+			remoteInfo = IosSummerProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
@@ -63,6 +74,9 @@
 		71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenterProtocol.swift; sourceTree = "<group>"; };
 		71ABAD9324C3267C00E48992 /* CommsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewController.swift; sourceTree = "<group>"; };
 		71ABAD9524C3269600E48992 /* CommsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommsList.storyboard; sourceTree = "<group>"; };
+		71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosSummerProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSummerProjectTests.swift; sourceTree = "<group>"; };
+		71ABADAF24C57EDF00E48992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -103,6 +117,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		71ABADA824C57EDF00E48992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08924C0FC5C00B7A26F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -168,10 +189,20 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		71ABADAC24C57EDF00E48992 /* IosSummerProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */,
+				71ABADAF24C57EDF00E48992 /* Info.plist */,
+			);
+			path = IosSummerProjectTests;
+			sourceTree = "<group>";
+		};
 		A4E8F08324C0FC5C00B7A26F = {
 			isa = PBXGroup;
 			children = (
 				A4E8F08E24C0FC5C00B7A26F /* IosSummerProject */,
+				71ABADAC24C57EDF00E48992 /* IosSummerProjectTests */,
 				A4E8F08D24C0FC5C00B7A26F /* Products */,
 				DA16121C00B257EFD1955AEC /* Pods */,
 				DEF10AD35F56C9CE7AAF9026 /* Frameworks */,
@@ -182,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				A4E8F08C24C0FC5C00B7A26F /* IosSummerProject.app */,
+				71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -442,6 +474,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		71ABADAA24C57EDF00E48992 /* IosSummerProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71ABADB224C57EDF00E48992 /* Build configuration list for PBXNativeTarget "IosSummerProjectTests" */;
+			buildPhases = (
+				71ABADA724C57EDF00E48992 /* Sources */,
+				71ABADA824C57EDF00E48992 /* Frameworks */,
+				71ABADA924C57EDF00E48992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71ABADB124C57EDF00E48992 /* PBXTargetDependency */,
+			);
+			name = IosSummerProjectTests;
+			productName = IosSummerProjectTests;
+			productReference = 71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4E8F0A024C0FC5E00B7A26F /* Build configuration list for PBXNativeTarget "IosSummerProject" */;
@@ -468,10 +518,14 @@
 		A4E8F08424C0FC5C00B7A26F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Liiban Mukhtar";
 				TargetAttributes = {
+					71ABADAA24C57EDF00E48992 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = A4E8F08B24C0FC5C00B7A26F;
+					};
 					A4E8F08B24C0FC5C00B7A26F = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -491,11 +545,19 @@
 			projectRoot = "";
 			targets = (
 				A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */,
+				71ABADAA24C57EDF00E48992 /* IosSummerProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		71ABADA924C57EDF00E48992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08A24C0FC5C00B7A26F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -575,6 +637,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		71ABADA724C57EDF00E48992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08824C0FC5C00B7A26F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -616,6 +686,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		71ABADB124C57EDF00E48992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */;
+			targetProxy = 71ABADB024C57EDF00E48992 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		A4E8F09524C0FC5C00B7A26F /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -636,6 +714,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		71ABADB324C57EDF00E48992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosSummerProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios-stream-summercamp-build-project.IosSummerProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosSummerProject.app/IosSummerProject";
+			};
+			name = Debug;
+		};
+		71ABADB424C57EDF00E48992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosSummerProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios-stream-summercamp-build-project.IosSummerProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosSummerProject.app/IosSummerProject";
+			};
+			name = Release;
+		};
 		A4E8F09E24C0FC5E00B7A26F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -791,6 +909,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		71ABADB224C57EDF00E48992 /* Build configuration list for PBXNativeTarget "IosSummerProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71ABADB324C57EDF00E48992 /* Debug */,
+				71ABADB424C57EDF00E48992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A4E8F08724C0FC5C00B7A26F /* Build configuration list for PBXProject "IosSummerProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
