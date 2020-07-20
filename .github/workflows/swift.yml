@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
-      run: xcodebuild test -project IosSummerProject.xcodeproj -scheme IosSummerProjectTests -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro"
+      run: xcodebuild test -project IosSummerProject.xcodeproj -scheme IosSummerProjectTests -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
