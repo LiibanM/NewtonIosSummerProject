@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CommsListPresenterDelegate {
-    
+    func goToCreateContent()
 }
 
 protocol CommsListPresenterView {
@@ -46,8 +46,12 @@ class CommsListPresenter: CommsListPresenterProtocol {
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")
-                }
+            }
         }
+    }
+    
+    func didTapAddComms() {
+        delegate.goToCreateContent()
     }
     
     

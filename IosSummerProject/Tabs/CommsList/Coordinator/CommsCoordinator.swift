@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 
 protocol CommsCoordinatorDelegate {
-//    func didSelectPost()
 }
 
 class CommsCoordinator: Coordinator {
@@ -35,11 +34,12 @@ class CommsCoordinator: Coordinator {
     }
     
     func showAddComms() {
-        
     }
     
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
-
+    func goToCreateContent() {
+        showAddComms()
+    }
 }

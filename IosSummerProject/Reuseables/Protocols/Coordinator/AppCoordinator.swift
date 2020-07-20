@@ -39,6 +39,5 @@ class AppCoordinator: Coordinator {
 }
 
 extension AppCoordinator: CommsCoordinatorDelegate {
-    
 }
 
