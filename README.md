@@ -6,4 +6,19 @@ Welcome to argubly one of the best streams in Newton! This repository contains e
 
 ## Setup
 
-To do...
+Checklist:
+
+- Ensure you have Xcode installed, the latest version can be found [here](https://apps.apple.com/gb/app/xcode/id497799835?mt=12)
+- Ensure you have CocoaPods installed, a guide on how to do this can be found [here](https://guides.cocoapods.org/using/getting-started.html)
+
+### Step 1
+
+Clone the latest version of 'Development' to your local machine, then navigate to the project folder in Terminal and type 'pod install', this will begin to download all of the pods required to run the project.
+
+### Step 2
+
+Once the pods have installed, open Xcode and click 'Open an existing project'. You will need to navigate into the project folder and select the file 'IosSummerProject.xcworkspace'.
+
+### Step 3
+
+The project should now open in Xcode and you can press the play button (run) which is found at the top of the window, this will now run the app in the simulator.
