@@ -11,6 +11,8 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
+    var commsCoordinator: CommsCoordinator!
+    
     init(_ navigationController: UINavigationController) {
         super.init(navigationController: navigationController)
     }
@@ -22,4 +24,15 @@ class AppCoordinator: Coordinator {
     func showLogin() {
         
     }
+    
+    func showComms() {
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self)
+        addChildCoordinator(commsCoordinator)
+        commsCoordinator.start()
+    }
 }
+
+extension AppCoordinator: CommsCoordinatorDelegate {
+    
+}
+
