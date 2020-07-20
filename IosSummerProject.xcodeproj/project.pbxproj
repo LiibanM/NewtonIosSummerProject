@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
+		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
+		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
+		71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */; };
+		71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8A24C325C300E48992 /* CommsDetailViewController.swift */; };
+		71ABAD8D24C325D900E48992 /* CommsDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8C24C325D900E48992 /* CommsDetail.storyboard */; };
+		71ABAD9024C325F100E48992 /* CommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8F24C325F100E48992 /* CommsPresenter.swift */; };
+		71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */; };
+		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
+		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
+		71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -18,18 +29,8 @@
 		A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0AB24C0FD5100B7A26F /* StoryBoarded.swift */; };
 		A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0AE24C0FD6B00B7A26F /* Constants.swift */; };
 		A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0B624C1001B00B7A26F /* CommsCoordinator.swift */; };
-		A4E8F0B924C1002E00B7A26F /* CommsPresenterProcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0B824C1002E00B7A26F /* CommsPresenterProcol.swift */; };
-		A4E8F0BB24C1004600B7A26F /* CommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0BA24C1004600B7A26F /* CommsPresenter.swift */; };
-		A4E8F0BD24C1006400B7A26F /* CommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */; };
-		A4E8F0BF24C1012D00B7A26F /* CommsStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */; };
-		A4E8F0C324C1025C00B7A26F /* CommsDetailsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0C224C1025C00B7A26F /* CommsDetailsPresenter.swift */; };
-		A4E8F0C524C1026900B7A26F /* CommsDetailsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0C424C1026900B7A26F /* CommsDetailsPresenterProtocol.swift */; };
-		A4E8F0C824C1029400B7A26F /* CommsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */; };
-		A4E8F0CB24C102A900B7A26F /* CommsDetailsPresenter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */; };
-		A4E8F0D024C1039C00B7A26F /* AddCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */; };
-		A4E8F0D224C103AB00B7A26F /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */; };
-		A4E8F0D424C103BA00B7A26F /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */; };
-		A4E8F0D624C103CE00B7A26F /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */; };
+		A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0B824C1002E00B7A26F /* CommsListPresenterProcol.swift */; };
+		A4E8F0BB24C1004600B7A26F /* CommsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0BA24C1004600B7A26F /* CommsListPresenter.swift */; };
 		A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */; };
 		A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */; };
 		A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */; };
@@ -52,7 +53,30 @@
 		C2F73737EF78BCDD37FA16F7 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		71ABADB024C57EDF00E48992 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A4E8F08424C0FC5C00B7A26F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A4E8F08B24C0FC5C00B7A26F;
+			remoteInfo = IosSummerProject;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
+		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
+		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
+		71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterProtocol.swift; sourceTree = "<group>"; };
+		71ABAD8A24C325C300E48992 /* CommsDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsDetailViewController.swift; sourceTree = "<group>"; };
+		71ABAD8C24C325D900E48992 /* CommsDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommsDetail.storyboard; sourceTree = "<group>"; };
+		71ABAD8F24C325F100E48992 /* CommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenter.swift; sourceTree = "<group>"; };
+		71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenterProtocol.swift; sourceTree = "<group>"; };
+		71ABAD9324C3267C00E48992 /* CommsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewController.swift; sourceTree = "<group>"; };
+		71ABAD9524C3269600E48992 /* CommsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CommsList.storyboard; sourceTree = "<group>"; };
+		71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosSummerProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSummerProjectTests.swift; sourceTree = "<group>"; };
+		71ABADAF24C57EDF00E48992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -69,18 +93,8 @@
 		A4E8F0AB24C0FD5100B7A26F /* StoryBoarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryBoarded.swift; sourceTree = "<group>"; };
 		A4E8F0AE24C0FD6B00B7A26F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A4E8F0B624C1001B00B7A26F /* CommsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsCoordinator.swift; sourceTree = "<group>"; };
-		A4E8F0B824C1002E00B7A26F /* CommsPresenterProcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenterProcol.swift; sourceTree = "<group>"; };
-		A4E8F0BA24C1004600B7A26F /* CommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsPresenter.swift; sourceTree = "<group>"; };
-		A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CommsStoryboard.storyboard; path = ../../../../../../../Documents/CommsStoryboard.storyboard; sourceTree = "<group>"; };
-		A4E8F0C224C1025C00B7A26F /* CommsDetailsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsPresenter.swift; path = ../../../../../../../../Documents/CommsDetailsPresenter.swift; sourceTree = "<group>"; };
-		A4E8F0C424C1026900B7A26F /* CommsDetailsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsPresenterProtocol.swift; path = ../../../../../../../../Documents/CommsDetailsPresenterProtocol.swift; sourceTree = "<group>"; };
-		A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsDetailsViewController.swift; path = ../../../../../../../../Documents/CommsDetailsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = CommsDetailsPresenter.storyboard; path = ../../../../../../../../Documents/CommsDetailsPresenter.storyboard; sourceTree = "<group>"; };
-		A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsPresenterProtocol.swift; path = ../../../../../../../../Documents/AddCommsPresenterProtocol.swift; sourceTree = "<group>"; };
-		A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsPresenter.swift; path = ../../../../../../../../Documents/AddCommsPresenter.swift; sourceTree = "<group>"; };
-		A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsViewController.swift; path = ../../../../../../../../Documents/AddCommsViewController.swift; sourceTree = "<group>"; };
-		A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = AddComms.storyboard; path = ../../../../../../../../Documents/AddComms.storyboard; sourceTree = "<group>"; };
+		A4E8F0B824C1002E00B7A26F /* CommsListPresenterProcol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListPresenterProcol.swift; sourceTree = "<group>"; };
+		A4E8F0BA24C1004600B7A26F /* CommsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0DA24C1067B00B7A26F /* BrowseTagsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F0DC24C1069100B7A26F /* BrowseTagsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0DE24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseTagsPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -103,6 +117,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		71ABADA824C57EDF00E48992 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08924C0FC5C00B7A26F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -114,10 +135,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		71ABAD7D24C324AF00E48992 /* AddComms */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8324C3252D00E48992 /* Presenter */,
+				71ABAD7E24C324BA00E48992 /* View */,
+			);
+			path = AddComms;
+			sourceTree = "<group>";
+		};
+		71ABAD7E24C324BA00E48992 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */,
+				71ABAD8124C324E700E48992 /* AddComms.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71ABAD8324C3252D00E48992 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */,
+				71ABAD8624C3254D00E48992 /* AddCommsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		71ABAD8824C325A200E48992 /* CommsDetail */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8E24C325E100E48992 /* Presenter */,
+				71ABAD8924C325AE00E48992 /* View */,
+			);
+			path = CommsDetail;
+			sourceTree = "<group>";
+		};
+		71ABAD8924C325AE00E48992 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8A24C325C300E48992 /* CommsDetailViewController.swift */,
+				71ABAD8C24C325D900E48992 /* CommsDetail.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71ABAD8E24C325E100E48992 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				71ABAD8F24C325F100E48992 /* CommsPresenter.swift */,
+				71ABAD9124C325FD00E48992 /* CommsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		71ABADAC24C57EDF00E48992 /* IosSummerProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */,
+				71ABADAF24C57EDF00E48992 /* Info.plist */,
+			);
+			path = IosSummerProjectTests;
+			sourceTree = "<group>";
+		};
 		A4E8F08324C0FC5C00B7A26F = {
 			isa = PBXGroup;
 			children = (
 				A4E8F08E24C0FC5C00B7A26F /* IosSummerProject */,
+				71ABADAC24C57EDF00E48992 /* IosSummerProjectTests */,
 				A4E8F08D24C0FC5C00B7A26F /* Products */,
 				DA16121C00B257EFD1955AEC /* Pods */,
 				DEF10AD35F56C9CE7AAF9026 /* Frameworks */,
@@ -128,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				A4E8F08C24C0FC5C00B7A26F /* IosSummerProject.app */,
+				71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,8 +296,8 @@
 		A4E8F0B224C0FE4300B7A26F /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0CC24C1036D00B7A26F /* AddComms */,
-				A4E8F0C024C101AF00B7A26F /* CommsDetail */,
+				71ABAD8824C325A200E48992 /* CommsDetail */,
+				71ABAD7D24C324AF00E48992 /* AddComms */,
 				A4E8F0B324C0FFD100B7A26F /* Coordinator */,
 				A4E8F0B424C0FFDA00B7A26F /* Presenter */,
 				A4E8F0B524C0FFE400B7A26F /* View */,
@@ -230,8 +316,8 @@
 		A4E8F0B424C0FFDA00B7A26F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0B824C1002E00B7A26F /* CommsPresenterProcol.swift */,
-				A4E8F0BA24C1004600B7A26F /* CommsPresenter.swift */,
+				A4E8F0B824C1002E00B7A26F /* CommsListPresenterProcol.swift */,
+				A4E8F0BA24C1004600B7A26F /* CommsListPresenter.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -239,62 +325,8 @@
 		A4E8F0B524C0FFE400B7A26F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0BC24C1006400B7A26F /* CommsViewController.swift */,
-				A4E8F0BE24C1012D00B7A26F /* CommsStoryboard.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A4E8F0C024C101AF00B7A26F /* CommsDetail */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0C624C1027400B7A26F /* View */,
-				A4E8F0C124C1023900B7A26F /* Presenter */,
-			);
-			path = CommsDetail;
-			sourceTree = "<group>";
-		};
-		A4E8F0C124C1023900B7A26F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0C224C1025C00B7A26F /* CommsDetailsPresenter.swift */,
-				A4E8F0C424C1026900B7A26F /* CommsDetailsPresenterProtocol.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A4E8F0C624C1027400B7A26F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0C724C1029400B7A26F /* CommsDetailsViewController.swift */,
-				A4E8F0CA24C102A900B7A26F /* CommsDetailsPresenter.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		A4E8F0CC24C1036D00B7A26F /* AddComms */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0CE24C1038000B7A26F /* View */,
-				A4E8F0CD24C1037900B7A26F /* Presenter */,
-			);
-			path = AddComms;
-			sourceTree = "<group>";
-		};
-		A4E8F0CD24C1037900B7A26F /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0CF24C1039C00B7A26F /* AddCommsPresenterProtocol.swift */,
-				A4E8F0D124C103AB00B7A26F /* AddCommsPresenter.swift */,
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		A4E8F0CE24C1038000B7A26F /* View */ = {
-			isa = PBXGroup;
-			children = (
-				A4E8F0D324C103BA00B7A26F /* AddCommsViewController.swift */,
-				A4E8F0D524C103CE00B7A26F /* AddComms.storyboard */,
+				71ABAD9324C3267C00E48992 /* CommsListViewController.swift */,
+				71ABAD9524C3269600E48992 /* CommsList.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -442,6 +474,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		71ABADAA24C57EDF00E48992 /* IosSummerProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 71ABADB224C57EDF00E48992 /* Build configuration list for PBXNativeTarget "IosSummerProjectTests" */;
+			buildPhases = (
+				71ABADA724C57EDF00E48992 /* Sources */,
+				71ABADA824C57EDF00E48992 /* Frameworks */,
+				71ABADA924C57EDF00E48992 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				71ABADB124C57EDF00E48992 /* PBXTargetDependency */,
+			);
+			name = IosSummerProjectTests;
+			productName = IosSummerProjectTests;
+			productReference = 71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = A4E8F0A024C0FC5E00B7A26F /* Build configuration list for PBXNativeTarget "IosSummerProject" */;
@@ -468,10 +518,14 @@
 		A4E8F08424C0FC5C00B7A26F /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1150;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Liiban Mukhtar";
 				TargetAttributes = {
+					71ABADAA24C57EDF00E48992 = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = A4E8F08B24C0FC5C00B7A26F;
+					};
 					A4E8F08B24C0FC5C00B7A26F = {
 						CreatedOnToolsVersion = 11.6;
 					};
@@ -491,25 +545,33 @@
 			projectRoot = "";
 			targets = (
 				A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */,
+				71ABADAA24C57EDF00E48992 /* IosSummerProjectTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		71ABADA924C57EDF00E48992 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08A24C0FC5C00B7A26F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A4E8F0CB24C102A900B7A26F /* CommsDetailsPresenter.storyboard in Resources */,
+				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
+				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
-				A4E8F0D624C103CE00B7A26F /* AddComms.storyboard in Resources */,
-				A4E8F0BF24C1012D00B7A26F /* CommsStoryboard.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
 				A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */,
 				A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */,
 				A4E8F0F924C1090D00B7A26F /* AddTag.storyboard in Resources */,
+				71ABAD8D24C325D900E48992 /* CommsDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,46 +637,62 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		71ABADA724C57EDF00E48992 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		A4E8F08824C0FC5C00B7A26F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A4E8F10424C10C3700B7A26F /* LoginPresenterProtocol.swift in Sources */,
-				A4E8F0C524C1026900B7A26F /* CommsDetailsPresenterProtocol.swift in Sources */,
+				71ABAD9024C325F100E48992 /* CommsPresenter.swift in Sources */,
 				A4E8F0E124C106BE00B7A26F /* BrowseTagsViewController.swift in Sources */,
 				A4E8F0A824C0FD3300B7A26F /* Coordinator.swift in Sources */,
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
+				71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */,
 				A4E8F0F724C108A100B7A26F /* AddTagViewController.swift in Sources */,
-				A4E8F0D224C103AB00B7A26F /* AddCommsPresenter.swift in Sources */,
-				A4E8F0C824C1029400B7A26F /* CommsDetailsViewController.swift in Sources */,
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
+				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
+				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
-				A4E8F0BD24C1006400B7A26F /* CommsViewController.swift in Sources */,
-				A4E8F0D424C103BA00B7A26F /* AddCommsViewController.swift in Sources */,
 				A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */,
-				A4E8F0D024C1039C00B7A26F /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */,
-				A4E8F0B924C1002E00B7A26F /* CommsPresenterProcol.swift in Sources */,
+				A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
+				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
-				A4E8F0BB24C1004600B7A26F /* CommsPresenter.swift in Sources */,
+				71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */,
+				71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */,
+				A4E8F0BB24C1004600B7A26F /* CommsListPresenter.swift in Sources */,
 				A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */,
-				A4E8F0C324C1025C00B7A26F /* CommsDetailsPresenter.swift in Sources */,
 				A4E8F0E824C1079200B7A26F /* EditTagsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		71ABADB124C57EDF00E48992 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A4E8F08B24C0FC5C00B7A26F /* IosSummerProject */;
+			targetProxy = 71ABADB024C57EDF00E48992 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		A4E8F09524C0FC5C00B7A26F /* Main.storyboard */ = {
@@ -636,6 +714,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		71ABADB324C57EDF00E48992 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosSummerProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios-stream-summercamp-build-project.IosSummerProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosSummerProject.app/IosSummerProject";
+			};
+			name = Debug;
+		};
+		71ABADB424C57EDF00E48992 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = IosSummerProjectTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "ios-stream-summercamp-build-project.IosSummerProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/IosSummerProject.app/IosSummerProject";
+			};
+			name = Release;
+		};
 		A4E8F09E24C0FC5E00B7A26F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -757,6 +875,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IosSummerProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -775,6 +894,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = IosSummerProject/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -789,6 +909,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		71ABADB224C57EDF00E48992 /* Build configuration list for PBXNativeTarget "IosSummerProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				71ABADB324C57EDF00E48992 /* Debug */,
+				71ABADB424C57EDF00E48992 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		A4E8F08724C0FC5C00B7A26F /* Build configuration list for PBXProject "IosSummerProject" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

@@ -1,8 +1,8 @@
 //
-//  CommsViewController.swift
+//  CommsPresenter.swift
 //  IosSummerProject
 //
-//  Created by Liiban Mukhtar on 16/07/2020.
+//  Created by Akash Mair on 18/07/2020.
 //  Copyright © 2020 Liiban Mukhtar. All rights reserved.
 //
 
