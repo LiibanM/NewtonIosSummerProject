@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol LoginPresenterProtocol {
+    func googleSharedSignIninitialSetup();
+    func didLogin() //user info ?
+}
