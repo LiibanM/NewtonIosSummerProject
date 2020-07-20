@@ -51,6 +51,7 @@
 		A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */; };
 		A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F10924C10C5C00B7A26F /* Login.storyboard */; };
 		C2F73737EF78BCDD37FA16F7 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */; };
+		D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019D24C59FE100CD15DD /* ComsContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		A4E8F10524C10C4200B7A26F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4E8F10924C10C5C00B7A26F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		D282019D24C59FE100CD15DD /* ComsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComsContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +223,7 @@
 		A4E8F08E24C0FC5C00B7A26F /* IosSummerProject */ = {
 			isa = PBXGroup;
 			children = (
+				D282019C24C59F8D00CD15DD /* Models */,
 				A4E8F10B24C10C7E00B7A26F /* Services */,
 				A4E8F0A424C0FCF600B7A26F /* Reuseables */,
 				A4E8F0B024C0FDD400B7A26F /* Tabs */,
@@ -454,6 +457,14 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
+		D282019C24C59F8D00CD15DD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D282019D24C59FE100CD15DD /* ComsContent.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		DA16121C00B257EFD1955AEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -674,6 +685,7 @@
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
+				D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
 				71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */,
