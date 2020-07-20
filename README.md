@@ -15,6 +15,8 @@ Checklist:
 
 Clone the latest version of 'Development' to your local machine, then navigate to the project folder in Terminal and type 'pod install', this will begin to download all of the pods required to run the project.
 
+`git clone https://github.com/LiibanM/NewtonIosSummerProject.git`
+
 ### Step 2
 
 Once the pods have installed, open Xcode and click 'Open an existing project'. You will need to navigate into the project folder and select the file 'IosSummerProject.xcworkspace'.
