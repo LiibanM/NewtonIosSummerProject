@@ -10,6 +10,9 @@ import UIKit
 
 class CommsCell: UITableViewCell {
 
+    @IBOutlet weak var commsImageView: UIImageView!
+    @IBOutlet weak var commsTitleLabel: UILabel!
+    @IBOutlet weak var commsCategoryLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
