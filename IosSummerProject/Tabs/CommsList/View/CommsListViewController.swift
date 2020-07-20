@@ -10,7 +10,10 @@ import UIKit
 
 class CommsListViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var commsListTableView: UITableView!
     var commsListPresenter: CommsListPresenterProtocol!
+    
+    var comms = [Any]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,3 +41,21 @@ extension CommsListViewController: CommsListPresenterView {
     
     
 }
+
+extension CommsListViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        comms.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CommsCell", for: indexPath) as! CommsCell
+        
+        cell.commsTitleLabel.text = "Kash Money"
+        
+        return cell
+        
+    }
+    
+    
+}
+
