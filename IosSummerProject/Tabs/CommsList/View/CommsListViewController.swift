@@ -24,6 +24,8 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
         self.navigationItem.title = "Comms"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: nil, action: nil)
+
     }
     
 

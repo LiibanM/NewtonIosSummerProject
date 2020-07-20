@@ -21,8 +21,6 @@ class CommsCoordinator: Coordinator {
         
         self.apiService = apiService
         super.init(navigationController: navigationController)
-//        self.navigationController.navigationBar.largeContentTitle = "Comms"
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Add", style:.done, target: nil, action: nil)
     }
     
     override func start() {
