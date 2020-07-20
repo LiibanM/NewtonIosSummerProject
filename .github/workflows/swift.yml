@@ -8,4 +8,4 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     - name: Run tests
-      run: xcodebuild test -workspace IosSummerProject.xcworkspace -scheme IosSummerProjectTests -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean test -workspace IosSummerProject.xcworkspace -scheme IosSummerProject -sdk iphonesimulator -destination "platform=iOS Simulator,OS=13.5,name=iPhone 11 Pro" CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
