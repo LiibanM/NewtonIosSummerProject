@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AddCommsViewController: UIViewController {
+class AddCommsViewController: UIViewController, Storyboarded {
 
     override func viewDidLoad() {
         super.viewDidLoad()
