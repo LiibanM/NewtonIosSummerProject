@@ -24,19 +24,8 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         commsListTableView.register(UINib.init(nibName: "CommsCell", bundle: nil), forCellReuseIdentifier:"CommsCell" )
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
 
@@ -58,8 +47,6 @@ extension CommsListViewController: UITableViewDataSource {
         
         cell.commsTitleLabel.text = "Kash Money"
         cell.commsCategoryLabel.text = "Awesome"
-        
-        
         return cell
         
     }
@@ -70,4 +57,6 @@ extension CommsListViewController: UITableViewDelegate {
         print("hello")
     }
 }
+
+
 

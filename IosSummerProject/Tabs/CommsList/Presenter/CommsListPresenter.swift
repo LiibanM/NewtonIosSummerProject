@@ -21,10 +21,14 @@ class CommsListPresenter: CommsListPresenterProtocol {
     
     var delegate: CommsListPresenterDelegate
     var view: CommsListPresenterView
+    var apiService: ApiServiceProtocol
     
-    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate) {
+    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
         self.view = view
+        self.apiService = apiService
     }
+    
+    
     
 }

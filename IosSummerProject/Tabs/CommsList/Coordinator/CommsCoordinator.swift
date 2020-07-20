@@ -15,8 +15,11 @@ protocol CommsCoordinatorDelegate {
 
 class CommsCoordinator: Coordinator {
     
+    var apiService: ApiServiceProtocol
     
-    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate) {
+    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate, _ apiService: ApiServiceProtocol) {
+        
+        self.apiService = apiService
         super.init(navigationController: navigationController)
     }
     
@@ -26,7 +29,7 @@ class CommsCoordinator: Coordinator {
     
     func showCommsList() {
         let commsListViewController = CommsListViewController.instantiate(storyboard: "CommsList")
-        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self)
+        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
         self.navigationController.viewControllers = [commsListViewController]
     }
