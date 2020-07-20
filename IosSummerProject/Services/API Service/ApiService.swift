@@ -24,6 +24,9 @@ class ApiService: ApiServiceProtocol {
             completion(.failure(.badUrl))
             return
         }
+        let token = ""
+        var request = URLRequest(url: url)
+        request.addValue("\(Constants.bearer) \(token)", forHTTPHeaderField: Constants.forHTTPHeaderField)
         
         let session = URLSession(configuration: .default)
      

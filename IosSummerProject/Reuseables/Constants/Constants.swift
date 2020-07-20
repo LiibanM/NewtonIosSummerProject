@@ -12,4 +12,7 @@ import Foundation
 struct Constants {
     static let commsCellIdentifier = "CommsCell"
     static let commsCellNibName = "CommsCell"
+    
+    static let forHTTPHeaderField = "Authorization"
+    static let bearer = "Bearer"
 }
