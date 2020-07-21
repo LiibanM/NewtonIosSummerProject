@@ -30,9 +30,7 @@ class LoginCoordinator: Coordinator {
     func showLogin() {
         let loginViewController = LoginViewController.instantiate(storyboard: "Login")
         
-        let loginPresenter = LoginPresenter(
-            with: loginViewController,
-            delegate: self)
+        let loginPresenter = LoginPresenter(with: loginViewController, delegate: self)
         
         loginViewController.loginPresenter = loginPresenter
         

@@ -9,6 +9,6 @@
 import Foundation
 
 protocol LoginPresenterProtocol {
-    func googleSharedSignIninitialSetup();
+    func createGoogleSharedInstance();
     func didLogin() //user info ?
 }

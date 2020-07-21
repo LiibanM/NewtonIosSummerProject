@@ -19,7 +19,7 @@ class AppCoordinator: Coordinator {
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
         super.init(navigationController: navigationController)
-//        self.navigationController.navigationBar.isHidden = true
+        self.navigationController.navigationBar.isHidden = true
 
     }
     
@@ -28,9 +28,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
-        loginCoordinator = LoginCoordinator(
-            navigationController,
-            delegate: self)
+        loginCoordinator = LoginCoordinator(navigationController, delegate: self)
         
         self.addChildCoordinator(loginCoordinator)
         loginCoordinator.start()

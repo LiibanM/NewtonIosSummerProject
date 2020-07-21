@@ -36,7 +36,7 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
         delegate.didLogin()
     }
     
-    func googleSharedSignIninitialSetup() {
+    func createGoogleSharedInstance() {
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().presentingViewController = view as? UIViewController
     }
