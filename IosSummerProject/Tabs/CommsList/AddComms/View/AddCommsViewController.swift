@@ -16,7 +16,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
-    let customAllertController = CustomAlert()
+    let customActionSheet = CustomActionSheet()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +44,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
-        customAllertController.showAllert(title: "What woud you like to do?",
+        customActionSheet.showAlert(title: "What woud you like to do?",
                                           message: "Use image from",
-                                          okButtonText: "Library",
-                                          cancelButtonText: "Camera",
+                                          optionOne: "Library",
+                                          optionTwo: "Camera",
                                           viewController: self,completion: { (success) -> Void in
             if success! {
                 self.imagePicker.allowsEditing = false
