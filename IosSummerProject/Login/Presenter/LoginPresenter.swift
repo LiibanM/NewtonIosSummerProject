@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import GoogleSignIn
+    import GoogleSignIn
 import UIKit
 
 protocol LoginPresenterView {
@@ -61,14 +61,13 @@ extension LoginPresenter {
         //TODO: to be removed before launch
         
         //let userId = user.userID                  // For client-side use only!
-        //let idToken = user.authentication.idToken // Safe to send to the server
+        let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
         let fullName = user.profile.name
         //let givenName = user.profile.givenName
         //let familyName = user.profile.familyName
         let email = user.profile.email
         print(fullName ?? "Can't find full name or user")
         print(email ?? "Can't find email of user")
-        
         didLogin()
     }
     
