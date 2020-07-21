@@ -13,8 +13,13 @@ class AppCoordinator: Coordinator {
     
     var commsCoordinator: CommsCoordinator!
     
+    var apiService: ApiServiceProtocol
+    
     init(_ navigationController: UINavigationController) {
+        self.apiService = ApiService()
         super.init(navigationController: navigationController)
+//        self.navigationController.navigationBar.isHidden = true
+
     }
     
     override func start() {
@@ -26,13 +31,12 @@ class AppCoordinator: Coordinator {
     }
     
     func showComms() {
-        commsCoordinator = CommsCoordinator(navigationController, delegate: self)
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
     }
 }
 
 extension AppCoordinator: CommsCoordinatorDelegate {
-    
 }
 
