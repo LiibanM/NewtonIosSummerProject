@@ -9,10 +9,10 @@
 import Foundation
 
 struct CommsContent: Codable {
-  var image: String?
+  var image: Data?
   var title: String
   var description: String
-  init(image: String, title: String, description: String) {
+  init(image: Data, title: String, description: String) {
     self.image = image
     self.title = title
     self.description = description
