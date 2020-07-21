@@ -15,21 +15,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="CommsList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HI5-8P-1ql">
-                                <rect key="frame" x="164" y="318" width="87" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-iV-69R">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.8796955958549223" green="0.8796955958549223" blue="0.8796955958549223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="1VK-iV-69R" firstAttribute="trailing" secondItem="2w3-8Q-aFo" secondAttribute="trailing" id="4aj-12-Rjw"/>
+                            <constraint firstItem="1VK-iV-69R" firstAttribute="bottom" secondItem="2w3-8Q-aFo" secondAttribute="bottom" constant="-34" id="LZU-5W-qhA"/>
+                            <constraint firstItem="1VK-iV-69R" firstAttribute="leading" secondItem="2w3-8Q-aFo" secondAttribute="leading" id="M9Q-2v-613"/>
+                            <constraint firstItem="1VK-iV-69R" firstAttribute="top" secondItem="2w3-8Q-aFo" secondAttribute="top" constant="44" id="vK6-18-XUB"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="0CP-3x-uRj"/>
                     </view>
+                    <connections>
+                        <outlet property="commsListTableView" destination="1VK-iV-69R" id="rV3-tu-uJQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7g-Xc-WLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="955" y="11"/>
+            <point key="canvasLocation" x="953.62318840579712" y="10.714285714285714"/>
         </scene>
     </scenes>
 </document>
