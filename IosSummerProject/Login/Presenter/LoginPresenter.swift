@@ -7,7 +7,7 @@
 //
 
 import Foundation
-    import GoogleSignIn
+import GoogleSignIn
 import UIKit
 
 protocol LoginPresenterView {
@@ -18,7 +18,7 @@ protocol LoginPresenterDelegate {
     func didLogin()
 }
 
-class LoginPresenter: NSObject, LoginPresenterProtocol, GIDSignInDelegate {
+class LoginPresenter: NSObject, LoginPresenterProtocol {
     
     let view: LoginPresenterView
     let delegate: LoginPresenterDelegate
@@ -42,7 +42,7 @@ class LoginPresenter: NSObject, LoginPresenterProtocol, GIDSignInDelegate {
     }
 }
 
-extension LoginPresenter {
+extension LoginPresenter: GIDSignInDelegate {
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
