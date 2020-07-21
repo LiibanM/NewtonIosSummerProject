@@ -10,12 +10,12 @@ import UIKit
 
   
     
-class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class AddCommsViewController: UIViewController, Storyboarded {
 
    
     @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
-      @IBOutlet weak var commsContent: UITextField!
+    @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
@@ -44,25 +44,13 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+//        imagePicker.allowsEditing = false
+//        imagePicker.sourceType = .photoLibrary
+//        present(imagePicker, animated: true, completion: nil)
+
     }
     
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-//            print(pickedImage)
-//            var test = convertImageToBase64String(img: pickedImage)
-//            print(test)
-            commImage.contentMode = .scaleAspectFit
-            commImage.image = pickedImage
-            let imageData = pickedImage.jpegData(compressionQuality: 1)
-            print(imageData)
 
-        }
-     
-        dismiss(animated: true, completion: nil)
-    }
     
     func convertImageToBase64String (img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
@@ -78,5 +66,23 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
     }
     */
 
+}
+
+extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+    //            print(pickedImage)
+    //            var test = convertImageToBase64String(img: pickedImage)
+    //            print(test)
+                commImage.contentMode = .scaleAspectFit
+                commImage.image = pickedImage
+                let imageData = pickedImage.jpegData(compressionQuality: 1)
+                print(imageData)
+
+            }
+         
+            dismiss(animated: true, completion: nil)
+        }
 }
 
