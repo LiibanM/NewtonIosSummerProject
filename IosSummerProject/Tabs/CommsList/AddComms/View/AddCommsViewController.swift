@@ -8,7 +8,6 @@
 
 import UIKit
 
-  
     
 class AddCommsViewController: UIViewController, Storyboarded {
 
@@ -17,6 +16,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
+    let customAllertController = CustomAlert()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,13 +44,22 @@ class AddCommsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
-//        imagePicker.allowsEditing = false
-//        imagePicker.sourceType = .photoLibrary
-//        present(imagePicker, animated: true, completion: nil)
-
+        customAllertController.showAllert(title: "What woud you like to do?",
+                                          message: "Use image from",
+                                          okButtonText: "Library",
+                                          cancelButtonText: "Camera",
+                                          viewController: self,completion: { (success) -> Void in
+            if success! {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
+            } else {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .camera
+            }
+            self.present(self.imagePicker, animated: true, completion: nil)
+        })
     }
     
-
     
     func convertImageToBase64String (img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
