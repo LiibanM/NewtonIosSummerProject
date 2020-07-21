@@ -8,39 +8,15 @@
 
 import UIKit
 
-  
-    
 class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
     @IBOutlet weak var commImage: UIImageView!
-    @IBOutlet weak var commsTitle: UITextField!
-      @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
-    }
-    
-   
-    @IBAction func postTapped(_ sender: Any) {
-        guard  let title = commsTitle.text else {print("No Tittle"); return}
-        guard let content = commsContent.text else {print("No description"); return}
-        
-        let comms = CommsContent(title:title, description: content)
-        
-        let postRequest = APIRequest(endpoint: "Addcomms")
-        
-        postRequest.save(comms, completion: { result in
-            switch result{
-            case .success:
-                print("the following message has been sent")
-            case .failure:
-               print("an error occured when sending")
-            }
-        })
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
@@ -79,4 +55,3 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
     */
 
 }
-

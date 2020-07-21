@@ -50,9 +50,6 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-dG-3KB">
                                 <rect key="frame" x="25" y="500" width="31" height="30"/>
                                 <state key="normal" title="Post"/>
-                                <connections>
-                                    <action selector="postTapped:" destination="XYM-VG-n2h" eventType="touchUpInside" id="9Cp-O5-utf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-cQ-auO">
                                 <rect key="frame" x="64" y="500" width="100" height="30"/>
@@ -92,8 +89,6 @@
                     </view>
                     <connections>
                         <outlet property="commImage" destination="abf-wa-4a8" id="rqb-bC-9ze"/>
-                        <outlet property="commsContent" destination="55W-6e-kmX" id="luu-jv-Let"/>
-                        <outlet property="commsTitle" destination="nmM-0n-2hB" id="K1S-bo-AEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWc-sV-tRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

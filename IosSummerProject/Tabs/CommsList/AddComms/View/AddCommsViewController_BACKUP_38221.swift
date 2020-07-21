@@ -8,15 +8,16 @@
 
 import UIKit
 
-  
-    
+<<<<<<< HEAD
+class AddCommsViewController: UIViewController, Storyboarded {
+    @IBOutlet weak var commsTitle: UITextField!
+    @IBOutlet weak var commsContent: UITextField!
+=======
 class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-   
     @IBOutlet weak var commImage: UIImageView!
-    @IBOutlet weak var commsTitle: UITextField!
-      @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
+>>>>>>> bbf204fd748e23a7e40bc627e0377e6db9f4a95a
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,8 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
         // Do any additional setup after loading the view.
     }
     
-   
-    @IBAction func postTapped(_ sender: Any) {
+<<<<<<< HEAD
+    @IBAction func sendComms(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
         
@@ -43,6 +44,7 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
         })
     }
     
+=======
     @IBAction func onTapUploadImage(_ sender: Any) {
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .photoLibrary
@@ -68,6 +70,7 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }
 
+>>>>>>> bbf204fd748e23a7e40bc627e0377e6db9f4a95a
     /*
     // MARK: - Navigation
 
@@ -79,4 +82,3 @@ class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerContr
     */
 
 }
-

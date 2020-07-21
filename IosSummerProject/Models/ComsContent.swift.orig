@@ -9,11 +9,19 @@
 import Foundation
 
 struct CommsContent: Codable {
+<<<<<<< HEAD
   var id:Int?
   var title: String
   var description: String
     
   init(title: String, description: String) {
+=======
+  var image: Data?
+  var title: String
+  var description: String
+  init(image: Data, title: String, description: String) {
+    self.image = image
+>>>>>>> bbf204fd748e23a7e40bc627e0377e6db9f4a95a
     self.title = title
     self.description = description
   }

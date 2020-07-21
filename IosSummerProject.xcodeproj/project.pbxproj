@@ -50,6 +50,7 @@
 		A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10524C10C4200B7A26F /* LoginPresenter.swift */; };
 		A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */; };
 		A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F10924C10C5C00B7A26F /* Login.storyboard */; };
+		A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11024C5C68D00B7A26F /* PostRequest.swift */; };
 		C2F73737EF78BCDD37FA16F7 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */; };
 		D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019D24C59FE100CD15DD /* ComsContent.swift */; };
 /* End PBXBuildFile section */
@@ -115,6 +116,7 @@
 		A4E8F10524C10C4200B7A26F /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4E8F10924C10C5C00B7A26F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
+		A4E8F11024C5C68D00B7A26F /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		D282019D24C59FE100CD15DD /* ComsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComsContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -453,6 +455,7 @@
 		A4E8F10B24C10C7E00B7A26F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A4E8F11024C5C68D00B7A26F /* PostRequest.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -675,6 +678,7 @@
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
 				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
+				A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
 				A4E8F0DB24C1067B00B7A26F /* BrowseTagsCoordinator.swift in Sources */,
 				A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */,
