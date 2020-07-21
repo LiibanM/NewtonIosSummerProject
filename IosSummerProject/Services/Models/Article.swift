@@ -9,12 +9,12 @@
 import Foundation
 
 struct Article: Codable {
-    let article_id: Int
+//    let article_id: Int
     let title: String
     let content: String
     let category: Category
-    let date: Date
-    let user: User
-    let highlighted: Bool
+//    let date: Date
+//    let user: User
+//    let highlighted: Bool
     let image: String
 }

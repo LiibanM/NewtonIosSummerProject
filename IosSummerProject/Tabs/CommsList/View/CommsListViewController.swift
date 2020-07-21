@@ -22,11 +22,14 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
-        commsListTableView.separatorInset = UIEdgeInsets(top: 0, left: 50, bottom: 0, right: 50)
 
         commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
+        
         self.navigationItem.title = "Comms"
+        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        commsListPresenter.loadData()
         
         if #available(iOS 10.0, *) {
             commsListTableView.refreshControl = refreshControl
@@ -44,7 +47,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     }
     
     @objc func getCommsData() {
-//        commsListPresenter.loadData()
+        commsListPresenter.loadData()
     }
     
 
@@ -74,12 +77,15 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
         
-        cell.commsTitleLabel.text = "Kash Money"
-        cell.commsCategoryLabel.text = "Awesome"
+        let currentComms = comms[indexPath.row]
         
-        return cell
+        cell.commsTitleLabel.text = currentComms.title
+        cell.commsCategoryLabel.text = currentComms.content
+        
+    return cell
         
     }
+    
 }
 
 extension CommsListViewController: UITableViewDelegate {
