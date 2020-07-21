@@ -13,7 +13,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsListTableView: UITableView!
     var commsListPresenter: CommsListPresenterProtocol!
     
-    var comms = [Article]()
+    var comms = ["hello"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +36,7 @@ class CommsListViewController: UIViewController, Storyboarded {
 
 extension CommsListViewController: CommsListPresenterView {
     func setCommsData(with data: [Article]) {
-        comms = data
+//        comms = data
     }
     
     func errorOccured(message: String) {
