@@ -15,23 +15,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-iV-69R">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1VK-iV-69R">
+                                <rect key="frame" x="0.0" y="190" width="414" height="672"/>
                                 <color key="backgroundColor" red="0.8796955958549223" green="0.8796955958549223" blue="0.8796955958549223" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-mD-eRL">
+                                <rect key="frame" x="164" y="118" width="63" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Category"/>
+                                <connections>
+                                    <action selector="categoryButtonTapped:" destination="mLU-xt-UTP" eventType="touchUpInside" id="yZl-NH-Zwz"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" id="NKn-kk-uhw">
+                                <rect key="frame" x="0.0" y="56" width="414" height="809"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AqW-n4-8fb">
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
+                                <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="1VK-iV-69R" firstAttribute="trailing" secondItem="2w3-8Q-aFo" secondAttribute="trailing" id="4aj-12-Rjw"/>
+                            <constraint firstItem="AqW-n4-8fb" firstAttribute="centerY" secondItem="2w3-8Q-aFo" secondAttribute="centerY" id="GL9-MF-Rti"/>
                             <constraint firstItem="1VK-iV-69R" firstAttribute="bottom" secondItem="2w3-8Q-aFo" secondAttribute="bottom" constant="-34" id="LZU-5W-qhA"/>
                             <constraint firstItem="1VK-iV-69R" firstAttribute="leading" secondItem="2w3-8Q-aFo" secondAttribute="leading" id="M9Q-2v-613"/>
+                            <constraint firstItem="AqW-n4-8fb" firstAttribute="centerX" secondItem="2w3-8Q-aFo" secondAttribute="centerX" id="dqf-3g-E7f"/>
                             <constraint firstItem="1VK-iV-69R" firstAttribute="top" secondItem="2w3-8Q-aFo" secondAttribute="top" constant="44" id="vK6-18-XUB"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="0CP-3x-uRj"/>
                     </view>
                     <connections>
+                        <outlet property="categoryButton" destination="a8O-mD-eRL" id="jZu-w0-p2i"/>
                         <outlet property="commsListTableView" destination="1VK-iV-69R" id="rV3-tu-uJQ"/>
+                        <outlet property="pickerView" destination="AqW-n4-8fb" id="WZ3-g2-Yob"/>
+                        <outlet property="pickerViewOverlay" destination="NKn-kk-uhw" id="yIM-fQ-M9V"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c7g-Xc-WLd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

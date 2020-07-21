@@ -11,18 +11,29 @@ import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
     
+    
+    @IBOutlet weak var pickerViewOverlay: UIView!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var commsListTableView: UITableView!
     var commsListPresenter: CommsListPresenterProtocol!
     
     var comms = [Article]()
-    private let refreshControl = UIRefreshControl()
-
     
+    let categories = ["Kash","Money", "Niko", "Filip"]
+    private let refreshControl = UIRefreshControl()
+     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        pickerView.isHidden = true
+        
+        pickerViewOverlay.isHidden = true
+        
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
+        pickerView.dataSource = self
+        pickerView.delegate = self
 
         commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
         
@@ -41,6 +52,16 @@ class CommsListViewController: UIViewController, Storyboarded {
         refreshControl.addTarget(self, action: #selector(getCommsData), for: .valueChanged)
         
         
+    }
+    
+
+    @IBAction func categoryButtonTapped(_ sender: Any) {
+        if pickerView.isHidden {
+            pickerView.isHidden = false
+            pickerViewOverlay.isHidden = false
+            pickerViewOverlay.backgroundColor = .black
+        }
+        print("its me")
     }
     
     @objc func addButtonTapped() {
@@ -94,6 +115,33 @@ extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hello")
     }
+}
+
+extension CommsListViewController: UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return categories.count
+    }
+    
+    
+}
+
+extension CommsListViewController: UIPickerViewDelegate {
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return categories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        categoryButton.setTitle(categories[row], for: .normal)
+        pickerView.isHidden = true
+        pickerViewOverlay.isHidden = true
+
+    }
+    
 }
 
 
