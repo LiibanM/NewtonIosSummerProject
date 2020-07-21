@@ -56,13 +56,14 @@ class CommsListPresenter: CommsListPresenterProtocol {
     
     func loadData() {
 //          getComms()
-        let articles = [Article(title: "First post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://www.keysigns.co.uk/images/hazard-warning-safety-signs-p1254-38488_zoom.jpg"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://smallbizclub.com/wp-content/uploads/2019/01/Business-Warning-Signs.jpg")
+        let articles = [Article(title: "First post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+             Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+              Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+               Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+                Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200"),
+                 Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , image: "https://picsum.photos/200")
         ]
         view.setCommsData(with: articles)
       }
-      
-    
-    
-    
 }

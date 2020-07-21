@@ -76,13 +76,13 @@ extension CommsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
-        
         let currentComms = comms[indexPath.row]
-        
+                
         cell.commsTitleLabel.text = currentComms.title
         cell.commsCategoryLabel.text = currentComms.content
+        cell.downLoadImage(from: currentComms.image)
         
-    return cell
+        return cell
         
     }
     

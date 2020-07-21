@@ -17,12 +17,41 @@ class CommsCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
     }
+    
+    override func prepareForReuse() {
+        // invoke superclass implementation
+        super.prepareForReuse()
+        commsImageView.image = #imageLiteral(resourceName: "comms-placeholder")
+        // reset (hide) the checkmark label
+
+    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-        contentView.layoutMargins.left = 50
+    }
+    
+    func downLoadImage(from url: String) {
+        guard let url = URL(string: url) else {
+            print("not valid url")
+            return
+        }
+        
+        let session = URLSession(configuration: .default)
+        
+        session.dataTask(with: url) { (data, urlResponse, error) in
+            if let data = data {
+                DispatchQueue.main.async {
+                    let downloadedImage = UIImage(data: data)
+                    self.commsImageView.image = downloadedImage
+                }
+                return
+            } else if error != nil {
+                print("couldnt download image")
+                return
+            } else {
+                print("Error")
+            }
+        }.resume()
     }
     
 
