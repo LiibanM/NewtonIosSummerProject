@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
     
@@ -77,6 +78,7 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
         let currentComms = comms[indexPath.row]
+        
                 
         cell.commsTitleLabel.text = currentComms.title
         cell.commsCategoryLabel.text = currentComms.content
