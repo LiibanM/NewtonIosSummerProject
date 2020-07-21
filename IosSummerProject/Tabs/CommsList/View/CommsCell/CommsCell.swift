@@ -13,9 +13,11 @@ class CommsCell: UITableViewCell {
     @IBOutlet weak var commsImageView: UIImageView!
     @IBOutlet weak var commsTitleLabel: UILabel!
     @IBOutlet weak var commsCategoryLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.contentView.layer.cornerRadius = 30
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
