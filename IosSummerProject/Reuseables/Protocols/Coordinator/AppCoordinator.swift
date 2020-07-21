@@ -37,7 +37,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showComms() {
-        commsCoordinator = CommsCoordinator(navigationController, delegate: self)
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
     }
@@ -52,14 +52,5 @@ extension AppCoordinator: LoginCoordinatorDelegate {
         self.removeChildCoordinator(loginCoordinator)
         showComms()
     }
-    
-    func showComms() {
-        commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
-        addChildCoordinator(commsCoordinator)
-        commsCoordinator.start()
-    }
-}
-
-extension AppCoordinator: CommsCoordinatorDelegate {
 }
 
