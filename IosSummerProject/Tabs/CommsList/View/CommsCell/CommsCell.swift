@@ -16,13 +16,13 @@ class CommsCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutMargins = UIEdgeInsets(top: 8, left: 80, bottom: 8, right: 80)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+        contentView.layoutMargins.left = 50
     }
     
 
