@@ -44,6 +44,14 @@
                                 <rect key="frame" x="50" y="420" width="314" height="30"/>
                                 <state key="normal" title="Upload Image"/>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldE-Hg-SRJ">
+                                <rect key="frame" x="175" y="534" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendComms:" destination="XYM-VG-n2h" eventType="touchUpInside" id="6r4-Lg-Pd0"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -67,10 +75,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gz4-Yy-KUJ"/>
                     </view>
+                    <connections>
+                        <outlet property="commsContent" destination="55W-6e-kmX" id="22W-YP-DLk"/>
+                        <outlet property="commsTitle" destination="nmM-0n-2hB" id="Hbl-UH-4k4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWc-sV-tRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="63.768115942028992" y="157.36607142857142"/>
+            <point key="canvasLocation" x="57" y="0.0"/>
         </scene>
     </scenes>
 </document>
