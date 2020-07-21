@@ -31,6 +31,8 @@ class CommsCoordinator: Coordinator {
         let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
         self.navigationController.viewControllers = [commsListViewController]
+        navigationController.navigationBar.prefersLargeTitles = true
+
     }
     
     func showAddComms() {
