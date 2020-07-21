@@ -13,7 +13,9 @@ class CommsListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsListTableView: UITableView!
     var commsListPresenter: CommsListPresenterProtocol!
     
-    var comms = ["hi"]
+    var comms = [Article]()
+    private let refreshControl = UIRefreshControl()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +27,24 @@ class CommsListViewController: UIViewController, Storyboarded {
         commsListTableView.register(UINib.init(nibName: Constants.Comms.commsCellNibName, bundle: nil), forCellReuseIdentifier: Constants.Comms.commsCellIdentifier )
         self.navigationItem.title = "Comms"
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        if #available(iOS 10.0, *) {
+            commsListTableView.refreshControl = refreshControl
+        } else {
+            commsListTableView.addSubview(refreshControl)
+        }
+        
+        refreshControl.addTarget(self, action: #selector(getCommsData), for: .valueChanged)
+        
+        
     }
     
-    @objc func addButtonTapped(sender: UIBarButtonItem) {
+    @objc func addButtonTapped() {
         commsListPresenter.didTapAddComms()
+    }
+    
+    @objc func getCommsData() {
+//        commsListPresenter.loadData()
     }
     
 
@@ -36,10 +52,14 @@ class CommsListViewController: UIViewController, Storyboarded {
 
 extension CommsListViewController: CommsListPresenterView {
     func setCommsData(with data: [Article]) {
-//        comms = data
+        self.refreshControl.endRefreshing()
+        comms = data
+        self.commsListTableView.reloadData()
+
     }
     
     func errorOccured(message: String) {
+        self.refreshControl.endRefreshing()
         print(message)
     }
     
