@@ -57,7 +57,9 @@ extension LoginPresenter {
           }
           return
         }
-        // Perform any operations on signed in user here.
+        // Prints out credentials for testing purposes
+        //TODO: to be removed before launch
+        
         //let userId = user.userID                  // For client-side use only!
         //let idToken = user.authentication.idToken // Safe to send to the server
         let fullName = user.profile.name

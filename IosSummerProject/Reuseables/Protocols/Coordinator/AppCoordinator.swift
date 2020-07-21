@@ -11,6 +11,7 @@ import UIKit
 
 class AppCoordinator: Coordinator {
     
+    var commsCoordinator: CommsCoordinator!
     var loginCoordinator: LoginCoordinator!
     
     init(_ navigationController: UINavigationController) {
@@ -22,9 +23,6 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
-        /*let viewController = ViewController.instantiate()
-        navigationController.viewControllers = [viewController]*/
-        
         loginCoordinator = LoginCoordinator(
             navigationController,
             delegate: self)
@@ -32,11 +30,22 @@ class AppCoordinator: Coordinator {
         self.addChildCoordinator(loginCoordinator)
         loginCoordinator.start()
     }
+    
+    func showComms() {
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self)
+        addChildCoordinator(commsCoordinator)
+        commsCoordinator.start()
+    }
+}
+
+extension AppCoordinator: CommsCoordinatorDelegate {
+    
 }
 
 extension AppCoordinator: LoginCoordinatorDelegate {
     func didLogin() {
         self.removeChildCoordinator(loginCoordinator)
-        //show comms()
+        showComms()
     }
 }
+
