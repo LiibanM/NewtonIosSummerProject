@@ -59,23 +59,6 @@
                                 <rect key="frame" x="149" y="538" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XBA-RV-cfb">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqM-2n-QmY">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="EqM-2n-QmY" firstAttribute="top" secondItem="XBA-RV-cfb" secondAttribute="top" id="ASy-Lv-O8O"/>
-                                    <constraint firstAttribute="bottom" secondItem="EqM-2n-QmY" secondAttribute="bottom" id="GZW-jf-MGa"/>
-                                    <constraint firstItem="EqM-2n-QmY" firstAttribute="height" secondItem="XBA-RV-cfb" secondAttribute="height" priority="250" id="bBe-Pk-1Ul"/>
-                                    <constraint firstAttribute="trailing" secondItem="EqM-2n-QmY" secondAttribute="trailing" id="inS-BU-WWm"/>
-                                    <constraint firstItem="EqM-2n-QmY" firstAttribute="width" secondItem="XBA-RV-cfb" secondAttribute="width" id="naf-F0-X8x"/>
-                                    <constraint firstItem="EqM-2n-QmY" firstAttribute="leading" secondItem="XBA-RV-cfb" secondAttribute="leading" id="q4p-Le-rS7"/>
-                                </constraints>
-                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -84,7 +67,6 @@
                             <constraint firstItem="55W-6e-kmX" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="25" id="7lh-LF-YGr"/>
                             <constraint firstItem="bDF-sy-7R6" firstAttribute="top" secondItem="gz4-Yy-KUJ" secondAttribute="top" constant="50" id="8Iq-qk-coF"/>
                             <constraint firstItem="I5y-l4-bht" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="25" id="BWk-pK-Apw"/>
-                            <constraint firstItem="XBA-RV-cfb" firstAttribute="bottom" secondItem="gz4-Yy-KUJ" secondAttribute="bottom" id="CY4-YK-UOP"/>
                             <constraint firstItem="nmM-0n-2hB" firstAttribute="top" secondItem="bDF-sy-7R6" secondAttribute="bottom" constant="25" id="Fus-KH-7hy"/>
                             <constraint firstItem="55W-6e-kmX" firstAttribute="top" secondItem="I5y-l4-bht" secondAttribute="bottom" constant="25" id="NAZ-ri-uKj"/>
                             <constraint firstItem="WdD-ve-jXV" firstAttribute="top" secondItem="55W-6e-kmX" secondAttribute="bottom" constant="50" id="PCc-XW-CC7"/>
@@ -92,15 +74,12 @@
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fHa-cQ-auO" secondAttribute="trailing" constant="25" id="QZd-eY-aG0"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="WdD-ve-jXV" secondAttribute="bottom" constant="25" id="Qex-ax-AE5"/>
                             <constraint firstItem="Ikm-dG-3KB" firstAttribute="top" secondItem="WdD-ve-jXV" secondAttribute="bottom" constant="50" id="SBa-nr-6Mk"/>
-                            <constraint firstItem="XBA-RV-cfb" firstAttribute="top" secondItem="gz4-Yy-KUJ" secondAttribute="top" id="SeI-tA-XGH"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="55W-6e-kmX" secondAttribute="bottom" constant="50" id="V4q-6j-l2Z"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="I5y-l4-bht" secondAttribute="trailing" constant="25" id="Zwh-D0-ZzM"/>
                             <constraint firstItem="WdD-ve-jXV" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="50" id="evv-Bv-F7e"/>
                             <constraint firstItem="I5y-l4-bht" firstAttribute="top" secondItem="nmM-0n-2hB" secondAttribute="bottom" constant="50" id="j98-Tn-Lkq"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="WdD-ve-jXV" secondAttribute="trailing" constant="50" id="kpj-xu-a9d"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="bDF-sy-7R6" secondAttribute="trailing" constant="25" id="lsZ-Nw-jwd"/>
-                            <constraint firstItem="XBA-RV-cfb" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" id="nSV-L7-TPn"/>
-                            <constraint firstItem="XBA-RV-cfb" firstAttribute="trailing" secondItem="gz4-Yy-KUJ" secondAttribute="trailing" id="qfY-Hv-VPc"/>
                             <constraint firstItem="bDF-sy-7R6" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="25" id="qlk-zc-szx"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="55W-6e-kmX" secondAttribute="trailing" constant="25" id="tWl-iY-9Fk"/>
                             <constraint firstItem="fHa-cQ-auO" firstAttribute="top" secondItem="WdD-ve-jXV" secondAttribute="bottom" constant="50" id="wnK-E3-1w4"/>
