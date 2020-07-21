@@ -24,6 +24,7 @@ class LoginViewController: UIViewController, Storyboarded {
         loginPresenter.googleSharedSignIninitialSetup()
         
         let gSignIn = GIDSignInButton()
+        gSignIn.style = GIDSignInButtonStyle.wide
         gSignIn.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(gSignIn)
         gSignIn.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
