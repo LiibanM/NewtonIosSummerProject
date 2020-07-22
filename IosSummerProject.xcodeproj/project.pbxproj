@@ -42,8 +42,6 @@
 		A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0ED24C107C200B7A26F /* EditTags.storyboard */; };
 		A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0F224C1088300B7A26F /* AddTagPresenter.swift */; };
 		A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0F424C1089100B7A26F /* AddTagPresenterProtocol.swift */; };
-		A4E8F0F724C108A100B7A26F /* AddTagViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0F624C108A100B7A26F /* AddTagViewController.swift */; };
-		A4E8F0F924C1090D00B7A26F /* AddTag.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F0F824C1090D00B7A26F /* AddTag.storyboard */; };
 		A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F0FB24C10BBA00B7A26F /* TabBarCoordinator.swift */; };
 		A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10024C10C2100B7A26F /* LoginCoordinator.swift */; };
 		A4E8F10424C10C3700B7A26F /* LoginPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10324C10C3700B7A26F /* LoginPresenterProtocol.swift */; };
@@ -51,6 +49,9 @@
 		A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */; };
 		A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F10924C10C5C00B7A26F /* Login.storyboard */; };
 		A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11024C5C68D00B7A26F /* PostRequest.swift */; };
+		A4E8F11324C867BD00B7A26F /* AddTagStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A4E8F11224C867BD00B7A26F /* AddTagStoryboard.storyboard */; };
+		A4E8F11524C868B700B7A26F /* AddTagCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11424C868B700B7A26F /* AddTagCollectionViewController.swift */; };
+		A4E8F11924C86C8300B7A26F /* AddTagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11824C86C8300B7A26F /* AddTagCollectionViewCell.swift */; };
 		C2F73737EF78BCDD37FA16F7 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */; };
 		D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019D24C59FE100CD15DD /* ComsContent.swift */; };
 		D28201A024C71F3800CD15DD /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019F24C71F3800CD15DD /* CustomActionSheet.swift */; };
@@ -109,8 +110,6 @@
 		A4E8F0ED24C107C200B7A26F /* EditTags.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditTags.storyboard; sourceTree = "<group>"; };
 		A4E8F0F224C1088300B7A26F /* AddTagPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagPresenter.swift; sourceTree = "<group>"; };
 		A4E8F0F424C1089100B7A26F /* AddTagPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagPresenterProtocol.swift; sourceTree = "<group>"; };
-		A4E8F0F624C108A100B7A26F /* AddTagViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagViewController.swift; sourceTree = "<group>"; };
-		A4E8F0F824C1090D00B7A26F /* AddTag.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTag.storyboard; sourceTree = "<group>"; };
 		A4E8F0FB24C10BBA00B7A26F /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F10024C10C2100B7A26F /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		A4E8F10324C10C3700B7A26F /* LoginPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterProtocol.swift; sourceTree = "<group>"; };
@@ -118,6 +117,9 @@
 		A4E8F10724C10C4E00B7A26F /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		A4E8F10924C10C5C00B7A26F /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		A4E8F11024C5C68D00B7A26F /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		A4E8F11224C867BD00B7A26F /* AddTagStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddTagStoryboard.storyboard; sourceTree = "<group>"; };
+		A4E8F11424C868B700B7A26F /* AddTagCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagCollectionViewController.swift; sourceTree = "<group>"; };
+		A4E8F11824C86C8300B7A26F /* AddTagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTagCollectionViewCell.swift; sourceTree = "<group>"; };
 		D282019D24C59FE100CD15DD /* ComsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComsContent.swift; sourceTree = "<group>"; };
 		D282019F24C71F3800CD15DD /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 		71ABAD7D24C324AF00E48992 /* AddComms */ = {
 			isa = PBXGroup;
 			children = (
+				A4E8F0EF24C1084700B7A26F /* AddTags */,
 				71ABAD8324C3252D00E48992 /* Presenter */,
 				71ABAD7E24C324BA00E48992 /* View */,
 			);
@@ -291,7 +294,6 @@
 		A4E8F0B124C0FE3700B7A26F /* BrowseTags */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0EF24C1084700B7A26F /* AddTags */,
 				A4E8F0E424C106F600B7A26F /* EditTags */,
 				A4E8F0D724C1062400B7A26F /* Coordinator */,
 				A4E8F0D824C1064100B7A26F /* Presenter */,
@@ -403,8 +405,9 @@
 		A4E8F0F024C1085D00B7A26F /* View */ = {
 			isa = PBXGroup;
 			children = (
-				A4E8F0F624C108A100B7A26F /* AddTagViewController.swift */,
-				A4E8F0F824C1090D00B7A26F /* AddTag.storyboard */,
+				A4E8F11224C867BD00B7A26F /* AddTagStoryboard.storyboard */,
+				A4E8F11424C868B700B7A26F /* AddTagCollectionViewController.swift */,
+				A4E8F11824C86C8300B7A26F /* AddTagCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -579,6 +582,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4E8F11324C867BD00B7A26F /* AddTagStoryboard.storyboard in Resources */,
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
@@ -587,7 +591,6 @@
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
 				A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */,
 				A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */,
-				A4E8F0F924C1090D00B7A26F /* AddTag.storyboard in Resources */,
 				71ABAD8D24C325D900E48992 /* CommsDetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -673,7 +676,6 @@
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
 				71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */,
-				A4E8F0F724C108A100B7A26F /* AddTagViewController.swift in Sources */,
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
@@ -688,9 +690,11 @@
 				A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
 				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
+				A4E8F11524C868B700B7A26F /* AddTagCollectionViewController.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
+				A4E8F11924C86C8300B7A26F /* AddTagCollectionViewCell.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
 				D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
