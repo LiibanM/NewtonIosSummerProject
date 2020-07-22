@@ -15,9 +15,17 @@ class CommsListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var commsListTableView: UITableView!
-    var commsListPresenter: CommsListPresenterProtocol!
     
+    var commsListPresenter: CommsListPresenterProtocol!
+    let searchController = UISearchController(searchResultsController: nil)
     var comms = [Article]()
+    var filteredComms = [Article]()
+    var isSearchBarEmpty: Bool {
+      return searchController.searchBar.text?.isEmpty ?? true
+    }
+    var isFiltering: Bool {
+      return searchController.isActive && !isSearchBarEmpty
+    }
     
     let categories = ["Business Updates", "COVID-19", "Random", "Updates"]
     private let refreshControl = UIRefreshControl()
@@ -40,7 +48,11 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         
-        let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.placeholder = "Search comms"
+        definesPresentationContext = true
+
+
         navigationItem.searchController = searchController
         
         commsListPresenter.loadData()
@@ -54,6 +66,15 @@ class CommsListViewController: UIViewController, Storyboarded {
         refreshControl.addTarget(self, action: #selector(getCommsData), for: .valueChanged)
         
         
+    }
+    
+    func filterContentForSearchText(_ searchText: String,
+                                    category: String? = nil) {
+      filteredComms = comms.filter { (comm: Article) -> Bool in
+        return comm.title.lowercased().contains(searchText.lowercased())
+      }
+      
+      commsListTableView.reloadData()
     }
     
 
@@ -91,15 +112,25 @@ extension CommsListViewController: CommsListPresenterView {
 
 extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        comms.count
+        if isFiltering {
+            return filteredComms.count
+        }
+        return comms.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
-        let currentComms = comms[indexPath.row]
         
-        cell.commsTitleLabel.text = "\(currentComms.highlighted)"
+        let currentComms: Article
+        
+        if isFiltering {
+            currentComms = filteredComms[indexPath.row]
+        } else {
+            currentComms = comms[indexPath.row]
+        }
+        
+        cell.commsTitleLabel.text = currentComms.title
         cell.commsCategoryLabel.text = "\(currentComms.date)"
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedTextLabel.text = currentComms.highlighted ? "Highlighted" : ""
@@ -144,6 +175,14 @@ extension CommsListViewController: UIPickerViewDelegate {
         pickerViewOverlay.isHidden = true
     }
     
+}
+
+extension CommsListViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        let searchBar = searchController.searchBar
+        filterContentForSearchText(searchBar.text!)
+        
+    }
 }
 
 
