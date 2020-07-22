@@ -21,21 +21,36 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6YX-we-keU">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="901"/>
                                         <subviews>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-GK-6Ou">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="tMG-GK-6Ou">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="414" id="1w6-Cx-ARX"/>
                                                     <constraint firstAttribute="height" constant="270" id="xyz-tf-WPf"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-5j-1ou">
-                                                <rect key="frame" x="15" y="280" width="389" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fvh-5j-1ou" customClass="PaddingLabel" customModule="PaddingLabel">
+                                                <rect key="frame" x="15" y="280" width="54" height="32"/>
+                                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="TUf-4w-YId"/>
                                                 </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                                <nil key="textColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="topInset">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uul-zy-hQo">
                                                 <rect key="frame" x="10" y="320" width="394" height="166.5"/>
@@ -56,7 +71,7 @@
                                             <constraint firstItem="fvh-5j-1ou" firstAttribute="top" secondItem="tMG-GK-6Ou" secondAttribute="bottom" constant="10" id="PdM-JC-wwu"/>
                                             <constraint firstItem="Uul-zy-hQo" firstAttribute="leading" secondItem="6YX-we-keU" secondAttribute="leading" constant="10" id="U7c-YG-7Rh"/>
                                             <constraint firstItem="tMG-GK-6Ou" firstAttribute="leading" secondItem="6YX-we-keU" secondAttribute="leading" id="Zrk-22-GHm"/>
-                                            <constraint firstAttribute="trailing" secondItem="fvh-5j-1ou" secondAttribute="trailing" constant="10" id="ip1-Bg-6zq"/>
+                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="fvh-5j-1ou" secondAttribute="trailing" constant="10" id="ip1-Bg-6zq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -91,7 +106,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ebp-lX-PcA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="121.73913043478262" y="223.66071428571428"/>
+            <point key="canvasLocation" x="121.73913043478262" y="223.32589285714283"/>
         </scene>
     </scenes>
     <resources>
