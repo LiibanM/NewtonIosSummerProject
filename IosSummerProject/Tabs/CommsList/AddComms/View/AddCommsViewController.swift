@@ -48,13 +48,13 @@ class AddCommsViewController: UIViewController, Storyboarded {
                                           message: "Use image from",
                                           optionOne: "Library",
                                           optionTwo: "Camera",
-                                          viewController: self,completion: { (success) -> Void in
-            if success! {
-                self.imagePicker.allowsEditing = false
-                self.imagePicker.sourceType = .photoLibrary
-            } else {
+                                          viewController: self,completion: { (result) -> Void in
+            if result == "Camera" {
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
+            } else {
+                self.imagePicker.allowsEditing = false
+                self.imagePicker.sourceType = .photoLibrary
             }
             self.present(self.imagePicker, animated: true, completion: nil)
         })

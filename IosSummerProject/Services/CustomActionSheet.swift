@@ -17,17 +17,17 @@ class CustomActionSheet {
                     optionOne:String,
                     optionTwo:String,
                     viewController:UIViewController,
-                    completion: @escaping (_ res: Bool?) -> ()
+                    completion: @escaping (_ res: String?) -> ()
     ){
         
         let customAlert = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
 
         customAlert.addAction(UIAlertAction(title: optionOne, style: .default, handler: { (action: UIAlertAction!) in
-            completion(true)
+            completion(optionOne)
         }))
         
         customAlert.addAction(UIAlertAction(title: optionTwo, style: .default, handler: { (action: UIAlertAction!) in
-            completion(false)
+            completion(optionTwo)
         }))
         
         customAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) -> Void in
