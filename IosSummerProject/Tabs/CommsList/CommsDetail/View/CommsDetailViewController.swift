@@ -39,7 +39,14 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
         
         navigationController?.navigationBar.prefersLargeTitles = false
+        
+        let backBtn = UIBarButtonItem.init(title: "Menu", style: .plain, target: self, action: #selector(menuAction))
+        self.navigationItem.leftBarButtonItem = backBtn
 
+    }
+    
+    @objc func menuAction(){
+        print("menu button pressed")  //Do your action here
     }
     
     @objc func handleRefreshControl() {
