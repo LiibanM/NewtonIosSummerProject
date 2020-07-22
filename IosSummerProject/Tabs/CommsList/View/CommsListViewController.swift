@@ -68,15 +68,13 @@ class CommsListViewController: UIViewController, Storyboarded {
         print("its me")
     }
     
-    @objc func addButtonTapped() {
+    @objc func addButtonTapped(_ sender: Any) {
         commsListPresenter.didTapAddComms()
     }
     
     @objc func getCommsData() {
         commsListPresenter.loadData()
     }
-    
-
 }
 
 extension CommsListViewController: CommsListPresenterView {
@@ -118,6 +116,8 @@ extension CommsListViewController: UITableViewDataSource {
 extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         print("hello")
+        tableView.deselectRow(at: indexPath, animated: true)
+
     }
 }
 
