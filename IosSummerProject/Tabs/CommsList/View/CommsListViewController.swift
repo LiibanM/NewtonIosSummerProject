@@ -28,8 +28,9 @@ class CommsListViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.isHidden = true
-
-//        pickerViewOverlay.isHidden = true
+        pickerView.backgroundColor = .white
+        pickerView.alpha = 1
+        pickerViewOverlay.isHidden = true
         
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
@@ -62,8 +63,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     @IBAction func categoryButtonTapped(_ sender: Any) {
         if pickerView.isHidden {
             pickerView.isHidden = false
-//            pickerViewOverlay.isHidden = false
-//            pickerViewOverlay.backgroundColor = .black
+            pickerViewOverlay.isHidden = false
         }
         print("its me")
     }
@@ -142,8 +142,7 @@ extension CommsListViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         categoryButton.setTitle(categories[row], for: .normal)
         pickerView.isHidden = true
-//        pickerViewOverlay.isHidden = true
-
+        pickerViewOverlay.isHidden = true
     }
     
 }
