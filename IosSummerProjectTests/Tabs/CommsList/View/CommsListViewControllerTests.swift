@@ -37,15 +37,15 @@ class CommsListViewControllerTests: XCTestCase {
         XCTAssertEqual(1, mockCommsListPresenter.didTapAddCommsCount)
     }
     
-    func testLoadComms() {
-//        commsListViewController.comms
-        
-        
-        commsListViewController.viewDidLoad()
-        
-        XCTAssertEqual(commsListViewController.comms)
-
-    }
+//    func testLoadComms() {
+////        commsListViewController.comms
+//        
+//        
+//        commsListViewController.viewDidLoad()
+////        
+////        XCTAssertEqual(commsListViewController.comms)
+//
+//    }
     
     
 
