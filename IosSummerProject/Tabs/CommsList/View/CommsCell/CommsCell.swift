@@ -26,9 +26,14 @@ class CommsCell: UITableViewCell {
     func downLoadImage(from url: String) {
         guard let url = URL(string: url) else {
             print("not a valid url")
+            DispatchQueue.main.async {
+                self.commsImageView.image = #imageLiteral(resourceName: "comms-placeholder")
+            }
             return
         }
-        commsImageView.kf.setImage(with: url)
+        DispatchQueue.main.async {
+            self.commsImageView.kf.setImage(with: url)
+        }
     }
 }
 
