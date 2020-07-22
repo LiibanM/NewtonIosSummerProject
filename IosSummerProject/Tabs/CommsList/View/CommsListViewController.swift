@@ -66,5 +66,3 @@ extension CommsListViewController: UITableViewDelegate {
     }
 }
 
-
-
