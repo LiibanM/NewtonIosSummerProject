@@ -10,7 +10,9 @@ import UIKit
 import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
-    
+//    [{title:"hi", highlighted: true, date: yesterday}, {title:"bye", highlighted: false, date: yesterday}, {title:"hi2", highlighted: true, date: today}]
+//    --->
+//    [{title:"hi", highlighted: true, date: today}, {title:"hi2", highlighted: true, date: yesterday}, {title:"bye", highlighted: false, date: today}]
     
     @IBOutlet weak var pickerViewOverlay: UIView!
     @IBOutlet weak var categoryButton: UIButton!
@@ -25,7 +27,6 @@ class CommsListViewController: UIViewController, Storyboarded {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pickerView.isHidden = true
 
 //        pickerViewOverlay.isHidden = true
@@ -99,16 +100,15 @@ extension CommsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constants.Comms.commsCellIdentifier, for: indexPath) as! CommsCell
         let currentComms = comms[indexPath.row]
         
-                
-        cell.commsTitleLabel.text = currentComms.title
-        cell.commsCategoryLabel.text = currentComms.content
+        cell.commsTitleLabel.text = "\(currentComms.highlighted)"
+        cell.commsCategoryLabel.text = "\(currentComms.date)"
         cell.downLoadImage(from: currentComms.image)
         
         return cell
-        
     }
     
 }
