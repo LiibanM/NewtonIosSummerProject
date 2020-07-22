@@ -80,7 +80,8 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         if category == "Other" {
             pickerView.isHidden = false
-            
+            searchController.searchBar.endEditing(true)
+
         } else {
             pickerView.isHidden = true
         }
