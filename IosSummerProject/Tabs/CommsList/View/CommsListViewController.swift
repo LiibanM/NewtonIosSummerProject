@@ -24,10 +24,13 @@ class CommsListViewController: UIViewController, Storyboarded {
       return searchController.searchBar.text?.isEmpty ?? true
     }
     var isFiltering: Bool {
-      return searchController.isActive && !isSearchBarEmpty
+     let searchBarScopeIsFiltering =
+         searchController.searchBar.selectedScopeButtonIndex != 0
+       return searchController.isActive &&
+         (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
-    let categories = ["Business Updates", "COVID-19", "Random", "Updates"]
+    let categories = ["All", "Business Updates", "COVID-19", "Random", "Updates"]
     private let refreshControl = UIRefreshControl()
      
     override func viewDidLoad() {
@@ -51,7 +54,8 @@ class CommsListViewController: UIViewController, Storyboarded {
         searchController.searchResultsUpdater = self
         searchController.searchBar.placeholder = "Search comms"
         definesPresentationContext = true
-
+        searchController.searchBar.scopeButtonTitles = categories
+        searchController.searchBar.delegate = self
 
         navigationItem.searchController = searchController
         
@@ -71,9 +75,16 @@ class CommsListViewController: UIViewController, Storyboarded {
     func filterContentForSearchText(_ searchText: String,
                                     category: String? = nil) {
       filteredComms = comms.filter { (comm: Article) -> Bool in
-        return comm.title.lowercased().contains(searchText.lowercased())
+        let doesCategoryMatch = (category == "All") || comm.category.category_name == category
+
+        if isSearchBarEmpty {
+            return doesCategoryMatch
+        } else {
+            return doesCategoryMatch && comm.title.lowercased().contains(searchText.lowercased())
+        }
+        
       }
-      
+      print(filteredComms)
       commsListTableView.reloadData()
     }
     
@@ -178,11 +189,20 @@ extension CommsListViewController: UIPickerViewDelegate {
 }
 
 extension CommsListViewController: UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
-        let searchBar = searchController.searchBar
-        filterContentForSearchText(searchBar.text!)
-        
+      let searchBar = searchController.searchBar
+      filterContentForSearchText(searchBar.text!, category: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])
     }
+}
+
+extension CommsListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar,
+         selectedScopeButtonIndexDidChange selectedScope: Int) {
+//       let category = Candy.Category(rawValue:
+//         searchBar.scopeButtonTitles![selectedScope])
+        filterContentForSearchText(searchBar.text!, category: searchBar.scopeButtonTitles![selectedScope])
+     }
 }
 
 
