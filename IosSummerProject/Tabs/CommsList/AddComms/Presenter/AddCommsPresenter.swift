@@ -7,24 +7,3 @@
 //
 
 import Foundation
-
-protocol AddCommsPresenterDelegate {
-    
-}
-
-protocol AddCommsPresenterView {
-    func errorOccured(message: String)
-//    func loadComms()
-}
-
-class AddCommsPresenter: AddCommsPresenterProtocol {
-    
-    var delegate: AddCommsPresenterDelegate
-    var view: AddCommsPresenterView
-    
-    init(with view: AddCommsPresenterView, delegate: AddCommsPresenterDelegate) {
-        self.delegate = delegate
-        self.view = view
-    }
-    
-}

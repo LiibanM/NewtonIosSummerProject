@@ -1,5 +1,5 @@
 //
-//  CommsPresenterProtocol.swift
+//  AddCommsPresenterProtocol.swift
 //  IosSummerProject
 //
 //  Created by Akash Mair on 18/07/2020.
@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol CommsPresenterProtocol {
+    
+}

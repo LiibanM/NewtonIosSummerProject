@@ -21,7 +21,7 @@ class CommsCoordinator: Coordinator {
     }
     
     override func start() {
-        showAddComms()
+        showCommsDetail()
     }
     
     func showCommsList() {
@@ -31,12 +31,9 @@ class CommsCoordinator: Coordinator {
         self.navigationController.viewControllers = [commsListViewController]
     }
     
-    func showAddComms() {
-        let addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
-//        let addCommsPresenter = AddCommsPresenter(with: CommsListViewController, delegate: self)
-//        CommsListViewController.addCommsPresenter = add
-         self.navigationController.viewControllers = [addCommsViewController]
-        
+    func showCommsDetail() {
+        let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
+        self.navigationController.viewControllers = [commsDetailViewController]
     }
     
 }
