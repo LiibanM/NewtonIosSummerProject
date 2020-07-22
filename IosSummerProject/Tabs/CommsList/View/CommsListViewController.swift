@@ -27,7 +27,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         
         pickerView.isHidden = true
-        
+
 //        pickerViewOverlay.isHidden = true
         
         commsListTableView.dataSource = self
@@ -40,6 +40,9 @@ class CommsListViewController: UIViewController, Storyboarded {
         self.navigationItem.title = "Comms"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        
+        let searchController = UISearchController(searchResultsController: nil)
+        navigationItem.searchController = searchController
         
         commsListPresenter.loadData()
         
