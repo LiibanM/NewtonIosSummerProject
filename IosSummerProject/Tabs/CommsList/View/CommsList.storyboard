@@ -23,17 +23,17 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-Fg-FS7">
+                                        <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-Fg-FS7">
                                             <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qju-Ul-yx3">
-                                                    <rect key="frame" x="0.0" y="5" width="95" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="5" width="102.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-mD-eRL">
-                                                    <rect key="frame" x="101" y="0.0" width="66" height="30"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-mD-eRL">
+                                                    <rect key="frame" x="102.5" y="0.0" width="64.5" height="30"/>
                                                     <state key="normal" title="All">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
