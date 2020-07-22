@@ -80,8 +80,9 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         if category == "Other" {
             pickerView.isHidden = false
-            pickerViewOverlay.isHidden = false
             
+        } else {
+            pickerView.isHidden = true
         }
         let doesCategoryMatch = (category == "All") || comm.category.category_name == category
 
