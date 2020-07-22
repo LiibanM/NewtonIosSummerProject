@@ -8,7 +8,6 @@
 
 import Foundation
 
-
 protocol CommsListPresenterDelegate {
     func goToCreateContent()
 }
@@ -80,7 +79,6 @@ class CommsListPresenter: CommsListPresenterProtocol {
     
     func sortByDate(data: [Article]) -> [Article] {
         return data.sorted { $0.date > $1.date }
-
     }
     
 }

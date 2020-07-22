@@ -34,6 +34,11 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="ZB5-2F-8hX">
+                        <rect key="frame" x="45" y="44" width="34" height="36"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </activityIndicatorView>
                 </subviews>
                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 <constraints>
@@ -51,6 +56,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="activityIndicator" destination="ZB5-2F-8hX" id="eiP-We-3eU"/>
                 <outlet property="commsCategoryLabel" destination="beg-Fc-vRv" id="fBC-8U-dFR"/>
                 <outlet property="commsImageView" destination="AiG-uR-InE" id="Gmo-wZ-sRu"/>
                 <outlet property="commsTitleLabel" destination="pXZ-Bf-lpW" id="WID-PP-ofS"/>
