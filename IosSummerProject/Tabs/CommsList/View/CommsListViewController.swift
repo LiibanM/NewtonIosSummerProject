@@ -20,7 +20,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     
     var comms = [Article]()
     
-    let categories = ["Kash","Money", "Niko", "Filip"]
+    let categories = ["Business Updates", "COVID-19", "Random", "Updates"]
     private let refreshControl = UIRefreshControl()
      
     override func viewDidLoad() {

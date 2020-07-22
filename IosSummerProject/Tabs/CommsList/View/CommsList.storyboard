@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -19,21 +20,21 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="sRGB"/>
-                                <stackView key="tableHeaderView" opaque="NO" contentMode="left" distribution="fillEqually" alignment="center" spacing="80" id="sfI-AJ-c6a">
+                                <stackView key="tableHeaderView" opaque="NO" contentMode="left" distribution="fillEqually" alignment="center" spacingType="standard" id="sfI-AJ-c6a">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
-                                        <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-Fg-FS7">
-                                            <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
+                                        <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="b1i-Fg-FS7">
+                                            <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter :" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qju-Ul-yx3">
-                                                    <rect key="frame" x="0.0" y="5" width="102.5" height="20.5"/>
+                                                    <rect key="frame" x="0.0" y="5" width="97.5" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8O-mD-eRL">
-                                                    <rect key="frame" x="102.5" y="0.0" width="64.5" height="30"/>
+                                                    <rect key="frame" x="105.5" y="0.0" width="97.5" height="30"/>
                                                     <state key="normal" title="All">
                                                         <color key="titleColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -44,10 +45,10 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="left" semanticContentAttribute="forceLeftToRight" distribution="fillProportionally" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="CG7-XE-4bF">
-                                            <rect key="frame" x="247" y="0.0" width="167" height="30"/>
+                                            <rect key="frame" x="211" y="0.0" width="203" height="30"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veG-6l-Trq">
-                                                    <rect key="frame" x="0.0" y="0.0" width="167" height="30"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="203" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
