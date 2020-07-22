@@ -112,8 +112,10 @@ extension CommsListViewController: UITableViewDataSource {
 
 extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("hello")
         tableView.deselectRow(at: indexPath, animated: true)
+        let tappedComm = comms[indexPath.row]
+        let id = tappedComm.article_id
+        commsListPresenter.didTapComm(with: id)
 
     }
 }

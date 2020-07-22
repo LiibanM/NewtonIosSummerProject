@@ -44,4 +44,8 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     func goToCreateContent() {
         showAddComms()
     }
+    
+    func goToCommsDetail(_ id: Int) {
+        print(id)
+    }
 }

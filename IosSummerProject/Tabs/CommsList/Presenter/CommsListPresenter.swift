@@ -10,6 +10,7 @@ import Foundation
 
 protocol CommsListPresenterDelegate {
     func goToCreateContent()
+    func goToCommsDetail(_ id: Int)
 }
 
 protocol CommsListPresenterView {
@@ -55,16 +56,20 @@ class CommsListPresenter: CommsListPresenterProtocol {
         delegate.goToCreateContent()
     }
     
+    func didTapComm(with id: Int) {
+        delegate.goToCommsDetail(id)
+    }
+    
     func loadData() {
 //          getComms()
         let articles = [
-            Article(title: "First post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceNow: 86400), highlighted: true, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67893), highlighted: false, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67893), highlighted: true, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 86400), highlighted: false, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67833), highlighted: true, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 90000), highlighted: false, image: "https://picsum.photos/200"),
-            Article(title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(), highlighted: false, image: "https://picsum.photos/200")
+            Article(article_id: 1, title: "First post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceNow: 86400), highlighted: true, image: "https://picsum.photos/200"),
+            Article(article_id: 2, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67893), highlighted: false, image: "https://picsum.photos/200"),
+            Article(article_id: 3, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67893), highlighted: true, image: "https://picsum.photos/200"),
+            Article(article_id: 4, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 86400), highlighted: false, image: "https://picsum.photos/200"),
+            Article(article_id: 5, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 67833), highlighted: true, image: "https://picsum.photos/200"),
+            Article(article_id: 6, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceReferenceDate: 90000), highlighted: false, image: "https://picsum.photos/200"),
+            Article(article_id: 7, title: "Second post", content: "This is content", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(), highlighted: false, image: "https://picsum.photos/200")
         ]
         
         let sortedByDate = self.sortByDate(data: articles)
