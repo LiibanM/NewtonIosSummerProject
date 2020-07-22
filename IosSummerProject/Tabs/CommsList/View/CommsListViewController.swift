@@ -17,7 +17,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsListTableView: UITableView!
     
     var commsListPresenter: CommsListPresenterProtocol!
-    let searchController = UISearchController(searchResultsController: nil)
+    var searchController: UISearchController!
     var comms = [Article]()
     var filteredComms = [Article]()
     var isSearchBarEmpty: Bool {
@@ -30,7 +30,7 @@ class CommsListViewController: UIViewController, Storyboarded {
          (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
-    let categories = ["All", "Business Updates", "COVID-19", "Random", "Updates"]
+    let categories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
     private let refreshControl = UIRefreshControl()
      
     override func viewDidLoad() {
@@ -50,10 +50,12 @@ class CommsListViewController: UIViewController, Storyboarded {
         self.navigationItem.title = "Comms"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
-        
+        searchController = UISearchController(searchResultsController: nil)
+
         searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search comms"
-        definesPresentationContext = true
+//        definesPresentationContext = true
         searchController.searchBar.scopeButtonTitles = categories
         searchController.searchBar.delegate = self
 
@@ -75,6 +77,12 @@ class CommsListViewController: UIViewController, Storyboarded {
     func filterContentForSearchText(_ searchText: String,
                                     category: String? = nil) {
       filteredComms = comms.filter { (comm: Article) -> Bool in
+        
+        if category == "Other" {
+            pickerView.isHidden = false
+            pickerViewOverlay.isHidden = false
+            
+        }
         let doesCategoryMatch = (category == "All") || comm.category.category_name == category
 
         if isSearchBarEmpty {
@@ -94,7 +102,6 @@ class CommsListViewController: UIViewController, Storyboarded {
             pickerView.isHidden = false
             pickerViewOverlay.isHidden = false
         }
-        print("its me")
     }
     
     @objc func addButtonTapped(_ sender: Any) {
