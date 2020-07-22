@@ -38,12 +38,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uul-zy-hQo">
-                                                <rect key="frame" x="10" y="320" width="396" height="182"/>
+                                                <rect key="frame" x="10" y="320" width="394" height="166.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Uul-zy-hQo" secondAttribute="height" multiplier="198:91" id="bbx-Il-LwM"/>
-                                                    <constraint firstAttribute="width" secondItem="Uul-zy-hQo" secondAttribute="height" multiplier="198:91" id="tqq-QY-agE"/>
-                                                </constraints>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -54,10 +50,10 @@
                                         <constraints>
                                             <constraint firstItem="fvh-5j-1ou" firstAttribute="leading" secondItem="6YX-we-keU" secondAttribute="leading" constant="15" id="5x8-7O-ffp"/>
                                             <constraint firstItem="tMG-GK-6Ou" firstAttribute="top" secondItem="6YX-we-keU" secondAttribute="top" id="6ST-HK-KQb"/>
-                                            <constraint firstAttribute="trailing" secondItem="Uul-zy-hQo" secondAttribute="trailing" constant="8" id="JLs-5G-cy9"/>
+                                            <constraint firstAttribute="trailing" secondItem="Uul-zy-hQo" secondAttribute="trailing" constant="10" id="JLs-5G-cy9"/>
+                                            <constraint firstItem="Uul-zy-hQo" firstAttribute="top" secondItem="fvh-5j-1ou" secondAttribute="bottom" id="JtH-8R-a2w"/>
                                             <constraint firstAttribute="trailing" secondItem="tMG-GK-6Ou" secondAttribute="trailing" id="L5P-Kg-FdP"/>
                                             <constraint firstItem="fvh-5j-1ou" firstAttribute="top" secondItem="tMG-GK-6Ou" secondAttribute="bottom" constant="10" id="PdM-JC-wwu"/>
-                                            <constraint firstItem="Uul-zy-hQo" firstAttribute="top" secondItem="fvh-5j-1ou" secondAttribute="bottom" id="RTG-aY-WhU"/>
                                             <constraint firstItem="Uul-zy-hQo" firstAttribute="leading" secondItem="6YX-we-keU" secondAttribute="leading" constant="10" id="U7c-YG-7Rh"/>
                                             <constraint firstItem="tMG-GK-6Ou" firstAttribute="leading" secondItem="6YX-we-keU" secondAttribute="leading" id="Zrk-22-GHm"/>
                                             <constraint firstAttribute="trailing" secondItem="fvh-5j-1ou" secondAttribute="trailing" constant="10" id="ip1-Bg-6zq"/>
