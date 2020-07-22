@@ -10,9 +10,6 @@ import UIKit
 import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
-//    [{title:"hi", highlighted: true, date: yesterday}, {title:"bye", highlighted: false, date: yesterday}, {title:"hi2", highlighted: true, date: today}]
-//    --->
-//    [{title:"hi", highlighted: true, date: today}, {title:"hi2", highlighted: true, date: yesterday}, {title:"bye", highlighted: false, date: today}]
     
     @IBOutlet weak var pickerViewOverlay: UIView!
     @IBOutlet weak var categoryButton: UIButton!
