@@ -25,7 +25,6 @@ class AppCoordinator: Coordinator {
     
     override func start() {
         showLogin()
-//        showComms()
     }
     
     func showLogin() {
