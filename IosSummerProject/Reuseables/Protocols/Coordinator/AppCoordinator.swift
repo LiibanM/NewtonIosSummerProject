@@ -19,13 +19,13 @@ class AppCoordinator: Coordinator {
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
         super.init(navigationController: navigationController)
-//        self.navigationController.navigationBar.isHidden = true
+        self.navigationController.navigationBar.isHidden = true
 
     }
     
     override func start() {
-//        showLogin()
-        showComms()
+        showLogin()
+//        showComms()
     }
     
     func showLogin() {
@@ -36,6 +36,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showComms() {
+        self.navigationController.navigationBar.isHidden = false
         commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()

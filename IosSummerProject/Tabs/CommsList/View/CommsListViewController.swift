@@ -53,6 +53,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         self.navigationItem.title = "Comms"
         
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: nil)
         searchController = UISearchController(searchResultsController: nil)
 
         searchController.searchResultsUpdater = self
@@ -150,8 +151,6 @@ extension CommsListViewController: CommsListPresenterView {
         self.refreshControl.endRefreshing()
         print(message)
     }
-    
-    
 }
 
 extension CommsListViewController: UITableViewDataSource {

@@ -30,7 +30,8 @@ class CommsCoordinator: Coordinator {
         let commsListViewController = CommsListViewController.instantiate(storyboard: "CommsList")
         let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
-        self.navigationController.viewControllers = [commsListViewController]
+        self.navigationController.viewControllers = [UIViewController]()
+        navigationController.pushViewController(commsListViewController, animated: false)
         navigationController.navigationBar.prefersLargeTitles = true
 
     }
