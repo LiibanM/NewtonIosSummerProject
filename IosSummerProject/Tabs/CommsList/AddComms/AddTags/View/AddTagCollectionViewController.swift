@@ -15,7 +15,7 @@ class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
     
     @IBOutlet weak var deleteButton: UIBarButtonItem!
     
-    let dataSource: [String] = ["Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a", "Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a", "Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a"]
+    var dataSource: [String] = ["Office", "Social Events", "Business Updata", "Holidays", "New Clients", "Communting"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,8 +40,21 @@ class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
                    
         }
     }
+    
     @objc func addTapped(sender: UIBarButtonItem) {
         // Function body goes here
+    }
+    
+    
+    @IBAction func deleteSelectedItems(_ sender: Any) {
+        if let selectedItems = collectionView.indexPathsForSelectedItems{
+            let items = selectedItems.map{$0.item}.sorted().reversed()
+            for item in items{
+                dataSource.remove(at: item)
+            }
+            collectionView.deleteItems(at: selectedItems)
+        }
+        
     }
     
     
