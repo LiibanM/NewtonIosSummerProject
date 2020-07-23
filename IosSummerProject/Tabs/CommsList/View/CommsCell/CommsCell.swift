@@ -7,24 +7,50 @@
 //
 
 import UIKit
+import Kingfisher
 
 class CommsCell: UITableViewCell {
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var commsImageView: UIImageView!
     @IBOutlet weak var commsTitleLabel: UILabel!
     @IBOutlet weak var commsCategoryLabel: UILabel!
+    @IBOutlet weak var highlightedTextLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        layoutMargins = UIEdgeInsets(top: 8, left: 80, bottom: 8, right: 80)
+        activityIndicator.isHidden = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
     }
     
-
+    func setLoading(isLoading: Bool) {
+        if isLoading {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+        }
+    }
+    
+    func downLoadImage(from url: String) {
+        setLoading(isLoading: true)
+        guard let url = URL(string: url) else {
+            print("not a valid url")
+            DispatchQueue.main.async {
+                self.commsImageView.image = #imageLiteral(resourceName: "comms-placeholder")
+                self.setLoading(isLoading: false)
+            }
+            
+            return
+        }
+        DispatchQueue.main.async {
+            self.commsImageView.kf.setImage(with: url)
+            self.setLoading(isLoading: false)
+        }
+    }
 }
 

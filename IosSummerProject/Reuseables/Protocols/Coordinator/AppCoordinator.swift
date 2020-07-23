@@ -35,6 +35,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showComms() {
+        self.navigationController.navigationBar.isHidden = false
         commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
