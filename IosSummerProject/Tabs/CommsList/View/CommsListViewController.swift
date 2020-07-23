@@ -31,6 +31,9 @@ class CommsListViewController: UIViewController, Storyboarded {
     }
     
     let categories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
+    let allCategories = ["Business Updates", "COVID-19", "Random", "Other", "Tech", "AND"]
+    var otherCategories = [String]()
+    
     private let refreshControl = UIRefreshControl()
      
     override func viewDidLoad() {
@@ -71,8 +74,29 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         refreshControl.addTarget(self, action: #selector(getCommsData), for: .valueChanged)
         
+        calculateOtherCategories()
         
     }
+    
+    func arrayToSet<T>(_ x: [T]) -> Set<T> {
+        return Set(x)
+    }
+    
+    func differenceBetweenSets<T>(_ x: Set<T>, _ y: Set<T>) -> Set<T> {
+        return y.subtracting(x)
+    }
+    
+    func setToArray<T>(_ x: Set<T>) -> [T] {
+        return Array(x)
+    }
+    
+    func calculateOtherCategories() {
+        let setOfAllCategories = arrayToSet(allCategories)
+        let setOfTopCategories = arrayToSet(categories)
+        let difference = differenceBetweenSets(setOfTopCategories, setOfAllCategories)
+        otherCategories = setToArray(difference)
+    }
+    
     
     func filterContentForSearchText(_ searchText: String,
                                     category: String? = nil) {
@@ -167,7 +191,6 @@ extension CommsListViewController: UITableViewDelegate {
         let tappedComm = comms[indexPath.row]
         let id = tappedComm.article_id
         searchController.searchBar.endEditing(true)
-
         commsListPresenter.didTapComm(with: id)
 
     }
@@ -179,7 +202,7 @@ extension CommsListViewController: UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return categories.count
+        return otherCategories.count
     }
     
     
@@ -188,11 +211,11 @@ extension CommsListViewController: UIPickerViewDataSource {
 extension CommsListViewController: UIPickerViewDelegate {
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return categories[row]
+        return otherCategories[row]
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryButton.setTitle(categories[row], for: .normal)
+        categoryButton.setTitle(otherCategories[row], for: .normal)
         pickerView.isHidden = true
         pickerViewOverlay.isHidden = true
     }
