@@ -30,7 +30,7 @@ class CommsListViewController: UIViewController, Storyboarded {
          (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
-    let categories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
+    let topCategories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
     let allCategories = ["Business Updates", "COVID-19", "Random", "Other", "Tech", "AND"]
     var otherCategories = [String]()
     
@@ -59,7 +59,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search comms"
 //        definesPresentationContext = true
-        searchController.searchBar.scopeButtonTitles = categories
+        searchController.searchBar.scopeButtonTitles = topCategories
         searchController.searchBar.delegate = self
 
         navigationItem.searchController = searchController
@@ -92,7 +92,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     
     func calculateOtherCategories() {
         let setOfAllCategories = arrayToSet(allCategories)
-        let setOfTopCategories = arrayToSet(categories)
+        let setOfTopCategories = arrayToSet(topCategories)
         let difference = differenceBetweenSets(setOfTopCategories, setOfAllCategories)
         otherCategories = setToArray(difference)
     }
