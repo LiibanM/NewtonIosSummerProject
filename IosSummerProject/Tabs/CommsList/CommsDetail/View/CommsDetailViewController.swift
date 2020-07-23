@@ -42,8 +42,6 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         
         navigationController?.navigationBar.prefersLargeTitles = false
         
-        let backBtn = UIBarButtonItem.init(title: "Menu", style: .plain, target: self, action: #selector(menuAction))
-        self.navigationItem.leftBarButtonItem = backBtn
 
     }
     
