@@ -7,6 +7,5 @@ target 'IosSummerProject' do
 
   # Pods for IosSummerProject
   pod 'GoogleSignIn'
-  pod 'PaddingLabel', '1.2'
 
 end
