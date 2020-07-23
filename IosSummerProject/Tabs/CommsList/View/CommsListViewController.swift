@@ -80,7 +80,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         if category == "Other" {
             pickerView.isHidden = false
-            searchController.searchBar.endEditing(true)
+//            searchController.searchBar.endEditing(true)
 
         } else {
             pickerView.isHidden = true
@@ -166,7 +166,7 @@ extension CommsListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let tappedComm = comms[indexPath.row]
         let id = tappedComm.article_id
-        searchController.searchBar.endEditing(true)
+//        searchController.searchBar.endEditing(true)
 
         commsListPresenter.didTapComm(with: id)
 
