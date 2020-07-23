@@ -14,7 +14,7 @@ class MockCommsListPresenter: CommsListPresenterProtocol {
     
     var didTapAddCommsCount = 0
     var didLoadDataCount = 0
-    var didTapComm = 0
+    var didTapCommCount = 0
     
     
     
@@ -28,6 +28,6 @@ class MockCommsListPresenter: CommsListPresenterProtocol {
     }
     
     func didTapComm(with id: Int) {
-        didTapComm += 1
+        didTapCommCount += 1
     }
 }

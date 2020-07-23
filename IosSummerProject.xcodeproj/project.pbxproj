@@ -11,6 +11,7 @@
 		702C115924C5B73200799497 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115824C5B73200799497 /* User.swift */; };
 		702C115B24C5B73F00799497 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115A24C5B73F00799497 /* Category.swift */; };
 		702C115E24C5B9D000799497 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115D24C5B9D000799497 /* ApiService.swift */; };
+		702C116024C9A0A300799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115F24C9A0A300799497 /* CommsListPresenterTests.swift */; };
 		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
 		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
 		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
@@ -76,6 +77,7 @@
 		702C115824C5B73200799497 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		702C115A24C5B73F00799497 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		702C115D24C5B9D000799497 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		702C115F24C9A0A300799497 /* CommsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsListPresenterTests.swift; path = "IosSummerProject/Services/API Service/CommsListPresenterTests.swift"; sourceTree = SOURCE_ROOT; };
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
 		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		71ABADBD24C8836E00E48992 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				702C115F24C9A0A300799497 /* CommsListPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -732,6 +735,7 @@
 			files = (
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+				702C116024C9A0A300799497 /* CommsListPresenterTests.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -47,6 +47,28 @@ class CommsListViewControllerTests: XCTestCase {
         XCTAssertEqual(2, mockCommsListPresenter.didLoadDataCount) // change it later
     }
     
+//    var didTapCategoryButtonCount = 0
+//
+//    func didTapCategoryButton() {
+//        didTapCategoryButtonCount += 1
+//
+//    }
+    
+    func testCategroyButtonTapped() {
+         // Arrange
+        var didTapCategoryButtonCount = 0
+        didTapCategoryButtonCount += 1
+
+         
+         // Act
+        commsListViewController.categoryButtonTapped((Any).self)
+         
+         // Assert
+        XCTAssertEqual(1, didTapCategoryButtonCount)
+        
+    }
+     
+    
     func testSetCommsData() {
         // Arrange
         let articles = [
