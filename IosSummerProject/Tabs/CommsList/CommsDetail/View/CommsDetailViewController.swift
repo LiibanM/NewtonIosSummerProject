@@ -22,8 +22,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         commsScrollView.refreshControl?.addTarget(self, action:
                                            #selector(handleRefreshControl),
                                            for: .valueChanged)
-        
         // this is dummy data (will eventually be from backend)
+        let isAdmin = true
         let image = "https://www.lifeline-security.co.uk/wp-content/uploads/2020/03/covid-19.png"
         let title = "CRT Comms"
         let tag = "Covid-19 Important Information"
@@ -36,7 +36,9 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         self.commsLabelView?.layer.masksToBounds = true
         self.commsDescriptionView.text = description
         
+        if isAdmin {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
+        }
         
         navigationController?.navigationBar.prefersLargeTitles = false
         
