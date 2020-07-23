@@ -9,5 +9,7 @@
 import Foundation
 
 protocol CommsListPresenterProtocol {
-    
+    func didTapAddComms()
+    func didTapComm(with id: Int)
+    func loadData()
 }

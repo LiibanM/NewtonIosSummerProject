@@ -12,9 +12,15 @@ import UIKit
 class AppCoordinator: Coordinator {
     
     var commsCoordinator: CommsCoordinator!
+    var loginCoordinator: LoginCoordinator!
+    
+    var apiService: ApiServiceProtocol
     
     init(_ navigationController: UINavigationController) {
+        self.apiService = ApiService()
         super.init(navigationController: navigationController)
+        self.navigationController.navigationBar.isHidden = true
+
     }
     
     override func start() {
@@ -22,11 +28,15 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
+        loginCoordinator = LoginCoordinator(navigationController, delegate: self)
         
+        self.addChildCoordinator(loginCoordinator)
+        loginCoordinator.start()
     }
     
     func showComms() {
-        commsCoordinator = CommsCoordinator(navigationController, delegate: self)
+        self.navigationController.navigationBar.isHidden = false
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
     }
@@ -34,5 +44,12 @@ class AppCoordinator: Coordinator {
 
 extension AppCoordinator: CommsCoordinatorDelegate {
     
+}
+
+extension AppCoordinator: LoginCoordinatorDelegate {
+    func didLogin() {
+        self.removeChildCoordinator(loginCoordinator)
+        showComms()
+    }
 }
 

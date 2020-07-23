@@ -10,13 +10,15 @@ import Foundation
 import UIKit
 
 protocol CommsCoordinatorDelegate {
-//    func didSelectPost()
 }
 
 class CommsCoordinator: Coordinator {
     
+    var apiService: ApiServiceProtocol
     
-    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate) {
+    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate, _ apiService: ApiServiceProtocol) {
+        
+        self.apiService = apiService
         super.init(navigationController: navigationController)
     }
     
@@ -26,9 +28,12 @@ class CommsCoordinator: Coordinator {
     
     func showCommsList() {
         let commsListViewController = CommsListViewController.instantiate(storyboard: "CommsList")
-        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self)
+        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
-        self.navigationController.viewControllers = [commsListViewController]
+        self.navigationController.viewControllers = [UIViewController]()
+        navigationController.pushViewController(commsListViewController, animated: false)
+        navigationController.navigationBar.prefersLargeTitles = true
+
     }
     
     func showCommsDetail() {
@@ -36,8 +41,17 @@ class CommsCoordinator: Coordinator {
         self.navigationController.viewControllers = [commsDetailViewController]
     }
     
+    func showAddComms() {
+    }
+    
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
-
+    func goToCreateContent() {
+        showAddComms()
+    }
+    
+    func goToCommsDetail(_ id: Int) {
+        print(id)
+    }
 }
