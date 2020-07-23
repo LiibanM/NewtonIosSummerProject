@@ -10,19 +10,27 @@ import UIKit
 
 class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
     
-    let dataSource: [String] = ["Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a"]
+    
+    @IBOutlet weak var bottomNavBar: UINavigationBar!
+    
+    @IBOutlet weak var deleteButton: UIBarButtonItem!
+    
+    let dataSource: [String] = ["Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a", "Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a", "Office", "Social Events", "Holidays", "New Clients", "Campus", "Business Updates", "a"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.leftBarButtonItem = editButtonItem
-
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(title: "+", style: .done, target: self, action: #selector(addTapped))
     }
     
     
     override func setEditing(_ editing: Bool, animated: Bool) {
         super.setEditing(editing, animated: animated)
         collectionView.allowsMultipleSelection = editing
+        navigationItem.rightBarButtonItem?.isEnabled = !editing
+        bottomNavBar.isHidden = !editing
         collectionView.indexPathsForSelectedItems?.forEach({ (IndexPath) in
             collectionView.deselectItem(at: IndexPath, animated: false)
         })
@@ -32,7 +40,9 @@ class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
                    
         }
     }
-    
+    @objc func addTapped(sender: UIBarButtonItem) {
+        // Function body goes here
+    }
     
     
     
