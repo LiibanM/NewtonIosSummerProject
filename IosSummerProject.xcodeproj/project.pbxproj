@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702C115724C5B5FB00799497 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115624C5B5FB00799497 /* Article.swift */; };
+		702C115924C5B73200799497 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115824C5B73200799497 /* User.swift */; };
+		702C115B24C5B73F00799497 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115A24C5B73F00799497 /* Category.swift */; };
+		702C115E24C5B9D000799497 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115D24C5B9D000799497 /* ApiService.swift */; };
 		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
 		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
 		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
@@ -18,6 +22,10 @@
 		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
 		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
 		71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */; };
+		71ABADB824C5A99400E48992 /* CommsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADB624C5A99400E48992 /* CommsCell.swift */; };
+		71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ABADB724C5A99400E48992 /* CommsCell.xib */; };
+		71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */; };
+		71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -70,6 +78,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		702C115624C5B5FB00799497 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		702C115824C5B73200799497 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		702C115A24C5B73F00799497 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		702C115D24C5B9D000799497 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
 		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
@@ -83,6 +95,10 @@
 		71ABADAB24C57EDF00E48992 /* IosSummerProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IosSummerProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IosSummerProjectTests.swift; sourceTree = "<group>"; };
 		71ABADAF24C57EDF00E48992 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71ABADB624C5A99400E48992 /* CommsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsCell.swift; sourceTree = "<group>"; };
+		71ABADB724C5A99400E48992 /* CommsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommsCell.xib; sourceTree = "<group>"; };
+		71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewControllerTests.swift; sourceTree = "<group>"; };
+		71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenter.swift; sourceTree = "<group>"; };
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +163,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702C115524C5B5CB00799497 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				702C115624C5B5FB00799497 /* Article.swift */,
+				702C115824C5B73200799497 /* User.swift */,
+				702C115A24C5B73F00799497 /* Category.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		702C115C24C5B9A600799497 /* API Service */ = {
+			isa = PBXGroup;
+			children = (
+				702C115D24C5B9D000799497 /* ApiService.swift */,
+			);
+			path = "API Service";
+			sourceTree = "<group>";
+		};
 		71ABAD7D24C324AF00E48992 /* AddComms */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,10 +240,61 @@
 			isa = PBXGroup;
 			children = (
 				D28201A624C8455800CD15DD /* Tabs */,
+				71ABADBA24C8833A00E48992 /* Tabs */,
 				71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */,
 				71ABADAF24C57EDF00E48992 /* Info.plist */,
 			);
 			path = IosSummerProjectTests;
+			sourceTree = "<group>";
+		};
+		71ABADB524C5A95A00E48992 /* CommsCell */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADB624C5A99400E48992 /* CommsCell.swift */,
+				71ABADB724C5A99400E48992 /* CommsCell.xib */,
+			);
+			path = CommsCell;
+			sourceTree = "<group>";
+		};
+		71ABADBA24C8833A00E48992 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADBB24C8835100E48992 /* CommsList */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		71ABADBB24C8835100E48992 /* CommsList */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADC024C8847900E48992 /* Mocks */,
+				71ABADBD24C8836E00E48992 /* Presenter */,
+				71ABADBC24C8836800E48992 /* View */,
+			);
+			path = CommsList;
+			sourceTree = "<group>";
+		};
+		71ABADBC24C8836800E48992 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		71ABADBD24C8836E00E48992 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		71ABADC024C8847900E48992 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */,
+			);
+			path = Mocks;
 			sourceTree = "<group>";
 		};
 		A4E8F08324C0FC5C00B7A26F = {
@@ -340,6 +425,7 @@
 		A4E8F0B524C0FFE400B7A26F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				71ABADB524C5A95A00E48992 /* CommsCell */,
 				71ABAD9324C3267C00E48992 /* CommsListViewController.swift */,
 				71ABAD9524C3269600E48992 /* CommsList.storyboard */,
 			);
@@ -467,6 +553,8 @@
 			children = (
 				A4E8F11024C5C68D00B7A26F /* PostRequest.swift */,
 				D282019F24C71F3800CD15DD /* CustomActionSheet.swift */,
+				702C115C24C5B9A600799497 /* API Service */,
+				702C115524C5B5CB00799497 /* Models */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -636,6 +724,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */,
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
@@ -717,7 +806,9 @@
 			files = (
 				D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */,
 				D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */,
+				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -739,7 +830,9 @@
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
 				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
+				702C115924C5B73200799497 /* User.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
+				702C115724C5B5FB00799497 /* Article.swift in Sources */,
 				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
 				A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */,
 				A4E8F0AC24C0FD5100B7A26F /* StoryBoarded.swift in Sources */,
@@ -748,12 +841,15 @@
 				A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
 				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
+				702C115E24C5B9D000799497 /* ApiService.swift in Sources */,
+				702C115B24C5B73F00799497 /* Category.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
 				D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
+				71ABADB824C5A99400E48992 /* CommsCell.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
 				71ABAD9224C325FD00E48992 /* CommsPresenterProtocol.swift in Sources */,
 				71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */,
