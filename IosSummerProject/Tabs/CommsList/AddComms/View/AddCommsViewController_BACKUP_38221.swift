@@ -8,15 +8,16 @@
 
 import UIKit
 
-    
+<<<<<<< HEAD
 class AddCommsViewController: UIViewController, Storyboarded {
-
-   
-    @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
+=======
+class AddCommsViewController: UIViewController, Storyboarded, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+
+    @IBOutlet weak var commImage: UIImageView!
     let imagePicker = UIImagePickerController()
-    let customActionSheet = CustomActionSheet()
+>>>>>>> bbf204fd748e23a7e40bc627e0377e6db9f4a95a
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,8 +25,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
         // Do any additional setup after loading the view.
     }
     
-   
-    @IBAction func postTapped(_ sender: Any) {
+<<<<<<< HEAD
+    @IBAction func sendComms(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
         
@@ -43,28 +44,33 @@ class AddCommsViewController: UIViewController, Storyboarded {
         })
     }
     
+=======
     @IBAction func onTapUploadImage(_ sender: Any) {
-        customActionSheet.showAlert(title: "What woud you like to do?",
-                                          message: "Use image from",
-                                          optionOne: "Library",
-                                          optionTwo: "Camera",
-                                          viewController: self,completion: { (result) -> Void in
-            if result == "Camera" {
-                self.imagePicker.allowsEditing = false
-                self.imagePicker.sourceType = .camera
-            } else {
-                self.imagePicker.allowsEditing = false
-                self.imagePicker.sourceType = .photoLibrary
-            }
-            self.present(self.imagePicker, animated: true, completion: nil)
-        })
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
     }
     
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+//            print(pickedImage)
+//            var test = convertImageToBase64String(img: pickedImage)
+//            print(test)
+            commImage.contentMode = .scaleAspectFit
+            commImage.image = pickedImage
+            let imageData = pickedImage.jpegData(compressionQuality: 1)
+            print(imageData)
+
+        }
+     
+        dismiss(animated: true, completion: nil)
+    }
     
     func convertImageToBase64String (img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }
 
+>>>>>>> bbf204fd748e23a7e40bc627e0377e6db9f4a95a
     /*
     // MARK: - Navigation
 
@@ -76,22 +82,3 @@ class AddCommsViewController: UIViewController, Storyboarded {
     */
 
 }
-
-extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-            if let pickedImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-    //            print(pickedImage)
-    //            var test = convertImageToBase64String(img: pickedImage)
-    //            print(test)
-                commImage.contentMode = .scaleAspectFit
-                commImage.image = pickedImage
-                let imageData = pickedImage.jpegData(compressionQuality: 1)
-                print(imageData)
-
-            }
-         
-            dismiss(animated: true, completion: nil)
-        }
-}
-

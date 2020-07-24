@@ -15,25 +15,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nlP-NQ-iv7">
-                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6QA-nd-1rH">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="6QA-nd-1rH" secondAttribute="bottom" id="0wD-bY-yOa"/>
-                                    <constraint firstItem="6QA-nd-1rH" firstAttribute="leading" secondItem="nlP-NQ-iv7" secondAttribute="leading" id="77e-pj-Cir"/>
-                                    <constraint firstItem="6QA-nd-1rH" firstAttribute="top" secondItem="nlP-NQ-iv7" secondAttribute="top" id="aqr-EV-jH9"/>
-                                    <constraint firstItem="6QA-nd-1rH" firstAttribute="height" secondItem="nlP-NQ-iv7" secondAttribute="height" priority="250" id="n8A-vT-cVo"/>
-                                    <constraint firstItem="6QA-nd-1rH" firstAttribute="width" secondItem="nlP-NQ-iv7" secondAttribute="width" id="uCu-jk-PnF"/>
-                                    <constraint firstAttribute="trailing" secondItem="6QA-nd-1rH" secondAttribute="trailing" id="zdl-6j-0Wx"/>
-                                </constraints>
-                                <viewLayoutGuide key="contentLayoutGuide" id="bL5-dT-PGz"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="3rI-NG-8y3"/>
-                            </scrollView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bDF-sy-7R6">
                                 <rect key="frame" x="25" y="94" width="364" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -69,9 +50,6 @@
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ikm-dG-3KB">
                                 <rect key="frame" x="25" y="500" width="31" height="30"/>
                                 <state key="normal" title="Post"/>
-                                <connections>
-                                    <action selector="postTapped:" destination="XYM-VG-n2h" eventType="touchUpInside" id="9Cp-O5-utf"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fHa-cQ-auO">
                                 <rect key="frame" x="64" y="500" width="100" height="30"/>
@@ -84,14 +62,10 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="gz4-Yy-KUJ" firstAttribute="bottom" secondItem="nlP-NQ-iv7" secondAttribute="bottom" id="3su-ar-qSF"/>
-                            <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="nlP-NQ-iv7" secondAttribute="trailing" id="4VO-t4-acL"/>
                             <constraint firstItem="fHa-cQ-auO" firstAttribute="leading" secondItem="Ikm-dG-3KB" secondAttribute="trailing" constant="8" symbolic="YES" id="5cu-ds-apQ"/>
                             <constraint firstItem="gz4-Yy-KUJ" firstAttribute="trailing" secondItem="nmM-0n-2hB" secondAttribute="trailing" constant="25" id="6dL-M3-GKg"/>
                             <constraint firstItem="55W-6e-kmX" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="25" id="7lh-LF-YGr"/>
                             <constraint firstItem="bDF-sy-7R6" firstAttribute="top" secondItem="gz4-Yy-KUJ" secondAttribute="top" constant="50" id="8Iq-qk-coF"/>
-                            <constraint firstItem="nlP-NQ-iv7" firstAttribute="top" secondItem="gz4-Yy-KUJ" secondAttribute="top" id="8sI-M8-OHi"/>
-                            <constraint firstItem="nlP-NQ-iv7" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" id="9wL-mH-DpY"/>
                             <constraint firstItem="I5y-l4-bht" firstAttribute="leading" secondItem="gz4-Yy-KUJ" secondAttribute="leading" constant="25" id="BWk-pK-Apw"/>
                             <constraint firstItem="nmM-0n-2hB" firstAttribute="top" secondItem="bDF-sy-7R6" secondAttribute="bottom" constant="25" id="Fus-KH-7hy"/>
                             <constraint firstItem="55W-6e-kmX" firstAttribute="top" secondItem="I5y-l4-bht" secondAttribute="bottom" constant="25" id="NAZ-ri-uKj"/>
@@ -115,8 +89,6 @@
                     </view>
                     <connections>
                         <outlet property="commImage" destination="abf-wa-4a8" id="rqb-bC-9ze"/>
-                        <outlet property="commsContent" destination="55W-6e-kmX" id="luu-jv-Let"/>
-                        <outlet property="commsTitle" destination="nmM-0n-2hB" id="K1S-bo-AEB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sWc-sV-tRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
