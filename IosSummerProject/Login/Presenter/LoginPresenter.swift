@@ -68,6 +68,7 @@ extension LoginPresenter: GIDSignInDelegate {
         let email = user.profile.email
         print(fullName ?? "Can't find full name or user")
         print(email ?? "Can't find email of user")
+        print(idToken, "token")
         didLogin()
     }
     

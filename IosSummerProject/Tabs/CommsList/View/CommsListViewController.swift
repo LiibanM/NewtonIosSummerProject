@@ -32,6 +32,8 @@ class CommsListViewController: UIViewController, Storyboarded {
     
     let topCategories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
     let allCategories = ["Business Updates", "COVID-19", "Random", "Other", "Tech", "AND"]
+    
+    var selectedOtherCategory: String!
     var otherCategories = [String]()
     
     private let refreshControl = UIRefreshControl()
@@ -103,14 +105,17 @@ class CommsListViewController: UIViewController, Storyboarded {
                                     category: String? = nil) {
       filteredComms = comms.filter { (comm: Article) -> Bool in
         
+        var chosenCategory = category
+        
         if category == "Other" {
             pickerView.isHidden = false
             searchController.searchBar.endEditing(true)
+            chosenCategory = selectedOtherCategory
 
         } else {
             pickerView.isHidden = true
         }
-        let doesCategoryMatch = (category == "All") || comm.category.category_name == category
+        let doesCategoryMatch = (chosenCategory == "All") || comm.category.category_name == chosenCategory
 
         if isSearchBarEmpty {
             return doesCategoryMatch
@@ -214,9 +219,10 @@ extension CommsListViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryButton.setTitle(otherCategories[row], for: .normal)
+        selectedOtherCategory = otherCategories[row]
         pickerView.isHidden = true
         pickerViewOverlay.isHidden = true
+        filterContentForSearchText(searchController.searchBar.text!, category: selectedOtherCategory)
     }
     
 }
