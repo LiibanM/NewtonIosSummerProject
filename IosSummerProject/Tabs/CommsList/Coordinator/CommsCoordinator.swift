@@ -41,6 +41,7 @@ class CommsCoordinator: Coordinator {
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.article_id = id;
+        print("Article ID: ", id)
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
     }
     

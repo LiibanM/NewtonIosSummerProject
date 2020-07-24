@@ -184,6 +184,7 @@ extension CommsListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let tappedComm = comms[indexPath.row]
         let id = tappedComm.article_id
+        print("Article ID Controller", id)
         searchController.searchBar.endEditing(true)
         commsListPresenter.didTapComm(with: id)
 
