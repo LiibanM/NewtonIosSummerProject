@@ -10,6 +10,8 @@ import UIKit
 
     
 class CommsDetailViewController: UIViewController, Storyboarded {
+    
+    var article_id:Int!
         
     @IBOutlet weak var commsScrollView: UIScrollView!
     @IBOutlet weak var commsImageView: UIImageView!
