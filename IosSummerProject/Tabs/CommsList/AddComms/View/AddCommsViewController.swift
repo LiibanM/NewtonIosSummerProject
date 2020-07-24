@@ -21,6 +21,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
+        self.navigationItem.title = "Create New Comms"
         // Do any additional setup after loading the view.
     }
     
