@@ -173,8 +173,22 @@ extension CommsListViewController: UITableViewDataSource {
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedTextLabel.text = currentComms.highlighted ? "Highlighted" : ""
         
-        
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            print("edit")
+            self.commsListPresenter.didTapAddComms()
+            completionHandler(true)
+        }
+        
+        edit.image = UIImage(systemName: "pencil")
+        edit.backgroundColor = .orange
+        
+        let swipe = UISwipeActionsConfiguration(actions: [edit])
+        return swipe
     }
     
 }
