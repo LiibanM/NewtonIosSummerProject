@@ -54,7 +54,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
             } else {
-                self.imagePicker.allowsEditing = false
+                self.imagePicker.allowsEditing = true
                 self.imagePicker.sourceType = .photoLibrary
             }
             self.present(self.imagePicker, animated: true, completion: nil)

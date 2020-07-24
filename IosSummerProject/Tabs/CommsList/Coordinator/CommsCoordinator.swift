@@ -38,10 +38,9 @@ class CommsCoordinator: Coordinator {
     
     func showCommsDetail(_ id: Int) {
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
-        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self)
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
-        commsDetailPresenter.article_id = id;
-        print("Article ID: ", id)
+        commsDetailPresenter.articleId = id;
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
     }
     
