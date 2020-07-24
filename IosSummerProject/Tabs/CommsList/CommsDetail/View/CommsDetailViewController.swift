@@ -10,13 +10,14 @@ import UIKit
 
     
 class CommsDetailViewController: UIViewController, Storyboarded {
-    
-    var article_id:Int!
-        
+            
     @IBOutlet weak var commsScrollView: UIScrollView!
     @IBOutlet weak var commsImageView: UIImageView!
     @IBOutlet weak var commsLabelView: UILabel!
     @IBOutlet weak var commsDescriptionView: UITextView!
+    
+    var commsDetailPresenter: CommsDetailPresenterProtocol!
+    var comm: Article!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,16 +25,19 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         commsScrollView.refreshControl?.addTarget(self, action:
                                            #selector(handleRefreshControl),
                                            for: .valueChanged)
+        
+        commsDetailPresenter.loadData()
+        
         // this is dummy data (will eventually be from backend)
         let isAdmin = true
-        let image = "https://www.lifeline-security.co.uk/wp-content/uploads/2020/03/covid-19.png"
-        let title = "CRT Comms"
-        let tag = "Covid-19 Important Information"
-        let description = "Hi Everyone, Please see the following slides detailing changes to the existing policies and processes which we have put in place to help us manage the business in the current climate we are operating in.\n\nThe slides confirm and clarify the changes mentioned by Paramjit in the last all AND call.They cover the following 3 key areas:\n\n\u{2022} Holiday Policy changes\n\u{2022} Probation Period changes\n\u{2022} Performance & Progression changes\n\nYou will be receiving some additional comms from your LoB (Line of Business) Leads explaining what follow up actions will be either required by you or put in place as a result of the changes that have been made.\n\nThank you to everyone who completed the last Illume survey. Results are being analysed so we can fully understand your view and take appropriate action to continue making sure we’re looking after our ANDis. From just over 500 responses, 93% of you are feeling confident about the company and 89% are feeling positive about the way we are communicating. A big thank you for your confidence in our company and the way we are dealing with this crisis."
+        let image = comm.image
+        let title = comm.title
+        let tag = comm.category
+        let description = comm.content
         
         self.commsImageView.downloaded(from: image)
         self.navigationItem.title = title
-        self.commsLabelView.text = tag
+        self.commsLabelView.text = tag.category_name
         self.commsLabelView?.layer.cornerRadius = commsLabelView.frame.size.height/5.0
         self.commsLabelView?.layer.masksToBounds = true
         self.commsDescriptionView.text = description
@@ -98,5 +102,11 @@ extension UIImageView {
     func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
+    }
+}
+
+extension CommsDetailViewController: CommsDetailPresenterView {
+    func setCommsData(with data: Article) {
+        comm = data
     }
 }
