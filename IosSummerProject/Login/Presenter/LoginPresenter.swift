@@ -23,6 +23,16 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
     let view: LoginPresenterView
     let delegate: LoginPresenterDelegate
     
+    //PH Function pull user from database
+    func getUser() -> String?{
+        //get user from db / check if user is present in db
+        return nil
+    }
+
+    func postUser(user: User) {
+        //Post user to db
+    }
+    
     init(
         with view: LoginPresenterView,
         delegate: LoginPresenterDelegate) {
@@ -60,15 +70,19 @@ extension LoginPresenter: GIDSignInDelegate {
         // Prints out credentials for testing purposes
         //TODO: to be removed before launch
         
-        //let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
-        let fullName = user.profile.name
-        //let givenName = user.profile.givenName
-        //let familyName = user.profile.familyName
-        let email = user.profile.email
-        print(fullName ?? "Can't find full name or user")
-        print(email ?? "Can't find email of user")
-        didLogin()
+        if(getUser() != nil /*check if userId is present in db*/){
+
+        } else /*user is logging into the system for the first time */{
+            //let userId = user.userID                  // For client-side use only!
+            let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
+            let fullName = user.profile.name
+            //let givenName = user.profile.givenName
+            //let familyName = user.profile.familyName
+            let email = user.profile.email
+            print(fullName ?? "Can't find full name or user")
+            print(email ?? "Can't find email of user")
+
+        }
     }
     
     /*func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
