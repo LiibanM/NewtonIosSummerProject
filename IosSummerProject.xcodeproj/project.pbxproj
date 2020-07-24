@@ -12,6 +12,9 @@
 		702C115B24C5B73F00799497 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115A24C5B73F00799497 /* Category.swift */; };
 		702C115E24C5B9D000799497 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115D24C5B9D000799497 /* ApiService.swift */; };
 		702C116024C9A0A300799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115F24C9A0A300799497 /* CommsListPresenterTests.swift */; };
+		702C116324C9BF4500799497 /* MockCommsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116224C9BF4500799497 /* MockCommsListPresenterDelegate.swift */; };
+		702C116524C9BF8000799497 /* MockCommsListPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116424C9BF8000799497 /* MockCommsListPresenterView.swift */; };
+		702C116724C9C0D400799497 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116624C9C0D400799497 /* MockApiService.swift */; };
 		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
 		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
 		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
@@ -78,6 +81,9 @@
 		702C115A24C5B73F00799497 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		702C115D24C5B9D000799497 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		702C115F24C9A0A300799497 /* CommsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CommsListPresenterTests.swift; path = "IosSummerProject/Services/API Service/CommsListPresenterTests.swift"; sourceTree = SOURCE_ROOT; };
+		702C116224C9BF4500799497 /* MockCommsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		702C116424C9BF8000799497 /* MockCommsListPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterView.swift; sourceTree = "<group>"; };
+		702C116624C9C0D400799497 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
 		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
@@ -282,6 +288,9 @@
 			isa = PBXGroup;
 			children = (
 				71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */,
+				702C116224C9BF4500799497 /* MockCommsListPresenterDelegate.swift */,
+				702C116424C9BF8000799497 /* MockCommsListPresenterView.swift */,
+				702C116624C9C0D400799497 /* MockApiService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -733,7 +742,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702C116324C9BF4500799497 /* MockCommsListPresenterDelegate.swift in Sources */,
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
+				702C116724C9C0D400799497 /* MockApiService.swift in Sources */,
+				702C116524C9BF8000799497 /* MockCommsListPresenterView.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
 				702C116024C9A0A300799497 /* CommsListPresenterTests.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,

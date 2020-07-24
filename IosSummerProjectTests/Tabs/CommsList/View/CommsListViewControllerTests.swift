@@ -47,24 +47,16 @@ class CommsListViewControllerTests: XCTestCase {
         XCTAssertEqual(2, mockCommsListPresenter.didLoadDataCount) // change it later
     }
     
-//    var didTapCategoryButtonCount = 0
-//
-//    func didTapCategoryButton() {
-//        didTapCategoryButtonCount += 1
-//
-//    }
     
     func testCategroyButtonTapped() {
          // Arrange
-        var didTapCategoryButtonCount = 0
-        didTapCategoryButtonCount += 1
 
-         
          // Act
         commsListViewController.categoryButtonTapped((Any).self)
          
          // Assert
-        XCTAssertEqual(1, didTapCategoryButtonCount)
+        XCTAssertTrue(commsListViewController.pickerView != nil)
+        XCTAssertTrue(commsListViewController.pickerViewOverlay != nil)
         
     }
      
@@ -87,17 +79,6 @@ class CommsListViewControllerTests: XCTestCase {
         // Assert
         XCTAssertEqual(articles.count, commsListViewController.comms.count)
     }
-    
-//    func testDidTapComm() {
-//        // Arrange
-//        
-//        // Act
-//        commsListViewController
-//        
-//        // Assert
-//    }
-    
-
     
     
 
