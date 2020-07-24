@@ -191,6 +191,20 @@ extension CommsListViewController: UITableViewDataSource {
         return swipe
     }
     
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
+            print("Highlight")
+            completionHandler(true)
+        }
+        
+        highlight.image = UIImage(systemName: "star")
+        highlight.backgroundColor = .systemIndigo
+        
+        let swipe = UISwipeActionsConfiguration(actions: [highlight])
+               return swipe
+        
+    }
 }
 
 extension CommsListViewController: UITableViewDelegate {
@@ -201,7 +215,6 @@ extension CommsListViewController: UITableViewDelegate {
         print("Article ID Controller", id)
         searchController.searchBar.endEditing(true)
         commsListPresenter.didTapComm(with: id)
-
     }
 }
 
