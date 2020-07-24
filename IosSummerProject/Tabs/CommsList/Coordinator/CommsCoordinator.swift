@@ -21,7 +21,7 @@ class CommsCoordinator: Coordinator {
     }
     
     override func start() {
-        showTagsList()
+        showAddComms()
     }
  
     func showCommsList() {

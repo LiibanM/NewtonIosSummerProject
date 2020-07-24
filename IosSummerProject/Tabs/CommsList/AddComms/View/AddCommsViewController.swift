@@ -22,6 +22,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
+        
     }
     
    
