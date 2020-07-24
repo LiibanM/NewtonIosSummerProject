@@ -11,7 +11,6 @@ import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var pickerViewOverlay: UIView!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var commsListTableView: UITableView!
@@ -43,7 +42,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         pickerView.isHidden = true
         pickerView.backgroundColor = .white
         pickerView.alpha = 1
-        pickerViewOverlay.isHidden = true
         
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
@@ -126,14 +124,6 @@ class CommsListViewController: UIViewController, Storyboarded {
       }
       print(filteredComms)
       commsListTableView.reloadData()
-    }
-    
-
-    @IBAction func categoryButtonTapped(_ sender: Any) {
-        if pickerView.isHidden {
-            pickerView.isHidden = false
-            pickerViewOverlay.isHidden = false
-        }
     }
     
     @objc func addButtonTapped(_ sender: Any) {
@@ -221,7 +211,6 @@ extension CommsListViewController: UIPickerViewDelegate {
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         selectedOtherCategory = otherCategories[row]
         pickerView.isHidden = true
-        pickerViewOverlay.isHidden = true
         filterContentForSearchText(searchController.searchBar.text!, category: selectedOtherCategory)
     }
     
@@ -238,8 +227,6 @@ extension CommsListViewController: UISearchResultsUpdating {
 extension CommsListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar,
          selectedScopeButtonIndexDidChange selectedScope: Int) {
-//       let category = Candy.Category(rawValue:
-//         searchBar.scopeButtonTitles![selectedScope])
         filterContentForSearchText(searchBar.text!, category: searchBar.scopeButtonTitles![selectedScope])
      }
 }
