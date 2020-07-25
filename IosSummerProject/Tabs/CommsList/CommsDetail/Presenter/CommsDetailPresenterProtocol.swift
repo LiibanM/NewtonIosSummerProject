@@ -8,6 +8,6 @@
 
 import Foundation
 
-protocol CommsPresenterProtocol {
-    
+protocol CommsDetailPresenterProtocol {
+    func loadData()
 }

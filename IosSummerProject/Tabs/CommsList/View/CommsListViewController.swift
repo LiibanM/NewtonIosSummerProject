@@ -11,7 +11,6 @@ import Kingfisher
 
 class CommsListViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var pickerViewOverlay: UIView!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var commsListTableView: UITableView!
@@ -32,6 +31,8 @@ class CommsListViewController: UIViewController, Storyboarded {
     
     let topCategories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
     let allCategories = ["Business Updates", "COVID-19", "Random", "Other", "Tech", "AND"]
+    
+    var selectedOtherCategory: String!
     var otherCategories = [String]()
     
     private let refreshControl = UIRefreshControl()
@@ -41,7 +42,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         pickerView.isHidden = true
         pickerView.backgroundColor = .white
         pickerView.alpha = 1
-        pickerViewOverlay.isHidden = true
         
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
@@ -103,14 +103,17 @@ class CommsListViewController: UIViewController, Storyboarded {
                                     category: String? = nil) {
       filteredComms = comms.filter { (comm: Article) -> Bool in
         
+        var chosenCategory = category
+        
         if category == "Other" {
             pickerView.isHidden = false
             searchController.searchBar.endEditing(true)
+            chosenCategory = selectedOtherCategory
 
         } else {
             pickerView.isHidden = true
         }
-        let doesCategoryMatch = (category == "All") || comm.category.category_name == category
+        let doesCategoryMatch = (chosenCategory == "All") || comm.category.category_name == chosenCategory
 
         if isSearchBarEmpty {
             return doesCategoryMatch
@@ -121,14 +124,6 @@ class CommsListViewController: UIViewController, Storyboarded {
       }
       print(filteredComms)
       commsListTableView.reloadData()
-    }
-    
-
-    @IBAction func categoryButtonTapped(_ sender: Any) {
-        if pickerView.isHidden {
-            pickerView.isHidden = false
-            pickerViewOverlay.isHidden = false
-        }
     }
     
     @objc func addButtonTapped(_ sender: Any) {
@@ -178,20 +173,48 @@ extension CommsListViewController: UITableViewDataSource {
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedTextLabel.text = currentComms.highlighted ? "Highlighted" : ""
         
-        
         return cell
     }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+            print("edit")
+            self.commsListPresenter.didTapAddComms()
+            completionHandler(true)
+        }
+        
+        edit.image = UIImage(systemName: "pencil")
+        edit.backgroundColor = .orange
+        
+        let swipe = UISwipeActionsConfiguration(actions: [edit])
+        return swipe
+    }
+    
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
+            print("Highlight")
+            completionHandler(true)
+        }
+        
+        highlight.image = UIImage(systemName: "star")
+        highlight.backgroundColor = .systemIndigo
+        
+        let swipe = UISwipeActionsConfiguration(actions: [highlight])
+               return swipe
+        
+    }
 }
 
 extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let tappedComm = comms[indexPath.row]
+        let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row]
         let id = tappedComm.article_id
+        print("Article ID Controller", id)
         searchController.searchBar.endEditing(true)
         commsListPresenter.didTapComm(with: id)
-
     }
 }
 
@@ -214,9 +237,9 @@ extension CommsListViewController: UIPickerViewDelegate {
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        categoryButton.setTitle(otherCategories[row], for: .normal)
+        selectedOtherCategory = otherCategories[row]
         pickerView.isHidden = true
-        pickerViewOverlay.isHidden = true
+        filterContentForSearchText(searchController.searchBar.text!, category: selectedOtherCategory)
     }
     
 }
@@ -232,8 +255,6 @@ extension CommsListViewController: UISearchResultsUpdating {
 extension CommsListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar,
          selectedScopeButtonIndexDidChange selectedScope: Int) {
-//       let category = Candy.Category(rawValue:
-//         searchBar.scopeButtonTitles![selectedScope])
         filterContentForSearchText(searchBar.text!, category: searchBar.scopeButtonTitles![selectedScope])
      }
 }

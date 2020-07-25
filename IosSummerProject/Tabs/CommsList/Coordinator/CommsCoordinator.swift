@@ -36,16 +36,16 @@ class CommsCoordinator: Coordinator {
 
     }
     
-    func showCommsDetail() {
+    func showCommsDetail(_ id: Int) {
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
+        commsDetailViewController.commsDetailPresenter = commsDetailPresenter
+        commsDetailPresenter.articleId = id;
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
     }
     
     func showAddComms() {
         let addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
-//        let addCommsPresenter = AddCommsPresenter(with: CommsListViewController, delegate: self)
-//        CommsListViewController.addCommsPresenter = add
-        
         self.navigationController.pushViewController(addCommsViewController, animated: true)
         
     }
@@ -58,7 +58,10 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     }
     
     func goToCommsDetail(_ id: Int) {
-        print(id)
-        showCommsDetail()
+        showCommsDetail(id)
     }
+}
+
+extension CommsCoordinator: CommsDetailPresenterDelegate {
+    
 }
