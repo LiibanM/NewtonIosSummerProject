@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import KeychainSwift
 
 protocol LoginCoordinatorDelegate {
     func didLogin()
@@ -16,9 +17,11 @@ protocol LoginCoordinatorDelegate {
 class LoginCoordinator: Coordinator {
     
     var delegate: LoginCoordinatorDelegate!
+    var keychainService: KeychainSwift
     
-    init(_ navigationController: UINavigationController, delegate: LoginCoordinatorDelegate) {
+    init(_ navigationController: UINavigationController, delegate: LoginCoordinatorDelegate, _ keychainService: KeychainSwift) {
         
+        self.keychainService = keychainService
         super.init(navigationController: navigationController)
         self.delegate = delegate
     }
@@ -30,7 +33,7 @@ class LoginCoordinator: Coordinator {
     func showLogin() {
         let loginViewController = LoginViewController.instantiate(storyboard: "Login")
         
-        let loginPresenter = LoginPresenter(with: loginViewController, delegate: self)
+        let loginPresenter = LoginPresenter(with: loginViewController, delegate: self, keychainService)
         
         loginViewController.loginPresenter = loginPresenter
         
