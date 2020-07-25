@@ -11,6 +11,8 @@ import Foundation
 protocol CommsListPresenterDelegate {
     func goToCreateContent()
     func goToCommsDetail(_ id: Int)
+    func goToEditComms(_ id: Int)
+
 }
 
 protocol CommsListPresenterView {
@@ -58,6 +60,10 @@ class CommsListPresenter: CommsListPresenterProtocol {
     
     func didTapComm(with id: Int) {
         delegate.goToCommsDetail(id)
+    }
+    
+    func didSwipeEdit(with id: Int) {
+        delegate.goToEditComms(id)
     }
     
     func loadData() {

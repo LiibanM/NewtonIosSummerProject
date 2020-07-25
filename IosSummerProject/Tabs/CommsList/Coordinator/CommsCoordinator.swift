@@ -53,6 +53,10 @@ class CommsCoordinator: Coordinator {
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
+    func goToEditComms(_ id: Int) {
+        // showEditComms()
+    }
+    
     func goToCreateContent() {
         showAddComms()
     }

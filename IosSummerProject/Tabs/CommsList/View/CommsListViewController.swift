@@ -180,7 +180,9 @@ extension CommsListViewController: UITableViewDataSource {
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             print("edit")
-            self.commsListPresenter.didTapAddComms()
+            let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+            let id = swipedComm.article_id
+            self.commsListPresenter.didSwipeEdit(with: id)
             completionHandler(true)
         }
         
