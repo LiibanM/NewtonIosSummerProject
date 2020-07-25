@@ -106,6 +106,10 @@ extension UIImageView {
 }
 
 extension CommsDetailViewController: CommsDetailPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
+    
     func setCommsData(with data: Article) {
         comm = data
     }

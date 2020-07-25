@@ -9,6 +9,7 @@
 import Foundation
 import GoogleSignIn
 import UIKit
+import KeychainSwift
 
 protocol LoginPresenterView {
     func errorOccurred(message: String)
@@ -22,19 +23,21 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
     
     let view: LoginPresenterView
     let delegate: LoginPresenterDelegate
+    var keychainService: KeychainSwift
     
     init(
         with view: LoginPresenterView,
-        delegate: LoginPresenterDelegate) {
-        
+        delegate: LoginPresenterDelegate,
+        _ keychainService: KeychainSwift) {
+        self.keychainService = keychainService
         self.view = view
         self.delegate = delegate
         
     }
     
-    func didLogin() {
-        delegate.didLogin()
-    }
+//    func didLogin(with user: Any) {
+//        delegate.didLogin(with user: Any)
+//    }
     
     func createGoogleSharedInstance() {
         GIDSignIn.sharedInstance().delegate = self
@@ -69,7 +72,9 @@ extension LoginPresenter: GIDSignInDelegate {
         print(fullName ?? "Can't find full name or user")
         print(email ?? "Can't find email of user")
         print(idToken, "token")
-        didLogin()
+        
+        delegate.didLogin()
+        keychainService.set(idToken!, forKey: "userToken")
     }
     
     /*func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
