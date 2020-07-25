@@ -8,5 +8,6 @@ target 'IosSummerProject' do
   # Pods for IosSummerProject
   pod 'GoogleSignIn'
   pod 'Kingfisher'
+  pod 'KeychainSwift'
 
 end

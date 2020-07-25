@@ -14,6 +14,7 @@ protocol CommsDetailPresenterDelegate {
 
 protocol CommsDetailPresenterView {
     func setCommsData(with data: Article)
+    func errorOccured(message: String)
 }
 
 class CommsDetailPresenter: CommsDetailPresenterProtocol {
@@ -29,6 +30,26 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
         self.view = view
         self.apiService = apiService
     }
+    
+    func getCommsDetail() {
+           apiService.fetchData(url: "https://www.google.com", objectType: Article.self) { (result) in
+               switch result {
+                   case .failure(.badUrl):
+                       self.view.errorOccured(message: "Given Url was bad")
+                   case .failure(.failedToDecode):
+                       self.view.errorOccured(message: "Failed to decode data" )
+                   case .failure(.requestFailed):
+                       self.view.errorOccured(message: "request failed")
+                   case .failure(.unAuthenticated):
+                       self.view.errorOccured(message: "Unauthenticated" )
+                   case .success(let article):
+                       self.view.setCommsData(with: article)
+                       print("Success")
+                   default:
+                       self.view.errorOccured(message: "error")
+               }
+           }
+       }
     
     func loadData() {
             let articles = [
