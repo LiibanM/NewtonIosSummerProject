@@ -46,6 +46,8 @@ class CommsCoordinator: Coordinator {
     
     func showAddComms() {
         let addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
+        let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self)
+        addCommsViewController.addCommsPresenter = addCommsPresenter
         self.navigationController.pushViewController(addCommsViewController, animated: true)
         
     }
@@ -63,6 +65,12 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     
     func goToCommsDetail(_ id: Int) {
         showCommsDetail(id)
+    }
+}
+
+extension CommsCoordinator: AddCommsPresenterDelegate {
+    func goToCommsList() {
+        showCommsList()
     }
 }
 

@@ -18,6 +18,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     
+    var addCommsPresenter: AddCommsPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
@@ -42,6 +44,9 @@ class AddCommsViewController: UIViewController, Storyboarded {
                print("an error occured when sending")
             }
         })
+        
+        addCommsPresenter.didTapPost()
+        
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
@@ -94,5 +99,11 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
          
             dismiss(animated: true, completion: nil)
         }
+}
+
+extension AddCommsViewController: AddCommsPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
 }
 
