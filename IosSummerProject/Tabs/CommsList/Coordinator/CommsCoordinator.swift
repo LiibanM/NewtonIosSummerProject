@@ -51,11 +51,19 @@ class CommsCoordinator: Coordinator {
         self.navigationController.pushViewController(addCommsViewController, animated: true)
     }
     
+    func showEditComms() {
+        let editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
+        let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self)
+        editViewController.editCommsPresenter = editCommsPresenter
+        self.navigationController.pushViewController(editViewController, animated: true)
+
+    }
+    
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
     func goToEditComms(_ id: Int) {
-        // showEditComms()
+         showEditComms()
     }
     
     func goToCreateContent() {
@@ -74,5 +82,9 @@ extension CommsCoordinator: AddCommsPresenterDelegate {
 }
 
 extension CommsCoordinator: CommsDetailPresenterDelegate {
+    
+}
+
+extension CommsCoordinator: EditCommsPresenterDelegate {
     
 }

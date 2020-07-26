@@ -8,7 +8,9 @@
 
 import UIKit
 
-class EditCommsViewController: UIViewController {
+class EditCommsViewController: UIViewController, Storyboarded {
+    
+    var editCommsPresenter: EditCommsPresenterProtocol!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,4 +29,8 @@ class EditCommsViewController: UIViewController {
     }
     */
 
+}
+
+extension EditCommsViewController: EditCommsPresenterView {
+    
 }
