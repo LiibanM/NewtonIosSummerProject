@@ -50,18 +50,12 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @objc func saveEdittedCommTapped() {
-//        editCommsPresenter.saveEdittedComm()
+        editCommsPresenter.didTapSave()
     }
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.view.endEditing(true)
-        navigationItem.titleView?.resignFirstResponder()
-    }
-    
+
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         editCommsDescription.resignFirstResponder()
         editCommsTitle.resignFirstResponder()
-
-
     }
     
     func setUpEditableFields() {
