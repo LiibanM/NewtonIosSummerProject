@@ -11,6 +11,7 @@ import Foundation
 protocol ApiServiceProtocol {
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
            Void)
+     func sendData<T: Codable>(url: String, payload: T, completion: @escaping (Result<T, NetworkError>) -> ())
 }
 
 enum NetworkError: Error {

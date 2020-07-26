@@ -53,7 +53,7 @@ class CommsCoordinator: Coordinator {
     
     func showEditComms(with id: Int?, or article: Article?) {
         let editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
-        let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self)
+        let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
         if let passedId = id {
             editCommsPresenter.articleId = passedId
         }
@@ -95,5 +95,7 @@ extension CommsCoordinator: CommsDetailPresenterDelegate {
 }
 
 extension CommsCoordinator: EditCommsPresenterDelegate {
-    
+    func goToCommsListAfterSave() {
+        showCommsList()
+    }
 }

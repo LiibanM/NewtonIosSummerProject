@@ -16,7 +16,7 @@ protocol EditCommsPresenterView {
 }
 
 protocol EditCommsPresenterDelegate {
-    
+    func goToCommsListAfterSave()
 }
 
 class EditCommsPresenter: EditCommsPresenterProtocol {
@@ -25,8 +25,10 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
     var comm: Article?
     var delegate: EditCommsPresenterDelegate!
     var view: EditCommsPresenterView!
+    var apiService: ApiServiceProtocol!
     
-    init(with view: EditCommsPresenterView, delegate: EditCommsPresenterDelegate) {
+    init(with view: EditCommsPresenterView, delegate: EditCommsPresenterDelegate, _ apiService: ApiServiceProtocol) {
+        self.apiService = apiService
         self.view = view
         self.delegate = delegate
     }
@@ -39,6 +41,30 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         }
     }
     
+    
+    func didTapSave() {
+        delegate.goToCommsListAfterSave()
+    }
+    
+    func saveEdittedPost(article: Article) {
+        apiService.sendData(url: "", payload: article) { (result) in
+            switch result {
+                case .failure(.badUrl):
+                    self.view.errorOccured(message: "Given Url was bad")
+                case .failure(.failedToDecode):
+                    self.view.errorOccured(message: "Failed to decode data" )
+                case .failure(.requestFailed):
+                    self.view.errorOccured(message: "request failed")
+                case .failure(.unAuthenticated):
+                    self.view.errorOccured(message: "Unauthenticated" )
+                case .success(let article):
+                    self.didTapSave()
+                    print("Success")
+                default:
+                    self.view.errorOccured(message: "error")
+            }
+        }
+    }
     
     func loadCommFromId() {
         let articles = [
