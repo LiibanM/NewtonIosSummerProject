@@ -10,13 +10,29 @@ import UIKit
 
 class EditCommsViewController: UIViewController, Storyboarded {
     
+    @IBOutlet weak var editCommsCategory: UILabel!
+    @IBOutlet weak var editCommsImage: UIImageView!
+    @IBOutlet weak var editCommsDescription: UITextView!
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpEditableFields()
+        navigationItem.titleView = UITextView()
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
+        self.view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func dismissKeyboard (_ sender: UITapGestureRecognizer) {
+        editCommsDescription.resignFirstResponder()
+    }
+    
+    func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        // Do any additional setup after loading the view.
+        editCommsCategory.text = comm.category.category_name
+        editCommsDescription.isEditable = true
+        editCommsDescription.text = comm.content
     }
     
 

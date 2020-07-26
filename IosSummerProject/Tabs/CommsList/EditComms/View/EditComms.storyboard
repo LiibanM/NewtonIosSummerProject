@@ -97,6 +97,11 @@
                         <viewLayoutGuide key="safeArea" id="jKC-qQ-3Ml"/>
                     </view>
                     <size key="freeformSize" width="414" height="901"/>
+                    <connections>
+                        <outlet property="editCommsCategory" destination="iiX-Ih-8d9" id="DmL-iA-vCt"/>
+                        <outlet property="editCommsDescription" destination="NpV-Wf-ycW" id="o7b-0U-eh2"/>
+                        <outlet property="editCommsImage" destination="Wu7-kD-ND1" id="F5O-Ab-03S"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gWC-Bv-FJb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
