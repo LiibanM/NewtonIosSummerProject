@@ -82,6 +82,9 @@ extension CommsCoordinator: AddCommsPresenterDelegate {
 }
 
 extension CommsCoordinator: CommsDetailPresenterDelegate {
+    func goToEditComms() {
+        showEditComms()
+    }
     
 }
 

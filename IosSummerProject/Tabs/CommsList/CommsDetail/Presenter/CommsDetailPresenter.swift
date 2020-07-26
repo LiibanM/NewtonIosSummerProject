@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CommsDetailPresenterDelegate {
-    
+    func goToEditComms()
 }
 
 protocol CommsDetailPresenterView {
@@ -66,5 +66,9 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
         }[0]
             view.setCommsData(with: article)
           }
+    
+    func didTapEdit() {
+        delegate.goToEditComms()
+    }
     
 }
