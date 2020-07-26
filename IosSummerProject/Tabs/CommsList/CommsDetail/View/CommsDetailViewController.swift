@@ -64,7 +64,7 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     }
     
     @objc func editButtonTapped() {
-        commsDetailPresenter.didTapEdit()
+        commsDetailPresenter.didTapEdit(on: comm)
        }
     
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {

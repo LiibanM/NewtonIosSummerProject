@@ -11,10 +11,11 @@ import UIKit
 class EditCommsViewController: UIViewController, Storyboarded {
     
     var editCommsPresenter: EditCommsPresenterProtocol!
+    var comm: Article!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        editCommsPresenter.loadComm()
         // Do any additional setup after loading the view.
     }
     
@@ -32,5 +33,14 @@ class EditCommsViewController: UIViewController, Storyboarded {
 }
 
 extension EditCommsViewController: EditCommsPresenterView {
+    func setCommsData(with article: Article) {
+        comm = article
+        print(comm, "edit")
+    }
+    
+    func errorOccured(message: String) {
+        print(message)
+    }
+    
     
 }
