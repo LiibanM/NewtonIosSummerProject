@@ -26,16 +26,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setUpEditableFields()
         
-        
-        navigationItem.titleView = UITextView()
-
-//        let titleView = UIView()
-//        let textArea = UITextView(frame: CGRect())
-//        titleView.addSubview(textArea)
         let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 200, height: 70))
         
-        
-            
         titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
        
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 20))
