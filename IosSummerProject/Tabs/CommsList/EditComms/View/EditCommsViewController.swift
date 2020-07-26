@@ -32,20 +32,22 @@ class EditCommsViewController: UIViewController, Storyboarded {
 //        let titleView = UIView()
 //        let textArea = UITextView(frame: CGRect())
 //        titleView.addSubview(textArea)
-        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 100, height: 70))
+        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 200, height: 70))
         
         
             
-        titleView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 70))
+        titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
        
-        let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 100, height: 20))
+        let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 20))
         titleLabel.textAlignment = .center
         titleLabel.text = "Title:"
+        titleLabel.font = UIFont.systemFont(ofSize: 13)
         
-        editCommsTitle = UITextView(frame: CGRect(x: 0, y: 10, width: 100, height: 70))
+        editCommsTitle = UITextView(frame: CGRect(x: 0, y: 10, width: 200, height: 70))
+        editCommsTitle.textContainer.maximumNumberOfLines = 1
         editCommsTitle.text = comm.title
+        editCommsTitle.font = UIFont.boldSystemFont(ofSize: 15)
         editCommsTitle.backgroundColor = .none
-        editCommsTitle.font = UIFont.systemFont(ofSize: 15)
         editCommsTitle.textAlignment = .center
         titleView.addSubview(editCommsTitle)
         
