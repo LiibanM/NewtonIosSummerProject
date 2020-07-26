@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class EditCommsViewController: UIViewController, Storyboarded {
     
@@ -61,6 +62,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
         editCommsCategory.text = comm.category.category_name
+        guard let url = URL(string: comm.image) else {
+            print("bad url")
+            return
+        }
+        editCommsImage.kf.setImage(with: url)
         editCommsDescription.isEditable = true
         editCommsDescription.layer.borderWidth = 1
         editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
