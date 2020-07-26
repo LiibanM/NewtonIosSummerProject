@@ -11,5 +11,5 @@ import Foundation
 
 protocol EditCommsPresenterProtocol {
     func loadComm()
-    func didTapSave()
+    func didTapSave(for article: Article)
 }

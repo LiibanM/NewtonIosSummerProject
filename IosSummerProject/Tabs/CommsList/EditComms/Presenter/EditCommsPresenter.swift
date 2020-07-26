@@ -38,16 +38,17 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
             view.setCommsData(with: passedComm)
         } else {
             loadCommFromId()
+//            fetchCommFromId()
         }
     }
     
     
-    func didTapSave() {
-        delegate.goToCommsListAfterSave()
+    func didTapSave(for article: Article) {
+        saveEdittedPost(article)
     }
     
-    func saveEdittedPost(article: Article) {
-        apiService.sendData(url: "", payload: article) { (result) in
+    func saveEdittedPost(_ article: Article) {
+        apiService.sendData(url: "https://www.google.com/\(articleId)", payload: article) { (result) in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -58,7 +59,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let article):
-                    self.didTapSave()
+                    self.delegate.goToCommsListAfterSave()
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")
@@ -100,7 +101,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
             $0.article_id == articleId
         }[0]
             view.setCommsData(with: article)
-          }
+    }
 }
     
     

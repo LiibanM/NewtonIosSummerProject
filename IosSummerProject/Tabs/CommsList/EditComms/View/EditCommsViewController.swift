@@ -50,7 +50,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @objc func saveEdittedCommTapped() {
-        editCommsPresenter.didTapSave()
+        editCommsPresenter.didTapSave(for: comm)
     }
 
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
