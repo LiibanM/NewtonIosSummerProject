@@ -8,3 +8,25 @@
 //
 
 import Foundation
+
+
+protocol EditCommsPresenterView {
+    
+}
+
+protocol EditCommsPresenterDelegate {
+    
+}
+
+class EditCommsPresenter: EditCommsPresenterProtocol {
+    
+    
+    var delegate: EditCommsPresenterDelegate!
+    var view: EditCommsPresenterView!
+    
+    init(with view: EditCommsPresenterView, delegate: EditCommsPresenterDelegate) {
+        self.view = view
+        self.delegate = delegate
+    }
+    
+}
