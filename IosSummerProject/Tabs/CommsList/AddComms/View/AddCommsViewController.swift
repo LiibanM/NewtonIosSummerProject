@@ -9,23 +9,49 @@
 import UIKit
 
     
-class AddCommsViewController: UIViewController, Storyboarded {
+class AddCommsViewController: UIViewController, Storyboarded, UICollectionViewDelegate, UICollectionViewDataSource  {
+    
+    
+    
 
-   
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     
+    var dataSource: [String] = ["Office", "Social Events", "Business Updata", "Holidays", "New Clients", "Communting"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
-        
+        collectionView.delegate = self // Unless you have already defined the delegate in IB
+        collectionView.dataSource = self // Unless you have already defined the dataSource in IB
     }
     
-   
+    
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+       
+        var cell = UICollectionViewCell()
+        
+        if let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? PreviewTagCell{
+            
+            tagCell.configure(with: dataSource[indexPath.row])
+            
+            cell = tagCell
+        }
+        return cell
+    }
+    
+    
     @IBAction func postTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}

@@ -18,6 +18,7 @@
 		71ABAD9424C3267C00E48992 /* CommsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD9324C3267C00E48992 /* CommsListViewController.swift */; };
 		71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD9524C3269600E48992 /* CommsList.storyboard */; };
 		71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */; };
+		A4CAC70D24CE02BC008D00B6 /* PreviewTagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4CAC70C24CE02BC008D00B6 /* PreviewTagCell.swift */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -84,6 +85,7 @@
 		7C63B52859816C956AEE5A0A /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 		8AFBE2A7C29273ACF4C2DECD /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE9704A3084789D90FEF14C /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
+		A4CAC70C24CE02BC008D00B6 /* PreviewTagCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewTagCell.swift; sourceTree = "<group>"; };
 		A4E8F08C24C0FC5C00B7A26F /* IosSummerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosSummerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 			children = (
 				71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */,
 				71ABAD8124C324E700E48992 /* AddComms.storyboard */,
+				A4CAC70C24CE02BC008D00B6 /* PreviewTagCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -696,6 +699,7 @@
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F11924C86C8300B7A26F /* AddTagCollectionViewCell.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
+				A4CAC70D24CE02BC008D00B6 /* PreviewTagCell.swift in Sources */,
 				D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */,
 				A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */,
 				A4E8F0F524C1089100B7A26F /* AddTagPresenterProtocol.swift in Sources */,
