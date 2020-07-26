@@ -18,15 +18,19 @@ class AddCommsViewController: UIViewController, Storyboarded {
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     
+    var addCommsPresenter: AddCommsPresenterProtocol!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
         self.navigationItem.title = "Create New Comms"
-        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped))
+
     }
     
    
-    @IBAction func postTapped(_ sender: Any) {
+    @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
         
@@ -42,6 +46,9 @@ class AddCommsViewController: UIViewController, Storyboarded {
                print("an error occured when sending")
             }
         })
+        
+        addCommsPresenter.didTapPost()
+        
     }
     
     @IBAction func onTapUploadImage(_ sender: Any) {
@@ -94,5 +101,11 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
          
             dismiss(animated: true, completion: nil)
         }
+}
+
+extension AddCommsViewController: AddCommsPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
 }
 

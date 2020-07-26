@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockCommsListPresenter: CommsListPresenterProtocol {
+    func didSwipeEdit(with id: Int) {
+        
+    }
+    
    
     
     var didTapAddCommsCount = 0
