@@ -17,7 +17,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
     
-    var editCommsTitle: UITextField!
+    var editCommsTitle: UITextView!
     var titleView:UIView!
 
     
@@ -31,13 +31,13 @@ class EditCommsViewController: UIViewController, Storyboarded {
 //        let titleView = UIView()
 //        let textArea = UITextView(frame: CGRect())
 //        titleView.addSubview(textArea)
-        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 64, height: 64))
+        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: view.frame.size.width - 70, height: 64))
             
-        titleView = UIView.init(frame: rect)
+        titleView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width - 70, height: 50))
        
-        editCommsTitle = UITextField.init(frame: CGRect.init(x: 0, y: 30, width: 64, height: 24))
+        editCommsTitle = UITextView(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         editCommsTitle.text = comm.title
-        editCommsTitle.font = UIFont.systemFont(ofSize: 12)
+        editCommsTitle.font = UIFont.systemFont(ofSize: 15)
         editCommsTitle.textAlignment = .center
         titleView.addSubview(editCommsTitle)
         
@@ -68,7 +68,14 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editCommsPresenter.loadComm()
         editCommsCategory.text = comm.category.category_name
         editCommsDescription.isEditable = true
+        editCommsDescription.layer.borderWidth = 1
+        editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
+        editCommsDescription.layer.cornerRadius = 5
+//        editCommsDescription.layer.backgroundColor = UIColor.lightGray.cgColor
         editCommsDescription.text = comm.content
+    }
+    @IBAction func editCommsImageTapped(_ sender: Any) {
+        showImagePickerControllerActionSheet()
     }
     
 
@@ -95,4 +102,51 @@ extension EditCommsViewController: EditCommsPresenterView {
     }
     
     
+}
+
+
+extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    func showImagePickerControllerActionSheet() {
+        let alert =  UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
+
+        let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
+            self.showImagePickerController(sourceType: .photoLibrary)
+        }
+        
+        let cameraAction = UIAlertAction(title: "Take from camera", style: .default) { (action) in
+            self.showImagePickerController(sourceType: .camera)
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alert.addAction(photoLibraryAction)
+        alert.addAction(cameraAction)
+        alert.addAction(cancelAction)
+
+
+        self.present(alert, animated: true, completion: nil)
+//        alert.addAction(cameraAction)
+//        alert.addAction(cancelAction)
+    }
+    
+    func showImagePickerController(sourceType: UIImagePickerController.SourceType) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.allowsEditing = true
+        imagePickerController.sourceType = sourceType
+        present(imagePickerController, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            editCommsImage.image = editedImage
+            let imageData = editedImage.pngData()
+            print(imageData!.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters))
+        } else if let originalImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            editCommsImage.image = originalImage
+        }
+
+        dismiss(animated: true, completion: nil)
+    }
 }
