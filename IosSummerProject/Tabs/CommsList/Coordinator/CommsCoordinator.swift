@@ -49,7 +49,6 @@ class CommsCoordinator: Coordinator {
         let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self)
         addCommsViewController.addCommsPresenter = addCommsPresenter
         self.navigationController.pushViewController(addCommsViewController, animated: true)
-        
     }
     
 }

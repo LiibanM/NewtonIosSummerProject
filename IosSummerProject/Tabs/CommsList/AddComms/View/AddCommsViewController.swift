@@ -24,11 +24,13 @@ class AddCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         imagePicker.delegate = self
         self.navigationItem.title = "Create New Comms"
-        // Do any additional setup after loading the view.
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped))
+
     }
     
    
-    @IBAction func postTapped(_ sender: Any) {
+    @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
         
