@@ -32,7 +32,7 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
     }
     
     func getCommsDetail() {
-           apiService.fetchData(url: "https://www.google.com", objectType: Article.self) { (result) in
+           apiService.fetchData(url: "https://www.google.com\(articleId)", objectType: Article.self) { (result) in
                switch result {
                    case .failure(.badUrl):
                        self.view.errorOccured(message: "Given Url was bad")

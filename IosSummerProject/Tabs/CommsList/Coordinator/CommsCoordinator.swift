@@ -33,7 +33,6 @@ class CommsCoordinator: Coordinator {
         self.navigationController.viewControllers = [UIViewController]()
         navigationController.pushViewController(commsListViewController, animated: false)
         navigationController.navigationBar.prefersLargeTitles = true
-
     }
     
     func showCommsDetail(_ id: Int) {

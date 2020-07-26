@@ -68,6 +68,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 //        editCommsDescription.layer.backgroundColor = UIColor.lightGray.cgColor
         editCommsDescription.text = comm.content
     }
+    
     @IBAction func editCommsImageTapped(_ sender: Any) {
         showImagePickerControllerActionSheet()
     }

@@ -54,6 +54,10 @@ class CommsListPresenter: CommsListPresenterProtocol {
         }
     }
     
+    func highlightComm() {
+        
+    }
+    
     func didTapAddComms() {
         delegate.goToCreateContent()
     }
