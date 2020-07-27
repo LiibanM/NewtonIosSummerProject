@@ -51,6 +51,14 @@ class CommsCoordinator: Coordinator {
         self.navigationController.pushViewController(addCommsViewController, animated: true)
     }
     
+    func showCategories() {
+        let showCategoriesViewController = ShowCategoriesViewController.instantiate(storyboard: "ShowCategories")
+        let showCategoriesPresenter = ShowCategoriesPresenter(with: showCategoriesViewController, delegate: self)
+        showCategoriesViewController.showCategoriesPresenter = showCategoriesPresenter
+        self.navigationController.showDetailViewController(showCategoriesViewController, sender: nil)
+        
+        
+    }
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
@@ -68,11 +76,20 @@ extension CommsCoordinator: CommsListPresenterDelegate {
 }
 
 extension CommsCoordinator: AddCommsPresenterDelegate {
+    func goToShowCategories() {
+        showCategories()
+    }
+    
     func goToCommsList() {
         showCommsList()
+        
     }
 }
 
 extension CommsCoordinator: CommsDetailPresenterDelegate {
+    
+}
+
+extension CommsCoordinator: ShowCategoriesPresenterDelegate {
     
 }

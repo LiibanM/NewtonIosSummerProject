@@ -10,4 +10,5 @@ import Foundation
 
 protocol AddCommsPresenterProtocol {
     func didTapPost()
+    func didTapSelectCategory()
 }

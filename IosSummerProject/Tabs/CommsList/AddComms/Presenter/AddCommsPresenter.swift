@@ -10,6 +10,7 @@ import Foundation
 
 protocol AddCommsPresenterDelegate {
     func goToCommsList()
+    func goToShowCategories()
 }
 
 protocol AddCommsPresenterView {
@@ -29,6 +30,10 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
     
     func didTapPost() {
         delegate.goToCommsList()
+    }
+    
+    func didTapSelectCategory() {
+        delegate.goToShowCategories()
     }
     
 }
