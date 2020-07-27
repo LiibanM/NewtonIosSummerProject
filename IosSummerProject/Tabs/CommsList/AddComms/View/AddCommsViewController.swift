@@ -17,6 +17,9 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsContent: UITextField!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var isHighlighted: UISegmentedControl!
+    @IBOutlet weak var saveButtonNew: UIButton!
+    @IBOutlet weak var previewButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     
@@ -29,11 +32,18 @@ class AddCommsViewController: UIViewController, Storyboarded {
         
         self.categoryButton?.layer.cornerRadius = categoryButton.frame.size.height/5.0
         self.categoryButton?.layer.masksToBounds = true
+        self.saveButtonNew?.layer.cornerRadius = saveButtonNew.frame.size.height/5.0
+        self.saveButtonNew?.layer.masksToBounds = true
+        self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
+        self.previewButton?.layer.masksToBounds = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTapUploadImage(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
 
-        let addImageButton   = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(onTapUploadImage))
         let savePostButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped(_:)))
 
-        navigationItem.rightBarButtonItems = [savePostButton, addImageButton]
+        navigationItem.rightBarButtonItems = [savePostButton]
         
         navigationController?.navigationBar.prefersLargeTitles = false
 
@@ -61,7 +71,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
         
     }
     
-    @IBAction func onTapUploadImage(_ sender: Any) {
+    @IBAction func onTapUploadImage(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
         customActionSheet.showAlert(title: "What woud you like to do?",
                                           message: "Use image from",
                                           optionOne: "Library",
