@@ -128,6 +128,11 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 extension AddCommsViewController: AddCommsPresenterView {
+    func updateCategory(with new: Category) {
+        categoryButton.titleLabel?.text = new.category_name
+        categoryButton.backgroundColor = .systemTeal
+    }
+    
     func errorOccured(message: String) {
         print(message)
     }

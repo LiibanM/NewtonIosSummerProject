@@ -18,8 +18,7 @@ protocol ShowCategoriesPresenterDelegate {
 }
 
 class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
-    
-    
+   
     var delegate: ShowCategoriesPresenterDelegate
     var view: ShowCategoriesPresenterView
     var apiService: ApiServiceProtocol
@@ -64,6 +63,25 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
             }
         }
     }
+    
+//    func sendCategory(with new: Category) {
+//        apiService.sendData(url: "", payload: new) { (result) in
+//            switch result {
+//                case .failure(.badUrl):
+//                    self.view.errorOccured(message: "Given Url was bad")
+//                case .failure(.failedToDecode):
+//                    self.view.errorOccured(message: "Failed to decode data" )
+//                case .failure(.requestFailed):
+//                    self.view.errorOccured(message: "request failed")
+//                case .failure(.unAuthenticated):
+//                    self.view.errorOccured(message: "Unauthenticated" )
+//                case .success(let newCategory):
+//                    self.view.setCategories(with: newCategory)
+//                default:
+//                    self.view.errorOccured(message: "error")
+//            }
+//        }
+//    }
 
     func mockSendCategory(with new: Category) {
         categories.append(new)
@@ -74,6 +92,12 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     func mockDataCategories() {
         self.view.setCategories(with: categories)
     }
+    
+    func sendCategory(with category: Category) {
+        mockSendCategory(with: category)
+    }
+       
+       
     
     
 }

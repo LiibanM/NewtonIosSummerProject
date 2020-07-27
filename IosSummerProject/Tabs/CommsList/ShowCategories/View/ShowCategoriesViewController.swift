@@ -10,7 +10,9 @@ import UIKit
 
 class ShowCategoriesViewController: UIViewController, Storyboarded {
 
-    @IBOutlet weak var collectionView: UICollectionView!
+
+    @IBOutlet weak var categoryTextField: UITextField!
+    @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var addTagButton: UIButton!{
         didSet{
             addTagButton.layer.cornerRadius = addTagButton.frame.size.height/5.0
@@ -26,13 +28,17 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
       
         showCategoriesPresenter.loadCategories()
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+        categoriesCollectionView.delegate = self
+        categoriesCollectionView.dataSource = self
+        categoriesCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
         
     }
     
-
+    @IBAction func addCategoryButtonTapped(_ sender: Any) {
+        showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
+        categoryTextField.text = ""
+    }
+    
 
 }
 
@@ -42,7 +48,11 @@ extension ShowCategoriesViewController: ShowCategoriesPresenterView {
     }
     
     func setCategories(with categories: [Category]) {
-        self.categories = categories
+        
+        DispatchQueue.main.async {
+            self.categories = categories
+        }
+        categoriesCollectionView.reloadData()
     }
     
     

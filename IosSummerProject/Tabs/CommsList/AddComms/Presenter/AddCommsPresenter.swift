@@ -15,6 +15,7 @@ protocol AddCommsPresenterDelegate {
 
 protocol AddCommsPresenterView {
     func errorOccured(message: String)
+    func updateCategory(with new: Category)
 //    func loadComms()
 }
 
@@ -37,8 +38,7 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
     }
     
     func selectedCategory(_ category: Category) {
-        print("add comms: Category", category)
-        
+        view.updateCategory(with: category)
     }
     
 }
