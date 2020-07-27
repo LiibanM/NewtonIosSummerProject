@@ -22,7 +22,8 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
         showCategoriesPresenter.loadCategories()
         collectionView.delegate = self
         collectionView.dataSource = self
-        // Do any additional setup after loading the view.
+        collectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+        
     }
     
 
@@ -51,9 +52,10 @@ extension ShowCategoriesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let currentCategory = categories[indexPath.row]
+        let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         
-        let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath)
-        
+        categoryCell.categoryLabel.text = currentCategory.category_name
         return categoryCell
      
     }

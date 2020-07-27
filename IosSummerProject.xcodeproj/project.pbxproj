@@ -31,6 +31,8 @@
 		A491B82C24CED8190069559A /* ShowCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A491B82B24CED8190069559A /* ShowCategories.storyboard */; };
 		A491B82E24CED82F0069559A /* ShowCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */; };
 		A491B83024CED8430069559A /* ShowCategoriesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82F24CED8430069559A /* ShowCategoriesPresenterProtocol.swift */; };
+		A491B83424CEF1AB0069559A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B83224CEF1AB0069559A /* CategoryCell.swift */; };
+		A491B83524CEF1AB0069559A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A491B83324CEF1AB0069559A /* CategoryCell.xib */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -110,6 +112,8 @@
 		A491B82B24CED8190069559A /* ShowCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowCategories.storyboard; sourceTree = "<group>"; };
 		A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenter.swift; sourceTree = "<group>"; };
 		A491B82F24CED8430069559A /* ShowCategoriesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenterProtocol.swift; sourceTree = "<group>"; };
+		A491B83224CEF1AB0069559A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		A491B83324CEF1AB0069559A /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		A4E8F08C24C0FC5C00B7A26F /* IosSummerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosSummerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -335,10 +339,20 @@
 		A491B82824CED7E40069559A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A491B83124CEF17D0069559A /* CategoryCell */,
 				A491B82924CED8060069559A /* ShowCategoriesViewController.swift */,
 				A491B82B24CED8190069559A /* ShowCategories.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		A491B83124CEF17D0069559A /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				A491B83224CEF1AB0069559A /* CategoryCell.swift */,
+				A491B83324CEF1AB0069559A /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
 			sourceTree = "<group>";
 		};
 		A4E8F08324C0FC5C00B7A26F = {
@@ -766,6 +780,7 @@
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
 				A491B82C24CED8190069559A /* ShowCategories.storyboard in Resources */,
+				A491B83524CEF1AB0069559A /* CategoryCell.xib in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
@@ -869,6 +884,7 @@
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
 				A491B83024CED8430069559A /* ShowCategoriesPresenterProtocol.swift in Sources */,
+				A491B83424CEF1AB0069559A /* CategoryCell.swift in Sources */,
 				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				702C115924C5B73200799497 /* User.swift in Sources */,
