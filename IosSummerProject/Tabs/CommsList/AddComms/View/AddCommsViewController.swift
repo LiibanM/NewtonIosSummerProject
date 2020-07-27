@@ -29,12 +29,6 @@ class AddCommsViewController: UIViewController, Storyboarded {
 
     }
     
-   
-    @IBAction func selectCategoryButtonTapped(_ sender: Any) {
-        
-        addCommsPresenter.didTapSelectCategory()
-        
-    }
     @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
