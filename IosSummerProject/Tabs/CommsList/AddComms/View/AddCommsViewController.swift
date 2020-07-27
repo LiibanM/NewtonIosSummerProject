@@ -15,6 +15,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var isHighlighted: UISegmentedControl!
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     
@@ -25,7 +27,15 @@ class AddCommsViewController: UIViewController, Storyboarded {
         imagePicker.delegate = self
         self.navigationItem.title = "Create New Comms"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped))
+        self.categoryButton?.layer.cornerRadius = categoryButton.frame.size.height/5.0
+        self.categoryButton?.layer.masksToBounds = true
+
+        let addImageButton   = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(onTapUploadImage))
+        let savePostButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped(_:)))
+
+        navigationItem.rightBarButtonItems = [savePostButton, addImageButton]
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
 
     }
     
@@ -92,7 +102,7 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
     //            print(pickedImage)
     //            var test = convertImageToBase64String(img: pickedImage)
     //            print(test)
-                commImage.contentMode = .scaleAspectFit
+                commImage.contentMode = .scaleAspectFill
                 commImage.image = pickedImage
                 let imageData = pickedImage.jpegData(compressionQuality: 1)
                 print(imageData)
