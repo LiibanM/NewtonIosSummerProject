@@ -14,13 +14,14 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     
     var showCategoriesPresenter: ShowCategoriesPresenterProtocol!
     
-    var dataSource: [String] = ["test1", "test2", "test3"]
+    var categories = [Category]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+        showCategoriesPresenter.loadCategories()
         collectionView.delegate = self
         collectionView.dataSource = self
-
         // Do any additional setup after loading the view.
     }
     
@@ -29,6 +30,14 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
 }
 
 extension ShowCategoriesViewController: ShowCategoriesPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
+    
+    func setCategories(with categories: [Category]) {
+        self.categories = categories
+    }
+    
     
 }
 
@@ -38,7 +47,7 @@ extension ShowCategoriesViewController: UICollectionViewDelegate {
 
 extension ShowCategoriesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dataSource.count
+        return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

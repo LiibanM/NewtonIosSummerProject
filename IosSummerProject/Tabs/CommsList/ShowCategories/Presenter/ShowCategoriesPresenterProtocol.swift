@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ShowCategoriesPresenterProtocol  {
-    
+    func loadCategories()
 }

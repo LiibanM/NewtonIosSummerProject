@@ -53,7 +53,7 @@ class CommsCoordinator: Coordinator {
     
     func showCategories() {
         let showCategoriesViewController = ShowCategoriesViewController.instantiate(storyboard: "ShowCategories")
-        let showCategoriesPresenter = ShowCategoriesPresenter(with: showCategoriesViewController, delegate: self)
+        let showCategoriesPresenter = ShowCategoriesPresenter(with: showCategoriesViewController, delegate: self, apiService)
         showCategoriesViewController.showCategoriesPresenter = showCategoriesPresenter
         self.navigationController.showDetailViewController(showCategoriesViewController, sender: nil)
         
