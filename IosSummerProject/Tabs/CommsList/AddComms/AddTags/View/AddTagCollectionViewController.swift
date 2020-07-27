@@ -36,7 +36,7 @@ class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
         })
         collectionView.indexPathsForVisibleItems.forEach { (IndexPath) in
             let cell = collectionView.cellForItem(at: IndexPath) as! AddTagCollectionViewCell
-            cell.isEditing = editing
+//            cell.isEditing = editing
                    
         }
     }
@@ -70,7 +70,7 @@ class AddTagCollectionViewController: UICollectionViewController, Storyboarded{
         if let tagCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as? AddTagCollectionViewCell{
             
             tagCell.configure(with: dataSource[indexPath.row])
-            tagCell.isEditing = isEditing
+//            tagCell.isEditing = isEditing
             cell = tagCell
         }
         return cell

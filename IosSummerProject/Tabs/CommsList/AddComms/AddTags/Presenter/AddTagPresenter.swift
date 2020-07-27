@@ -7,3 +7,27 @@
 //
 
 import Foundation
+
+protocol AddTagPresenterView {
+    
+}
+
+protocol AddTagPresenterDelegate {
+    
+}
+
+class AddTagPresenter: AddTagPresenterProtocol {
+    
+    var delegate: AddTagPresenterDelegate
+    var view: AddTagPresenterView
+    
+    init(with view: AddTagPresenterView, delegate: AddTagPresenterDelegate) {
+        self.delegate = delegate
+        self.view = view
+    }
+    
+    func getCategories() {
+        
+        
+    }
+}

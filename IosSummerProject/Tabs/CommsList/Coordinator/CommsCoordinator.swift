@@ -21,7 +21,7 @@ class CommsCoordinator: Coordinator {
     }
     
     override func start() {
-        showAddComms()
+        showTagsList()
     }
  
     func showCommsList() {
@@ -40,15 +40,20 @@ class CommsCoordinator: Coordinator {
     }
     
      func showTagsList() {
-            let addTagsViewController = AddTagCollectionViewController.instantiate(storyboard: "AddTagStoryboard")
-    //        let addCommsPresenter = AddCommsPresenter(with: CommsListViewController, delegate: self)
-    //        CommsListViewController.addCommsPresenter = add
-             self.navigationController.viewControllers = [addTagsViewController]
+            let addTagsViewController = AddTagsViewController.instantiate(storyboard: "AddTags")
+            let addTagPresenter = AddTagPresenter(with: addTagsViewController, delegate: self)
+            addTagsViewController.addTagPresenter = addTagPresenter
+            self.navigationController.viewControllers = [addTagsViewController]
             
         }
     
 }
 
 extension CommsCoordinator: CommsListPresenterDelegate {
+
+}
+
+extension CommsCoordinator: AddTagPresenterDelegate {
+
 
 }
