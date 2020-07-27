@@ -89,6 +89,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
     }
     
     
+    @IBAction func selectCategoryButtonTapped(_ sender: Any) {
+        addCommsPresenter.didTapSelectCategory()
+    }
+    
     func convertImageToBase64String (img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
     }

@@ -23,12 +23,18 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     var delegate: ShowCategoriesPresenterDelegate
     var view: ShowCategoriesPresenterView
     var apiService: ApiServiceProtocol
-    var categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
+    var categories = [Category]()
     
     init(with view: ShowCategoriesPresenterView, delegate: ShowCategoriesPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService
+        self.categories = [
+            Category(category_id: 1, category_name: "abc"),
+            Category(category_id: 2, category_name: "3245353453453534"),
+            Category(category_id: 3, category_name: "456"),
+            Category(category_id: 4, category_name: "879")
+        ]
     }
     
     func didSelectCategory(with category: Category) {
@@ -40,7 +46,6 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     }
     
     func getCategories() {
-        
         apiService.fetchData(url: "", objectType: [Category].self) { result in
             switch result {
                 case .failure(.badUrl):
@@ -59,19 +64,14 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
             }
         }
     }
-    
-//    func sendCategory(with new: Category) {
-//
-//    }
-    func mockSendCategory(with new: Category) {
-    var categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
-     let updatedCategories = categories.append(new)
-     self.view.setCategories(with: updatedCategories)
 
+    func mockSendCategory(with new: Category) {
+        categories.append(new)
+        self.view.setCategories(with: categories)
     }
     
+
     func mockDataCategories() {
-       
         self.view.setCategories(with: categories)
     }
     
