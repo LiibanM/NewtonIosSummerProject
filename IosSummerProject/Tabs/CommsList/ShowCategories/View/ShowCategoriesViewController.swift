@@ -11,6 +11,12 @@ import UIKit
 class ShowCategoriesViewController: UIViewController, Storyboarded {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var addTagButton: UIButton!{
+        didSet{
+            addTagButton.layer.cornerRadius = addTagButton.frame.size.height/5.0
+            addTagButton.layer.masksToBounds = true
+        }
+    }
     
     var showCategoriesPresenter: ShowCategoriesPresenterProtocol!
     

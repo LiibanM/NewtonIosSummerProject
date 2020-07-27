@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-gf-FiA">
-                                <rect key="frame" x="0.0" y="146" width="414" height="716"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="435"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGB-4r-Bj2">
                                     <size key="itemSize" width="128" height="40"/>
@@ -43,7 +43,7 @@
                                                 </label>
                                             </subviews>
                                         </collectionViewCellContentView>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -53,21 +53,53 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koh-6T-Nrb">
+                                <rect key="frame" x="10" y="671" width="394" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djm-5H-puQ">
+                                <rect key="frame" x="29" y="620" width="63" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYS-H7-2E3">
+                                <rect key="frame" x="10" y="725" width="394" height="40"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3qC-5n-aKd"/>
+                                </constraints>
+                                <state key="normal" title="Add Tag">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="XYS-H7-2E3" firstAttribute="top" secondItem="koh-6T-Nrb" secondAttribute="bottom" constant="20" id="1St-cl-egt"/>
                             <constraint firstAttribute="trailing" secondItem="f9t-6s-ejs" secondAttribute="trailing" constant="89.5" id="3gR-hs-Jv0"/>
+                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="koh-6T-Nrb" secondAttribute="trailing" constant="10" id="50T-9K-Qpu"/>
+                            <constraint firstItem="koh-6T-Nrb" firstAttribute="top" secondItem="djm-5H-puQ" secondAttribute="bottom" constant="30" id="6V7-dY-7vZ"/>
+                            <constraint firstItem="XYS-H7-2E3" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="7TN-zL-mnC"/>
                             <constraint firstItem="dt2-gf-FiA" firstAttribute="trailing" secondItem="FIl-oJ-h7b" secondAttribute="trailing" id="7e7-q9-eE3"/>
                             <constraint firstItem="dt2-gf-FiA" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" id="Etw-Ym-TDG"/>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="bottom" secondItem="FIl-oJ-h7b" secondAttribute="bottom" id="MqR-Wn-i2S"/>
+                            <constraint firstItem="djm-5H-puQ" firstAttribute="top" secondItem="dt2-gf-FiA" secondAttribute="bottom" constant="39" id="HQM-1P-Yi7"/>
                             <constraint firstItem="f9t-6s-ejs" firstAttribute="top" secondItem="ooz-Dj-dfx" secondAttribute="top" constant="56" id="Ndd-Tu-5Az"/>
                             <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="49" id="UcA-QK-8uc"/>
                             <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="49" id="XoO-6v-sGq"/>
                             <constraint firstItem="f9t-6s-ejs" firstAttribute="leading" secondItem="ooz-Dj-dfx" secondAttribute="leading" constant="10" id="Z4H-nE-NIW"/>
+                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="XYS-H7-2E3" secondAttribute="trailing" constant="10" id="fXY-wc-Ani"/>
+                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="djm-5H-puQ" secondAttribute="trailing" constant="322" id="nRp-ib-uB6"/>
+                            <constraint firstItem="djm-5H-puQ" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="29" id="t9N-Kl-Wuu"/>
+                            <constraint firstItem="XYS-H7-2E3" firstAttribute="top" secondItem="koh-6T-Nrb" secondAttribute="bottom" constant="20" id="v5l-sG-IsR"/>
+                            <constraint firstItem="koh-6T-Nrb" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="xHw-iK-Nrk"/>
+                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="bottom" secondItem="XYS-H7-2E3" secondAttribute="bottom" constant="97" id="zcW-B5-7uY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FIl-oJ-h7b"/>
                     </view>
                     <connections>
+                        <outlet property="addTagButton" destination="XYS-H7-2E3" id="PRU-O6-vwg"/>
                         <outlet property="collectionView" destination="dt2-gf-FiA" id="3FJ-3B-1FQ"/>
                     </connections>
                 </viewController>
