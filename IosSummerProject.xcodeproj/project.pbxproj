@@ -12,6 +12,14 @@
 		702C115924C5B73200799497 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115824C5B73200799497 /* User.swift */; };
 		702C115B24C5B73F00799497 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115A24C5B73F00799497 /* Category.swift */; };
 		702C115E24C5B9D000799497 /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115D24C5B9D000799497 /* ApiService.swift */; };
+		702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116B24CECAF600799497 /* MockCommsListPresenterDelegate.swift */; };
+		702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */; };
+		702C117024CECB2100799497 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116F24CECB2100799497 /* MockApiService.swift */; };
+		702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C117124CECB9000799497 /* CommsListPresenterTests.swift */; };
+		7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098224CD6E93001C7A8F /* EditCommsViewController.swift */; };
+		7134098524CD6EA0001C7A8F /* EditComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7134098424CD6EA0001C7A8F /* EditComms.storyboard */; };
+		7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */; };
+		7134098924CD6EBA001C7A8F /* EditCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098824CD6EBA001C7A8F /* EditCommsPresenterProtocol.swift */; };
 		71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */; };
 		71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71ABAD8124C324E700E48992 /* AddComms.storyboard */; };
 		71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */; };
@@ -90,7 +98,15 @@
 		702C115824C5B73200799497 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		702C115A24C5B73F00799497 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		702C115D24C5B9D000799497 /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
+		702C116B24CECAF600799497 /* MockCommsListPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterDelegate.swift; sourceTree = "<group>"; };
+		702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterView.swift; sourceTree = "<group>"; };
+		702C116F24CECB2100799497 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
+		702C117124CECB9000799497 /* CommsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListPresenterTests.swift; sourceTree = "<group>"; };
 		7134097E24CC2F3C001C7A8F /* IosSummerProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IosSummerProject.entitlements; sourceTree = "<group>"; };
+		7134098224CD6E93001C7A8F /* EditCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsViewController.swift; sourceTree = "<group>"; };
+		7134098424CD6EA0001C7A8F /* EditComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditComms.storyboard; sourceTree = "<group>"; };
+		7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsPresenter.swift; sourceTree = "<group>"; };
+		7134098824CD6EBA001C7A8F /* EditCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsPresenterProtocol.swift; sourceTree = "<group>"; };
 		71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewController.swift; sourceTree = "<group>"; };
 		71ABAD8124C324E700E48992 /* AddComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddComms.storyboard; sourceTree = "<group>"; };
 		71ABAD8424C3254000E48992 /* AddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenter.swift; sourceTree = "<group>"; };
@@ -202,6 +218,33 @@
 			path = "API Service";
 			sourceTree = "<group>";
 		};
+		7134097F24CD6E64001C7A8F /* EditComms */ = {
+			isa = PBXGroup;
+			children = (
+				7134098124CD6E79001C7A8F /* View */,
+				7134098024CD6E6F001C7A8F /* Presenter */,
+			);
+			path = EditComms;
+			sourceTree = "<group>";
+		};
+		7134098024CD6E6F001C7A8F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */,
+				7134098824CD6EBA001C7A8F /* EditCommsPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		7134098124CD6E79001C7A8F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7134098224CD6E93001C7A8F /* EditCommsViewController.swift */,
+				7134098424CD6EA0001C7A8F /* EditComms.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		71ABAD7D24C324AF00E48992 /* AddComms */ = {
 			isa = PBXGroup;
 			children = (
@@ -306,6 +349,7 @@
 		71ABADBD24C8836E00E48992 /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
+				702C117124CECB9000799497 /* CommsListPresenterTests.swift */,
 			);
 			path = Presenter;
 			sourceTree = "<group>";
@@ -314,6 +358,9 @@
 			isa = PBXGroup;
 			children = (
 				71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */,
+				702C116B24CECAF600799497 /* MockCommsListPresenterDelegate.swift */,
+				702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */,
+				702C116F24CECB2100799497 /* MockApiService.swift */,
 			);
 			path = Mocks;
 			sourceTree = "<group>";
@@ -456,6 +503,7 @@
 			isa = PBXGroup;
 			children = (
 				A491B82624CED7CB0069559A /* ShowCategories */,
+				7134097F24CD6E64001C7A8F /* EditComms */,
 				71ABAD8824C325A200E48992 /* CommsDetail */,
 				71ABAD7D24C324AF00E48992 /* AddComms */,
 				A4E8F0B324C0FFD100B7A26F /* Coordinator */,
@@ -776,6 +824,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7134098524CD6EA0001C7A8F /* EditComms.storyboard in Resources */,
 				71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */,
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
@@ -861,8 +910,12 @@
 				D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */,
 				D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */,
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
+				702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */,
+				702C117024CECB2100799497 /* MockApiService.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
+				702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */,
+				702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -879,6 +932,7 @@
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
 				71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */,
+				7134098924CD6EBA001C7A8F /* EditCommsPresenterProtocol.swift in Sources */,
 				A4E8F0F724C108A100B7A26F /* AddTagViewController.swift in Sources */,
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
@@ -889,6 +943,7 @@
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				702C115924C5B73200799497 /* User.swift in Sources */,
 				A491B82A24CED8060069559A /* ShowCategoriesViewController.swift in Sources */,
+				7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
 				702C115724C5B5FB00799497 /* Article.swift in Sources */,
 				71ABAD8024C324CF00E48992 /* AddCommsViewController.swift in Sources */,
@@ -898,6 +953,7 @@
 				A4E8F10624C10C4200B7A26F /* LoginPresenter.swift in Sources */,
 				A4E8F0B924C1002E00B7A26F /* CommsListPresenterProcol.swift in Sources */,
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
+				7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */,
 				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
 				702C115E24C5B9D000799497 /* ApiService.swift in Sources */,
 				702C115B24C5B73F00799497 /* Category.swift in Sources */,

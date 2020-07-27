@@ -47,6 +47,8 @@ class CommsListViewControllerTests: XCTestCase {
         XCTAssertEqual(2, mockCommsListPresenter.didLoadDataCount) // change it later
     }
     
+
+    
     func testSetCommsData() {
         // Arrange
         let articles = [
@@ -65,17 +67,6 @@ class CommsListViewControllerTests: XCTestCase {
         // Assert
         XCTAssertEqual(articles.count, commsListViewController.comms.count)
     }
-    
-//    func testDidTapComm() {
-//        // Arrange
-//        
-//        // Act
-//        commsListViewController
-//        
-//        // Assert
-//    }
-    
-
     
     
 

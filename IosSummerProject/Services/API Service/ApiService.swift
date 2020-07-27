@@ -11,10 +11,11 @@ import Foundation
 protocol ApiServiceProtocol {
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
            Void)
+     func sendData<T: Codable>(url: String, payload: T, completion: @escaping (Result<T, NetworkError>) -> ())
 }
 
 enum NetworkError: Error {
-    case badUrl, requestFailed, unknown, failedToDecode, unAuthenticated
+    case badUrl, requestFailed, unknown, failedToDecode, unAuthenticated, failedToEncode
 }
 
 class ApiService: ApiServiceProtocol {
@@ -46,6 +47,37 @@ class ApiService: ApiServiceProtocol {
             }
         }
         task.resume()
+    }
+    
+    func sendData<T: Codable>(url: String, payload: T, completion: @escaping (Result<T, NetworkError>) -> ()) {
+        
+        guard let url = URL(string: url) else {
+            completion(.failure(.badUrl))
+            return
+        }
+        
+        do {
+            var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(payload)
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200, let
+                                 jsonData = data else {
+                                 completion(.failure(.requestFailed))
+                                 return
+                }
+                do {
+                    let data = try JSONDecoder().decode(T.self, from: jsonData)
+                    completion(.success(data))
+                    } catch {
+                        completion(.failure(.failedToDecode))
+                    }
+            }
+            dataTask.resume()
+        } catch {
+            completion(.failure(.failedToEncode))
+        }
     }
 }
 

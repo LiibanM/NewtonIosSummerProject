@@ -10,5 +10,5 @@ import Foundation
 
 protocol CommsDetailPresenterProtocol {
     func loadData()
-    
+    func didTapEdit(on article: Article)
 }

@@ -167,11 +167,10 @@ extension CommsListViewController: UITableViewDataSource {
         } else {
             currentComms = comms[indexPath.row]
         }
-        
         cell.commsTitleLabel.text = currentComms.title
-        cell.commsCategoryLabel.text = "\(currentComms.date)"
+        cell.commsCategoryLabel.text = currentComms.category.category_name
         cell.downLoadImage(from: currentComms.image)
-        cell.highlightedTextLabel.text = currentComms.highlighted ? "Highlighted" : ""
+        cell.highlightedImageView.isHidden = !currentComms.highlighted
         
         return cell
     }
@@ -197,6 +196,9 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
             print("Highlight")
+            let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+            let id = swipedComm.article_id
+            self.commsListPresenter.highlightComm(with: id)
             completionHandler(true)
         }
         
@@ -204,7 +206,7 @@ extension CommsListViewController: UITableViewDataSource {
         highlight.backgroundColor = .systemIndigo
         
         let swipe = UISwipeActionsConfiguration(actions: [highlight])
-               return swipe
+        return swipe
         
     }
 }
