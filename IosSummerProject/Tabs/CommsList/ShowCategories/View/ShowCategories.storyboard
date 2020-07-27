@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-gf-FiA">
-                                <rect key="frame" x="0.0" y="152" width="414" height="710"/>
+                                <rect key="frame" x="0.0" y="146" width="414" height="716"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hGB-4r-Bj2">
                                     <size key="itemSize" width="128" height="40"/>
@@ -48,22 +48,22 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-6s-ejs">
-                                <rect key="frame" x="63" y="44" width="288" height="47"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <rect key="frame" x="10" y="56" width="314.5" height="41"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="f9t-6s-ejs" secondAttribute="trailing" constant="63" id="N7i-lm-rCb"/>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" id="OWI-l6-Wg0"/>
-                            <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="dt2-gf-FiA" secondAttribute="trailing" id="PAi-72-zql"/>
-                            <constraint firstItem="f9t-6s-ejs" firstAttribute="top" secondItem="ooz-Dj-dfx" secondAttribute="topMargin" id="Sqb-YE-HXp"/>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="bottom" secondItem="FIl-oJ-h7b" secondAttribute="bottom" id="TcY-VL-oJZ"/>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="61" id="kBH-8W-Fv8"/>
-                            <constraint firstItem="f9t-6s-ejs" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="63" id="otV-vE-UIx"/>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="FIl-oJ-h7b" secondAttribute="top" constant="108" id="u6V-6A-5NO"/>
+                            <constraint firstAttribute="trailing" secondItem="f9t-6s-ejs" secondAttribute="trailing" constant="89.5" id="3gR-hs-Jv0"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="trailing" secondItem="FIl-oJ-h7b" secondAttribute="trailing" id="7e7-q9-eE3"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" id="Etw-Ym-TDG"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="bottom" secondItem="FIl-oJ-h7b" secondAttribute="bottom" id="MqR-Wn-i2S"/>
+                            <constraint firstItem="f9t-6s-ejs" firstAttribute="top" secondItem="ooz-Dj-dfx" secondAttribute="top" constant="56" id="Ndd-Tu-5Az"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="49" id="UcA-QK-8uc"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="49" id="XoO-6v-sGq"/>
+                            <constraint firstItem="f9t-6s-ejs" firstAttribute="leading" secondItem="ooz-Dj-dfx" secondAttribute="leading" constant="10" id="Z4H-nE-NIW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FIl-oJ-h7b"/>
                     </view>
