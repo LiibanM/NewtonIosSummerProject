@@ -23,7 +23,7 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     var delegate: ShowCategoriesPresenterDelegate
     var view: ShowCategoriesPresenterView
     var apiService: ApiServiceProtocol
-    
+    var categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
     
     init(with view: ShowCategoriesPresenterView, delegate: ShowCategoriesPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
@@ -60,9 +60,18 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         }
     }
     
+//    func sendCategory(with new: Category) {
+//
+//    }
+    func mockSendCategory(with new: Category) {
+    var categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
+     let updatedCategories = categories.append(new)
+     self.view.setCategories(with: updatedCategories)
+
+    }
+    
     func mockDataCategories() {
-        let categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
-        
+       
         self.view.setCategories(with: categories)
     }
     
