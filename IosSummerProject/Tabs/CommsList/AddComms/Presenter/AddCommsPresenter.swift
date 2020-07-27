@@ -36,4 +36,9 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
         delegate.goToShowCategories()
     }
     
+    func selectedCategory(_ category: Category) {
+        print("add comms: Category", category)
+        
+    }
+    
 }

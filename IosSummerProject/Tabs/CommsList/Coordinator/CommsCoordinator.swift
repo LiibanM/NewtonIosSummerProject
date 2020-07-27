@@ -15,10 +15,11 @@ protocol CommsCoordinatorDelegate {
 class CommsCoordinator: Coordinator {
     
     var apiService: ApiServiceProtocol
-    
+    var addCommsViewController: AddCommsViewController
     init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate, _ apiService: ApiServiceProtocol) {
         
         self.apiService = apiService
+        addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
         super.init(navigationController: navigationController)
     }
     
@@ -45,7 +46,6 @@ class CommsCoordinator: Coordinator {
     }
     
     func showAddComms() {
-        let addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
         let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self)
         addCommsViewController.addCommsPresenter = addCommsPresenter
         self.navigationController.pushViewController(addCommsViewController, animated: true)
@@ -91,5 +91,10 @@ extension CommsCoordinator: CommsDetailPresenterDelegate {
 }
 
 extension CommsCoordinator: ShowCategoriesPresenterDelegate {
+    func didSelectCategory(with category: Category) {
+        navigationController.dismiss(animated: true) {
+            self.addCommsViewController.addCommsPresenter.selectedCategory(category)
+    }
+  }
     
 }

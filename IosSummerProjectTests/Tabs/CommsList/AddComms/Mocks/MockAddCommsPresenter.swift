@@ -10,6 +10,11 @@ import Foundation
 @testable import IosSummerProject
 
 class MockAddCommsPresenter: AddCommsPresenterProtocol {
+    
+    func selectedCategory(_ category: Category) {
+        
+    }
+    
     func didTapSelectCategory() {
         
     }

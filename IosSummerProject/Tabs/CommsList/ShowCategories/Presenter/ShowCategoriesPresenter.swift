@@ -14,18 +14,25 @@ protocol ShowCategoriesPresenterView {
 }
 
 protocol ShowCategoriesPresenterDelegate {
-    
+    func didSelectCategory(with category: Category)
 }
 
 class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
+    
+    
     var delegate: ShowCategoriesPresenterDelegate
     var view: ShowCategoriesPresenterView
     var apiService: ApiServiceProtocol
+    
     
     init(with view: ShowCategoriesPresenterView, delegate: ShowCategoriesPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService
+    }
+    
+    func didSelectCategory(with category: Category) {
+        delegate.didSelectCategory(with: category)
     }
     
     func loadCategories() {
@@ -54,7 +61,7 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     }
     
     func mockDataCategories() {
-        let categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "123"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
+        let categories = [Category(category_id: 1, category_name: "abc"), Category(category_id: 2, category_name: "3245353453453534"), Category(category_id: 3, category_name: "456"), Category(category_id: 4, category_name: "879")]
         
         self.view.setCategories(with: categories)
     }
