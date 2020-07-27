@@ -167,11 +167,10 @@ extension CommsListViewController: UITableViewDataSource {
         } else {
             currentComms = comms[indexPath.row]
         }
-        
         cell.commsTitleLabel.text = currentComms.title
-        cell.commsCategoryLabel.text = "\(currentComms.date)"
+        cell.commsCategoryLabel.text = currentComms.category.category_name
         cell.downLoadImage(from: currentComms.image)
-        cell.highlightedTextLabel.text = currentComms.highlighted ? "Highlighted" : ""
+        cell.highlightedImageView.isHidden = !currentComms.highlighted
         
         return cell
     }

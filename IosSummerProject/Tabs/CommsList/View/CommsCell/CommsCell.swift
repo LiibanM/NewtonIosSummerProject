@@ -15,11 +15,15 @@ class CommsCell: UITableViewCell {
     @IBOutlet weak var commsImageView: UIImageView!
     @IBOutlet weak var commsTitleLabel: UILabel!
     @IBOutlet weak var commsCategoryLabel: UILabel!
-    @IBOutlet weak var highlightedTextLabel: UILabel!
+    @IBOutlet weak var highlightedImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         activityIndicator.isHidden = true
+        commsCategoryLabel.layer.cornerRadius = 5
+        commsCategoryLabel.layer.masksToBounds = true
+        commsTitleLabel.font = UIFont.boldSystemFont(ofSize: 17)
+
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -38,6 +42,7 @@ class CommsCell: UITableViewCell {
     
     func downLoadImage(from url: String) {
         setLoading(isLoading: true)
+        commsImageView.layer.cornerRadius = 5
         guard let url = URL(string: url) else {
             print("not a valid url")
             DispatchQueue.main.async {
