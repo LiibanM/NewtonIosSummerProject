@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockCommsListPresenter: CommsListPresenterProtocol {
+    func highlightComm(with id: Int) {
+        
+    }
+    
     func didSwipeEdit(with id: Int) {
         
     }

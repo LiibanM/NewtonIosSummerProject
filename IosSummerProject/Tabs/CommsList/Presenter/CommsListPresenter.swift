@@ -22,7 +22,7 @@ protocol CommsListPresenterView {
 }
 
 class CommsListPresenter: CommsListPresenterProtocol {
-    
+
     var delegate: CommsListPresenterDelegate
     var view: CommsListPresenterView
     var apiService: ApiServiceProtocol
@@ -54,6 +54,10 @@ class CommsListPresenter: CommsListPresenterProtocol {
         }
     }
     
+    func highlightComm() {
+        
+    }
+    
     func didTapAddComms() {
         delegate.goToCreateContent()
     }
@@ -65,6 +69,12 @@ class CommsListPresenter: CommsListPresenterProtocol {
     func didSwipeEdit(with id: Int) {
         delegate.goToEditComms(id)
     }
+    
+    func highlightComm(with id: Int) {
+        
+    }
+    
+    
     
     func loadData() {
 //          getComms() - need to replace when backend is ready
