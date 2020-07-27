@@ -29,7 +29,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
         let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 200, height: 70))
         
         titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
-       
+       self.navigationController!.navigationBar.prefersLargeTitles = false
+
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 20))
         titleLabel.textAlignment = .center
         titleLabel.text = "Title:"
