@@ -15,3 +15,4 @@ protocol CommsListPresenterProtocol {
     func highlightComm(with id: Int)
     func loadData()
 }
+
