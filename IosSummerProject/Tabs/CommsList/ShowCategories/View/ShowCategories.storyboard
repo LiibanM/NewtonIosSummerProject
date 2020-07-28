@@ -84,7 +84,7 @@
                                                 </constraints>
                                                 <color key="tintColor" red="0.6466426101213949" green="1" blue="0.56090096135804912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Save">
-                                                    <color key="titleColor" red="0.94873434310000004" green="0.94907277820000002" blue="0.96909886599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="titleColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
                                                     <action selector="addCategoryButtonTapped:" destination="hTO-qg-8cB" eventType="touchUpInside" id="523-xP-UQL"/>
