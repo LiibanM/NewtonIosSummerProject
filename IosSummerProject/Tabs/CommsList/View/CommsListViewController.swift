@@ -173,6 +173,8 @@ extension CommsListViewController: UITableViewDataSource {
             currentComms = comms[indexPath.row]
         }
         cell.commsTitleLabel.text = currentComms.title
+        cell.commsDescription.text = currentComms.content
+
         cell.commsCategoryLabel.text = currentComms.category.category_name
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedImageView.isHidden = !currentComms.highlighted

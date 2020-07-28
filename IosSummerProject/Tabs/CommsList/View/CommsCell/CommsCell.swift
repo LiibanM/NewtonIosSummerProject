@@ -17,6 +17,8 @@ class CommsCell: UITableViewCell {
     @IBOutlet weak var commsCategoryLabel: UILabel!
     @IBOutlet weak var highlightedImageView: UIImageView!
     
+    @IBOutlet weak var commsDescription: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         activityIndicator.isHidden = true
