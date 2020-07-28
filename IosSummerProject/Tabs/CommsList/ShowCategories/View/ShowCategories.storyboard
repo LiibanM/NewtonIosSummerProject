@@ -7,6 +7,11 @@
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Show Categories View Controller-->
         <scene sceneID="NN1-cp-59P">
@@ -23,18 +28,18 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-6s-ejs">
-                                                <rect key="frame" x="10" y="50" width="404" height="41"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                                <rect key="frame" x="10" y="50" width="404" height="54.5"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="33"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="koh-6T-Nrb">
-                                                <rect key="frame" x="10" y="392" width="394" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <rect key="frame" x="10" y="412.5" width="394" height="34"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="dt2-gf-FiA">
-                                                <rect key="frame" x="10" y="101" width="394" height="250"/>
+                                                <rect key="frame" x="10" y="114.5" width="394" height="250"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="250" id="SHv-qv-N17"/>
@@ -70,18 +75,19 @@
                                                 </cells>
                                             </collectionView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Dx-0R-DAg">
-                                                <rect key="frame" x="10" y="361" width="394" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="10" y="374.5" width="394" height="28"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYS-H7-2E3">
-                                                <rect key="frame" x="10" y="436" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="456.5" width="394" height="40"/>
                                                 <color key="backgroundColor" red="0.23058208820000001" green="0.53015232089999997" blue="0.48235046860000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="3qC-5n-aKd"/>
                                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="T9J-jj-0Pm"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" red="0.6466426101213949" green="1" blue="0.56090096135804912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Save">
                                                     <color key="titleColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

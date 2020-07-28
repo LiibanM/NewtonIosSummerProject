@@ -16,6 +16,7 @@
 		702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */; };
 		702C117024CECB2100799497 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116F24CECB2100799497 /* MockApiService.swift */; };
 		702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C117124CECB9000799497 /* CommsListPresenterTests.swift */; };
+		711279FC24D07964005FC4A3 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 711279FB24D07964005FC4A3 /* Poppins-Regular.ttf */; };
 		7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098224CD6E93001C7A8F /* EditCommsViewController.swift */; };
 		7134098524CD6EA0001C7A8F /* EditComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7134098424CD6EA0001C7A8F /* EditComms.storyboard */; };
 		7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */; };
@@ -102,6 +103,7 @@
 		702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterView.swift; sourceTree = "<group>"; };
 		702C116F24CECB2100799497 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		702C117124CECB9000799497 /* CommsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListPresenterTests.swift; sourceTree = "<group>"; };
+		711279FB24D07964005FC4A3 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Poppins-Regular.ttf"; path = "../../../../../Downloads/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7134097E24CC2F3C001C7A8F /* IosSummerProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IosSummerProject.entitlements; sourceTree = "<group>"; };
 		7134098224CD6E93001C7A8F /* EditCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsViewController.swift; sourceTree = "<group>"; };
 		7134098424CD6EA0001C7A8F /* EditComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditComms.storyboard; sourceTree = "<group>"; };
@@ -216,6 +218,14 @@
 				702C115D24C5B9D000799497 /* ApiService.swift */,
 			);
 			path = "API Service";
+			sourceTree = "<group>";
+		};
+		711279FA24D07924005FC4A3 /* font */ = {
+			isa = PBXGroup;
+			children = (
+				711279FB24D07964005FC4A3 /* Poppins-Regular.ttf */,
+			);
+			path = font;
 			sourceTree = "<group>";
 		};
 		7134097F24CD6E64001C7A8F /* EditComms */ = {
@@ -438,6 +448,7 @@
 				A4E8F09824C0FC5E00B7A26F /* Assets.xcassets */,
 				A4E8F09A24C0FC5E00B7A26F /* LaunchScreen.storyboard */,
 				A4E8F09D24C0FC5E00B7A26F /* Info.plist */,
+				711279FA24D07924005FC4A3 /* font */,
 			);
 			path = IosSummerProject;
 			sourceTree = "<group>";
@@ -833,6 +844,7 @@
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
+				711279FC24D07964005FC4A3 /* Poppins-Regular.ttf in Resources */,
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
 				A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */,
 				A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */,
