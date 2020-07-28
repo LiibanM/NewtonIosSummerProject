@@ -17,7 +17,6 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsContent: UITextField!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var isHighlighted: UISegmentedControl!
-    @IBOutlet weak var saveButtonNew: UIButton!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
     
@@ -30,13 +29,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        self.navigationItem.title = "Create New Comms"
-        self.categoryButton.backgroundColor = .lightGray
+        self.navigationItem.title = "Add"
         
         self.categoryButton?.layer.cornerRadius = categoryButton.frame.size.height/5.0
         self.categoryButton?.layer.masksToBounds = true
-        self.saveButtonNew?.layer.cornerRadius = saveButtonNew.frame.size.height/5.0
-        self.saveButtonNew?.layer.masksToBounds = true
         self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
         self.previewButton?.layer.masksToBounds = true
         
