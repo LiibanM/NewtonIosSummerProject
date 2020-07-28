@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KeychainSwift
 
 protocol ApiServiceProtocol {
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
@@ -26,10 +27,7 @@ class ApiService: ApiServiceProtocol {
             completion(.failure(.badUrl))
             return
         }
-//        let token = ""
-        let _ = URLRequest(url)
-//        request.addValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
-        
+        let _ = URLRequest(url)        
         let session = URLSession(configuration: .default)
      
         let task = session.dataTask(with: url) { (data, urlResponse, error) in
@@ -85,7 +83,8 @@ class ApiService: ApiServiceProtocol {
 extension URLRequest {
     init(_ url: URL) {
         self.init(url: url)
-        let token = ""
+        let keyChainService = KeychainSwift()
+        let token = keyChainService.get("userToken")
         self.setValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
     }
 }

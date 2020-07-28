@@ -136,6 +136,11 @@ class CommsListViewController: UIViewController, Storyboarded {
 }
 
 extension CommsListViewController: CommsListPresenterView {
+    func setAllCategories(with data: [String]) {
+//        data.append("Other")
+//      allCategories = data[0 ... 3]
+    }
+    
     func setCommsData(with data: [Article]) {
         self.refreshControl.endRefreshing()
         comms = data
@@ -168,6 +173,8 @@ extension CommsListViewController: UITableViewDataSource {
             currentComms = comms[indexPath.row]
         }
         cell.commsTitleLabel.text = currentComms.title
+        cell.commsDescription.text = currentComms.content
+
         cell.commsCategoryLabel.text = currentComms.category.category_name
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedImageView.isHidden = !currentComms.highlighted

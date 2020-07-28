@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockCommsListPresenterView: CommsListPresenterView {
+    func setAllCategories(with data: [String]) {
+        
+    }
+    
     
     func errorOccured(message: String) {
         
