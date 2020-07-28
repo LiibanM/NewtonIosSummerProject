@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -29,7 +29,7 @@
                                                 </constraints>
                                             </imageView>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5y-n8-qKq">
-                                                <rect key="frame" x="10" y="305" width="394" height="166.5"/>
+                                                <rect key="frame" x="10" y="330" width="394" height="166.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,21 +37,24 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-3r-AJD">
-                                                <rect key="frame" x="15" y="275" width="46" height="30"/>
-                                                <state key="normal" title="Button"/>
+                                                <rect key="frame" x="15" y="290" width="46" height="30"/>
+                                                <color key="backgroundColor" red="0.23137254900000001" green="0.52549019610000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="UcS-oj-z4O" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" id="5dB-h1-i9Q"/>
-                                            <constraint firstItem="Q5y-n8-qKq" firstAttribute="top" secondItem="hgi-3r-AJD" secondAttribute="bottom" id="AXz-NZ-93N"/>
                                             <constraint firstItem="Q5y-n8-qKq" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="10" id="B99-Ae-Mu3"/>
                                             <constraint firstItem="UcS-oj-z4O" firstAttribute="top" secondItem="PWW-gm-ei7" secondAttribute="top" id="Jhm-nt-0SQ"/>
                                             <constraint firstAttribute="trailing" secondItem="UcS-oj-z4O" secondAttribute="trailing" id="L33-fK-Ta1"/>
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q5y-n8-qKq" secondAttribute="bottom" constant="25" id="RyX-Yt-KFP"/>
+                                            <constraint firstItem="Q5y-n8-qKq" firstAttribute="top" secondItem="hgi-3r-AJD" secondAttribute="bottom" constant="10" id="kaD-vT-Vof"/>
                                             <constraint firstItem="hgi-3r-AJD" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="15" id="knx-GH-raN"/>
-                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="top" secondItem="UcS-oj-z4O" secondAttribute="bottom" constant="5" id="snu-Xw-2h7"/>
                                             <constraint firstAttribute="trailing" secondItem="Q5y-n8-qKq" secondAttribute="trailing" constant="10" id="udK-Ih-Lhi"/>
+                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="top" secondItem="UcS-oj-z4O" secondAttribute="bottom" constant="20" id="v1O-1q-YAq"/>
                                         </constraints>
                                     </view>
                                 </subviews>
