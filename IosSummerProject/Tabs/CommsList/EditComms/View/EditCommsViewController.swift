@@ -14,6 +14,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var editCommsCategory: UILabel!
     @IBOutlet weak var editCommsImage: UIImageView!
     @IBOutlet weak var editCommsDescription: UITextView!
+    @IBOutlet weak var editCommsHighlighted: UISwitch!
     
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
@@ -21,6 +22,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
     var editCommsTitle: UITextView!
     var titleView:UIView!
 
+    var oldTitle: String = ""
+    var oldDescription: String = ""
+    var oldHighlighted: Bool = false;
+    var oldCategory: Category!
+    //var oldImage: UIImage = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +35,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
         let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 200, height: 70))
         
         titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
-       
+       self.navigationController!.navigationBar.prefersLargeTitles = false
+
         let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 20))
         titleLabel.textAlignment = .center
         titleLabel.text = "Title:"
@@ -43,6 +50,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editCommsTitle.textAlignment = .center
         titleView.addSubview(editCommsTitle)
         
+        oldTitle = comm.title
+        oldDescription = comm.content
+        oldHighlighted = comm.highlighted
+        oldCategory = comm.category
+        //oldImage = comm.image
        
         titleView.addSubview(titleLabel)
         
@@ -55,7 +67,18 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @objc func saveEdittedCommTapped() {
-        editCommsPresenter.didTapSave(for: comm)
+        if(oldTitle == editCommsTitle.text &&
+            oldDescription == editCommsDescription.text &&
+            oldHighlighted == editCommsHighlighted.isOn &&
+            oldCategory.category_name == editCommsCategory.text
+            //oldImage == editCommsImage.
+            ){
+            let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            editCommsPresenter.didTapSave(for: comm)
+        }
     }
 
     @objc func dismissKeyboard(_ sender: UITapGestureRecognizer) {
@@ -82,7 +105,6 @@ class EditCommsViewController: UIViewController, Storyboarded {
     @IBAction func editCommsImageTapped(_ sender: Any) {
         showImagePickerControllerActionSheet()
     }
-    
 
     /*
     // MARK: - Navigation
