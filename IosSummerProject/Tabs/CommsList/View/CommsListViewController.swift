@@ -9,31 +9,7 @@
 import UIKit
 import Kingfisher
 
-class CommsListViewController: UIViewController, Storyboarded, UIViewControllerPreviewingDelegate {
-    
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
-
-           if let indexPath = commsListTableView.indexPathForRow(at: location) {
-            previewingContext.sourceRect = commsListTableView.rectForRow(at: indexPath)
-            print(indexPath.row, "Hello")
-            let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row-1]
-            print(tappedComm.title, "tapped")
-            let id = tappedComm.article_id
-            
-            let vc = commsListPresenter.previewCommsDetail(with: id)
-            return vc
-        }
-        return nil
-    }
-    
-    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-       navigationController?.pushViewController(viewControllerToCommit, animated: true)
-
-    }
-    
-    
-    
+class CommsListViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -298,5 +274,23 @@ extension CommsListViewController: UISearchBarDelegate {
      }
 }
 
+extension CommsListViewController: UIViewControllerPreviewingDelegate {
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+
+           if let indexPath = commsListTableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = commsListTableView.rectForRow(at: indexPath)
+            let tappedComm = isFiltering ? filteredComms[indexPath.row-1] : comms[indexPath.row-1]
+            let id = tappedComm.article_id
+            let vc = commsListPresenter.previewCommsDetail(with: id)
+            return vc
+        }
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+       navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+}
 
 
