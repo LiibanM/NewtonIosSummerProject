@@ -16,10 +16,15 @@ class CommsCoordinator: Coordinator {
     
     var apiService: ApiServiceProtocol
     var addCommsViewController: AddCommsViewController
+    var editViewController: EditCommsViewController
+    
+    var modalDisplayedOn: String!
+    
     init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate, _ apiService: ApiServiceProtocol) {
         
         self.apiService = apiService
         addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
+        editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
         super.init(navigationController: navigationController)
     }
     
@@ -59,7 +64,7 @@ class CommsCoordinator: Coordinator {
         
     }
     func showEditComms(with id: Int?, or article: Article?) {
-        let editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
+       
         let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
         if let passedId = id {
             editCommsPresenter.articleId = passedId
@@ -89,7 +94,9 @@ extension CommsCoordinator: CommsListPresenterDelegate {
 }
 
 extension CommsCoordinator: AddCommsPresenterDelegate {
-    func goToShowCategories() {
+    func goToShowCategories(currentPage: String) {
+        modalDisplayedOn = currentPage
+
         showCategories()
     }
     
@@ -109,12 +116,21 @@ extension CommsCoordinator: CommsDetailPresenterDelegate {
 extension CommsCoordinator: ShowCategoriesPresenterDelegate {
     func didSelectCategory(with category: Category) {
         navigationController.dismiss(animated: true) {
+            if self.modalDisplayedOn == "add" {
             self.addCommsViewController.addCommsPresenter.selectedCategory(category)
+            } else {
+                self.editViewController.editCommsPresenter.selectedCategory(with: category)
+            }
     }
   }
 }
     
 extension CommsCoordinator: EditCommsPresenterDelegate {
+    func goToCategoriesFromEdit(currentPage: String) {
+        modalDisplayedOn = currentPage
+        showCategories()
+    }
+    
     func goToCommsListAfterSave() {
         showCommsList()
     }

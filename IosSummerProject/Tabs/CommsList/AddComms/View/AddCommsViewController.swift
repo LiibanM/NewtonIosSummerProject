@@ -127,8 +127,6 @@ extension AddCommsViewController: AddCommsPresenterView {
     func updateCategory(with new: Category) {
         selectedCategory = new
         categoryButton.titleLabel?.text = selectedCategory.category_name
-//        categoryButton.titleLabel?.textAlignment = .center
-        categoryButton.backgroundColor = .systemTeal
     }
     
     func errorOccured(message: String) {

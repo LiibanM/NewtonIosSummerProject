@@ -19,6 +19,7 @@ protocol ShowCategoriesPresenterDelegate {
 
 class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
    
+    var currentPage: String!
     var delegate: ShowCategoriesPresenterDelegate
     var view: ShowCategoriesPresenterView
     var apiService: ApiServiceProtocol
