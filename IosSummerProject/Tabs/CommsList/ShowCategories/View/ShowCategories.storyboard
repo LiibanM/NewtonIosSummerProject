@@ -47,7 +47,7 @@
                                 </cells>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select a category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f9t-6s-ejs">
-                                <rect key="frame" x="10" y="54" width="394" height="41"/>
+                                <rect key="frame" x="10" y="84" width="394" height="41"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -59,14 +59,14 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XYS-H7-2E3">
                                 <rect key="frame" x="10" y="725" width="394" height="40"/>
-                                <color key="backgroundColor" red="0.47996420796773237" green="0.74509803919999995" blue="0.67192584017544521" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.4291647583086019" green="0.70814223224342965" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="3qC-5n-aKd"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="T9J-jj-0Pm"/>
                                 </constraints>
                                 <color key="tintColor" red="0.6466426101213949" green="1" blue="0.56090096135804912" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Save">
-                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" red="0.94873434310000004" green="0.94907277820000002" blue="0.96909886599999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
                                     <action selector="addCategoryButtonTapped:" destination="hTO-qg-8cB" eventType="touchUpInside" id="523-xP-UQL"/>
@@ -81,10 +81,9 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="50" id="103-02-BTw"/>
                             <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="XYS-H7-2E3" secondAttribute="trailing" constant="10" id="166-E8-8vD"/>
                             <constraint firstItem="XYS-H7-2E3" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="30u-9M-B5e"/>
-                            <constraint firstItem="f9t-6s-ejs" firstAttribute="top" secondItem="FIl-oJ-h7b" secondAttribute="top" constant="10" id="5zj-7b-9bQ"/>
+                            <constraint firstItem="f9t-6s-ejs" firstAttribute="top" secondItem="FIl-oJ-h7b" secondAttribute="top" constant="40" id="5zj-7b-9bQ"/>
                             <constraint firstItem="dt2-gf-FiA" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" id="6a5-FW-ck7"/>
                             <constraint firstItem="f9t-6s-ejs" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="6zW-E5-e4Q"/>
                             <constraint firstItem="XYS-H7-2E3" firstAttribute="top" secondItem="koh-6T-Nrb" secondAttribute="bottom" constant="20" id="8VU-4S-VK9"/>
@@ -93,6 +92,7 @@
                             <constraint firstItem="FIl-oJ-h7b" firstAttribute="bottom" secondItem="XYS-H7-2E3" secondAttribute="bottom" constant="97" id="H5v-Nf-dGD"/>
                             <constraint firstItem="XYS-H7-2E3" firstAttribute="top" secondItem="koh-6T-Nrb" secondAttribute="bottom" constant="20" id="Jt1-Tf-dj4"/>
                             <constraint firstItem="FIl-oJ-h7b" firstAttribute="trailing" secondItem="f9t-6s-ejs" secondAttribute="trailing" constant="10" id="WWw-yH-JLg"/>
+                            <constraint firstItem="dt2-gf-FiA" firstAttribute="top" secondItem="f9t-6s-ejs" secondAttribute="bottom" constant="20" id="btK-MB-wB5"/>
                             <constraint firstItem="XYS-H7-2E3" firstAttribute="top" secondItem="koh-6T-Nrb" secondAttribute="bottom" constant="20" id="fDd-s1-ItO"/>
                             <constraint firstItem="koh-6T-Nrb" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="fPX-ja-wmN"/>
                             <constraint firstItem="djm-5H-puQ" firstAttribute="leading" secondItem="FIl-oJ-h7b" secondAttribute="leading" constant="10" id="gcQ-kG-aJe"/>
