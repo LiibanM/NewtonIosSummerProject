@@ -64,6 +64,7 @@ extension ShowCategoriesViewController: UICollectionViewDelegate {
         let selectedCategory = categories[indexPath.row]
         showCategoriesPresenter.didSelectCategory(with: selectedCategory)
     }
+    
 }
 
 extension ShowCategoriesViewController: UICollectionViewDataSource {
@@ -79,6 +80,8 @@ extension ShowCategoriesViewController: UICollectionViewDataSource {
         return categoryCell
      
     }
+    
+    
 }
 
 extension ShowCategoriesViewController: UICollectionViewDelegateFlowLayout {

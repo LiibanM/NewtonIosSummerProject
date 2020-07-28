@@ -121,8 +121,6 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
                 commImage.contentMode = .scaleAspectFill
                 commImage.image = pickedImage
                 let imageData = pickedImage.jpegData(compressionQuality: 1)
-                print(imageData)
-
             }
          
             dismiss(animated: true, completion: nil)
