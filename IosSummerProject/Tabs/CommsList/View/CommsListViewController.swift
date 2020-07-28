@@ -136,6 +136,11 @@ class CommsListViewController: UIViewController, Storyboarded {
 }
 
 extension CommsListViewController: CommsListPresenterView {
+    func setAllCategories(with data: [String]) {
+//        data.append("Other")
+//      allCategories = data[0 ... 3]
+    }
+    
     func setCommsData(with data: [Article]) {
         self.refreshControl.endRefreshing()
         comms = data
