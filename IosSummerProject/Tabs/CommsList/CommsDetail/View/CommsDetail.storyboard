@@ -28,50 +28,29 @@
                                                     <constraint firstAttribute="width" constant="414" id="WnF-jX-ONG"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWa-Zc-0d6">
-                                                <rect key="frame" x="15" y="280" width="54" height="32"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="Zb0-Ww-uGl"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <nil key="highlightedColor"/>
-                                                <userDefinedRuntimeAttributes>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="topInset">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="bottomInset">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftInset">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                    <userDefinedRuntimeAttribute type="number" keyPath="rightInset">
-                                                        <real key="value" value="5"/>
-                                                    </userDefinedRuntimeAttribute>
-                                                </userDefinedRuntimeAttributes>
-                                            </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5y-n8-qKq">
-                                                <rect key="frame" x="10" y="320" width="394" height="166.5"/>
+                                                <rect key="frame" x="10" y="305" width="394" height="166.5"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
                                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-3r-AJD">
+                                                <rect key="frame" x="10" y="275" width="46" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="UcS-oj-z4O" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" id="5dB-h1-i9Q"/>
-                                            <constraint firstItem="oWa-Zc-0d6" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="15" id="68L-5r-u6H"/>
+                                            <constraint firstItem="Q5y-n8-qKq" firstAttribute="top" secondItem="hgi-3r-AJD" secondAttribute="bottom" id="AXz-NZ-93N"/>
                                             <constraint firstItem="Q5y-n8-qKq" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="10" id="B99-Ae-Mu3"/>
                                             <constraint firstItem="UcS-oj-z4O" firstAttribute="top" secondItem="PWW-gm-ei7" secondAttribute="top" id="Jhm-nt-0SQ"/>
                                             <constraint firstAttribute="trailing" secondItem="UcS-oj-z4O" secondAttribute="trailing" id="L33-fK-Ta1"/>
-                                            <constraint firstItem="Q5y-n8-qKq" firstAttribute="top" secondItem="oWa-Zc-0d6" secondAttribute="bottom" id="XZA-1c-ZqA"/>
+                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="10" id="hYK-VH-Sdh"/>
+                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="top" secondItem="UcS-oj-z4O" secondAttribute="bottom" constant="5" id="snu-Xw-2h7"/>
                                             <constraint firstAttribute="trailing" secondItem="Q5y-n8-qKq" secondAttribute="trailing" constant="10" id="udK-Ih-Lhi"/>
-                                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oWa-Zc-0d6" secondAttribute="trailing" constant="10" id="yHw-sb-fpI"/>
-                                            <constraint firstItem="oWa-Zc-0d6" firstAttribute="top" secondItem="UcS-oj-z4O" secondAttribute="bottom" constant="10" id="zeW-o9-MH5"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -100,8 +79,8 @@
                     <connections>
                         <outlet property="commsDescriptionView" destination="Q5y-n8-qKq" id="RR6-HO-Rgc"/>
                         <outlet property="commsImageView" destination="UcS-oj-z4O" id="j73-ja-kF1"/>
-                        <outlet property="commsLabelView" destination="oWa-Zc-0d6" id="8ag-Gu-SXO"/>
                         <outlet property="commsScrollView" destination="hQE-LH-yxm" id="DIV-cw-APp"/>
+                        <outlet property="commsTagLabelButton" destination="hgi-3r-AJD" id="Zj0-DW-WuJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qeh-wg-jG3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

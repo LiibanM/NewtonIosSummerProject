@@ -14,9 +14,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
             
     @IBOutlet weak var commsScrollView: UIScrollView!
     @IBOutlet weak var commsImageView: UIImageView!
-    @IBOutlet weak var commsLabelView: UILabel!
     @IBOutlet weak var commsDescriptionView: UITextView!
-    
+    @IBOutlet weak var commsTagLabelButton: UIButton!
     var commsDetailPresenter: CommsDetailPresenterProtocol!
     var comm: Article!
     
@@ -38,10 +37,18 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         
         self.commsImageView.downloaded(from: image)
         self.navigationItem.title = title
-        self.commsLabelView.text = tag.category_name
-        self.commsLabelView?.layer.cornerRadius = commsLabelView.frame.size.height/5.0
-        self.commsLabelView?.layer.masksToBounds = true
+        self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
         self.commsDescriptionView.text = description
+        
+        
+        self.commsTagLabelButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
+        self.commsTagLabelButton.tintColor = .white
+        self.commsTagLabelButton.backgroundColor = .gray
+        self.commsTagLabelButton.layer.cornerRadius = 5
+        self.commsTagLabelButton.isUserInteractionEnabled = false
+    
+        
         
         if isAdmin {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
