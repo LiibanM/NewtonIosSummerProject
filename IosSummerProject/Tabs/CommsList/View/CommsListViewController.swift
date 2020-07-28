@@ -9,7 +9,31 @@
 import UIKit
 import Kingfisher
 
-class CommsListViewController: UIViewController, Storyboarded {
+class CommsListViewController: UIViewController, Storyboarded, UIViewControllerPreviewingDelegate {
+    
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+
+           if let indexPath = commsListTableView.indexPathForRow(at: location) {
+            previewingContext.sourceRect = commsListTableView.rectForRow(at: indexPath)
+            print(indexPath.row, "Hello")
+            let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row-1]
+            print(tappedComm.title, "tapped")
+            let id = tappedComm.article_id
+            
+            let vc = commsListPresenter.previewCommsDetail(with: id)
+            return vc
+        }
+        return nil
+    }
+    
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+       navigationController?.pushViewController(viewControllerToCommit, animated: true)
+
+    }
+    
+    
+    
     
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var pickerView: UIPickerView!
@@ -42,6 +66,10 @@ class CommsListViewController: UIViewController, Storyboarded {
         pickerView.isHidden = true
         pickerView.backgroundColor = .white
         pickerView.alpha = 1
+        
+        if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
+                   registerForPreviewing(with: self, sourceView: view)
+        }
         
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
