@@ -45,7 +45,7 @@ class CommsCoordinator: Coordinator {
     }
     
     func showAddComms() {
-        let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self)
+        let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self, apiService)
         addCommsViewController.addCommsPresenter = addCommsPresenter
         self.navigationController.pushViewController(addCommsViewController, animated: true)
     }

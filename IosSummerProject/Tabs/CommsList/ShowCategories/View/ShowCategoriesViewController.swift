@@ -35,6 +35,7 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func addCategoryButtonTapped(_ sender: Any) {
+        if categoryTextField.text == "" { return }
         showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
         categoryTextField.text = ""
     }

@@ -31,6 +31,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         imagePicker.delegate = self
         self.navigationItem.title = "Create New Comms"
+        self.categoryButton.backgroundColor = .lightGray
         
         self.categoryButton?.layer.cornerRadius = categoryButton.frame.size.height/5.0
         self.categoryButton?.layer.masksToBounds = true
@@ -67,7 +68,6 @@ class AddCommsViewController: UIViewController, Storyboarded {
                print("an error occured when sending")
             }
         })
-        
         addCommsPresenter.didTapPost()
         
     }
