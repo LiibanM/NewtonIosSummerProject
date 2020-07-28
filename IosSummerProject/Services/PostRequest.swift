@@ -8,9 +8,6 @@
 
 import Foundation
 
-
- 
-    
     enum APIError:Error {
         case responseProblem
         case decodingProblem
