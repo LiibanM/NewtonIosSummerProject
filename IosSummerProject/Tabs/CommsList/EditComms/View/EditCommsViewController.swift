@@ -11,16 +11,16 @@ import Kingfisher
 
 class EditCommsViewController: UIViewController, Storyboarded {
     
-    @IBOutlet weak var editCommsCategory: UILabel!
+    @IBOutlet weak var editCommsCategory: UIButton!
     @IBOutlet weak var editCommsImage: UIImageView!
-    @IBOutlet weak var editCommsDescription: UITextView!
-    @IBOutlet weak var editCommsHighlighted: UISwitch!
+    @IBOutlet weak var editCommsTitle: UITextField!
+    @IBOutlet weak var editCommsDescription: UITextField!
+    @IBOutlet weak var editCommsHighlighted: UISegmentedControl!
+    @IBOutlet weak var previewButton: UIButton!
+    @IBOutlet weak var editOverlayButton: UIButton!
     
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
-    
-    var editCommsTitle: UITextView!
-    var titleView:UIView!
 
     var oldTitle: String = ""
     var oldDescription: String = ""
@@ -32,45 +32,43 @@ class EditCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setUpEditableFields()
         
-        let rect:CGRect = CGRect.init(origin: CGPoint.init(x: 0, y: 0), size: CGSize.init(width: 200, height: 70))
-        
-        titleView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 70))
        self.navigationController!.navigationBar.prefersLargeTitles = false
-
-        let titleLabel = UILabel.init(frame: CGRect.init(x: 0, y: 0, width: 200, height: 20))
-        titleLabel.textAlignment = .center
-        titleLabel.text = "Title:"
-        titleLabel.font = UIFont.systemFont(ofSize: 13)
         
-        editCommsTitle = UITextView(frame: CGRect(x: 0, y: 10, width: 200, height: 70))
-        editCommsTitle.textContainer.maximumNumberOfLines = 1
         editCommsTitle.text = comm.title
-        editCommsTitle.font = UIFont.boldSystemFont(ofSize: 15)
-        editCommsTitle.backgroundColor = .none
-        editCommsTitle.textAlignment = .center
-        titleView.addSubview(editCommsTitle)
         
         oldTitle = comm.title
         oldDescription = comm.content
         oldHighlighted = comm.highlighted
         oldCategory = comm.category
         //oldImage = comm.image
+        
+        self.navigationItem.title = "Edit"
+        
+        self.editCommsCategory?.layer.cornerRadius = editCommsCategory.frame.size.height/5.0
+        self.editCommsCategory?.layer.masksToBounds = true
+        self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
+        self.previewButton?.layer.masksToBounds = true
        
-        titleView.addSubview(titleLabel)
-        
-        navigationItem.titleView = titleView
-        
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(saveEdittedCommTapped))
 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.dismissKeyboard (_:)))
         self.view.addGestureRecognizer(tapGesture)
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(editCommsImageTapped(_:)))
+        editOverlayButton.isUserInteractionEnabled = true
+        editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
+        
+        editCommsCategory.setTitle(oldCategory.category_name, for: .normal)
+        let result = oldHighlighted ? 0 : 1
+        editCommsHighlighted.selectedSegmentIndex = result
+
     }
     
     @objc func saveEdittedCommTapped() {
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
-            oldHighlighted == editCommsHighlighted.isOn &&
-            oldCategory.category_name == editCommsCategory.text
+            oldHighlighted == editCommsHighlighted.isSelected &&
+            oldCategory.category_name == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ){
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
@@ -88,13 +86,12 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        editCommsCategory.text = comm.category.category_name
+        editCommsCategory.titleLabel?.text = comm.category.category_name
         guard let url = URL(string: comm.image) else {
             print("bad url")
             return
         }
         editCommsImage.kf.setImage(with: url)
-        editCommsDescription.isEditable = true
         editCommsDescription.layer.borderWidth = 1
         editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
         editCommsDescription.layer.cornerRadius = 5
