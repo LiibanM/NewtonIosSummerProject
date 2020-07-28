@@ -87,7 +87,6 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         categories.append(new)
         self.view.setCategories(with: categories)
     }
-    
 
     func mockDataCategories() {
         self.view.setCategories(with: categories)

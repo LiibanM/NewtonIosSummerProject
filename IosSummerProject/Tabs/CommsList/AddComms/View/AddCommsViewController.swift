@@ -20,8 +20,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var saveButtonNew: UIButton!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
+    var selectedCategory: Category!
     
     var addCommsPresenter: AddCommsPresenterProtocol!
     
@@ -129,7 +131,9 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
 
 extension AddCommsViewController: AddCommsPresenterView {
     func updateCategory(with new: Category) {
-        categoryButton.titleLabel?.text = new.category_name
+        selectedCategory = new
+        categoryButton.titleLabel?.text = selectedCategory.category_name
+//        categoryButton.titleLabel?.textAlignment = .center
         categoryButton.backgroundColor = .systemTeal
     }
     
