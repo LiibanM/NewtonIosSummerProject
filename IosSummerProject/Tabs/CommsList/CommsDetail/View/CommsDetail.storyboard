@@ -37,7 +37,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hgi-3r-AJD">
-                                                <rect key="frame" x="10" y="275" width="46" height="30"/>
+                                                <rect key="frame" x="15" y="275" width="46" height="30"/>
                                                 <state key="normal" title="Button"/>
                                             </button>
                                         </subviews>
@@ -48,7 +48,8 @@
                                             <constraint firstItem="Q5y-n8-qKq" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="10" id="B99-Ae-Mu3"/>
                                             <constraint firstItem="UcS-oj-z4O" firstAttribute="top" secondItem="PWW-gm-ei7" secondAttribute="top" id="Jhm-nt-0SQ"/>
                                             <constraint firstAttribute="trailing" secondItem="UcS-oj-z4O" secondAttribute="trailing" id="L33-fK-Ta1"/>
-                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="10" id="hYK-VH-Sdh"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Q5y-n8-qKq" secondAttribute="bottom" constant="25" id="RyX-Yt-KFP"/>
+                                            <constraint firstItem="hgi-3r-AJD" firstAttribute="leading" secondItem="PWW-gm-ei7" secondAttribute="leading" constant="15" id="knx-GH-raN"/>
                                             <constraint firstItem="hgi-3r-AJD" firstAttribute="top" secondItem="UcS-oj-z4O" secondAttribute="bottom" constant="5" id="snu-Xw-2h7"/>
                                             <constraint firstAttribute="trailing" secondItem="Q5y-n8-qKq" secondAttribute="trailing" constant="10" id="udK-Ih-Lhi"/>
                                         </constraints>
