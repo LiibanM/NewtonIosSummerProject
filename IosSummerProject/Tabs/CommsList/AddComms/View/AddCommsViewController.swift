@@ -36,6 +36,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
         self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
         self.previewButton?.layer.masksToBounds = true
         
+        
+        
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTapUploadImage(tapGestureRecognizer:)))
         imageView.isUserInteractionEnabled = true
         imageView.addGestureRecognizer(tapGestureRecognizer)

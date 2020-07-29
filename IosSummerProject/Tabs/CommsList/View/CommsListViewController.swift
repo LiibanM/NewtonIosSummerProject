@@ -41,7 +41,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         
         pickerView.isHidden = true
-        pickerView.backgroundColor = .white
         pickerView.alpha = 1
         
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
@@ -126,7 +125,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         }
         
       }
-      print(filteredComms)
       commsListTableView.reloadData()
     }
     
