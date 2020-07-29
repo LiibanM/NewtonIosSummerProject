@@ -14,7 +14,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
    
     @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
-    @IBOutlet weak var commsContent: UITextField!
+    @IBOutlet weak var commsContent: UITextView!
     @IBOutlet weak var categoryButton: UIButton!
     @IBOutlet weak var isHighlighted: UISegmentedControl!
     @IBOutlet weak var previewButton: UIButton!
@@ -47,6 +47,13 @@ class AddCommsViewController: UIViewController, Storyboarded {
         navigationItem.rightBarButtonItems = [savePostButton]
         
         navigationController?.navigationBar.prefersLargeTitles = false
+        
+        commsTitle.layer.borderWidth = 1
+        commsTitle.layer.borderColor =  UIColor.lightGray.cgColor
+        commsTitle.layer.cornerRadius = 5
+        commsContent.layer.borderWidth = 1
+        commsContent.layer.borderColor =  UIColor.lightGray.cgColor
+        commsContent.layer.cornerRadius = 5
 
     }
     
