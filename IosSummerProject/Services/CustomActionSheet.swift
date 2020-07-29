@@ -8,7 +8,33 @@
 
 import Foundation
 import UIKit
+
+// Spacing in this file needs to be sorted
+// Convention should be 'param: Object type' with a space between the ':' and 'object type'
 class CustomActionSheet {
+    
+    // An AlertViewController has a .actions array which you can hook into to add as many actions as you want
+    
+    // By passing an array of actionTitles and actions of type [((UIAlertAction) -> Void?] you can create and add these actions to an alertviewcontroller
+    
+    // ---- EXAMPLE ----
+    
+    //    func showCustomAlert(view: UIViewController, title: String, message: String, actionTitles:[String?], actions: [((UIAlertAction) -> Void)?]) {
+    //
+    //           let alert = UIAlertController(
+    //               title: title,
+    //               message: message,
+    //               preferredStyle: UIAlertController.Style.alert)
+    //
+    //           for (index, title) in actionTitles.enumerated() {
+    //               let action = UIAlertAction(
+    //                   title: title,
+    //                   style: .default,
+    //                   handler: actions[index])
+    //
+    //               alert.addAction(action)
+    //           }
+    //    }
     
      init(){}
     
