@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 
+
 class EditCommsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var editCommsCategory: UIButton!
@@ -19,6 +20,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var editOverlayButton: UIButton!
     
+    var selectedCategory: Category!
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
 
@@ -103,19 +105,18 @@ class EditCommsViewController: UIViewController, Storyboarded {
         showImagePickerControllerActionSheet()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func selectCategoryTapped(_ sender: Any) {
+        editCommsPresenter.didTapSelectCategory()
     }
-    */
-
+    
 }
 
 extension EditCommsViewController: EditCommsPresenterView {
+    func setCategory(with category: Category) {
+        selectedCategory = category
+        editCommsCategory.titleLabel?.text = selectedCategory.category_name
+    }
+    
     func setCommsData(with article: Article) {
         comm = article
         print(comm, "edit")

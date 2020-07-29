@@ -19,7 +19,6 @@ protocol CommsListPresenterView {
     func errorOccured(message: String)
     func setCommsData(with data: [Article])
     func setAllCategories(with data: [String])
-//    func loadComms()
 }
 
 class CommsListPresenter: CommsListPresenterProtocol {

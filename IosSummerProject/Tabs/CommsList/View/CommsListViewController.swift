@@ -39,6 +39,7 @@ class CommsListViewController: UIViewController, Storyboarded {
      
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         pickerView.isHidden = true
         pickerView.backgroundColor = .white
         pickerView.alpha = 1
@@ -55,7 +56,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: nil)
         searchController = UISearchController(searchResultsController: nil)
-
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search comms"
