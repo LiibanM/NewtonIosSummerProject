@@ -15,7 +15,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var editCommsCategory: UIButton!
     @IBOutlet weak var editCommsImage: UIImageView!
     @IBOutlet weak var editCommsTitle: UITextField!
-    @IBOutlet weak var editCommsDescription: UITextField!
+    @IBOutlet weak var editCommsDescription: UITextView!
     @IBOutlet weak var editCommsHighlighted: UISegmentedControl!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var editOverlayButton: UIButton!
@@ -94,6 +94,9 @@ class EditCommsViewController: UIViewController, Storyboarded {
             return
         }
         editCommsImage.kf.setImage(with: url)
+        editCommsTitle.layer.borderWidth = 1
+        editCommsTitle.layer.borderColor =  UIColor.lightGray.cgColor
+        editCommsTitle.layer.cornerRadius = 5
         editCommsDescription.layer.borderWidth = 1
         editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
         editCommsDescription.layer.cornerRadius = 5
