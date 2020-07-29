@@ -17,6 +17,7 @@
 		702C117024CECB2100799497 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116F24CECB2100799497 /* MockApiService.swift */; };
 		702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C117124CECB9000799497 /* CommsListPresenterTests.swift */; };
 		711279FC24D07964005FC4A3 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 711279FB24D07964005FC4A3 /* Poppins-Regular.ttf */; };
+		711279FD24D15334005FC4A3 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 711279FB24D07964005FC4A3 /* Poppins-Regular.ttf */; };
 		7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098224CD6E93001C7A8F /* EditCommsViewController.swift */; };
 		7134098524CD6EA0001C7A8F /* EditComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7134098424CD6EA0001C7A8F /* EditComms.storyboard */; };
 		7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */; };
@@ -828,6 +829,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				711279FD24D15334005FC4A3 /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
