@@ -28,6 +28,7 @@ class AppCoordinator: Coordinator {
         self.apiService = ApiService()
         self.keychainService = KeychainSwift()
         self.userToken = self.keychainService.get("userToken")
+//        self.userToken = self.keychainService.get("userJwtToken")
 //        user = try! decode(jwt: userToken)
         super.init(navigationController: navigationController)
         self.navigationController.navigationBar.isHidden = true

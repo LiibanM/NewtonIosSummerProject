@@ -83,7 +83,7 @@ extension LoginPresenter: GIDSignInDelegate {
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let userJwtToken):
-                    self.keychainService.set(userJwtToken!, forKey: "userToken")
+                    self.keychainService.set(userJwtToken!, forKey: "userJwtToken")
                     self.delegate.didLogin()
                     print("Success")
                 default:
