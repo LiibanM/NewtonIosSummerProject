@@ -41,12 +41,25 @@ class CommsCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
-    func showCommsDetail(_ id: Int) {
+    
+    
+    func showCommsDetail(_ id: Int){
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
+        navigationController.navigationBar.prefersLargeTitles = false
+
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
+    }
+    
+    func showPreviewCommsDetail(_ id: Int) -> UIViewController {
+        let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
+               commsDetailViewController.commsDetailPresenter = commsDetailPresenter
+        commsDetailPresenter.articleId = id;
+        navigationController.navigationBar.prefersLargeTitles = false
+        return commsDetailViewController
     }
     
     func showAddComms() {
@@ -91,6 +104,11 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     
     func goToCommsDetail(_ id: Int) {
         showCommsDetail(id)
+    }
+    
+    func getCommsDetail(with id: Int) -> UIViewController {
+        print("articleId", id)
+        return showPreviewCommsDetail(id)
     }
 }
 

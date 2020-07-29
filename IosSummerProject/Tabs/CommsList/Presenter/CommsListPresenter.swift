@@ -7,11 +7,13 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CommsListPresenterDelegate {
     func goToCreateContent()
     func goToCommsDetail(_ id: Int)
     func goToEditComms(_ id: Int)
+    func getCommsDetail(with id: Int) -> UIViewController
 
 }
 
@@ -22,6 +24,11 @@ protocol CommsListPresenterView {
 }
 
 class CommsListPresenter: CommsListPresenterProtocol {
+    
+    func previewCommsDetail(with id: Int) -> UIViewController {
+        return delegate.getCommsDetail(with: id)
+    }
+    
 
     var delegate: CommsListPresenterDelegate
     var view: CommsListPresenterView
