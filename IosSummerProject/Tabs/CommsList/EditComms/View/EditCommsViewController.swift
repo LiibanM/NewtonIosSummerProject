@@ -26,7 +26,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 
     var oldTitle: String = ""
     var oldDescription: String = ""
-    var oldHighlighted: Bool = false;
+    var oldHighlighted: Int = 1;
     var oldCategory: Category!
     //var oldImage: UIImage = ""
     
@@ -40,7 +40,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
         oldTitle = comm.title
         oldDescription = comm.content
-        oldHighlighted = comm.highlighted
+        if(comm.highlighted){
+            oldHighlighted = 0
+        } else {
+            oldHighlighted = 1
+        }
         oldCategory = comm.category
         //oldImage = comm.image
         
@@ -61,15 +65,15 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
         editCommsCategory.setTitle(oldCategory.category_name, for: .normal)
-        let result = oldHighlighted ? 0 : 1
+        let result = oldHighlighted
         editCommsHighlighted.selectedSegmentIndex = result
 
     }
     
     @objc func saveEdittedCommTapped() {
         if(oldTitle == editCommsTitle.text &&
-            oldDescription == editCommsDescription.text &&
-            oldHighlighted == editCommsHighlighted.isSelected &&
+            //oldDescription == editCommsDescription.text &&
+            oldHighlighted == editCommsHighlighted.selectedSegmentIndex &&
             oldCategory.category_name == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ){
