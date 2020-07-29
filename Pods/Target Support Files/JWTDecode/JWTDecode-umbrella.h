@@ -10,8 +10,7 @@
 #endif
 #endif
 
-#import "UIImage+ImageEffects.h"
 
-FOUNDATION_EXPORT double JustPeekVersionNumber;
-FOUNDATION_EXPORT const unsigned char JustPeekVersionString[];
+FOUNDATION_EXPORT double JWTDecodeVersionNumber;
+FOUNDATION_EXPORT const unsigned char JWTDecodeVersionString[];
 

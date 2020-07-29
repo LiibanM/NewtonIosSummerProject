@@ -8,7 +8,7 @@ target 'IosSummerProject' do
   # Pods for IosSummerProject
   pod 'GoogleSignIn'
   pod 'Kingfisher'
-  pod 'JSONWebToken'
   pod 'KeychainSwift'
+  pod 'JWTDecode', '~> 2.4'
 
 end

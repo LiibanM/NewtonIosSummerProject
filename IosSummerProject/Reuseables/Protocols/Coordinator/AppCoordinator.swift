@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import KeychainSwift
+import JWTDecode
+ 
 
 class AppCoordinator: Coordinator {
     
@@ -16,7 +18,9 @@ class AppCoordinator: Coordinator {
     var loginCoordinator: LoginCoordinator!
     var keychainService: KeychainSwift
     
-    var userToken: Any!
+    var userToken: String!
+    
+    var user: User!
     
     var apiService: ApiServiceProtocol
     
@@ -24,13 +28,13 @@ class AppCoordinator: Coordinator {
         self.apiService = ApiService()
         self.keychainService = KeychainSwift()
         self.userToken = self.keychainService.get("userToken")
+//        user = try! decode(jwt: userToken)
         super.init(navigationController: navigationController)
         self.navigationController.navigationBar.isHidden = true
     }
     
     override func start() {
         if userToken != nil {
-            print(userToken!)
             showComms()
             return
         } else {
@@ -48,7 +52,7 @@ class AppCoordinator: Coordinator {
     
     func showComms() {
         self.navigationController.navigationBar.isHidden = false
-        commsCoordinator = CommsCoordinator(navigationController, delegate: self, apiService)
+        commsCoordinator = CommsCoordinator(navigationController, delegate: self, user, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
     }

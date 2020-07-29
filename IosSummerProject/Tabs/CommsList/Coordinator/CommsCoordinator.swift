@@ -15,9 +15,11 @@ protocol CommsCoordinatorDelegate {
 class CommsCoordinator: Coordinator {
     
     var apiService: ApiServiceProtocol
+    var user: User
     
-    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate, _ apiService: ApiServiceProtocol) {
+    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate,_ user: User, _ apiService: ApiServiceProtocol) {
         
+        self.user = user
         self.apiService = apiService
         super.init(navigationController: navigationController)
     }
@@ -28,7 +30,7 @@ class CommsCoordinator: Coordinator {
     
     func showCommsList() {
         let commsListViewController = CommsListViewController.instantiate(storyboard: "CommsList")
-        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, apiService)
+        let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, user, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
         self.navigationController.viewControllers = [UIViewController]()
         navigationController.pushViewController(commsListViewController, animated: false)
@@ -37,7 +39,7 @@ class CommsCoordinator: Coordinator {
     
     func showCommsDetail(_ id: Int) {
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
-        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, user, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
         self.navigationController.pushViewController(commsDetailViewController, animated: true)

@@ -27,11 +27,13 @@ class CommsListPresenter: CommsListPresenterProtocol {
     var delegate: CommsListPresenterDelegate
     var view: CommsListPresenterView
     var apiService: ApiServiceProtocol
+    var user: User
     
-    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate, _ apiService: ApiServiceProtocol) {
+    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate, _ user: User, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService
+        self.user = user
     }
     
     func getComms() {
