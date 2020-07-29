@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -22,10 +22,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vv4-tg-pst">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qzn-dZ-N4V">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Hiq-KU-EG4">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
@@ -173,9 +173,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Qk2-AA-xzg" firstAttribute="trailing" secondItem="Vv4-tg-pst" secondAttribute="trailing" id="AhC-Wb-zbD"/>
-                            <constraint firstItem="Vv4-tg-pst" firstAttribute="bottom" secondItem="Qk2-AA-xzg" secondAttribute="bottom" constant="34" id="Cgx-Yx-FUH"/>
+                            <constraint firstItem="Vv4-tg-pst" firstAttribute="bottom" secondItem="Qk2-AA-xzg" secondAttribute="bottom" id="Cgx-Yx-FUH"/>
                             <constraint firstItem="Vv4-tg-pst" firstAttribute="leading" secondItem="Qk2-AA-xzg" secondAttribute="leading" id="N66-Kk-kyy"/>
-                            <constraint firstItem="Qk2-AA-xzg" firstAttribute="top" secondItem="Vv4-tg-pst" secondAttribute="top" constant="44" id="mEQ-sq-076"/>
+                            <constraint firstItem="Qk2-AA-xzg" firstAttribute="top" secondItem="Vv4-tg-pst" secondAttribute="top" id="mEQ-sq-076"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qk2-AA-xzg"/>
                     </view>
