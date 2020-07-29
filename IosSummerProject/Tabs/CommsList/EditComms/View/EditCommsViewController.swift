@@ -22,6 +22,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     var selectedCategory: Category!
     var editCommsPresenter: EditCommsPresenterProtocol!
+    
+    // This should only be stored on your presenter, not your vc and using your presenters view delegate you can pass info as needed to display
     var comm: Article!
 
     var oldTitle: String = ""
@@ -36,6 +38,9 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
        self.navigationController!.navigationBar.prefersLargeTitles = false
         
+        // FROM HERE
+        // This should be returned to you via your presenter view
+        // You should have a function that returns the object to your vc so it can update as needed
         editCommsTitle.text = comm.title
         
         oldTitle = comm.title
@@ -43,9 +48,12 @@ class EditCommsViewController: UIViewController, Storyboarded {
         oldHighlighted = comm.highlighted
         oldCategory = comm.category
         //oldImage = comm.image
+        // TO HERE
         
         self.navigationItem.title = "Edit"
         
+        // There should not be ?'s here because your outlets use a ! in their denotion meaning it will never be nil
+        // Remove them
         self.editCommsCategory?.layer.cornerRadius = editCommsCategory.frame.size.height/5.0
         self.editCommsCategory?.layer.masksToBounds = true
         self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
@@ -67,16 +75,20 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @objc func saveEdittedCommTapped() {
+        // This code should be in your presenter
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
             oldHighlighted == editCommsHighlighted.isSelected &&
             oldCategory.category_name == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ) {
+            
+            // This should be displayed via your errorOcurred function with the message and title coming from the presenter
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
+            // This function should just have this one line in
             editCommsPresenter.didTapSave(for: comm)
         }
     }
@@ -89,10 +101,13 @@ class EditCommsViewController: UIViewController, Storyboarded {
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
         editCommsCategory.titleLabel?.text = comm.category.category_name
+        
+        // Provide a default image if URL is bad
         guard let url = URL(string: comm.image) else {
             print("bad url")
             return
         }
+        
         editCommsImage.kf.setImage(with: url)
         editCommsTitle.layer.borderWidth = 1
         editCommsTitle.layer.borderColor =  UIColor.lightGray.cgColor
@@ -135,6 +150,8 @@ extension EditCommsViewController: EditCommsPresenterView {
 
 extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImagePickerControllerActionSheet() {
+        // Spacing between alert =  UIAler (2 spaces on right of =)
+        // Should really have a AlertService that you can call instead of creating these everywhere
         let alert =  UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
 
         let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
@@ -168,6 +185,9 @@ extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            // Get the URL of the image and store that
+            // In your presenter you can then go and grab the ImageContent if you need it
+            // Use the InfoKey.imageURL
             editCommsImage.image = editedImage
             let imageData = editedImage.pngData()
             print(imageData!.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters))
