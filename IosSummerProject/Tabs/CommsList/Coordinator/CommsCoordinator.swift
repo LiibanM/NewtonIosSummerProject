@@ -64,7 +64,8 @@ class CommsCoordinator: Coordinator {
         
     }
     func showEditComms(with id: Int?, or article: Article?) {
-       
+        editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
+
         let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
         if let passedId = id {
             editCommsPresenter.articleId = passedId
