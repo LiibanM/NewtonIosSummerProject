@@ -44,7 +44,6 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         self.commsTagLabelButton.contentEdgeInsets = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
         self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
         self.commsTagLabelButton.tintColor = .white
-        self.commsTagLabelButton.backgroundColor = .gray
         self.commsTagLabelButton.layer.cornerRadius = 5
         self.commsTagLabelButton.isUserInteractionEnabled = false
     
