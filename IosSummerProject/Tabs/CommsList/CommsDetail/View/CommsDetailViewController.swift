@@ -17,6 +17,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsDescriptionView: UITextView!
     @IBOutlet weak var commsTagLabelButton: UIButton!
     var commsDetailPresenter: CommsDetailPresenterProtocol!
+    
+    // This should be stored on your CommsDetailPresenter and passed as needed through the presenter view protocol
     var comm: Article!
     
     override func viewDidLoad() {
@@ -57,6 +59,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     @objc func handleRefreshControl() {
        // Fetch the comm data from database & update elements
        // Dismiss the refresh control.
+        
+        // Don't believe you need to call this on the main queue
        DispatchQueue.main.async {
           self.commsScrollView.refreshControl?.endRefreshing()
        }
@@ -66,10 +70,14 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         commsDetailPresenter.didTapEdit(on: comm)
        }
     
+    // Don't know what this function is for, but, if it were to be used it should be on your presenter not your view controller
+    // Your VC should only update UI, all other functionality should be dealt with on your presenter
     func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
     }
 
+    // Not used
+    // If downloading an image, this should be handled by your presenter and passed to the vc through presenters view protocol
     func downloadImage(from url: URL) {
         commsImageView.kf.setImage(with: url)
 //        print("Download Started")
@@ -84,7 +92,11 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     }
 }
 
+// Extensions of any default object types should go into a common extensions folder
+// This is because this extension is available everywhere and not just this file
 extension UIImageView {
+    
+    // Looks like a job for your presenter
     func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
@@ -107,6 +119,7 @@ extension UIImageView {
 
 extension CommsDetailViewController: CommsDetailPresenterView {
     func errorOccured(message: String) {
+        // Display an alert
         print(message)
     }
     

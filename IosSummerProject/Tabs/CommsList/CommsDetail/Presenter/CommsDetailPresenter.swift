@@ -19,11 +19,11 @@ protocol CommsDetailPresenterView {
 
 class CommsDetailPresenter: CommsDetailPresenterProtocol {
     
-    var articleId: Int!
+    var articleId: Int! // Should be an optional
     
-    var delegate: CommsDetailPresenterDelegate
-    var view: CommsDetailPresenterView
-    var apiService: ApiServiceProtocol
+    var delegate: CommsDetailPresenterDelegate // Let not var
+    var view: CommsDetailPresenterView // Let not var
+    var apiService: ApiServiceProtocol // Let not var
     
     init(with view: CommsDetailPresenterView, delegate: CommsDetailPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
