@@ -80,6 +80,7 @@
 		D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */; };
 		D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */; };
 		D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */; };
+		D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACCDE224D07B40000A4C2B /* LabelButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -172,6 +173,7 @@
 		D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewControllerTests.swift; sourceTree = "<group>"; };
 		D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenter.swift; sourceTree = "<group>"; };
 		D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterTests.swift; sourceTree = "<group>"; };
+		D2ACCDE224D07B40000A4C2B /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		FFFDF5139D4752466148633B /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -456,6 +458,7 @@
 		A4E8F0A424C0FCF600B7A26F /* Reuseables */ = {
 			isa = PBXGroup;
 			children = (
+				D2ACCDDF24D07ABB000A4C2B /* UIComponents */,
 				A4E8F0A524C0FD1000B7A26F /* Protocols */,
 				A4E8F0AD24C0FD5B00B7A26F /* Constants */,
 			);
@@ -735,6 +738,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D2ACCDDF24D07ABB000A4C2B /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D2ACCDE224D07B40000A4C2B /* LabelButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		DA16121C00B257EFD1955AEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -970,6 +981,7 @@
 				702C115E24C5B9D000799497 /* ApiService.swift in Sources */,
 				702C115B24C5B73F00799497 /* Category.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
+				D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
