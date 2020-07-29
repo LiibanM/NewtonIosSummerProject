@@ -11,13 +11,19 @@ import Foundation
 
 class MockCommsListPresenter: CommsListPresenterProtocol {
    
-    
     var didTapAddCommsCount = 0
     var didLoadDataCount = 0
     var didTapComm = 0
+   
     
+    func highlightComm(with id: Int) {
+        
+    }
     
-    
+    func didSwipeEdit(with id: Int) {
+        
+    }
+
     func didTapAddComms() {
         didTapAddCommsCount += 1
     }

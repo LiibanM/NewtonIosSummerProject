@@ -11,5 +11,8 @@ import Foundation
 protocol CommsListPresenterProtocol {
     func didTapAddComms()
     func didTapComm(with id: Int)
+    func didSwipeEdit(with id: Int)
+    func highlightComm(with id: Int)
     func loadData()
 }
+

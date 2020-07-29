@@ -9,6 +9,7 @@
 import Foundation
 import GoogleSignIn
 import UIKit
+import KeychainSwift
 
 protocol LoginPresenterView {
     func errorOccurred(message: String)
@@ -22,6 +23,7 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
     
     let view: LoginPresenterView
     let delegate: LoginPresenterDelegate
+    var keychainService: KeychainSwift
     
     //PH Function pull user from database
     func getUser() -> String?{
@@ -35,16 +37,17 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
     
     init(
         with view: LoginPresenterView,
-        delegate: LoginPresenterDelegate) {
-        
+        delegate: LoginPresenterDelegate,
+        _ keychainService: KeychainSwift) {
+        self.keychainService = keychainService
         self.view = view
         self.delegate = delegate
         
     }
     
-    func didLogin() {
-        delegate.didLogin()
-    }
+//    func didLogin(with user: Any) {
+//        delegate.didLogin(with user: Any)
+//    }
     
     func createGoogleSharedInstance() {
         GIDSignIn.sharedInstance().delegate = self
@@ -70,19 +73,34 @@ extension LoginPresenter: GIDSignInDelegate {
         // Prints out credentials for testing purposes
         //TODO: to be removed before launch
         
-        if(getUser() != nil /*check if userId is present in db*/){
+        //need to make a call to the backend if this is successful you need to set the jwt in the keychain 
+        // the app coordinator will decode the jwt by accessing the keychain and give the user to everyone
 
-        } else /*user is logging into the system for the first time */{
-            //let userId = user.userID                  // For client-side use only!
-            let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
-            let fullName = user.profile.name
-            //let givenName = user.profile.givenName
-            //let familyName = user.profile.familyName
-            let email = user.profile.email
-            print(fullName ?? "Can't find full name or user")
-            print(email ?? "Can't find email of user")
+        // if(getUser() != nil /*check if userId is present in db*/){
 
-        }
+        // } else /*user is logging into the system for the first time */{
+        //     //let userId = user.userID                  // For client-side use only!
+        //     let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
+        //     let fullName = user.profile.name
+        //     //let givenName = user.profile.givenName
+        //     //let familyName = user.profile.familyName
+        //     let email = user.profile.email
+        //     print(fullName ?? "Can't find full name or user")
+        //     print(email ?? "Can't find email of user")
+
+        // }
+        //let userId = user.userID                  // For client-side use only!
+        let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
+        let fullName = user.profile.name
+        //let givenName = user.profile.givenName
+        //let familyName = user.profile.familyName
+        let email = user.profile.email
+        print(fullName ?? "Can't find full name or user")
+        print(email ?? "Can't find email of user")
+        print(idToken, "token")
+        
+        delegate.didLogin()
+        keychainService.set(idToken!, forKey: "userToken")
     }
     
     /*func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {

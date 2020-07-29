@@ -15,17 +15,39 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commImage: UIImageView!
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextField!
+    @IBOutlet weak var categoryButton: UIButton!
+    @IBOutlet weak var isHighlighted: UISegmentedControl!
+    @IBOutlet weak var previewButton: UIButton!
+    @IBOutlet weak var imageView: UIImageView!
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
+    
+    var addCommsPresenter: AddCommsPresenterProtocol!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicker.delegate = self
-        // Do any additional setup after loading the view.
+        self.navigationItem.title = "Add"
+        
+        self.categoryButton?.layer.cornerRadius = categoryButton.frame.size.height/5.0
+        self.categoryButton?.layer.masksToBounds = true
+        self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
+        self.previewButton?.layer.masksToBounds = true
+        
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onTapUploadImage(tapGestureRecognizer:)))
+        imageView.isUserInteractionEnabled = true
+        imageView.addGestureRecognizer(tapGestureRecognizer)
+
+        let savePostButton = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(postButtonTapped(_:)))
+
+        navigationItem.rightBarButtonItems = [savePostButton]
+        
+        navigationController?.navigationBar.prefersLargeTitles = false
+
     }
     
    
-    @IBAction func postTapped(_ sender: Any) {
+    @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
         
@@ -41,9 +63,13 @@ class AddCommsViewController: UIViewController, Storyboarded {
                print("an error occured when sending")
             }
         })
+        
+        addCommsPresenter.didTapPost()
+        
     }
     
-    @IBAction func onTapUploadImage(_ sender: Any) {
+    @IBAction func onTapUploadImage(tapGestureRecognizer: UITapGestureRecognizer) {
+        let tappedImage = tapGestureRecognizer.view as! UIImageView
         customActionSheet.showAlert(title: "What woud you like to do?",
                                           message: "Use image from",
                                           optionOne: "Library",
@@ -53,7 +79,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
                 self.imagePicker.allowsEditing = false
                 self.imagePicker.sourceType = .camera
             } else {
-                self.imagePicker.allowsEditing = false
+                self.imagePicker.allowsEditing = true
                 self.imagePicker.sourceType = .photoLibrary
             }
             self.present(self.imagePicker, animated: true, completion: nil)
@@ -84,7 +110,7 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
     //            print(pickedImage)
     //            var test = convertImageToBase64String(img: pickedImage)
     //            print(test)
-                commImage.contentMode = .scaleAspectFit
+                commImage.contentMode = .scaleAspectFill
                 commImage.image = pickedImage
                 let imageData = pickedImage.jpegData(compressionQuality: 1)
                 print(imageData)
@@ -93,5 +119,11 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
          
             dismiss(animated: true, completion: nil)
         }
+}
+
+extension AddCommsViewController: AddCommsPresenterView {
+    func errorOccured(message: String) {
+        print(message)
+    }
 }
 

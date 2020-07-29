@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockAddCommsPresenter: AddCommsPresenterProtocol {
+    func didTapPost() {
+        
+    }
+    
     
     func  onTapUploadImage() {
         

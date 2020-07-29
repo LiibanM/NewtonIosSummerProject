@@ -1,5 +1,5 @@
 //
-//  CommsPresenter.swift
+//  AddCommsPresenterProtocol.swift
 //  IosSummerProject
 //
 //  Created by Akash Mair on 18/07/2020.
@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol CommsDetailPresenterProtocol {
+    func loadData()
+    func didTapEdit(on article: Article)
+}

@@ -18,7 +18,7 @@ class LoginViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         
         if (GIDSignIn.sharedInstance().hasPreviousSignIn()){
-            loginPresenter.didLogin()
+//            loginPresenter.didLogin()
         }
         
         loginPresenter.createGoogleSharedInstance()
