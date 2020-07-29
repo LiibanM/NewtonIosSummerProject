@@ -19,8 +19,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var isHighlighted: UISegmentedControl!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
+    var selectedCategory: Category!
     
     var addCommsPresenter: AddCommsPresenterProtocol!
     
@@ -46,7 +48,6 @@ class AddCommsViewController: UIViewController, Storyboarded {
 
     }
     
-   
     @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
@@ -63,7 +64,6 @@ class AddCommsViewController: UIViewController, Storyboarded {
                print("an error occured when sending")
             }
         })
-        
         addCommsPresenter.didTapPost()
         
     }
@@ -86,6 +86,10 @@ class AddCommsViewController: UIViewController, Storyboarded {
         })
     }
     
+    
+    @IBAction func selectCategoryButtonTapped(_ sender: Any) {
+        addCommsPresenter.didTapSelectCategory()
+    }
     
     func convertImageToBase64String (img: UIImage) -> String {
         return img.jpegData(compressionQuality: 1)?.base64EncodedString() ?? ""
@@ -113,8 +117,6 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
                 commImage.contentMode = .scaleAspectFill
                 commImage.image = pickedImage
                 let imageData = pickedImage.jpegData(compressionQuality: 1)
-                print(imageData)
-
             }
          
             dismiss(animated: true, completion: nil)
@@ -122,6 +124,12 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
 }
 
 extension AddCommsViewController: AddCommsPresenterView {
+    func updateCategory(with new: Category) {
+        selectedCategory = new
+        categoryButton.titleLabel?.text = selectedCategory.category_name
+        categoryButton.backgroundColor = .lightGray
+    }
+    
     func errorOccured(message: String) {
         print(message)
     }

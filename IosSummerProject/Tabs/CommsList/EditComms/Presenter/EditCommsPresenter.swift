@@ -12,11 +12,14 @@ import Foundation
 
 protocol EditCommsPresenterView {
     func setCommsData(with article: Article)
+    func setCategory(with category: Category)
     func errorOccured(message: String)
 }
 
 protocol EditCommsPresenterDelegate {
     func goToCommsListAfterSave()
+    func goToCategoriesFromEdit(currentPage: String)
+    
 }
 
 class EditCommsPresenter: EditCommsPresenterProtocol {
@@ -41,10 +44,17 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
 //            fetchCommFromId()
         }
     }
-    
+        
+    func selectedCategory(with category: Category) {
+        view.setCategory(with: category)
+    }
     
     func didTapSave(for article: Article) {
         saveEdittedPost(article)
+    }
+    
+    func didTapSelectCategory() {
+        delegate.goToCategoriesFromEdit(currentPage: "edit")
     }
     
     func saveEdittedPost(_ article: Article) {
