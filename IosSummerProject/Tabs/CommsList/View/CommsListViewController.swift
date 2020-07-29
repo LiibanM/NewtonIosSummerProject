@@ -179,7 +179,7 @@ extension CommsListViewController: UITableViewDataSource {
         cell.commsTitleLabel.text = currentComms.title
         cell.commsDescription.text = currentComms.content
 
-        cell.commsCategoryLabel.text = currentComms.category.category_name
+        cell.commsCategoryLabel.setTitle(currentComms.category.category_name, for: .normal)
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedImageView.isHidden = !currentComms.highlighted
         
@@ -189,7 +189,6 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
-            print("edit")
             let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
             let id = swipedComm.article_id
             self.commsListPresenter.didSwipeEdit(with: id)
@@ -197,7 +196,7 @@ extension CommsListViewController: UITableViewDataSource {
         }
         
         edit.image = UIImage(systemName: "pencil")
-        edit.backgroundColor = .orange
+        edit.backgroundColor = UIColor(red: 239/255, green: 108/255, blue: 0, alpha: 1)
         
         let swipe = UISwipeActionsConfiguration(actions: [edit])
         return swipe
@@ -206,7 +205,6 @@ extension CommsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
-            print("Highlight")
             let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
             let id = swipedComm.article_id
             self.commsListPresenter.highlightComm(with: id)
@@ -214,7 +212,7 @@ extension CommsListViewController: UITableViewDataSource {
         }
         
         highlight.image = UIImage(systemName: "star")
-        highlight.backgroundColor = .systemIndigo
+        highlight.backgroundColor = UIColor(red: 124/255, green: 58/255, blue:175/255, alpha: 1)
         
         let swipe = UISwipeActionsConfiguration(actions: [highlight])
         return swipe
