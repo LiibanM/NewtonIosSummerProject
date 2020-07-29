@@ -42,6 +42,8 @@ class CommsCoordinator: Coordinator {
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
+        navigationController.navigationBar.prefersLargeTitles = false
+
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
     }
     
@@ -50,7 +52,7 @@ class CommsCoordinator: Coordinator {
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
                commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
-              
+        navigationController.navigationBar.prefersLargeTitles = false
         return commsDetailViewController
     }
     
