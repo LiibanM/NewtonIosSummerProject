@@ -11,20 +11,25 @@ import Foundation
 
 class MockAddCommsPresenter: AddCommsPresenterProtocol {
     
+    var didTapSelectCategoryCount = 0
+    var didTapPostCount = 0
+    var onTapUploadImageCount = 0
+    
+    
     func selectedCategory(_ category: Category) {
         
     }
     
     func didTapSelectCategory() {
-        
+        didTapSelectCategoryCount += 1
     }
     
     func didTapPost() {
-        
+        didTapPostCount += 1
     }
     
     
     func  onTapUploadImage() {
-        
+        onTapUploadImageCount += 1
     }
 }
