@@ -12,7 +12,7 @@ import UIKit
 import KeychainSwift
 
 protocol LoginPresenterView {
-    func errorOccurred(message: String)
+    func errorOccured(message: String)
 }
 
 protocol LoginPresenterDelegate {
@@ -24,6 +24,7 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
     let view: LoginPresenterView
     let delegate: LoginPresenterDelegate
     var keychainService: KeychainSwift
+    var apiService: ApiServiceProtocol
     
     //PH Function pull user from database
     func getUser() -> String?{
@@ -35,10 +36,8 @@ class LoginPresenter: NSObject, LoginPresenterProtocol {
         //Post user to db
     }
     
-    init(
-        with view: LoginPresenterView,
-        delegate: LoginPresenterDelegate,
-        _ keychainService: KeychainSwift) {
+    init(with view: LoginPresenterView, delegate: LoginPresenterDelegate, _ keychainService: KeychainSwift, _ apiService: ApiServiceProtocol) {
+        self.apiService = apiService
         self.keychainService = keychainService
         self.view = view
         self.delegate = delegate
@@ -73,37 +72,29 @@ extension LoginPresenter: GIDSignInDelegate {
         // Prints out credentials for testing purposes
         //TODO: to be removed before launch
         
-        //need to make a call to the backend if this is successful you need to set the jwt in the keychain 
-        // the app coordinator will decode the jwt by accessing the keychain and give the user to everyone
-
-        // if(getUser() != nil /*check if userId is present in db*/){
-
-        // } else /*user is logging into the system for the first time */{
-        //     //let userId = user.userID                  // For client-side use only!
-        //     let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
-        //     let fullName = user.profile.name
-        //     //let givenName = user.profile.givenName
-        //     //let familyName = user.profile.familyName
-        //     let email = user.profile.email
-        //     print(fullName ?? "Can't find full name or user")
-        //     print(email ?? "Can't find email of user")
-
-        // }
-        //let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken   //TODO Send this to server ! (unwrap optional)
-        let fullName = user.profile.name
-        //let givenName = user.profile.givenName
-        //let familyName = user.profile.familyName
-        let email = user.profile.email
-        print(fullName ?? "Can't find full name or user")
-        print(email ?? "Can't find email of user")
-        print(idToken, "token")
-        
-        delegate.didLogin()
-        keychainService.set(idToken!, forKey: "userToken")
+        apiService.sendData(url: "", payload: user.authentication.idToken) { (result) in
+            switch result {
+                case .failure(.badUrl):
+                    self.view.errorOccured(message: "Given Url was bad")
+                case .failure(.failedToDecode):
+                    self.view.errorOccured(message: "Failed to decode data" )
+                case .failure(.requestFailed):
+                    self.view.errorOccured(message: "request failed")
+                case .failure(.unAuthenticated):
+                    self.view.errorOccured(message: "Unauthenticated" )
+                case .success(let userJwtToken):
+                    self.keychainService.set(userJwtToken!, forKey: "userToken")
+                    self.delegate.didLogin()
+                    print("Success")
+                default:
+                    self.view.errorOccured(message: "error")
+            }
+        }
+//        delegate.didLogin()
+//        keychainService.set(idToken!, forKey: "userToken")
     }
-    
     /*func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("user has disconnected")
     }*/
 }
+

@@ -40,7 +40,7 @@ class AppCoordinator: Coordinator {
     }
     
     func showLogin() {
-        loginCoordinator = LoginCoordinator(navigationController, delegate: self, keychainService)
+        loginCoordinator = LoginCoordinator(navigationController, delegate: self, keychainService, apiService)
         
         self.addChildCoordinator(loginCoordinator)
         loginCoordinator.start()

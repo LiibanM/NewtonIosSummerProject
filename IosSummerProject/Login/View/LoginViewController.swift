@@ -39,7 +39,7 @@ class LoginViewController: UIViewController, Storyboarded {
 }
 
 extension LoginViewController: LoginPresenterView {
-    func errorOccurred(message: String) {
+    func errorOccured(message: String) {
         print("Error")
     }
     

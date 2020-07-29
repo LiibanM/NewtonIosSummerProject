@@ -18,9 +18,10 @@ class LoginCoordinator: Coordinator {
     
     var delegate: LoginCoordinatorDelegate!
     var keychainService: KeychainSwift
+    var apiService: ApiServiceProtocol
     
-    init(_ navigationController: UINavigationController, delegate: LoginCoordinatorDelegate, _ keychainService: KeychainSwift) {
-        
+    init(_ navigationController: UINavigationController, delegate: LoginCoordinatorDelegate, _ keychainService: KeychainSwift, _ apiService: ApiServiceProtocol) {
+        self.apiService = apiService
         self.keychainService = keychainService
         super.init(navigationController: navigationController)
         self.delegate = delegate
@@ -33,7 +34,7 @@ class LoginCoordinator: Coordinator {
     func showLogin() {
         let loginViewController = LoginViewController.instantiate(storyboard: "Login")
         
-        let loginPresenter = LoginPresenter(with: loginViewController, delegate: self, keychainService)
+        let loginPresenter = LoginPresenter(with: loginViewController, delegate: self, keychainService, apiService)
         
         loginViewController.loginPresenter = loginPresenter
         
