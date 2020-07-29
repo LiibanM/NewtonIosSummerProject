@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,8 +28,8 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXZ-Bf-lpW">
-                        <rect key="frame" x="130" y="10" width="220" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="130" y="10" width="220" height="26.5"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="16"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -36,22 +41,23 @@
                         <rect key="frame" x="56" y="42" width="29" height="37"/>
                         <color key="color" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </activityIndicatorView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-S7-aZV">
-                        <rect key="frame" x="130" y="35.5" width="210" height="18"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="clip" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gbO-S7-aZV">
+                        <rect key="frame" x="130" y="41.5" width="210" height="21.5"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="13"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="beg-Fc-vRv">
-                        <rect key="frame" x="130" y="95" width="35.5" height="17"/>
-                        <color key="backgroundColor" red="0.66256308631526006" green="0.87660086499859802" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvc-dl-swP" customClass="LabelButton" customModule="IosSummerProject" customModuleProvider="target">
+                        <rect key="frame" x="130" y="81" width="46" height="30"/>
+                        <color key="backgroundColor" red="0.23137254900000001" green="0.52549019610000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <state key="normal" title="Button">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="pXZ-Bf-lpW" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="2V3-oo-OiF"/>
+                    <constraint firstAttribute="bottom" secondItem="gvc-dl-swP" secondAttribute="bottom" constant="12" id="DaS-uf-Mpq"/>
                     <constraint firstItem="pXZ-Bf-lpW" firstAttribute="leading" secondItem="AiG-uR-InE" secondAttribute="trailing" constant="10" id="Ds3-LV-5i8"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZB5-2F-8hX" secondAttribute="trailing" constant="275" id="PLg-0a-qP9"/>
                     <constraint firstItem="AiG-uR-InE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="RQ5-eA-Fyu"/>
@@ -59,12 +65,11 @@
                     <constraint firstItem="gbO-S7-aZV" firstAttribute="leading" secondItem="AiG-uR-InE" secondAttribute="trailing" constant="10" id="UZi-7V-u5f"/>
                     <constraint firstAttribute="bottom" secondItem="dVa-bB-Zwe" secondAttribute="bottom" constant="12" id="UxK-SG-Zoc"/>
                     <constraint firstItem="pXZ-Bf-lpW" firstAttribute="leading" secondItem="AiG-uR-InE" secondAttribute="trailing" constant="10" id="VBB-NH-dMe"/>
-                    <constraint firstItem="beg-Fc-vRv" firstAttribute="leading" secondItem="AiG-uR-InE" secondAttribute="trailing" constant="10" id="XzJ-m7-WHW"/>
                     <constraint firstAttribute="trailing" secondItem="dVa-bB-Zwe" secondAttribute="trailing" constant="10" id="b7m-CJ-YBM"/>
                     <constraint firstItem="ZB5-2F-8hX" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="56" id="h8w-yQ-whx"/>
                     <constraint firstAttribute="bottom" secondItem="AiG-uR-InE" secondAttribute="bottom" constant="10" id="hOO-P2-orC"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="beg-Fc-vRv" secondAttribute="bottom" id="mOX-tY-gUB"/>
                     <constraint firstAttribute="trailing" secondItem="gbO-S7-aZV" secondAttribute="trailing" constant="20" id="q1i-zm-BqH"/>
+                    <constraint firstItem="gvc-dl-swP" firstAttribute="leading" secondItem="AiG-uR-InE" secondAttribute="trailing" constant="10" id="qNG-u1-trT"/>
                     <constraint firstItem="gbO-S7-aZV" firstAttribute="top" secondItem="pXZ-Bf-lpW" secondAttribute="bottom" constant="5" id="sR3-xE-eEl"/>
                     <constraint firstItem="AiG-uR-InE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="v4H-5E-dly"/>
                     <constraint firstItem="ZB5-2F-8hX" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="42" id="xBP-KD-aL7"/>
@@ -74,7 +79,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="activityIndicator" destination="ZB5-2F-8hX" id="eiP-We-3eU"/>
-                <outlet property="commsCategoryLabel" destination="beg-Fc-vRv" id="fBC-8U-dFR"/>
+                <outlet property="commsCategoryLabel" destination="gvc-dl-swP" id="0wQ-zQ-2Om"/>
                 <outlet property="commsDescription" destination="gbO-S7-aZV" id="Rcf-5F-ybU"/>
                 <outlet property="commsImageView" destination="AiG-uR-InE" id="Gmo-wZ-sRu"/>
                 <outlet property="commsTitleLabel" destination="pXZ-Bf-lpW" id="WID-PP-ofS"/>

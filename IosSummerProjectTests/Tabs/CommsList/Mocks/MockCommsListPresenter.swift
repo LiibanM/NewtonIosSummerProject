@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 @testable import IosSummerProject
 
 class MockCommsListPresenter: CommsListPresenterProtocol {
@@ -22,6 +23,10 @@ class MockCommsListPresenter: CommsListPresenterProtocol {
     
     func didSwipeEdit(with id: Int) {
         
+    }
+    
+    func previewCommsDetail(with id: Int) -> UIViewController {
+           return UIViewController()
     }
 
     func didTapAddComms() {

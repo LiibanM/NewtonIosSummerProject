@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 @testable import IosSummerProject
 
@@ -26,6 +27,10 @@ class MockCommsListPresenterDelegate: CommsListPresenterDelegate {
     
     func goToEditComms(_ id: Int) {
         didGoToEditCommsCallCount += 1
+    }
+    
+    func getCommsDetail(with id: Int) -> UIViewController {
+        return UIViewController()
     }
     
     

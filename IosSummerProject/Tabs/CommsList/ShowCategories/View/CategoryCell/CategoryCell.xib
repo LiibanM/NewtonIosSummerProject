@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCell" customModule="IosSummerProject" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="91" height="56"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="91" height="56"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zCM-zN-MUd">
+                        <rect key="frame" x="5" y="0.0" width="81" height="56"/>
+                        <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                        <color key="textColor" red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" red="0.23137254900000001" green="0.52549019610000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="zCM-zN-MUd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="2Zb-f5-htw"/>
+                <constraint firstItem="zCM-zN-MUd" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="8Mf-27-9OJ"/>
+                <constraint firstItem="zCM-zN-MUd" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="brn-Ui-yKY"/>
+                <constraint firstAttribute="bottom" secondItem="zCM-zN-MUd" secondAttribute="bottom" id="fCm-fB-hiA"/>
+                <constraint firstItem="zCM-zN-MUd" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="li0-5s-zp1"/>
+                <constraint firstAttribute="trailing" secondItem="zCM-zN-MUd" secondAttribute="trailing" constant="5" id="xPC-hG-lQd"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="91" height="56"/>
+            <connections>
+                <outlet property="categoryLabel" destination="zCM-zN-MUd" id="w0I-qV-yha"/>
+            </connections>
+            <point key="canvasLocation" x="-131.15942028985509" y="152.00892857142856"/>
+        </collectionViewCell>
+    </objects>
+</document>

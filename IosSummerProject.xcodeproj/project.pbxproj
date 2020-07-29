@@ -16,6 +16,7 @@
 		702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */; };
 		702C117024CECB2100799497 /* MockApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C116F24CECB2100799497 /* MockApiService.swift */; };
 		702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C117124CECB9000799497 /* CommsListPresenterTests.swift */; };
+		71127A0024D15656005FC4A3 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 711279FF24D15656005FC4A3 /* Poppins-Regular.ttf */; };
 		7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098224CD6E93001C7A8F /* EditCommsViewController.swift */; };
 		7134098524CD6EA0001C7A8F /* EditComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7134098424CD6EA0001C7A8F /* EditComms.storyboard */; };
 		7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7134098624CD6EAF001C7A8F /* EditCommsPresenter.swift */; };
@@ -35,6 +36,12 @@
 		71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ABADB724C5A99400E48992 /* CommsCell.xib */; };
 		71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */; };
 		71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */; };
+		A491B82A24CED8060069559A /* ShowCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82924CED8060069559A /* ShowCategoriesViewController.swift */; };
+		A491B82C24CED8190069559A /* ShowCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A491B82B24CED8190069559A /* ShowCategories.storyboard */; };
+		A491B82E24CED82F0069559A /* ShowCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */; };
+		A491B83024CED8430069559A /* ShowCategoriesPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82F24CED8430069559A /* ShowCategoriesPresenterProtocol.swift */; };
+		A491B83424CEF1AB0069559A /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B83224CEF1AB0069559A /* CategoryCell.swift */; };
+		A491B83524CEF1AB0069559A /* CategoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A491B83324CEF1AB0069559A /* CategoryCell.xib */; };
 		A4E8F09024C0FC5C00B7A26F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */; };
 		A4E8F09224C0FC5C00B7A26F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */; };
 		A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F09324C0FC5C00B7A26F /* ViewController.swift */; };
@@ -73,6 +80,7 @@
 		D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */; };
 		D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */; };
 		D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */; };
+		D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACCDE224D07B40000A4C2B /* LabelButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +104,7 @@
 		702C116D24CECB1000799497 /* MockCommsListPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenterView.swift; sourceTree = "<group>"; };
 		702C116F24CECB2100799497 /* MockApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockApiService.swift; sourceTree = "<group>"; };
 		702C117124CECB9000799497 /* CommsListPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListPresenterTests.swift; sourceTree = "<group>"; };
+		711279FF24D15656005FC4A3 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		7134097E24CC2F3C001C7A8F /* IosSummerProject.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IosSummerProject.entitlements; sourceTree = "<group>"; };
 		7134098224CD6E93001C7A8F /* EditCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsViewController.swift; sourceTree = "<group>"; };
 		7134098424CD6EA0001C7A8F /* EditComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = EditComms.storyboard; sourceTree = "<group>"; };
@@ -118,6 +127,12 @@
 		71ABADB724C5A99400E48992 /* CommsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommsCell.xib; sourceTree = "<group>"; };
 		71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewControllerTests.swift; sourceTree = "<group>"; };
 		71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenter.swift; sourceTree = "<group>"; };
+		A491B82924CED8060069559A /* ShowCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesViewController.swift; sourceTree = "<group>"; };
+		A491B82B24CED8190069559A /* ShowCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowCategories.storyboard; sourceTree = "<group>"; };
+		A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenter.swift; sourceTree = "<group>"; };
+		A491B82F24CED8430069559A /* ShowCategoriesPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenterProtocol.swift; sourceTree = "<group>"; };
+		A491B83224CEF1AB0069559A /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		A491B83324CEF1AB0069559A /* CategoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCell.xib; sourceTree = "<group>"; };
 		A4E8F08C24C0FC5C00B7A26F /* IosSummerProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IosSummerProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4E8F08F24C0FC5C00B7A26F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A4E8F09124C0FC5C00B7A26F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -158,6 +173,7 @@
 		D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewControllerTests.swift; sourceTree = "<group>"; };
 		D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenter.swift; sourceTree = "<group>"; };
 		D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterTests.swift; sourceTree = "<group>"; };
+		D2ACCDE224D07B40000A4C2B /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
 		FFFDF5139D4752466148633B /* Pods-IosSummerProject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.release.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +220,14 @@
 				702C115D24C5B9D000799497 /* ApiService.swift */,
 			);
 			path = "API Service";
+			sourceTree = "<group>";
+		};
+		711279FE24D1560B005FC4A3 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				711279FF24D15656005FC4A3 /* Poppins-Regular.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		7134097F24CD6E64001C7A8F /* EditComms */ = {
@@ -353,6 +377,43 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		A491B82624CED7CB0069559A /* ShowCategories */ = {
+			isa = PBXGroup;
+			children = (
+				A491B82824CED7E40069559A /* View */,
+				A491B82724CED7DD0069559A /* Presenter */,
+			);
+			path = ShowCategories;
+			sourceTree = "<group>";
+		};
+		A491B82724CED7DD0069559A /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */,
+				A491B82F24CED8430069559A /* ShowCategoriesPresenterProtocol.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A491B82824CED7E40069559A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A491B83124CEF17D0069559A /* CategoryCell */,
+				A491B82924CED8060069559A /* ShowCategoriesViewController.swift */,
+				A491B82B24CED8190069559A /* ShowCategories.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A491B83124CEF17D0069559A /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				A491B83224CEF1AB0069559A /* CategoryCell.swift */,
+				A491B83324CEF1AB0069559A /* CategoryCell.xib */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
 		A4E8F08324C0FC5C00B7A26F = {
 			isa = PBXGroup;
 			children = (
@@ -389,6 +450,7 @@
 				A4E8F09824C0FC5E00B7A26F /* Assets.xcassets */,
 				A4E8F09A24C0FC5E00B7A26F /* LaunchScreen.storyboard */,
 				A4E8F09D24C0FC5E00B7A26F /* Info.plist */,
+				711279FE24D1560B005FC4A3 /* Font */,
 			);
 			path = IosSummerProject;
 			sourceTree = "<group>";
@@ -396,6 +458,7 @@
 		A4E8F0A424C0FCF600B7A26F /* Reuseables */ = {
 			isa = PBXGroup;
 			children = (
+				D2ACCDDF24D07ABB000A4C2B /* UIComponents */,
 				A4E8F0A524C0FD1000B7A26F /* Protocols */,
 				A4E8F0AD24C0FD5B00B7A26F /* Constants */,
 			);
@@ -453,6 +516,7 @@
 		A4E8F0B224C0FE4300B7A26F /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
+				A491B82624CED7CB0069559A /* ShowCategories */,
 				7134097F24CD6E64001C7A8F /* EditComms */,
 				71ABAD8824C325A200E48992 /* CommsDetail */,
 				71ABAD7D24C324AF00E48992 /* AddComms */,
@@ -674,6 +738,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		D2ACCDDF24D07ABB000A4C2B /* UIComponents */ = {
+			isa = PBXGroup;
+			children = (
+				D2ACCDE224D07B40000A4C2B /* LabelButton.swift */,
+			);
+			path = UIComponents;
+			sourceTree = "<group>";
+		};
 		DA16121C00B257EFD1955AEC /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -778,9 +850,12 @@
 				71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */,
 				71ABAD9624C3269600E48992 /* CommsList.storyboard in Resources */,
 				71ABAD8224C324E700E48992 /* AddComms.storyboard in Resources */,
+				A491B82C24CED8190069559A /* ShowCategories.storyboard in Resources */,
+				A491B83524CEF1AB0069559A /* CategoryCell.xib in Resources */,
 				A4E8F09C24C0FC5E00B7A26F /* LaunchScreen.storyboard in Resources */,
 				A4E8F0E324C106CA00B7A26F /* BrowseTags.storyboard in Resources */,
 				A4E8F09924C0FC5E00B7A26F /* Assets.xcassets in Resources */,
+				71127A0024D15656005FC4A3 /* Poppins-Regular.ttf in Resources */,
 				A4E8F09724C0FC5C00B7A26F /* Main.storyboard in Resources */,
 				A4E8F0EE24C107C200B7A26F /* EditTags.storyboard in Resources */,
 				A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */,
@@ -875,6 +950,7 @@
 				71ABAD9024C325F100E48992 /* CommsDetailPresenter.swift in Sources */,
 				A4E8F0E124C106BE00B7A26F /* BrowseTagsViewController.swift in Sources */,
 				A4E8F0A824C0FD3300B7A26F /* Coordinator.swift in Sources */,
+				A491B82E24CED82F0069559A /* ShowCategoriesPresenter.swift in Sources */,
 				D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */,
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
@@ -884,9 +960,12 @@
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
+				A491B83024CED8430069559A /* ShowCategoriesPresenterProtocol.swift in Sources */,
+				A491B83424CEF1AB0069559A /* CategoryCell.swift in Sources */,
 				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
 				A4E8F10824C10C4E00B7A26F /* LoginViewController.swift in Sources */,
 				702C115924C5B73200799497 /* User.swift in Sources */,
+				A491B82A24CED8060069559A /* ShowCategoriesViewController.swift in Sources */,
 				7134098724CD6EAF001C7A8F /* EditCommsPresenter.swift in Sources */,
 				A4E8F0AA24C0FD3F00B7A26F /* AppCoordinator.swift in Sources */,
 				702C115724C5B5FB00799497 /* Article.swift in Sources */,
@@ -902,6 +981,7 @@
 				702C115E24C5B9D000799497 /* ApiService.swift in Sources */,
 				702C115B24C5B73F00799497 /* Category.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
+				D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */,
 				A4E8F10124C10C2100B7A26F /* LoginCoordinator.swift in Sources */,
 				A4E8F0F324C1088300B7A26F /* AddTagPresenter.swift in Sources */,
 				A4E8F0AF24C0FD6B00B7A26F /* Constants.swift in Sources */,
@@ -1109,8 +1189,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = IosSummerProject/IosSummerProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95XXQA45AL;
 				INFOPLIST_FILE = IosSummerProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1129,8 +1210,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = IosSummerProject/IosSummerProject.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 95XXQA45AL;
 				INFOPLIST_FILE = IosSummerProject/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

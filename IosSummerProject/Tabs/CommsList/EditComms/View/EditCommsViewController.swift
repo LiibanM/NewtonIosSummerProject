@@ -9,16 +9,18 @@
 import UIKit
 import Kingfisher
 
+
 class EditCommsViewController: UIViewController, Storyboarded {
     
     @IBOutlet weak var editCommsCategory: UIButton!
     @IBOutlet weak var editCommsImage: UIImageView!
     @IBOutlet weak var editCommsTitle: UITextField!
-    @IBOutlet weak var editCommsDescription: UITextField!
+    @IBOutlet weak var editCommsDescription: UITextView!
     @IBOutlet weak var editCommsHighlighted: UISegmentedControl!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var editOverlayButton: UIButton!
     
+    var selectedCategory: Category!
     var editCommsPresenter: EditCommsPresenterProtocol!
     var comm: Article!
 
@@ -70,7 +72,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
             oldHighlighted == editCommsHighlighted.isSelected &&
             oldCategory.category_name == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
-            ){
+            ) {
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -92,6 +94,9 @@ class EditCommsViewController: UIViewController, Storyboarded {
             return
         }
         editCommsImage.kf.setImage(with: url)
+        editCommsTitle.layer.borderWidth = 1
+        editCommsTitle.layer.borderColor =  UIColor.lightGray.cgColor
+        editCommsTitle.layer.cornerRadius = 5
         editCommsDescription.layer.borderWidth = 1
         editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
         editCommsDescription.layer.cornerRadius = 5
@@ -103,19 +108,18 @@ class EditCommsViewController: UIViewController, Storyboarded {
         showImagePickerControllerActionSheet()
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    @IBAction func selectCategoryTapped(_ sender: Any) {
+        editCommsPresenter.didTapSelectCategory()
+    } 
+    
 }
 
 extension EditCommsViewController: EditCommsPresenterView {
+    func setCategory(with category: Category) {
+        selectedCategory = category
+        editCommsCategory.titleLabel?.text = selectedCategory.category_name
+    }
+    
     func setCommsData(with article: Article) {
         comm = article
         print(comm, "edit")

@@ -14,7 +14,10 @@ class CommsCell: UITableViewCell {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var commsImageView: UIImageView!
     @IBOutlet weak var commsTitleLabel: UILabel!
-    @IBOutlet weak var commsCategoryLabel: UILabel!
+   
+    @IBOutlet weak var commsCategoryLabel: UIButton!
+    
+    
     @IBOutlet weak var highlightedImageView: UIImageView!
     
     @IBOutlet weak var commsDescription: UILabel!

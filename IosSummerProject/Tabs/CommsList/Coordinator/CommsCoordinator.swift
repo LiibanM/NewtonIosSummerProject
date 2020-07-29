@@ -16,11 +16,17 @@ class CommsCoordinator: Coordinator {
     
     var apiService: ApiServiceProtocol
     var user: User
+    var addCommsViewController: AddCommsViewController
+    var editViewController: EditCommsViewController
+    
+    var modalDisplayedOn: String!
     
     init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate,_ user: User, _ apiService: ApiServiceProtocol) {
         
         self.user = user
         self.apiService = apiService
+        addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
+        editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
         super.init(navigationController: navigationController)
     }
     
@@ -37,23 +43,44 @@ class CommsCoordinator: Coordinator {
         navigationController.navigationBar.prefersLargeTitles = true
     }
     
-    func showCommsDetail(_ id: Int) {
+    
+    
+    func showCommsDetail(_ id: Int){
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, user, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
+        navigationController.navigationBar.prefersLargeTitles = false
+
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
     }
     
+    func showPreviewCommsDetail(_ id: Int) -> UIViewController {
+        let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
+               commsDetailViewController.commsDetailPresenter = commsDetailPresenter
+        commsDetailPresenter.articleId = id;
+        navigationController.navigationBar.prefersLargeTitles = false
+        return commsDetailViewController
+    }
+    
     func showAddComms() {
-        let addCommsViewController = AddCommsViewController.instantiate(storyboard: "AddComms")
-        let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self)
+        let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self, apiService)
         addCommsViewController.addCommsPresenter = addCommsPresenter
         self.navigationController.pushViewController(addCommsViewController, animated: true)
     }
     
+    func showCategories() {
+        let showCategoriesViewController = ShowCategoriesViewController.instantiate(storyboard: "ShowCategories")
+        let showCategoriesPresenter = ShowCategoriesPresenter(with: showCategoriesViewController, delegate: self, apiService)
+        showCategoriesViewController.showCategoriesPresenter = showCategoriesPresenter
+        self.navigationController.showDetailViewController(showCategoriesViewController, sender: nil)
+        
+        
+    }
     func showEditComms(with id: Int?, or article: Article?) {
-        let editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
+        editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
+
         let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
         if let passedId = id {
             editCommsPresenter.articleId = passedId
@@ -80,11 +107,23 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     func goToCommsDetail(_ id: Int) {
         showCommsDetail(id)
     }
+    
+    func getCommsDetail(with id: Int) -> UIViewController {
+        print("articleId", id)
+        return showPreviewCommsDetail(id)
+    }
 }
 
 extension CommsCoordinator: AddCommsPresenterDelegate {
+    func goToShowCategories(currentPage: String) {
+        modalDisplayedOn = currentPage
+
+        showCategories()
+    }
+    
     func goToCommsList() {
         showCommsList()
+        
     }
 }
 
@@ -95,7 +134,24 @@ extension CommsCoordinator: CommsDetailPresenterDelegate {
     
 }
 
+extension CommsCoordinator: ShowCategoriesPresenterDelegate {
+    func didSelectCategory(with category: Category) {
+        navigationController.dismiss(animated: true) {
+            if self.modalDisplayedOn == "add" {
+            self.addCommsViewController.addCommsPresenter.selectedCategory(category)
+            } else {
+                self.editViewController.editCommsPresenter.selectedCategory(with: category)
+            }
+    }
+  }
+}
+    
 extension CommsCoordinator: EditCommsPresenterDelegate {
+    func goToCategoriesFromEdit(currentPage: String) {
+        modalDisplayedOn = currentPage
+        showCategories()
+    }
+    
     func goToCommsListAfterSave() {
         showCommsList()
     }
