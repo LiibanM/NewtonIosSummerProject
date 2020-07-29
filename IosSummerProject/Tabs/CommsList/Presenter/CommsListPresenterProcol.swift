@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 protocol CommsListPresenterProtocol {
     func didTapAddComms()
@@ -14,5 +15,6 @@ protocol CommsListPresenterProtocol {
     func didSwipeEdit(with id: Int)
     func highlightComm(with id: Int)
     func loadData()
+    func previewCommsDetail(with id: Int) -> UIViewController
 }
 
