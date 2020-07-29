@@ -9,7 +9,7 @@
 import Foundation
 
 protocol CommsDetailPresenterDelegate {
-    func goToEditComms(_ article: Article)
+    func goToEditComms(_ article: Article) 
 }
 
 protocol CommsDetailPresenterView {

@@ -72,7 +72,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
             oldHighlighted == editCommsHighlighted.isSelected &&
             oldCategory.category_name == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
-            ){
+            ) {
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
