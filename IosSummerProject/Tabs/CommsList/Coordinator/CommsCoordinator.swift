@@ -53,7 +53,6 @@ class CommsCoordinator: Coordinator {
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailViewController.user = user
         commsDetailPresenter.articleId = id;
-        print("artID", id)
         navigationController.navigationBar.prefersLargeTitles = false
 
         self.navigationController.pushViewController(commsDetailViewController, animated: true)
@@ -87,11 +86,17 @@ class CommsCoordinator: Coordinator {
         editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
         editViewController.user = self.user
         let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
+        print(id)
         if let passedId = id {
+            print(passedId, "CC")
+
             editCommsPresenter.articleId = passedId
         }
         if let passedArticle = article {
-             editCommsPresenter.comm = passedArticle
+            print(passedArticle.articleID, "CC")
+
+            editCommsPresenter.comm = passedArticle
+            editCommsPresenter.articleId = passedArticle.articleID
         }
         editViewController.editCommsPresenter = editCommsPresenter
         self.navigationController.pushViewController(editViewController, animated: true)
@@ -114,7 +119,6 @@ extension CommsCoordinator: CommsListPresenterDelegate {
     }
     
     func getCommsDetail(with id: Int) -> UIViewController {
-        print("articleId", id)
         return showPreviewCommsDetail(id)
     }
 }
@@ -158,7 +162,6 @@ extension CommsCoordinator: EditCommsPresenterDelegate {
     }
     
     func goToCommsListAfterSave() {
-        print("reached here bro")
         showCommsList()
     }
 }

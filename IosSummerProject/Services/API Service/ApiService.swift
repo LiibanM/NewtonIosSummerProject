@@ -12,8 +12,10 @@ import KeychainSwift
 protocol ApiServiceProtocol {
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
            Void)
-    func sendData(url: String, payload: NewArticle, completion: @escaping (Result<Article, NetworkError>) -> ())
+    func addNewArticle(url: String, payload: NewArticle, completion: @escaping (Result<Article, NetworkError>) -> ())
     func authenticateUser(url: String, payload: GoogleToken, completion: @escaping (Result<Token, NetworkError>) -> ())
+    func editAnArticle(url: String, payload: EditArticle, completion: @escaping (Result<Article, NetworkError>) -> ())
+    func addACategory(url: String, payload: AddCategory, completion: @escaping (Result<Category, NetworkError>) -> ())
 }
 
 enum NetworkError: Error {
@@ -21,7 +23,7 @@ enum NetworkError: Error {
 }
 
 class ApiService: ApiServiceProtocol {
-    
+        
     func fetchData<T:Decodable>(url: String, objectType: T.Type, completion: @escaping (Result<T, NetworkError>) ->
         Void) {
         guard let url = URL(string: url) else {
@@ -29,12 +31,10 @@ class ApiService: ApiServiceProtocol {
             return
         }
         var urlReq = URLRequest(url)
-        print(urlReq.allHTTPHeaderFields, "req", urlReq)
         let session = URLSession(configuration: .default)
      
         let task = session.dataTask(with: urlReq) { (data, urlResponse, error) in
             if let data = data {
-                print(data, "YOYOYO")
                 do{
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(decodedData))
@@ -56,7 +56,6 @@ class ApiService: ApiServiceProtocol {
                 completion(.failure(.badUrl))
                 return
             }
-            
             do {
                 var urlRequest = URLRequest(url: url)
                 urlRequest.httpMethod = "POST"
@@ -83,18 +82,15 @@ class ApiService: ApiServiceProtocol {
     
     
     
-    func sendData(url: String, payload: NewArticle, completion: @escaping (Result<Article, NetworkError>) -> ()) {
-        
+    func addNewArticle(url: String, payload: NewArticle, completion: @escaping (Result<Article, NetworkError>) -> ()) {
         guard let url = URL(string: url) else {
             completion(.failure(.badUrl))
             return
         }
-        
         do {
             var urlRequest = URLRequest(url)
             urlRequest.httpMethod = "POST"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//            let serialisedData = try JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted)
             urlRequest.httpBody = try JSONEncoder().encode(payload)
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 guard let jsonData = data else {
@@ -103,6 +99,62 @@ class ApiService: ApiServiceProtocol {
                 }
                 do {
                     let data = try JSONDecoder().decode(Article.self, from: jsonData)
+                        completion(.success(data))
+                    } catch {
+                        completion(.failure(.failedToDecode))
+                }
+            }
+            dataTask.resume()
+        } catch {
+            completion(.failure(.failedToEncode))
+        }
+    }
+    
+    func editAnArticle(url: String, payload: EditArticle, completion: @escaping (Result<Article, NetworkError>) -> ()) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.badUrl))
+            return
+        }
+        do {
+            var urlRequest = URLRequest(url)
+            urlRequest.httpMethod = "PUT"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(payload)
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                guard let jsonData = data else {
+                    completion(.failure(.requestFailed))
+                    return
+                }
+                do {
+                    let data = try JSONDecoder().decode(Article.self, from: jsonData)
+                        completion(.success(data))
+                    } catch {
+                        completion(.failure(.failedToDecode))
+                }
+            }
+            dataTask.resume()
+        } catch {
+            completion(.failure(.failedToEncode))
+        }
+    }
+    
+    func addACategory(url: String, payload: AddCategory, completion: @escaping (Result<Category, NetworkError>) -> ()) {
+        guard let url = URL(string: url) else {
+            completion(.failure(.badUrl))
+            return
+        }
+        do {
+            var urlRequest = URLRequest(url)
+            urlRequest.httpMethod = "POST"
+            urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = try JSONEncoder().encode(payload)
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                guard let jsonData = data else {
+                    completion(.failure(.requestFailed))
+                    return
+                }
+                do {
+                    let data = try JSONDecoder().decode(Category.self, from: jsonData)
                         completion(.success(data))
                     } catch {
                         completion(.failure(.failedToDecode))

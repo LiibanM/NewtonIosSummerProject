@@ -42,9 +42,6 @@ class AppCoordinator: Coordinator {
 
                   }
         }
-        
-//        print(decodedData, "hello")
-//        user.permissionLevel = decodedData.body["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] as! String
         super.init(navigationController: navigationController)
         self.navigationController.navigationBar.isHidden = true
     }

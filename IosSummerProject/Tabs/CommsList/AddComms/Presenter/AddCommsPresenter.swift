@@ -32,7 +32,7 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
     }
     
     func saveNewComm(article: NewArticle) {
-        apiService.sendData(url: "\(Constants.ApiService.url)/articles", payload: article) { (result) in
+        apiService.addNewArticle(url: "\(Constants.ApiService.url)/articles", payload: article) { result in
              switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -42,7 +42,7 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
                     self.view.errorOccured(message: "request failed")
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
-                case .success(let article):
+                case .success(let article ):
                     self.delegate.goToCommsList()
                     return
                 default:

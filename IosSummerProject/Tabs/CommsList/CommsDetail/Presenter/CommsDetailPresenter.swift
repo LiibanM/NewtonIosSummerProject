@@ -50,7 +50,6 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
                        self.view.errorOccured(message: "Unauthenticated" )
                    case .success(let article):
                        self.view.setCommsData(with: article)
-                       print(article, "CommsDetail")
                    default:
                        self.view.errorOccured(message: "error")
                }

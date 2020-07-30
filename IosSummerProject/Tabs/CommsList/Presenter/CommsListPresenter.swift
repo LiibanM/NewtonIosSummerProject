@@ -61,7 +61,6 @@ class CommsListPresenter: CommsListPresenterProtocol {
                 case .success(let articles):
 //                    let sortedByDate = self.sortByDate(data: articles)
 //                    let sortedArticles = self.sortByHighlighted(data: sortedByDate)
-                    print(articles)
                     let sortedArticles = self.sortByHighlighted(data: articles)
                     self.view.setCommsData(with: sortedArticles)
                     print("Success")

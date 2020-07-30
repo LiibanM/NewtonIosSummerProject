@@ -18,3 +18,9 @@ struct NewCategory: Codable {
     let categoryName: String
 }
 
+struct AddCategory: Codable {
+    let categoryName: String
+}
+
+
+

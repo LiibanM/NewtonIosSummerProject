@@ -106,6 +106,7 @@ extension CommsDetailViewController: CommsDetailPresenterView {
     
     func setCommsData(with data: Article) {
         DispatchQueue.main.async {
+            print(data)
             self.comm = data
             if let image = data.picture {
                 self.commsImageView.downloaded(from: image)

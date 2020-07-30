@@ -11,6 +11,7 @@ import Foundation
 protocol ShowCategoriesPresenterView {
     func errorOccured(message: String)
     func setCategories(with categories: [Category])
+    func addNewCategory(with new: Category)
 }
 
 protocol ShowCategoriesPresenterDelegate {
@@ -59,33 +60,28 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         }
     }
     
-//    func sendCategory(with new: Category) {
-//        apiService.sendData(url: "", payload: new) { (result) in
-//            switch result {
-//                case .failure(.badUrl):
-//                    self.view.errorOccured(message: "Given Url was bad")
-//                case .failure(.failedToDecode):
-//                    self.view.errorOccured(message: "Failed to decode data" )
-//                case .failure(.requestFailed):
-//                    self.view.errorOccured(message: "request failed")
-//                case .failure(.unAuthenticated):
-//                    self.view.errorOccured(message: "Unauthenticated" )
-//                case .success(let newCategory):
-//                    self.view.setCategories(with: newCategory)
-//                default:
-//                    self.view.errorOccured(message: "error")
-//            }
-//        }
-//    }
+    func addCategory(with new: AddCategory) {
+        apiService.addACategory(url: "\(Constants.ApiService.url)/categories", payload: new) { (result) in
+            switch result {
+                case .failure(.badUrl):
+                    self.view.errorOccured(message: "Given Url was bad")
+                case .failure(.failedToDecode):
+                    self.view.errorOccured(message: "Failed to decode data" )
+                case .failure(.requestFailed):
+                    self.view.errorOccured(message: "request failed")
+                case .failure(.unAuthenticated):
+                    self.view.errorOccured(message: "Unauthenticated" )
+                case .success(let category):
+                    self.view.addNewCategory(with: category)
+                default:
+                    self.view.errorOccured(message: "error")
+            }
+        }
 
-    func mockSendCategory(with new: Category) {
-        categories.append(new)
-        self.view.setCategories(with: categories)
     }
 
-
-    func sendCategory(with category: Category) {
-        mockSendCategory(with: category)
+    func sendCategory(with name: AddCategory) {
+         addCategory(with: name)
     }
        
        

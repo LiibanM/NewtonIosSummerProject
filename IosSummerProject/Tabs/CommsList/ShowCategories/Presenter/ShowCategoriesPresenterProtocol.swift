@@ -11,5 +11,5 @@ import Foundation
 protocol ShowCategoriesPresenterProtocol  {
     func loadCategories()
     func didSelectCategory(with category: Category)
-    func sendCategory(with category: Category)
+    func sendCategory(with name: AddCategory)
 }

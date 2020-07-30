@@ -51,13 +51,14 @@ class CommsCell: UITableViewCell {
         guard let url = URL(string: url) else {
             print("not a valid url")
             DispatchQueue.main.async {
-                self.commsImageView.image = #imageLiteral(resourceName: "comms-placeholder")
+                self.commsImageView.image = #imageLiteral(resourceName: "iOS FTW")
                 self.setLoading(isLoading: false)
             }
             
             return
         }
         DispatchQueue.main.async {
+            print(url,"url")
             self.commsImageView.kf.setImage(with: url)
             self.setLoading(isLoading: false)
         }

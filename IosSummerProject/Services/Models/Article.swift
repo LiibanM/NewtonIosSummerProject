@@ -20,6 +20,18 @@ struct Article: Codable {
     let picture: String?
 }
 
+struct EditArticle: Codable {
+    let articleID: Int
+    let title: String?
+    let content: String?
+    let articleCategories: [NewArticleCategory]
+    let dateCreated: String
+    let dateLastUpdated: String
+    let user: NewUser
+    let highlighted: Bool
+    let picture: String?
+}
+
 struct ArticleCategory: Codable {
     let category: Category
 }

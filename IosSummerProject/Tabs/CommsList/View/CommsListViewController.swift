@@ -189,7 +189,9 @@ extension CommsListViewController: UITableViewDataSource {
         cell.commsDescription.text = currentComms.content
 
         cell.commsCategoryLabel.setTitle(currentComms.articleCategories[0].category.categoryName, for: .normal)
-        cell.downLoadImage(from: currentComms.picture ?? "")
+        if let image = currentComms.picture {
+            cell.downLoadImage(from: image)
+        }
         cell.highlightedImageView.isHidden = !currentComms.highlighted
         
         return cell
@@ -218,14 +220,14 @@ extension CommsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if user.permissionLevel == "admin" {
-            let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
-                let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+                 let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+            let highlight = UIContextualAction(style: .normal, title: swipedComm.highlighted ? "Unhighlight": "Highlight") { (action, view, completionHandler) in
                 let id = swipedComm.articleID
                 self.commsListPresenter.highlightComm(with: id)
                 completionHandler(true)
             }
             
-            highlight.image = UIImage(systemName: "star")
+            highlight.image = swipedComm.highlighted ? UIImage(systemName: "star") :  UIImage(systemName: "star.fill")
             highlight.backgroundColor = UIColor(red: 124/255, green: 58/255, blue:175/255, alpha: 1)
             
             let swipe = UISwipeActionsConfiguration(actions: [highlight])

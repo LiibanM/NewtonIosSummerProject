@@ -36,7 +36,7 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     
     @IBAction func addCategoryButtonTapped(_ sender: Any) {
         if categoryTextField.text == "" { return }
-//        showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
+        showCategoriesPresenter.sendCategory(with: AddCategory(categoryName: categoryTextField.text!))
         categoryTextField.text = ""
     }
     
@@ -44,6 +44,13 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
 }
 
 extension ShowCategoriesViewController: ShowCategoriesPresenterView {
+    func addNewCategory(with new: Category) {
+        DispatchQueue.main.async {
+            self.categories.append(new)
+            self.categoriesCollectionView.reloadData()
+        }
+    }
+    
     func errorOccured(message: String) {
         print(message)
     }

@@ -76,7 +76,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-//            editCommsPresenter.didTapSave(for: NewArticle(articleID: comm.articleID, title: editCommsTitle.text!, content: editCommsDescription.text!, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: comm.articleCategories[0].category.categoryID, categoryName: (editCommsCategory.titleLabel?.text!)!))], dateCreated: "\(Date())", dateLastUpdated: "\(Date())", user: self.user, highlighted: false, picture: ""))
+            editCommsPresenter.didTapSave(for: EditArticle(articleID: comm.articleID, title: editCommsTitle.text!, content: editCommsDescription.text!, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: comm.articleCategories[0].category.categoryID, categoryName: (editCommsCategory.titleLabel?.text!)!))], dateCreated: "\(Date())", dateLastUpdated: "\(Date())", user: self.user, highlighted: false, picture: ""))
         }
     }
 
@@ -114,7 +114,6 @@ extension EditCommsViewController: EditCommsPresenterView {
     
     func setCommsData(with article: Article) {
         comm = article
-        print(article, "Edit from swipe")
         DispatchQueue.main.async {
             self.editCommsTitle.text = self.comm.title
             self.editCommsCategory.setTitle(self.comm.articleCategories[0].category.categoryName, for: .normal)
