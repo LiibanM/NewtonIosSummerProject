@@ -41,7 +41,6 @@ class CommsListViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         pickerView.isHidden = true
-        pickerView.backgroundColor = .white
         pickerView.alpha = 1
         
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available {

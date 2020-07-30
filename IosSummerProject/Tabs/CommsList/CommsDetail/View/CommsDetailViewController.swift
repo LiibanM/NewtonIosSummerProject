@@ -29,14 +29,7 @@ class CommsDetailViewController: UIViewController, Storyboarded {
                                            for: .valueChanged)
         
         commsDetailPresenter.loadData()
-        
-        // this is dummy data (will eventually be from backend)
-//        let isAdmin = true
-//        let image = comm.picture ?? ""
-        
-//        self.commsImageView.downloaded(from: image)
-        
-        
+    
         if user.permissionLevel == "admin" {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
         }
@@ -112,7 +105,7 @@ extension CommsDetailViewController: CommsDetailPresenterView {
             if let image = data.picture {
                 self.commsImageView.downloaded(from: image)
             } else {
-                self.commsImageView.image = #imageLiteral(resourceName: "news")
+                self.commsImageView.image = #imageLiteral(resourceName: "banner")
             }
             self.navigationItem.title = data.title
             self.commsTagLabelButton.setTitle(data.articleCategories[0].category.categoryName, for: .normal)
