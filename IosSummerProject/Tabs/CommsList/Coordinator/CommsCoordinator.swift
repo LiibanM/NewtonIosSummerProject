@@ -50,6 +50,7 @@ class CommsCoordinator: Coordinator {
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, user, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
+        print("artID", id)
         navigationController.navigationBar.prefersLargeTitles = false
 
         self.navigationController.pushViewController(commsDetailViewController, animated: true)

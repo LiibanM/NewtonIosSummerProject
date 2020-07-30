@@ -10,6 +10,6 @@ import Foundation
 
 struct Category: Codable {
     let categoryID: Int
-    let categoryName: String
+    let categoryName: String?
 }
 

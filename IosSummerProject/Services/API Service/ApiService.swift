@@ -28,11 +28,15 @@ class ApiService: ApiServiceProtocol {
             completion(.failure(.badUrl))
             return
         }
-        let _ = URLRequest(url)        
+        var urlReq = URLRequest(url: url)
+//        urlReq.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlReq.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJIUzI1NiIsImF1ZCI6Ijk4ODQ1ZjdiLWZjNjUtNDhkZS1hMzYyLWZjYmFiYzBkYWNmYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJleHAiOjE1OTYxMDI5NjV9.yNzU0JxJZng0yBhDtf6J-IwRGD7uIflNZHJ7-FBxxbI", forHTTPHeaderField: "Authorization")
+        print(urlReq.allHTTPHeaderFields, "req", urlReq)
         let session = URLSession(configuration: .default)
      
-        let task = session.dataTask(with: url) { (data, urlResponse, error) in
+        let task = session.dataTask(with: urlReq) { (data, urlResponse, error) in
             if let data = data {
+                print(data, "YOYOYO")
                 do{
                     let decodedData = try JSONDecoder().decode(T.self, from: data)
                     completion(.success(decodedData))
@@ -115,13 +119,14 @@ class ApiService: ApiServiceProtocol {
 
 
 extension URLRequest {
-    init(_ url: URL) {
-        self.init(url: url)
-        let keyChainService = KeychainSwift()
-        let token = keyChainService
-            .get("userJwtToken")
+//    init(_ url: URL) {
+//        self.init(url: url)
+//        let keyChainService = KeychainSwift()
+//        let token = keyChainService
+//            .get("userJwtToken")
+//        print(token, "token")
 //        if token != nil {
 //            self.setValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
 //        }
-    }
+//    }
 }

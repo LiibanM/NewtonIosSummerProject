@@ -21,7 +21,7 @@ class AppCoordinator: Coordinator {
     var userToken: String!
     
     var user: User!
-    var decodedData: JWT
+    var decodedData: JWT!
     
     var apiService: ApiServiceProtocol
     
@@ -29,21 +29,30 @@ class AppCoordinator: Coordinator {
         self.apiService = ApiService()
         self.keychainService = KeychainSwift()
         self.userToken = self.keychainService.get("userJwtToken")
-        decodedData = try! decode(jwt: userToken)
-        print(decodedData, "hello")
+        let firstName = self.keychainService.get("firstName")
+        let lastName = self.keychainService.get("lastName")
+        let email = self.keychainService.get("email")
+        
+        if let firstName = firstName, let lastName = lastName, let email = email {
+            user = User(userID: "1", firstName: firstName, lastName: lastName, emailAddress: nil, picture: "")
+            decodedData = try! decode(jwt: userToken)
+
+        }
+        
+//        print(decodedData, "hello")
 //        user.permissionLevel = decodedData.body["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] as! String
         super.init(navigationController: navigationController)
         self.navigationController.navigationBar.isHidden = true
     }
     
     override func start() {
-//        if userToken != nil {
-//            showComms()
-//            return
-//        } else {
+        if userToken != nil {
+            showComms()
+            return
+        } else {
             showLogin()
-//          return
-//        }
+          return
+        }
     }
     
     func showLogin() {
@@ -54,12 +63,16 @@ class AppCoordinator: Coordinator {
     }
     
     func showComms() {
-        self.navigationController.navigationBar.isHidden = false
+        DispatchQueue.main.async {
+            self.navigationController.navigationBar.isHidden = false
+        }
+        
         commsCoordinator = CommsCoordinator(navigationController, delegate: self, user, apiService)
         addChildCoordinator(commsCoordinator)
         commsCoordinator.start()
     }
 }
+
 
 extension AppCoordinator: CommsCoordinatorDelegate {
     
@@ -67,8 +80,7 @@ extension AppCoordinator: CommsCoordinatorDelegate {
 
 extension AppCoordinator: LoginCoordinatorDelegate {
     
-    func didLogin(with user: User) {
-        self.user = user
+    func didLogin() {
         self.removeChildCoordinator(loginCoordinator)
         showComms()
     }

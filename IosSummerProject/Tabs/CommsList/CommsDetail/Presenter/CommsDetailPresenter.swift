@@ -31,6 +31,7 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
         self.view = view
         self.apiService = apiService
         self.user = user
+        print(articleId, "id")
     }
     
     func loadData() {
@@ -38,7 +39,7 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
     }
     
     func getCommsDetail() {
-        apiService.fetchData(url: "\(Constants.ApiService.url)/articles\(articleId)", objectType: Article.self) { (result) in
+        apiService.fetchData(url: "\(Constants.ApiService.url)/articles/\(articleId!)", objectType: Article.self) { (result) in
                switch result {
                    case .failure(.badUrl):
                        self.view.errorOccured(message: "Given Url was bad")

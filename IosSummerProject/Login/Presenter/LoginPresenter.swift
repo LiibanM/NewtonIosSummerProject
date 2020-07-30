@@ -16,7 +16,7 @@ protocol LoginPresenterView {
 }
 
 protocol LoginPresenterDelegate {
-    func didLogin(with user: User)
+    func didLogin()
 }
 
 class LoginPresenter: NSObject, LoginPresenterProtocol {
@@ -84,8 +84,10 @@ extension LoginPresenter: GIDSignInDelegate {
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let jwt):
                     self.keychainService.set(jwt.token, forKey: "userJwtToken")
-                    let user = User(userID: 1, firstName: user.profile.givenName, lastName: user.profile.familyName, emailAddress: user.profile.email, picture: "", permissionLevel: nil)
-                    self.delegate.didLogin(with: user)
+                    self.keychainService.set(user.profile.givenName, forKey: "firstName")
+                    self.keychainService.set(user.profile.familyName, forKey: "lastName")
+                    self.keychainService.set(user.profile.email, forKey: "email")
+                    self.delegate.didLogin()
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")

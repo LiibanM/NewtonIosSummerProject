@@ -29,21 +29,21 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         commsDetailPresenter.loadData()
         
         // this is dummy data (will eventually be from backend)
-        let isAdmin = true
-        let image = comm.picture
-        let title = comm.title
-        let tag = comm.articleCategories[0].category
-        let description = comm.content
+//        let isAdmin = true
+////        let image = comm.picture ?? ""
+//        let title = comm.title
+//        let tag = comm.articleCategories[0].category
+//        let description = comm.content
         
-        self.commsImageView.downloaded(from: image)
+//        self.commsImageView.downloaded(from: image)
         self.navigationItem.title = title
-        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
+//        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
         self.commsDescriptionView.text = description
         
         
-        if isAdmin {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
-        }
+//        if isAdmin {
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
+//        }
         
         navigationController?.navigationBar.prefersLargeTitles = false
         

@@ -38,8 +38,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
         editCommsTitle.text = comm.title
         
-        oldTitle = comm.title
-        oldDescription = comm.content
+        oldTitle = comm.title!
+        oldDescription = comm.content!
         oldHighlighted = comm.highlighted
         oldCategory = comm.articleCategories[0].category
         //oldImage = comm.image
@@ -89,7 +89,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
         editCommsCategory.titleLabel?.text = comm.articleCategories[0].category.categoryName
-        guard let url = URL(string: comm.picture) else {
+        guard let url = URL(string: comm.picture ?? "") else {
             print("bad url")
             return
         }

@@ -29,8 +29,8 @@ class CommsListViewController: UIViewController, Storyboarded {
          (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
-    var topCategories: [String]!
-    var allCategories: [String]!
+    var topCategories = [String]()
+    var allCategories = [String]()
     
     var selectedOtherCategory: String!
     var otherCategories = [String]()
@@ -78,9 +78,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         }
         
         refreshControl.addTarget(self, action: #selector(getCommsData), for: .valueChanged)
-        
-        calculateOtherCategories()
-        
+                
     }
     
     func arrayToSet<T>(_ x: [T]) -> Set<T> {
@@ -122,7 +120,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         if isSearchBarEmpty {
             return doesCategoryMatch
         } else {
-            return doesCategoryMatch && comm.title.lowercased().contains(searchText.lowercased())
+            return doesCategoryMatch && comm.title!.lowercased().contains(searchText.lowercased())
         }
         
       }
@@ -141,16 +139,23 @@ class CommsListViewController: UIViewController, Storyboarded {
 
 extension CommsListViewController: CommsListPresenterView {
     func setAllCategories(with data: [String]) {
-        allCategories = data
-        allCategories.append("...")
-        topCategories = Array(allCategories[0...2])
-        topCategories.append("...")
+        DispatchQueue.main.async {
+            self.allCategories = data
+            self.allCategories.append("...")
+            self.topCategories = Array(self.allCategories[0...2])
+            self.topCategories.append("...")
+            self.calculateOtherCategories()
+            print("category from url", self.allCategories, data)
+        }
+       
     }
     
     func setCommsData(with data: [Article]) {
-        self.refreshControl.endRefreshing()
-        comms = data
-        self.commsListTableView.reloadData()
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+            self.comms = data
+            self.commsListTableView.reloadData()
+        }
     }
     
     func errorOccured(message: String) {
@@ -182,7 +187,7 @@ extension CommsListViewController: UITableViewDataSource {
         cell.commsDescription.text = currentComms.content
 
         cell.commsCategoryLabel.setTitle(currentComms.articleCategories[0].category.categoryName, for: .normal)
-        cell.downLoadImage(from: currentComms.picture)
+        cell.downLoadImage(from: currentComms.picture ?? "")
         cell.highlightedImageView.isHidden = !currentComms.highlighted
         
         return cell

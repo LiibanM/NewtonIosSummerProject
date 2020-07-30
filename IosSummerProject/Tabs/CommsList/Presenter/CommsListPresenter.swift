@@ -48,7 +48,7 @@ class CommsListPresenter: CommsListPresenterProtocol {
     }
     
     func getComms() {
-        apiService.fetchData(url: "\(Constants.ApiService.url)/articles", objectType: [Article].self) { (result) in
+        apiService.fetchData(url: "\(Constants.ApiService.url)/Articles", objectType: [Article].self) { (result) in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -59,9 +59,10 @@ class CommsListPresenter: CommsListPresenterProtocol {
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let articles):
-                    let sortedByDate = self.sortByDate(data: articles)
-                    let sortedArticles = self.sortByHighlighted(data: sortedByDate)
-                    self.view.setCommsData(with: sortedArticles)
+//                    let sortedByDate = self.sortByDate(data: articles)
+//                    let sortedArticles = self.sortByHighlighted(data: sortedByDate)
+                    print(articles)
+                    self.view.setCommsData(with: articles)
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")
@@ -70,7 +71,7 @@ class CommsListPresenter: CommsListPresenterProtocol {
     }
     
     func getCategories() {
-        apiService.fetchData(url: "\(Constants.ApiService.url)/categories", objectType: [Category].self) { (result) in
+        apiService.fetchData(url: "\(Constants.ApiService.url)/Categories", objectType: [Category].self) { (result) in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -81,7 +82,7 @@ class CommsListPresenter: CommsListPresenterProtocol {
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let categories):
-                    let categoryNames = categories.map { $0.categoryName }
+                    let categoryNames = categories.compactMap { $0.categoryName }
                     self.view.setAllCategories(with: categoryNames)
                     print("Success")
                 default:

@@ -10,13 +10,14 @@ import Foundation
 
 struct Article: Codable {
     let articleID: Int
-    let title: String
-    let content: String
+    let title: String?
+    let content: String?
     let articleCategories: [ArticleCategory]
-    let dateCreated: Date
+    let dateCreated: String
+    let dateLastUpdated: String
     let user: User
     let highlighted: Bool
-    let picture: String
+    let picture: String?
 }
 
 struct ArticleCategory: Codable {
