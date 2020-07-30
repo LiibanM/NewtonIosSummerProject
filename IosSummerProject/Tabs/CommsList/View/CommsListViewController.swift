@@ -19,6 +19,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     var searchController: UISearchController!
     var comms = [Article]()
     var filteredComms = [Article]()
+    var user: NewUser!
     var isSearchBarEmpty: Bool {
       return searchController.searchBar.text?.isEmpty ?? true
     }
@@ -35,7 +36,7 @@ class CommsListViewController: UIViewController, Storyboarded {
     var selectedOtherCategory: String!
     var otherCategories = [String]()
     
-    private let refreshControl = UIRefreshControl()
+    var refreshControl: UIRefreshControl!
      
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +48,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         if traitCollection.forceTouchCapability == UIForceTouchCapability.available {
                    registerForPreviewing(with: self, sourceView: view)
         }
-        
+        refreshControl = UIRefreshControl()
         commsListTableView.dataSource = self
         commsListTableView.delegate = self
         pickerView.dataSource = self
@@ -57,7 +58,10 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         self.navigationItem.title = "Comms"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        if user.permissionLevel == "admin" {
+            navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addButtonTapped))
+        }
+        
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Sign out", style: .plain, target: self, action: nil)
         searchController = UISearchController(searchResultsController: nil)
         searchController.searchResultsUpdater = self
@@ -192,36 +196,42 @@ extension CommsListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        
-        let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
-            let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
-            let id = swipedComm.articleID
-            self.commsListPresenter.didSwipeEdit(with: id)
-            completionHandler(true)
+        if user.permissionLevel == "admin" {
+
+            let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
+                let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+                let id = swipedComm.articleID
+                self.commsListPresenter.didSwipeEdit(with: id)
+                completionHandler(true)
+            }
+            
+            edit.image = UIImage(systemName: "pencil")
+            edit.backgroundColor = UIColor(red: 239/255, green: 108/255, blue: 0, alpha: 1)
+            
+            let swipe = UISwipeActionsConfiguration(actions: [edit])
+            return swipe
         }
-        
-        edit.image = UIImage(systemName: "pencil")
-        edit.backgroundColor = UIColor(red: 239/255, green: 108/255, blue: 0, alpha: 1)
-        
-        let swipe = UISwipeActionsConfiguration(actions: [edit])
-        return swipe
+        return nil
     }
     
     
+    
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
-            let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
-            let id = swipedComm.articleID
-            self.commsListPresenter.highlightComm(with: id)
-            completionHandler(true)
+        if user.permissionLevel == "admin" {
+            let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
+                let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
+                let id = swipedComm.articleID
+                self.commsListPresenter.highlightComm(with: id)
+                completionHandler(true)
+            }
+            
+            highlight.image = UIImage(systemName: "star")
+            highlight.backgroundColor = UIColor(red: 124/255, green: 58/255, blue:175/255, alpha: 1)
+            
+            let swipe = UISwipeActionsConfiguration(actions: [highlight])
+            return swipe
         }
-        
-        highlight.image = UIImage(systemName: "star")
-        highlight.backgroundColor = UIColor(red: 124/255, green: 58/255, blue:175/255, alpha: 1)
-        
-        let swipe = UISwipeActionsConfiguration(actions: [highlight])
-        return swipe
-        
+        return nil
     }
 }
 

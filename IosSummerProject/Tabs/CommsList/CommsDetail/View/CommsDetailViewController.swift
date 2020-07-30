@@ -19,6 +19,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     var commsDetailPresenter: CommsDetailPresenterProtocol!
     var comm: Article!
     
+    var user: NewUser!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         commsScrollView.refreshControl = UIRefreshControl()
@@ -35,9 +37,9 @@ class CommsDetailViewController: UIViewController, Storyboarded {
 //        self.commsImageView.downloaded(from: image)
         
         
-//        if isAdmin {
+        if user.permissionLevel == "admin" {
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
-//        }
+        }
         
         navigationController?.navigationBar.prefersLargeTitles = false
         

@@ -29,8 +29,6 @@ class ApiService: ApiServiceProtocol {
             return
         }
         var urlReq = URLRequest(url)
-//        urlReq.addValue("application/json", forHTTPHeaderField: "Content-Type")
-//        urlReq.addValue("Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiJIUzI1NiIsImF1ZCI6Ijk4ODQ1ZjdiLWZjNjUtNDhkZS1hMzYyLWZjYmFiYzBkYWNmYiIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6InVzZXIiLCJleHAiOjE1OTYxMDI5NjV9.yNzU0JxJZng0yBhDtf6J-IwRGD7uIflNZHJ7-FBxxbI", forHTTPHeaderField: "Authorization")
         print(urlReq.allHTTPHeaderFields, "req", urlReq)
         let session = URLSession(configuration: .default)
      
@@ -93,9 +91,10 @@ class ApiService: ApiServiceProtocol {
         }
         
         do {
-            var urlRequest = URLRequest(url: url)
-            urlRequest.httpMethod = "PUT"
+            var urlRequest = URLRequest(url)
+            urlRequest.httpMethod = "POST"
             urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+//            let serialisedData = try JSONSerialization.data(withJSONObject: payload, options: .prettyPrinted)
             urlRequest.httpBody = try JSONEncoder().encode(payload)
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 guard let jsonData = data else {
@@ -107,7 +106,7 @@ class ApiService: ApiServiceProtocol {
                         completion(.success(data))
                     } catch {
                         completion(.failure(.failedToDecode))
-                    }
+                }
             }
             dataTask.resume()
         } catch {
@@ -123,7 +122,6 @@ extension URLRequest {
         let keyChainService = KeychainSwift()
         let token = keyChainService
             .get("userJwtToken")
-        print(token, "token")
         if let token = token {
             self.setValue("\(Constants.ApiService.bearer) \(token)", forHTTPHeaderField: Constants.ApiService.forHTTPHeaderField)
         }

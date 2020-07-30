@@ -62,7 +62,8 @@ class CommsListPresenter: CommsListPresenterProtocol {
 //                    let sortedByDate = self.sortByDate(data: articles)
 //                    let sortedArticles = self.sortByHighlighted(data: sortedByDate)
                     print(articles)
-                    self.view.setCommsData(with: articles)
+                    let sortedArticles = self.sortByHighlighted(data: articles)
+                    self.view.setCommsData(with: sortedArticles)
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")

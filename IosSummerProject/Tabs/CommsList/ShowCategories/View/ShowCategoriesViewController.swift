@@ -52,8 +52,8 @@ extension ShowCategoriesViewController: ShowCategoriesPresenterView {
         
         DispatchQueue.main.async {
             self.categories = categories
+            self.categoriesCollectionView.reloadData()
         }
-        categoriesCollectionView.reloadData()
     }
     
     

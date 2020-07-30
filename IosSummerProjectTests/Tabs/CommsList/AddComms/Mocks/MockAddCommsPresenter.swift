@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockAddCommsPresenter: AddCommsPresenterProtocol {
+    func saveNewComm(article: NewArticle) {
+        
+    }
+    
     
     func selectedCategory(_ category: Category) {
         

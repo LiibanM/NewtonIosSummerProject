@@ -23,6 +23,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
     var selectedCategory: Category!
+    var user: NewUser!
     
     var addCommsPresenter: AddCommsPresenterProtocol!
     
@@ -58,20 +59,8 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @objc func postButtonTapped(_ sender: Any) {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
-        
-        let comms = CommsContent(title:title, description: content)
-        
-        let postRequest = APIRequest(endpoint: "Addcomms")
-        
-        postRequest.save(comms, completion: { result in
-            switch result{
-            case .success:
-                print("the following message has been sent")
-            case .failure:
-               print("an error occured when sending")
-            }
-        })
-        addCommsPresenter.didTapPost()
+                
+        addCommsPresenter.saveNewComm(article: NewArticle(title: title, content: content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: selectedCategory.categoryID, categoryName: categoryButton.titleLabel!.text!))], highlighted: false, picture: ""))
         
     }
     

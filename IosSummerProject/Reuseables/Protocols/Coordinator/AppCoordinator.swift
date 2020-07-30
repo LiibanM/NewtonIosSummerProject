@@ -86,6 +86,14 @@ extension AppCoordinator: LoginCoordinatorDelegate {
     
     func didLogin() {
         self.removeChildCoordinator(loginCoordinator)
+        self.userToken = self.keychainService.get("userJwtToken")
+        let firstName = self.keychainService.get("firstName")
+        let lastName = self.keychainService.get("lastName")
+        let email = self.keychainService.get("email")
+        decodedData = try! decode(jwt: userToken)
+        let userId = decodedData.body["aud"]
+        let role = decodedData.body["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+        user = NewUser(userID: userId! as! String, firstName: firstName!, lastName: lastName!, emailAddress: email!, picture: "", permissionLevel: role as! String)
         showComms()
     }
 }

@@ -12,7 +12,7 @@ struct User: Codable {
     let userID: String
     let firstName: String
     let lastName: String
-    let emailAddress: String?
+//    let emailAddress: String?
     let picture: String?
     var permissionLevel: String?
 }

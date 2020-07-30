@@ -31,10 +31,26 @@ class AddCommsPresenter: AddCommsPresenterProtocol {
         self.apiService = apiService
     }
     
-//    func sendNewComm() {
-//        apiService.sendData(url: "", payload: <#T##Decodable & Encodable#>, completion: <#T##(Result<Decodable & Encodable, NetworkError>) -> ()#>)
-//    }
-//    
+    func saveNewComm(article: NewArticle) {
+        apiService.sendData(url: "\(Constants.ApiService.url)/articles", payload: article) { (result) in
+             switch result {
+                case .failure(.badUrl):
+                    self.view.errorOccured(message: "Given Url was bad")
+                case .failure(.failedToDecode):
+                    self.view.errorOccured(message: "Failed to decode data" )
+                case .failure(.requestFailed):
+                    self.view.errorOccured(message: "request failed")
+                case .failure(.unAuthenticated):
+                    self.view.errorOccured(message: "Unauthenticated" )
+                case .success(let article):
+                    self.delegate.goToCommsList()
+                    return
+                default:
+                    self.view.errorOccured(message: "error")
+            }
+        }
+    }
+
     func didTapPost() {
         delegate.goToCommsList()
     }

@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AddCommsPresenterProtocol {
-    func didTapPost()
     func didTapSelectCategory()
     func selectedCategory(_ category: Category)
+    func saveNewComm(article: NewArticle)
 }

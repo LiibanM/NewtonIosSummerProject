@@ -29,13 +29,13 @@ struct NewArticleCategory: Codable {
 }
 
 struct NewArticle: Codable {
-    let articleID: Int
+//    let articleID: Int
     let title: String
     let content: String
     let articleCategories: [NewArticleCategory]
-    let dateCreated: String
-    let dateLastUpdated: String
-    let user: NewUser
+//    let dateCreated: String
+//    let dateLastUpdated: String
+//    let user: NewUser
     let highlighted: Bool
     let picture: String
 }

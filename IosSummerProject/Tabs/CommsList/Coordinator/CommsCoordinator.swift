@@ -38,9 +38,11 @@ class CommsCoordinator: Coordinator {
         let commsListViewController = CommsListViewController.instantiate(storyboard: "CommsList")
         let commsListPresenter = CommsListPresenter(with: commsListViewController, delegate: self, user, apiService)
         commsListViewController.commsListPresenter = commsListPresenter
-        self.navigationController.viewControllers = [UIViewController]()
-        navigationController.pushViewController(commsListViewController, animated: false)
-        navigationController.navigationBar.prefersLargeTitles = true
+        commsListViewController.user = user
+        DispatchQueue.main.async {
+            self.navigationController.viewControllers = [commsListViewController]
+            self.navigationController.navigationBar.prefersLargeTitles = true
+        }
     }
     
     
@@ -49,6 +51,7 @@ class CommsCoordinator: Coordinator {
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
         let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, user, apiService)
         commsDetailViewController.commsDetailPresenter = commsDetailPresenter
+        commsDetailViewController.user = user
         commsDetailPresenter.articleId = id;
         print("artID", id)
         navigationController.navigationBar.prefersLargeTitles = false
@@ -68,6 +71,7 @@ class CommsCoordinator: Coordinator {
     func showAddComms() {
         let addCommsPresenter = AddCommsPresenter(with: addCommsViewController, delegate: self, apiService)
         addCommsViewController.addCommsPresenter = addCommsPresenter
+        addCommsViewController.user = user
         self.navigationController.pushViewController(addCommsViewController, animated: true)
     }
     
