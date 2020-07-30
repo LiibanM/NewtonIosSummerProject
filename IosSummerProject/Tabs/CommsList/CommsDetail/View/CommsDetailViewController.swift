@@ -65,6 +65,7 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     }
 
     func downloadImage(from url: URL) {
+        print(url, "CommsDetailPagee")
         commsImageView.kf.setImage(with: url)
 //        print("Download Started")
 //        getData(from: url) { data, response, error in
@@ -110,6 +111,8 @@ extension CommsDetailViewController: CommsDetailPresenterView {
             self.comm = data
             if let image = data.picture {
                 self.commsImageView.downloaded(from: image)
+            } else {
+                self.commsImageView.image = #imageLiteral(resourceName: "news")
             }
             self.navigationItem.title = data.title
             self.commsTagLabelButton.setTitle(data.articleCategories[0].category.categoryName, for: .normal)

@@ -51,16 +51,20 @@ class CommsCell: UITableViewCell {
         guard let url = URL(string: url) else {
             print("not a valid url")
             DispatchQueue.main.async {
-                self.commsImageView.image = #imageLiteral(resourceName: "iOS FTW")
+                self.commsImageView.image = #imageLiteral(resourceName: "news")
                 self.setLoading(isLoading: false)
             }
             
             return
         }
+        
         DispatchQueue.main.async {
-            print(url,"url")
-            self.commsImageView.kf.setImage(with: url)
-            self.setLoading(isLoading: false)
+            if url.absoluteString.contains("http") {
+                self.commsImageView.kf.setImage(with: url)
+            } else {
+                self.commsImageView.image = #imageLiteral(resourceName: "news")
+            }
+            self.setLoading(isLoading: false)           
         }
     }
 }

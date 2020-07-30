@@ -40,7 +40,6 @@ class CommsListViewController: UIViewController, Storyboarded {
      
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         pickerView.isHidden = true
         pickerView.backgroundColor = .white
         pickerView.alpha = 1
@@ -161,8 +160,16 @@ extension CommsListViewController: CommsListPresenterView {
     }
     
     func errorOccured(message: String) {
-        self.refreshControl.endRefreshing()
-        print(message)
+        DispatchQueue.main.async {
+            self.refreshControl.endRefreshing()
+            print(message)
+        }
+    }
+    
+    func updateCommswith(_ comm: Article) {
+        DispatchQueue.main.async {
+            self.comms.insert(comm, at: 0)
+        }
     }
 }
 
@@ -224,6 +231,13 @@ extension CommsListViewController: UITableViewDataSource {
             let highlight = UIContextualAction(style: .normal, title: swipedComm.highlighted ? "Unhighlight": "Highlight") { (action, view, completionHandler) in
                 let id = swipedComm.articleID
                 self.commsListPresenter.highlightComm(with: id)
+//                if swipedComm.highlighted {
+////                    commsListPresenter.unHighlight(comm: swipedComm)
+//                } else {
+////                    let updatedArticle =
+////                        EditArticle(articleID: swipedComm.articleID, title: swipedComm.title, content: swipedComm.content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: swipedComm.articleCategories[0].category.categoryID, categoryName: swipedComm.articleCategories[0].category.categoryName!))], dateCreated: swipedComm.dateCreated, dateLastUpdated: "\(Date())", user: NewUser(userID: swipedComm.user.userID, firstName: swipedComm.user.firstName, lastName: swipedComm.user.lastName, emailAddress: "", picture: swipedComm.user.picture!, permissionLevel: swipedComm.user.permissionLevel!), highlighted: true, picture: "")
+//                    self.commsListPresenter.highlight(comm: updatedArticle)
+//                }
                 completionHandler(true)
             }
             
@@ -239,6 +253,7 @@ extension CommsListViewController: UITableViewDataSource {
 
 extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("IndexPath", indexPath)
         tableView.deselectRow(at: indexPath, animated: true)
         let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row]
         let id = tappedComm.articleID

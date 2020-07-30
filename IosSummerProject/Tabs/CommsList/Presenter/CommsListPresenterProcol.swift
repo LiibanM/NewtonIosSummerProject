@@ -16,5 +16,8 @@ protocol CommsListPresenterProtocol {
     func highlightComm(with id: Int)
     func loadData()
     func previewCommsDetail(with id: Int) -> UIViewController
+    func unHighlight(comm: EditArticle)
+    func highlight(comm: EditArticle)
+
 }
 

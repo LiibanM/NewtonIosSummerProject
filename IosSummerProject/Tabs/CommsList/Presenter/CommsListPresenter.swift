@@ -14,16 +14,21 @@ protocol CommsListPresenterDelegate {
     func goToCommsDetail(_ id: Int)
     func goToEditComms(_ id: Int)
     func getCommsDetail(with id: Int) -> UIViewController
-
+    
 }
 
 protocol CommsListPresenterView {
     func errorOccured(message: String)
     func setCommsData(with data: [Article])
     func setAllCategories(with data: [String])
+    func updateCommswith(_ comm: Article)
 }
 
 class CommsListPresenter: CommsListPresenterProtocol {
+    func unHighlight(comm: EditArticle) {
+        
+    }
+    
         
     func previewCommsDetail(with id: Int) -> UIViewController {
         return delegate.getCommsDetail(with: id)
@@ -91,7 +96,24 @@ class CommsListPresenter: CommsListPresenterProtocol {
         }
     }
     
-    func highlightComm() {
+    func highlight(comm: EditArticle) {
+        apiService.editAnArticle(url: "\(Constants.ApiService.url)/articles/\(comm.articleID)", payload: comm) { (result) in
+             switch result {
+                case .failure(.badUrl):
+                    self.view.errorOccured(message: "Given Url was bad")
+                case .failure(.failedToDecode):
+                    self.view.errorOccured(message: "Failed to decode data" )
+                case .failure(.requestFailed):
+                    self.view.errorOccured(message: "request failed")
+                case .failure(.unAuthenticated):
+                    self.view.errorOccured(message: "Unauthenticated" )
+                case .success(let updatedComm):
+                    self.view.updateCommswith(updatedComm)
+                    print("Success")
+                default:
+                    self.view.errorOccured(message: "error")
+            }
+        }
         
     }
     
