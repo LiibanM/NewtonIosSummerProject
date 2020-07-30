@@ -36,12 +36,10 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
        self.navigationController!.navigationBar.prefersLargeTitles = false
         
-        editCommsTitle.text = comm.title
-        
-        oldTitle = comm.title!
-        oldDescription = comm.content!
-        oldHighlighted = comm.highlighted
-        oldCategory = comm.articleCategories[0].category
+//        oldTitle = comm.title!
+//        oldDescription = comm.content!
+//        oldHighlighted = comm.highlighted
+//        oldCategory = comm.articleCategories[0].category
         //oldImage = comm.image
         
         self.navigationItem.title = "Edit"
@@ -60,9 +58,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.isUserInteractionEnabled = true
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
-        editCommsCategory.setTitle(oldCategory.categoryName, for: .normal)
-        let result = oldHighlighted ? 0 : 1
-        editCommsHighlighted.selectedSegmentIndex = result
+//        let result = oldHighlighted ? 0 : 1
+//        editCommsHighlighted.selectedSegmentIndex = result
 
     }
     
@@ -88,20 +85,12 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        editCommsCategory.titleLabel?.text = comm.articleCategories[0].category.categoryName
-        guard let url = URL(string: comm.picture ?? "") else {
-            print("bad url")
-            return
-        }
-        editCommsImage.kf.setImage(with: url)
         editCommsTitle.layer.borderWidth = 1
         editCommsTitle.layer.borderColor =  UIColor.lightGray.cgColor
         editCommsTitle.layer.cornerRadius = 5
         editCommsDescription.layer.borderWidth = 1
         editCommsDescription.layer.borderColor =  UIColor.lightGray.cgColor
         editCommsDescription.layer.cornerRadius = 5
-//        editCommsDescription.layer.backgroundColor = UIColor.lightGray.cgColor
-        editCommsDescription.text = comm.content
     }
     
     @IBAction func editCommsImageTapped(_ sender: Any) {
@@ -118,11 +107,23 @@ extension EditCommsViewController: EditCommsPresenterView {
     func setCategory(with category: Category) {
         selectedCategory = category
         editCommsCategory.titleLabel?.text = selectedCategory.categoryName
+        
     }
     
     func setCommsData(with article: Article) {
         comm = article
-        print(comm, "edit")
+        print(article, "Edit from swipe")
+        DispatchQueue.main.async {
+            self.editCommsTitle.text = self.comm.title
+            self.editCommsCategory.setTitle(self.comm.articleCategories[0].category.categoryName, for: .normal)
+            if let imageUrl = self.comm.picture {
+                if let url = URL(string: imageUrl) {
+                    self.editCommsImage.kf.setImage(with: url)
+                }
+            }
+            self.editCommsDescription.text = self.comm.content
+//            self.editCommsHighlighted: UISegmentedControl!
+        }
     }
     
     func errorOccured(message: String) {

@@ -29,6 +29,7 @@ class AppCoordinator: Coordinator {
         self.apiService = ApiService()
         self.keychainService = KeychainSwift()
         self.userToken = self.keychainService.get("userJwtToken")
+        print(userToken, "TOKEN")
         let firstName = self.keychainService.get("firstName")
         let lastName = self.keychainService.get("lastName")
         let email = self.keychainService.get("email")

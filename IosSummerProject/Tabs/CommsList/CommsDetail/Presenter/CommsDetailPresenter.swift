@@ -31,7 +31,6 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
         self.view = view
         self.apiService = apiService
         self.user = user
-        print(articleId, "id")
     }
     
     func loadData() {
@@ -51,7 +50,7 @@ class CommsDetailPresenter: CommsDetailPresenterProtocol {
                        self.view.errorOccured(message: "Unauthenticated" )
                    case .success(let article):
                        self.view.setCommsData(with: article)
-                       print("Success")
+                       print(article, "CommsDetail")
                    default:
                        self.view.errorOccured(message: "error")
                }

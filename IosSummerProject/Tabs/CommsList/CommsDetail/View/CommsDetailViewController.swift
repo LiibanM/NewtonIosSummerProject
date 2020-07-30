@@ -30,19 +30,13 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         
         // this is dummy data (will eventually be from backend)
 //        let isAdmin = true
-////        let image = comm.picture ?? ""
-//        let title = comm.title
-//        let tag = comm.articleCategories[0].category
-//        let description = comm.content
+//        let image = comm.picture ?? ""
         
 //        self.commsImageView.downloaded(from: image)
-        self.navigationItem.title = title
-//        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
-        self.commsDescriptionView.text = description
         
         
 //        if isAdmin {
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(editButtonTapped))
 //        }
         
         navigationController?.navigationBar.prefersLargeTitles = false
@@ -55,8 +49,6 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     }
     
     @objc func handleRefreshControl() {
-       // Fetch the comm data from database & update elements
-       // Dismiss the refresh control.
        DispatchQueue.main.async {
           self.commsScrollView.refreshControl?.endRefreshing()
        }
@@ -111,6 +103,14 @@ extension CommsDetailViewController: CommsDetailPresenterView {
     }
     
     func setCommsData(with data: Article) {
-        comm = data
+        DispatchQueue.main.async {
+            self.comm = data
+            if let image = data.picture {
+                self.commsImageView.downloaded(from: image)
+            }
+            self.navigationItem.title = data.title
+            self.commsTagLabelButton.setTitle(data.articleCategories[0].category.categoryName, for: .normal)
+            self.commsDescriptionView.text = data.content
+        }
     }
 }

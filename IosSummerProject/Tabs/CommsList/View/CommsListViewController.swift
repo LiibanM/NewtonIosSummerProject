@@ -64,7 +64,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search comms"
 //        definesPresentationContext = true
-        searchController.searchBar.scopeButtonTitles = topCategories
         searchController.searchBar.delegate = self
 
         navigationItem.searchController = searchController
@@ -107,11 +106,10 @@ class CommsListViewController: UIViewController, Storyboarded {
         
         var chosenCategory = category
         
-        if category == "Other" {
+        if category == "..." {
             pickerView.isHidden = false
             searchController.searchBar.endEditing(true)
             chosenCategory = selectedOtherCategory
-
         } else {
             pickerView.isHidden = true
         }
@@ -124,7 +122,6 @@ class CommsListViewController: UIViewController, Storyboarded {
         }
         
       }
-      print(filteredComms)
       commsListTableView.reloadData()
     }
     
@@ -142,12 +139,13 @@ extension CommsListViewController: CommsListPresenterView {
         DispatchQueue.main.async {
             self.allCategories = data
             self.allCategories.append("...")
-            self.topCategories = Array(self.allCategories[0...2])
+            self.allCategories.insert("All", at: 0)
+            self.topCategories = Array(self.allCategories[0...1])
             self.topCategories.append("...")
             self.calculateOtherCategories()
-            print("category from url", self.allCategories, data)
+            self.searchController.searchBar.scopeButtonTitles = self.topCategories
+            self.pickerView.reloadComponent(0)
         }
-       
     }
     
     func setCommsData(with data: [Article]) {
@@ -232,7 +230,6 @@ extension CommsListViewController: UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row]
         let id = tappedComm.articleID
-        print("Article ID Controller", id)
         searchController.searchBar.endEditing(true)
         commsListPresenter.didTapComm(with: id)
     }
@@ -246,8 +243,6 @@ extension CommsListViewController: UIPickerViewDataSource {
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return otherCategories.count
     }
-    
-    
 }
 
 extension CommsListViewController: UIPickerViewDelegate {
@@ -265,7 +260,6 @@ extension CommsListViewController: UIPickerViewDelegate {
 }
 
 extension CommsListViewController: UISearchResultsUpdating {
-    
     func updateSearchResults(for searchController: UISearchController) {
       let searchBar = searchController.searchBar
       filterContentForSearchText(searchBar.text!, category: searchBar.scopeButtonTitles![searchBar.selectedScopeButtonIndex])

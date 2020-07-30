@@ -40,8 +40,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         if let passedComm = comm {
             view.setCommsData(with: passedComm)
         } else {
-            loadCommFromId()
-//            fetchCommFromId()
+            fetchCommFromId()
         }
     }
         
@@ -78,7 +77,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
     }
     
     func fetchCommFromId() {
-        apiService.fetchData(url: "\(Constants.ApiService.url)/articles\(articleId)", objectType: Article.self) { (result) in
+        apiService.fetchData(url: "\(Constants.ApiService.url)/articles/\(articleId!)", objectType: Article.self) { (result) in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -95,10 +94,6 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
                     self.view.errorOccured(message: "error")
             }
         }
-    }
-    
-    func loadCommFromId() {
-      fetchCommFromId()
     }
 }
     
