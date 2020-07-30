@@ -20,24 +20,27 @@ class AppCoordinator: Coordinator {
     
     var userToken: String!
     
-    var user: User!
+    var user: NewUser!
     var decodedData: JWT!
-    
     var apiService: ApiServiceProtocol
     
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
         self.keychainService = KeychainSwift()
         self.userToken = self.keychainService.get("userJwtToken")
-        print(userToken, "TOKEN")
-        let firstName = self.keychainService.get("firstName")
-        let lastName = self.keychainService.get("lastName")
-        let email = self.keychainService.get("email")
-        
-        if let firstName = firstName, let lastName = lastName, let email = email {
-            user = User(userID: "1", firstName: firstName, lastName: lastName, emailAddress: nil, picture: "")
-            decodedData = try! decode(jwt: userToken)
+        if let token = userToken {
+            decodedData = try! decode(jwt: token)
+            let userId = decodedData.body["aud"]
+            let role = decodedData.body["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"]
+            let firstName = self.keychainService.get("firstName")
+                  let lastName = self.keychainService.get("lastName")
+                  let email = self.keychainService.get("email")
+                  
+                  if let firstName = firstName, let lastName = lastName, let email = email {
+                      user = NewUser(userID: userId! as! String, firstName: firstName, lastName: lastName, emailAddress: email, picture: "", permissionLevel: role as! String)
+                      decodedData = try! decode(jwt: userToken)
 
+                  }
         }
         
 //        print(decodedData, "hello")

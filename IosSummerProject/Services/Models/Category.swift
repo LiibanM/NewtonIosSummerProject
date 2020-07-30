@@ -13,3 +13,8 @@ struct Category: Codable {
     let categoryName: String?
 }
 
+struct NewCategory: Codable {
+    let categoryID: Int
+    let categoryName: String
+}
+

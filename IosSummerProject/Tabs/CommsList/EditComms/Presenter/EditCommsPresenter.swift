@@ -34,6 +34,9 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         self.apiService = apiService
         self.view = view
         self.delegate = delegate
+        if articleId == nil {
+            self.articleId = comm?.articleID
+        }
     }
     
     func loadComm() {
@@ -48,7 +51,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         view.setCategory(with: category)
     }
     
-    func didTapSave(for article: Article) {
+    func didTapSave(for article: NewArticle) {
         saveEdittedPost(article)
     }
     
@@ -56,8 +59,9 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         delegate.goToCategoriesFromEdit(currentPage: "edit")
     }
     
-    func saveEdittedPost(_ article: Article) {
-        apiService.sendData(url: "\(Constants.ApiService.url)/articles\(articleId)", payload: article) { (result) in
+    func saveEdittedPost(_ article: NewArticle) {
+        apiService.sendData(url: "\(Constants.ApiService.url)/articles/\(articleId!)", payload: article) { (result) in
+            print(article,"save edit post")
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -69,7 +73,8 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
                     self.view.errorOccured(message: "Unauthenticated" )
                 case .success(let article):
                     self.delegate.goToCommsListAfterSave()
-                    print("Success")
+                    print("Success", article, "YoHello")
+                    return
                 default:
                     self.view.errorOccured(message: "error")
             }

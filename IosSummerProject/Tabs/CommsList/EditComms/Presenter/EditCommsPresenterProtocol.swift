@@ -11,7 +11,7 @@ import Foundation
 
 protocol EditCommsPresenterProtocol {
     func loadComm()
-    func didTapSave(for article: Article)
+    func didTapSave(for article: NewArticle)
     func didTapSelectCategory()
     func selectedCategory(with category: Category)
 }

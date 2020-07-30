@@ -15,13 +15,13 @@ protocol CommsCoordinatorDelegate {
 class CommsCoordinator: Coordinator {
     
     var apiService: ApiServiceProtocol
-    var user: User
+    var user: NewUser
     var addCommsViewController: AddCommsViewController
     var editViewController: EditCommsViewController
     
     var modalDisplayedOn: String!
     
-    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate,_ user: User, _ apiService: ApiServiceProtocol) {
+    init(_ navigationController: UINavigationController, delegate: CommsCoordinatorDelegate,_ user: NewUser, _ apiService: ApiServiceProtocol) {
         
         self.user = user
         self.apiService = apiService
@@ -81,7 +81,7 @@ class CommsCoordinator: Coordinator {
     }
     func showEditComms(with id: Int?, or article: Article?) {
         editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
-
+        editViewController.user = self.user
         let editCommsPresenter = EditCommsPresenter(with: editViewController, delegate: self, apiService)
         if let passedId = id {
             editCommsPresenter.articleId = passedId
@@ -154,6 +154,7 @@ extension CommsCoordinator: EditCommsPresenterDelegate {
     }
     
     func goToCommsListAfterSave() {
+        print("reached here bro")
         showCommsList()
     }
 }

@@ -33,9 +33,9 @@ class CommsListPresenter: CommsListPresenterProtocol {
     var delegate: CommsListPresenterDelegate
     var view: CommsListPresenterView
     var apiService: ApiServiceProtocol
-    var user: User
+    var user: NewUser
     
-    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate, _ user: User, _ apiService: ApiServiceProtocol) {
+    init(with view: CommsListPresenterView, delegate: CommsListPresenterDelegate, _ user: NewUser, _ apiService: ApiServiceProtocol) {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService

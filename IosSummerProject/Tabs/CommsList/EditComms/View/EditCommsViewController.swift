@@ -28,6 +28,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
     var oldDescription: String = ""
     var oldHighlighted: Bool = false;
     var oldCategory: Category!
+    var user: NewUser!
+    
     //var oldImage: UIImage = ""
     
     override func viewDidLoad() {
@@ -74,7 +76,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            editCommsPresenter.didTapSave(for: comm)
+            editCommsPresenter.didTapSave(for: NewArticle(articleID: comm.articleID, title: editCommsTitle.text!, content: editCommsDescription.text!, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: comm.articleCategories[0].category.categoryID, categoryName: (editCommsCategory.titleLabel?.text!)!))], dateCreated: "\(Date())", dateLastUpdated: "\(Date())", user: self.user, highlighted: false, picture: ""))
         }
     }
 
