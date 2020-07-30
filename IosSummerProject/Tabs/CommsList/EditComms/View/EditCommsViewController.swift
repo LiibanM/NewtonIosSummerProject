@@ -41,7 +41,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
         oldTitle = comm.title
         oldDescription = comm.content
         oldHighlighted = comm.highlighted
-        oldCategory = comm.category
+        oldCategory = comm.articleCategories[0].category
         //oldImage = comm.image
         
         self.navigationItem.title = "Edit"
@@ -60,7 +60,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.isUserInteractionEnabled = true
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
-        editCommsCategory.setTitle(oldCategory.category_name, for: .normal)
+        editCommsCategory.setTitle(oldCategory.categoryName, for: .normal)
         let result = oldHighlighted ? 0 : 1
         editCommsHighlighted.selectedSegmentIndex = result
 
@@ -70,7 +70,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
             oldHighlighted == editCommsHighlighted.isSelected &&
-            oldCategory.category_name == editCommsCategory.titleLabel!.text
+            oldCategory.categoryName == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ) {
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
@@ -88,8 +88,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        editCommsCategory.titleLabel?.text = comm.category.category_name
-        guard let url = URL(string: comm.image) else {
+        editCommsCategory.titleLabel?.text = comm.articleCategories[0].category.categoryName
+        guard let url = URL(string: comm.picture) else {
             print("bad url")
             return
         }
@@ -117,7 +117,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 extension EditCommsViewController: EditCommsPresenterView {
     func setCategory(with category: Category) {
         selectedCategory = category
-        editCommsCategory.titleLabel?.text = selectedCategory.category_name
+        editCommsCategory.titleLabel?.text = selectedCategory.categoryName
     }
     
     func setCommsData(with article: Article) {

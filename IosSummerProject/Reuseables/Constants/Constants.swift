@@ -18,5 +18,6 @@ struct Constants {
     struct ApiService {
         static let forHTTPHeaderField = "Authorization"
         static let bearer = "Bearer"
+        static let url = "https://and-newton.co.uk/api"
     }
 }

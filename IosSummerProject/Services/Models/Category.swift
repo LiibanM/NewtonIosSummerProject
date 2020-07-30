@@ -9,7 +9,7 @@
 import Foundation
 
 struct Category: Codable {
-    let category_id: Int
-    let category_name: String
+    let categoryID: Int
+    let categoryName: String
 }
 

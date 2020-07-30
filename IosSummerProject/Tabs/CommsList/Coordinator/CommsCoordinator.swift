@@ -57,7 +57,7 @@ class CommsCoordinator: Coordinator {
     
     func showPreviewCommsDetail(_ id: Int) -> UIViewController {
         let commsDetailViewController = CommsDetailViewController.instantiate(storyboard: "CommsDetail")
-        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, apiService)
+        let commsDetailPresenter = CommsDetailPresenter(with: commsDetailViewController, delegate: self, user, apiService)
                commsDetailViewController.commsDetailPresenter = commsDetailPresenter
         commsDetailPresenter.articleId = id;
         navigationController.navigationBar.prefersLargeTitles = false

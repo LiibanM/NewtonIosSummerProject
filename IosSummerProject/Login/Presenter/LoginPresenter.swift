@@ -16,7 +16,7 @@ protocol LoginPresenterView {
 }
 
 protocol LoginPresenterDelegate {
-    func didLogin()
+    func didLogin(with user: User)
 }
 
 class LoginPresenter: NSObject, LoginPresenterProtocol {
@@ -69,10 +69,10 @@ extension LoginPresenter: GIDSignInDelegate {
           }
           return
         }
-        // Prints out credentials for testing purposes
-        //TODO: to be removed before launch
         
-        apiService.sendData(url: "", payload: user.authentication.idToken) { (result) in
+        let token = GoogleToken(tokenId: user.authentication.idToken)
+        
+        apiService.authenticateUser(url: "\(Constants.ApiService.url)/Auth/google", payload: token) { (result) in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -82,19 +82,26 @@ extension LoginPresenter: GIDSignInDelegate {
                     self.view.errorOccured(message: "request failed")
                 case .failure(.unAuthenticated):
                     self.view.errorOccured(message: "Unauthenticated" )
-                case .success(let userJwtToken):
-                    self.keychainService.set(userJwtToken!, forKey: "userJwtToken")
-                    self.delegate.didLogin()
+                case .success(let jwt):
+                    self.keychainService.set(jwt.token, forKey: "userJwtToken")
+                    let user = User(userID: 1, firstName: user.profile.givenName, lastName: user.profile.familyName, emailAddress: user.profile.email, picture: "", permissionLevel: nil)
+                    self.delegate.didLogin(with: user)
                     print("Success")
                 default:
                     self.view.errorOccured(message: "error")
             }
         }
-//        delegate.didLogin()
-//        keychainService.set(idToken!, forKey: "userToken")
     }
     /*func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         print("user has disconnected")
     }*/
 }
 
+struct GoogleToken: Codable {
+    let tokenId: String
+}
+
+
+struct Token: Codable {
+    let token: String
+}

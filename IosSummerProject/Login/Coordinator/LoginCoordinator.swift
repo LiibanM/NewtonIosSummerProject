@@ -11,7 +11,7 @@ import UIKit
 import KeychainSwift
 
 protocol LoginCoordinatorDelegate {
-    func didLogin()
+    func didLogin(with user: User)
 }
 
 class LoginCoordinator: Coordinator {
@@ -44,7 +44,7 @@ class LoginCoordinator: Coordinator {
 }
 
 extension LoginCoordinator: LoginPresenterDelegate {
-    func didLogin() {
-        delegate.didLogin()
+    func didLogin(with user: User) {
+        delegate.didLogin(with: user)
     }
 }

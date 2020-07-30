@@ -9,10 +9,10 @@
 import Foundation
 
 struct User: Codable {
-    let user_id: Int
-    let first_name: String
-    let last_name: String
-    let email_address: String
+    let userID: Int
+    let firstName: String
+    let lastName: String
+    let emailAddress: String
     let picture: String
-    let permission_level: String?
+    var permissionLevel: String?
 }

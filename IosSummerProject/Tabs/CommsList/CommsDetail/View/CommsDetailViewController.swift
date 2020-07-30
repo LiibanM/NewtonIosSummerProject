@@ -30,14 +30,14 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         
         // this is dummy data (will eventually be from backend)
         let isAdmin = true
-        let image = comm.image
+        let image = comm.picture
         let title = comm.title
-        let tag = comm.category
+        let tag = comm.articleCategories[0].category
         let description = comm.content
         
         self.commsImageView.downloaded(from: image)
         self.navigationItem.title = title
-        self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
+        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
         self.commsDescriptionView.text = description
         
         

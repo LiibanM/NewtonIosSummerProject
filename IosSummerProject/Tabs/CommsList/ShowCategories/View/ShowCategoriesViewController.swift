@@ -36,7 +36,7 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     
     @IBAction func addCategoryButtonTapped(_ sender: Any) {
         if categoryTextField.text == "" { return }
-        showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
+//        showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
         categoryTextField.text = ""
     }
     
@@ -77,7 +77,7 @@ extension ShowCategoriesViewController: UICollectionViewDataSource {
         let currentCategory = categories[indexPath.row]
         let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         
-        categoryCell.categoryLabel.text = currentCategory.category_name
+        categoryCell.categoryLabel.text = currentCategory.categoryName
         return categoryCell
      
     }

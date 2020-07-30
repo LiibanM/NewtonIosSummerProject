@@ -29,12 +29,6 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService
-        self.categories = [
-            Category(category_id: 1, category_name: "abc"),
-            Category(category_id: 2, category_name: "3245353453453534"),
-            Category(category_id: 3, category_name: "456"),
-            Category(category_id: 4, category_name: "879")
-        ]
     }
     
     func didSelectCategory(with category: Category) {
@@ -42,11 +36,11 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
     }
     
     func loadCategories() {
-        mockDataCategories()
+        getCategories()
     }
     
     func getCategories() {
-        apiService.fetchData(url: "", objectType: [Category].self) { result in
+        apiService.fetchData(url: "\(Constants.ApiService.url)/categories", objectType: [Category].self) { result in
             switch result {
                 case .failure(.badUrl):
                     self.view.errorOccured(message: "Given Url was bad")
@@ -89,10 +83,7 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         self.view.setCategories(with: categories)
     }
 
-    func mockDataCategories() {
-        self.view.setCategories(with: categories)
-    }
-    
+
     func sendCategory(with category: Category) {
         mockSendCategory(with: category)
     }

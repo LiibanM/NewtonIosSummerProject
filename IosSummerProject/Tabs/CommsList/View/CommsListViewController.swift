@@ -29,8 +29,8 @@ class CommsListViewController: UIViewController, Storyboarded {
          (!isSearchBarEmpty || searchBarScopeIsFiltering)
     }
     
-    let topCategories = ["All", "Business Updates", "COVID-19", "Random", "Other"]
-    let allCategories = ["Business Updates", "COVID-19", "Random", "Other", "Tech", "AND"]
+    var topCategories: [String]!
+    var allCategories: [String]!
     
     var selectedOtherCategory: String!
     var otherCategories = [String]()
@@ -117,7 +117,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         } else {
             pickerView.isHidden = true
         }
-        let doesCategoryMatch = (chosenCategory == "All") || comm.category.category_name == chosenCategory
+        let doesCategoryMatch = (chosenCategory == "All") || comm.articleCategories[0].category.categoryName == chosenCategory
 
         if isSearchBarEmpty {
             return doesCategoryMatch
@@ -141,8 +141,10 @@ class CommsListViewController: UIViewController, Storyboarded {
 
 extension CommsListViewController: CommsListPresenterView {
     func setAllCategories(with data: [String]) {
-//        data.append("Other")
-//      allCategories = data[0 ... 3]
+        allCategories = data
+        allCategories.append("...")
+        topCategories = Array(allCategories[0...2])
+        topCategories.append("...")
     }
     
     func setCommsData(with data: [Article]) {
@@ -179,8 +181,8 @@ extension CommsListViewController: UITableViewDataSource {
         cell.commsTitleLabel.text = currentComms.title
         cell.commsDescription.text = currentComms.content
 
-        cell.commsCategoryLabel.setTitle(currentComms.category.category_name, for: .normal)
-        cell.downLoadImage(from: currentComms.image)
+        cell.commsCategoryLabel.setTitle(currentComms.articleCategories[0].category.categoryName, for: .normal)
+        cell.downLoadImage(from: currentComms.picture)
         cell.highlightedImageView.isHidden = !currentComms.highlighted
         
         return cell
@@ -190,7 +192,7 @@ extension CommsListViewController: UITableViewDataSource {
         
         let edit = UIContextualAction(style: .normal, title: "Edit") { (action, view, completionHandler) in
             let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
-            let id = swipedComm.article_id
+            let id = swipedComm.articleID
             self.commsListPresenter.didSwipeEdit(with: id)
             completionHandler(true)
         }
@@ -206,7 +208,7 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let highlight = UIContextualAction(style: .normal, title: "Highlight") { (action, view, completionHandler) in
             let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
-            let id = swipedComm.article_id
+            let id = swipedComm.articleID
             self.commsListPresenter.highlightComm(with: id)
             completionHandler(true)
         }
@@ -224,7 +226,7 @@ extension CommsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let tappedComm = isFiltering ? filteredComms[indexPath.row] : comms[indexPath.row]
-        let id = tappedComm.article_id
+        let id = tappedComm.articleID
         print("Article ID Controller", id)
         searchController.searchBar.endEditing(true)
         commsListPresenter.didTapComm(with: id)
@@ -279,7 +281,7 @@ extension CommsListViewController: UIViewControllerPreviewingDelegate {
            if let indexPath = commsListTableView.indexPathForRow(at: location) {
             previewingContext.sourceRect = commsListTableView.rectForRow(at: indexPath)
             let tappedComm = isFiltering ? filteredComms[indexPath.row-1] : comms[indexPath.row-1]
-            let id = tappedComm.article_id
+            let id = tappedComm.articleID
             let vc = commsListPresenter.previewCommsDetail(with: id)
             return vc
         }
