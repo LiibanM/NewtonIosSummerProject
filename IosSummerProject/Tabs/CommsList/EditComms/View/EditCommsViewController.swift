@@ -76,7 +76,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         } else {
-            editCommsPresenter.didTapSave(for: EditArticle(articleID: comm.articleID, title: editCommsTitle.text!, content: editCommsDescription.text!, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: comm.articleCategories[0].category.categoryID, categoryName: (editCommsCategory.titleLabel?.text!)!))], dateCreated: "\(Date())", dateLastUpdated: "\(Date())", user: self.user, highlighted: false, picture: ""))
+            editCommsPresenter.didTapSave(for: EditArticle(articleID: comm.articleID, title: editCommsTitle.text!, content: editCommsDescription.text!, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: comm.articleCategories[0].category.categoryID, categoryName: (editCommsCategory.titleLabel?.text!)!))], dateCreated: "\(Date())", dateLastUpdated: "\(Date())", user: self.user, highlighted: editCommsHighlighted.selectedSegmentIndex == 0, picture: ""))
         }
     }
 
@@ -121,9 +121,16 @@ extension EditCommsViewController: EditCommsPresenterView {
                 if let url = URL(string: imageUrl) {
                     self.editCommsImage.kf.setImage(with: url)
                 }
+                else {
+                    self.editCommsImage.image = #imageLiteral(resourceName: "banner")
+                }
+            }
+            else {
+                self.editCommsImage.image = #imageLiteral(resourceName: "banner")
             }
             self.editCommsDescription.text = self.comm.content
-//            self.editCommsHighlighted: UISegmentedControl!
+            self.editCommsHighlighted.selectedSegmentIndex = self.comm.highlighted ? 0 : 1
+            print("segmentcontrol", self.editCommsHighlighted.selectedSegmentIndex)
         }
     }
     

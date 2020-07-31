@@ -142,7 +142,7 @@ extension CommsListViewController: CommsListPresenterView {
             self.allCategories = data
             self.allCategories.append("...")
             self.allCategories.insert("All", at: 0)
-            self.topCategories = Array(self.allCategories[0...1])
+            self.topCategories = Array(self.allCategories[0...2])
             self.topCategories.append("...")
             self.calculateOtherCategories()
             self.searchController.searchBar.scopeButtonTitles = self.topCategories
@@ -227,15 +227,20 @@ extension CommsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         if user.permissionLevel == "admin" {
                  let swipedComm = self.isFiltering ? self.filteredComms[indexPath.row] : self.comms[indexPath.row]
-            let highlight = UIContextualAction(style: .normal, title: swipedComm.highlighted ? "Unhighlight": "Highlight") { (action, view, completionHandler) in
+            let highlight = UIContextualAction(style: .destructive, title: swipedComm.highlighted ? "Unhighlight": "Highlight") { (action, view, completionHandler) in
                 let id = swipedComm.articleID
                 self.commsListPresenter.highlightComm(with: id)
+                
 //                if swipedComm.highlighted {
-////                    commsListPresenter.unHighlight(comm: swipedComm)
+////                  commsListPresenter.unHighlight(comm: swipedComm)
 //                } else {
-////                    let updatedArticle =
-////                        EditArticle(articleID: swipedComm.articleID, title: swipedComm.title, content: swipedComm.content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: swipedComm.articleCategories[0].category.categoryID, categoryName: swipedComm.articleCategories[0].category.categoryName!))], dateCreated: swipedComm.dateCreated, dateLastUpdated: "\(Date())", user: NewUser(userID: swipedComm.user.userID, firstName: swipedComm.user.firstName, lastName: swipedComm.user.lastName, emailAddress: "", picture: swipedComm.user.picture!, permissionLevel: swipedComm.user.permissionLevel!), highlighted: true, picture: "")
+//                   let updatedArticle =
+//                    EditArticle(articleID: swipedComm.articleID, title: swipedComm.title, content: swipedComm.content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: swipedComm.articleCategories[0].category.categoryID, categoryName: swipedComm.articleCategories[0].category.categoryName!))], dateCreated: swipedComm.dateCreated, dateLastUpdated: "\(Date())", user: NewUser(userID: swipedComm.user.userID, firstName: swipedComm.user.firstName, lastName: swipedComm.user.lastName, emailAddress: "", picture: swipedComm.user.picture ?? "", permissionLevel: swipedComm.user.permissionLevel ?? "user"), highlighted: true, picture: "")
 //                    self.commsListPresenter.highlight(comm: updatedArticle)
+//                    DispatchQueue.main.async {
+//                        self.comms.remove(at: indexPath.row)
+//                        self.commsListTableView.deleteRows(at: [indexPath], with: .right)
+//                    }
 //                }
                 completionHandler(true)
             }

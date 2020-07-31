@@ -16,9 +16,9 @@ class AddCommsViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsTitle: UITextField!
     @IBOutlet weak var commsContent: UITextView!
     @IBOutlet weak var categoryButton: UIButton!
-    @IBOutlet weak var isHighlighted: UISegmentedControl!
     @IBOutlet weak var previewButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var isHighlighted: UISegmentedControl!
     
     let imagePicker = UIImagePickerController()
     let customActionSheet = CustomActionSheet()
@@ -60,7 +60,7 @@ class AddCommsViewController: UIViewController, Storyboarded {
         guard  let title = commsTitle.text else {print("No Tittle"); return}
         guard let content = commsContent.text else {print("No description"); return}
                 
-        addCommsPresenter.saveNewComm(article: NewArticle(title: title, content: content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: selectedCategory.categoryID, categoryName: categoryButton.titleLabel!.text!))], highlighted: false, picture: ""))
+        addCommsPresenter.saveNewComm(article: NewArticle(title: title, content: content, articleCategories: [NewArticleCategory(category: NewCategory(categoryID: selectedCategory.categoryID, categoryName: categoryButton.titleLabel!.text!))], highlighted: isHighlighted.selectedSegmentIndex == 0, picture: ""))
         
     }
     

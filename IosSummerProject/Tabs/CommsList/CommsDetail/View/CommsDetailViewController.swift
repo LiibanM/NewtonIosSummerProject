@@ -103,7 +103,11 @@ extension CommsDetailViewController: CommsDetailPresenterView {
             print(data)
             self.comm = data
             if let image = data.picture {
-                self.commsImageView.downloaded(from: image)
+                if let imageUrl = URL(string: image) {
+                    self.commsImageView.downloaded(from: imageUrl)
+                } else {
+                    self.commsImageView.image = #imageLiteral(resourceName: "banner")
+                }
             } else {
                 self.commsImageView.image = #imageLiteral(resourceName: "banner")
             }
