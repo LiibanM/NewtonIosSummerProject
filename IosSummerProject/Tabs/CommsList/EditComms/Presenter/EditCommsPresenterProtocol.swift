@@ -13,5 +13,6 @@ protocol EditCommsPresenterProtocol {
     func loadComm()
     func didTapSave(for article: Article)
     func didTapSelectCategory()
+    func didTapPreviewComms()
     func selectedCategory(with category: Category)
 }

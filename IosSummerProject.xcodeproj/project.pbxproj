@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D3A1C8E24D835DF00ED2026 /* PreviewCommsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A1C8D24D835DF00ED2026 /* PreviewCommsViewController.swift */; };
+		3D3A1C9024D835EC00ED2026 /* PreviewComms.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D3A1C8F24D835EC00ED2026 /* PreviewComms.storyboard */; };
+		3D3A1C9224D8362F00ED2026 /* PreviewCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A1C9124D8362F00ED2026 /* PreviewCommsPresenter.swift */; };
+		3D3A1C9424D8363C00ED2026 /* PreviewCommsPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D3A1C9324D8363C00ED2026 /* PreviewCommsPresenterProtocol.swift */; };
 		5749576FCE024B97558D19A0 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */; };
 		702C115724C5B5FB00799497 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115624C5B5FB00799497 /* Article.swift */; };
 		702C115924C5B73200799497 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702C115824C5B73200799497 /* User.swift */; };
@@ -95,6 +99,10 @@
 
 /* Begin PBXFileReference section */
 		1E04CAA0DF92A24A31A88343 /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
+		3D3A1C8D24D835DF00ED2026 /* PreviewCommsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCommsViewController.swift; sourceTree = "<group>"; };
+		3D3A1C8F24D835EC00ED2026 /* PreviewComms.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PreviewComms.storyboard; sourceTree = "<group>"; };
+		3D3A1C9124D8362F00ED2026 /* PreviewCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCommsPresenter.swift; sourceTree = "<group>"; };
+		3D3A1C9324D8363C00ED2026 /* PreviewCommsPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewCommsPresenterProtocol.swift; sourceTree = "<group>"; };
 		6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		702C115624C5B5FB00799497 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		702C115824C5B73200799497 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -202,6 +210,33 @@
 				6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3D3A1C8A24D835B800ED2026 /* PreviewComms */ = {
+			isa = PBXGroup;
+			children = (
+				3D3A1C8C24D835C800ED2026 /* Presenter */,
+				3D3A1C8B24D835C100ED2026 /* View */,
+			);
+			path = PreviewComms;
+			sourceTree = "<group>";
+		};
+		3D3A1C8B24D835C100ED2026 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3D3A1C8D24D835DF00ED2026 /* PreviewCommsViewController.swift */,
+				3D3A1C8F24D835EC00ED2026 /* PreviewComms.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3D3A1C8C24D835C800ED2026 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3D3A1C9124D8362F00ED2026 /* PreviewCommsPresenter.swift */,
+				3D3A1C9324D8363C00ED2026 /* PreviewCommsPresenterProtocol.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		702C115524C5B5CB00799497 /* Models */ = {
@@ -516,6 +551,7 @@
 		A4E8F0B224C0FE4300B7A26F /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
+				3D3A1C8A24D835B800ED2026 /* PreviewComms */,
 				A491B82624CED7CB0069559A /* ShowCategories */,
 				7134097F24CD6E64001C7A8F /* EditComms */,
 				71ABAD8824C325A200E48992 /* CommsDetail */,
@@ -861,6 +897,7 @@
 				A4E8F10A24C10C5C00B7A26F /* Login.storyboard in Resources */,
 				A4E8F0F924C1090D00B7A26F /* AddTag.storyboard in Resources */,
 				71ABAD8D24C325D900E48992 /* CommsDetail.storyboard in Resources */,
+				3D3A1C9024D835EC00ED2026 /* PreviewComms.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -947,6 +984,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A4E8F10424C10C3700B7A26F /* LoginPresenterProtocol.swift in Sources */,
+				3D3A1C9424D8363C00ED2026 /* PreviewCommsPresenterProtocol.swift in Sources */,
 				71ABAD9024C325F100E48992 /* CommsDetailPresenter.swift in Sources */,
 				A4E8F0E124C106BE00B7A26F /* BrowseTagsViewController.swift in Sources */,
 				A4E8F0A824C0FD3300B7A26F /* Coordinator.swift in Sources */,
@@ -960,6 +998,7 @@
 				A4E8F0DD24C1069100B7A26F /* BrowseTagsPresenter.swift in Sources */,
 				A4E8F09424C0FC5C00B7A26F /* ViewController.swift in Sources */,
 				A4E8F0FC24C10BBA00B7A26F /* TabBarCoordinator.swift in Sources */,
+				3D3A1C8E24D835DF00ED2026 /* PreviewCommsViewController.swift in Sources */,
 				A491B83024CED8430069559A /* ShowCategoriesPresenterProtocol.swift in Sources */,
 				A491B83424CEF1AB0069559A /* CategoryCell.swift in Sources */,
 				71ABAD8724C3254D00E48992 /* AddCommsPresenterProtocol.swift in Sources */,
@@ -978,6 +1017,7 @@
 				A4E8F0DF24C106A500B7A26F /* BrowseTagsPresenterProtocol.swift in Sources */,
 				7134098324CD6E93001C7A8F /* EditCommsViewController.swift in Sources */,
 				71ABAD8B24C325C300E48992 /* CommsDetailViewController.swift in Sources */,
+				3D3A1C9224D8362F00ED2026 /* PreviewCommsPresenter.swift in Sources */,
 				702C115E24C5B9D000799497 /* ApiService.swift in Sources */,
 				702C115B24C5B73F00799497 /* Category.swift in Sources */,
 				A4E8F0B724C1001B00B7A26F /* CommsCoordinator.swift in Sources */,
