@@ -11,10 +11,13 @@ import Foundation
 
 class MockAddCommsPresenterView: AddCommsPresenterView {
     
+    func updateCategory(with new: IosSummerProject.Category) {
+        
+    }
+    
+    
     func errorOccured(message: String) {
     }
     
-    func updateCategory(with new: Category) {
-    }
     
 }

@@ -28,8 +28,7 @@ class MockAddCommsPresenter: AddCommsPresenterProtocol {
         didTapPostCount += 1
     }
     
-    
-    func  onTapUploadImage() {
+    func onTapUploadImage() {
         onTapUploadImageCount += 1
     }
 }
