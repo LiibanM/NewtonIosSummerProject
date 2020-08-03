@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		3C3FC73B24D836C70049E9D8 /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */; };
+		3C6DEF2324D8521B009DCC84 /* MockEditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DEF2224D8521B009DCC84 /* MockEditCommsPresenter.swift */; };
+		3C6DEF2524D85226009DCC84 /* MockEditCommsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DEF2424D85226009DCC84 /* MockEditCommsPresenterDelegate.swift */; };
+		3C6DEF2724D85235009DCC84 /* MockEditCommsPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DEF2624D85235009DCC84 /* MockEditCommsPresenterView.swift */; };
 		3CA89C1A24D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89C1924D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift */; };
 		3CA89C1C24D1BB70008DE29C /* MockAddCommsPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89C1B24D1BB70008DE29C /* MockAddCommsPresenterView.swift */; };
 		5749576FCE024B97558D19A0 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */; };
@@ -98,6 +101,9 @@
 /* Begin PBXFileReference section */
 		1E04CAA0DF92A24A31A88343 /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
 		3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsViewControllerTests.swift; path = IosSummerProjectTests/Tabs/CommsList/View/AddCommsViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
+		3C6DEF2224D8521B009DCC84 /* MockEditCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditCommsPresenter.swift; sourceTree = "<group>"; };
+		3C6DEF2424D85226009DCC84 /* MockEditCommsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditCommsPresenterDelegate.swift; sourceTree = "<group>"; };
+		3C6DEF2624D85235009DCC84 /* MockEditCommsPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditCommsPresenterView.swift; sourceTree = "<group>"; };
 		3CA89C1924D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenterDelegate.swift; sourceTree = "<group>"; };
 		3CA89C1B24D1BB70008DE29C /* MockAddCommsPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenterView.swift; sourceTree = "<group>"; };
 		6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +212,40 @@
 				6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C6DEF1D24D851E0009DCC84 /* EditComms */ = {
+			isa = PBXGroup;
+			children = (
+				3C6DEF2124D85202009DCC84 /* View */,
+				3C6DEF2024D851FA009DCC84 /* Presenter */,
+				3C6DEF1E24D851E7009DCC84 /* Mocks */,
+			);
+			path = EditComms;
+			sourceTree = "<group>";
+		};
+		3C6DEF1E24D851E7009DCC84 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				3C6DEF2224D8521B009DCC84 /* MockEditCommsPresenter.swift */,
+				3C6DEF2424D85226009DCC84 /* MockEditCommsPresenterDelegate.swift */,
+				3C6DEF2624D85235009DCC84 /* MockEditCommsPresenterView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		3C6DEF2024D851FA009DCC84 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		3C6DEF2124D85202009DCC84 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		702C115524C5B5CB00799497 /* Models */ = {
@@ -345,6 +385,7 @@
 		71ABADBB24C8835100E48992 /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DEF1D24D851E0009DCC84 /* EditComms */,
 				D28201A824C8456F00CD15DD /* AddComms */,
 				71ABADC024C8847900E48992 /* Mocks */,
 				71ABADBD24C8836E00E48992 /* Presenter */,
@@ -926,9 +967,12 @@
 				702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */,
 				702C117024CECB2100799497 /* MockApiService.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+				3C6DEF2724D85235009DCC84 /* MockEditCommsPresenterView.swift in Sources */,
+				3C6DEF2324D8521B009DCC84 /* MockEditCommsPresenter.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
 				702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */,
 				702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */,
+				3C6DEF2524D85226009DCC84 /* MockEditCommsPresenterDelegate.swift in Sources */,
 				3CA89C1C24D1BB70008DE29C /* MockAddCommsPresenterView.swift in Sources */,
 				3CA89C1A24D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift in Sources */,
 			);
