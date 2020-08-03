@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C3FC73B24D836C70049E9D8 /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */; };
 		3CA89C1A24D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89C1924D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift */; };
 		3CA89C1C24D1BB70008DE29C /* MockAddCommsPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CA89C1B24D1BB70008DE29C /* MockAddCommsPresenterView.swift */; };
 		5749576FCE024B97558D19A0 /* Pods_IosSummerProject.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */; };
@@ -79,7 +80,6 @@
 		A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11024C5C68D00B7A26F /* PostRequest.swift */; };
 		D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019D24C59FE100CD15DD /* ComsContent.swift */; };
 		D28201A024C71F3800CD15DD /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019F24C71F3800CD15DD /* CustomActionSheet.swift */; };
-		D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */; };
 		D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */; };
 		D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */; };
 		D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACCDE224D07B40000A4C2B /* LabelButton.swift */; };
@@ -97,6 +97,7 @@
 
 /* Begin PBXFileReference section */
 		1E04CAA0DF92A24A31A88343 /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
+		3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsViewControllerTests.swift; path = IosSummerProjectTests/Tabs/CommsList/View/AddCommsViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		3CA89C1924D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenterDelegate.swift; sourceTree = "<group>"; };
 		3CA89C1B24D1BB70008DE29C /* MockAddCommsPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenterView.swift; sourceTree = "<group>"; };
 		6999B1C100CB54EE64B7DF27 /* Pods_IosSummerProject.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IosSummerProject.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -174,7 +175,6 @@
 		A4E8F11024C5C68D00B7A26F /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		D282019D24C59FE100CD15DD /* ComsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComsContent.swift; sourceTree = "<group>"; };
 		D282019F24C71F3800CD15DD /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
-		D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewControllerTests.swift; sourceTree = "<group>"; };
 		D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenter.swift; sourceTree = "<group>"; };
 		D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterTests.swift; sourceTree = "<group>"; };
 		D2ACCDE224D07B40000A4C2B /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
@@ -275,7 +275,6 @@
 			children = (
 				71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */,
 				71ABAD8124C324E700E48992 /* AddComms.storyboard */,
-				D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -724,6 +723,7 @@
 		D28201AA24C845C600CD15DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -921,7 +921,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */,
-				D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */,
+				3C3FC73B24D836C70049E9D8 /* AddCommsViewControllerTests.swift in Sources */,
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
 				702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */,
 				702C117024CECB2100799497 /* MockApiService.swift in Sources */,

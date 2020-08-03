@@ -32,6 +32,7 @@ class AddCommsPresenterTests: XCTestCase {
         mockAddCommsPresenterView = nil
     }
     
+    //Need to test for posting
     func testDidTapPost() {
         
         // Act
