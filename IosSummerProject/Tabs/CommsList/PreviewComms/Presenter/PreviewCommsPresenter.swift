@@ -9,6 +9,7 @@
 import Foundation
 
 protocol PreviewCommsPresenterView {
+    func setCommsData(with article: Article)
 }
 
 protocol PreviewCommsPresenterDelegate {
@@ -16,6 +17,7 @@ protocol PreviewCommsPresenterDelegate {
 
 class PreviewCommsPresenter: PreviewCommsPresenterProtocol {
     
+    var comm: Article!
     var delegate: PreviewCommsPresenterDelegate
     var view: PreviewCommsPresenterView
     var apiService: ApiServiceProtocol
@@ -24,6 +26,10 @@ class PreviewCommsPresenter: PreviewCommsPresenterProtocol {
         self.delegate = delegate
         self.view = view
         self.apiService = apiService
+    }
+    
+    func loadComm() {
+        view.setCommsData(with: comm)
     }
 
 }

@@ -19,7 +19,7 @@ protocol EditCommsPresenterView {
 protocol EditCommsPresenterDelegate {
     func goToCommsListAfterSave()
     func goToCategoriesFromEdit(currentPage: String)
-    func goToPreviewCommsFromEdit(currentPage: String)
+    func goToPreviewCommsFromEdit(currentPage: String, article: Article)
     
 }
 
@@ -58,8 +58,8 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         delegate.goToCategoriesFromEdit(currentPage: "edit")
     }
     
-    func didTapPreviewComms() {
-        delegate.goToPreviewCommsFromEdit(currentPage: "edit")
+    func didTapPreviewComms(on article: Article) {
+        delegate.goToPreviewCommsFromEdit(currentPage: "edit", article: article)
     }
     
     func saveEdittedPost(_ article: Article) {

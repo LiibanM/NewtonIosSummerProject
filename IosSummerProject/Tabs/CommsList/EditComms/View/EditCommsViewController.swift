@@ -113,7 +113,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func previewCommsTapped(_ sender: Any) {
-        editCommsPresenter.didTapPreviewComms()
+        editCommsPresenter.didTapPreviewComms(on: comm)
     }
     
     

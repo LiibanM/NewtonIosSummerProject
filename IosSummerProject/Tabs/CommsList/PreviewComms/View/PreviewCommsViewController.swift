@@ -10,8 +10,17 @@ import UIKit
 
 class PreviewCommsViewController: UIViewController, Storyboarded {
     var previewCommsPresenter: PreviewCommsPresenterProtocol!
+    var comm: Article!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        previewCommsPresenter.loadComm()
+    }
 }
 
 extension PreviewCommsViewController: PreviewCommsPresenterView {
-    
+    func setCommsData(with article: Article) {
+        comm = article
+        print(comm, "preview")
+    }
 }

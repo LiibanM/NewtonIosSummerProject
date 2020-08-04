@@ -75,9 +75,10 @@ class CommsCoordinator: Coordinator, PreviewCommsPresenterDelegate {
         self.navigationController.showDetailViewController(showCategoriesViewController, sender: nil)
     }
     
-    func showPreviewComms() {
+    func showPreviewComms(_ article: Article) {
         let previewCommsViewController = PreviewCommsViewController.instantiate(storyboard: "PreviewComms")
         let previewCommsPresenter = PreviewCommsPresenter(with: previewCommsViewController, delegate: self, apiService)
+        previewCommsPresenter.comm = article
         previewCommsViewController.previewCommsPresenter = previewCommsPresenter
         self.navigationController.showDetailViewController(previewCommsViewController, sender: nil)
     }
@@ -156,9 +157,9 @@ extension CommsCoordinator: EditCommsPresenterDelegate {
         showCategories()
     }
     
-    func goToPreviewCommsFromEdit(currentPage: String) {
+    func goToPreviewCommsFromEdit(currentPage: String, article: Article) {
         modalDisplayedOn = currentPage
-        showPreviewComms()
+        showPreviewComms(article)
     }
     
     func goToCommsListAfterSave() {
