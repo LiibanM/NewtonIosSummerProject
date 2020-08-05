@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-// Spacing in this file needs to be sorted
-// Convention should be 'param: Object type' with a space between the ':' and 'object type'
 class CustomActionSheet {
     
     // An AlertViewController has a .actions array which you can hook into to add as many actions as you want
@@ -38,11 +36,39 @@ class CustomActionSheet {
     
      init(){}
     
-    func showAlert(title:String,
-                    message:String,
-                    optionOne:String,
-                    optionTwo:String,
-                    viewController:UIViewController,
+    //FILIP: Unsure how to implement this and how scalable it makes it due to the fixed set of custom erros that we have / will have
+   /* func showCustomAlert(view: UIViewController, title: String, message: String, optionOne: String,
+                         optionTwo: String, actionTitles:[String?], actions: [((UIAlertAction) -> Void)?]) {
+        
+        let customAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        for (index, title) in actionTitles.enumerated() {
+            let actionOne = UIAlertAction(
+                title: optionOne,
+                style: .default,
+                handler: actions[index])
+            customAlert.addAction(actionOne)
+            
+            let actionTwo = UIAlertAction(
+                title: optionTwo,
+                style: .default,
+                handler: actions[index])
+            customAlert.addAction(actionTwo)
+            
+            let actionCancel = UIAlertAction(
+                title: "Cancel",
+                style: .cancel,
+                handler: actions[index])
+            customAlert.addAction(actionCancel)
+        }
+        
+    }*/
+    
+    func showAlert(title: String,
+                    message: String,
+                    optionOne: String,
+                    optionTwo: String,
+                    viewController: UIViewController,
                     completion: @escaping (_ res: String?) -> ()
     ){
         
