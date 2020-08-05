@@ -15,6 +15,8 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     @IBOutlet weak var categoriesCollectionView: UICollectionView!
     @IBOutlet weak var addTagButton: UIButton!{
         // Do this in the viewDidLoad, not on the didSet of the button
+        //FILIP - moving it to viewDidLoad makes it so the call only happens initially,
+        //FILIP - we need to make this call every time a category is chosen
         didSet{
             addTagButton.layer.cornerRadius = addTagButton.frame.size.height/5.0
             addTagButton.layer.masksToBounds = true
@@ -33,7 +35,8 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
         categoriesCollectionView.dataSource = self
         
         // Make CategoryCell a constant
-        categoriesCollectionView.register(UINib(nibName: "CategoryCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+        let categoryCell = "CategoryCell"
+        categoriesCollectionView.register(UINib(nibName: categoryCell, bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
         
     }
     
@@ -43,18 +46,22 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
         
         // Hard coded category Id
         // SendCategory should take an optional string on category name so you don't force unwrap here
+        //FILIP: Unsure how to handle this, why is the category id hardcoded ?
         showCategoriesPresenter.sendCategory(with: Category(categoryId: 66, categoryName: categoryTextField.text!))
         
-        // This should be reset in a function in the ShowCategoriesPresenterView protocol not here
-        categoryTextField.text = ""
     }
-    
-
 }
 
 extension ShowCategoriesViewController: ShowCategoriesPresenterView {
+    func emptyCategoryTextField() {
+        categoryTextField.text = ""
+    }
+    
     func errorOccured(message: String) {
-        // Show an alert, dont print
+        let alert = UIAlertController(title: "Error", message: "An unexpected error occured", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         print(message)
     }
     
@@ -75,24 +82,26 @@ extension ShowCategoriesViewController: ShowCategoriesPresenterView {
 
 // This makes everything very clean and seperated
 
+//FILIP: Unsure where to put this new object
+
 extension ShowCategoriesViewController: UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        // Use indexPath.item as a row is specific to the section so it could be row 2 in section 3 but you are looking for item 12 in the categories array but would get category at location 2 in the array
-        let selectedCategory = categories[indexPath.row]
+        
+        let selectedCategory = categories[indexPath.item]
         showCategoriesPresenter.didSelectCategory(with: selectedCategory)
     }
     
 }
 
 extension ShowCategoriesViewController: UICollectionViewDataSource {
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return categories.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        // Same as comment above about using .item
-        let currentCategory = categories[indexPath.row]
+        let currentCategory = categories[indexPath.item]
         
         // Use CategoryCell constant
         let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
@@ -102,19 +111,21 @@ extension ShowCategoriesViewController: UICollectionViewDataSource {
      
     }
     
-    
 }
 
-// Spacing between functions, add whitelines!
 extension ShowCategoriesViewController: UICollectionViewDelegateFlowLayout {
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 5
     }
+    
 }
 

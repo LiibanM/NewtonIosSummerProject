@@ -11,6 +11,7 @@ import Foundation
 protocol ShowCategoriesPresenterView {
     func errorOccured(message: String)
     func setCategories(with categories: [Category])
+    func emptyCategoryTextField()
 }
 
 protocol ShowCategoriesPresenterDelegate {
