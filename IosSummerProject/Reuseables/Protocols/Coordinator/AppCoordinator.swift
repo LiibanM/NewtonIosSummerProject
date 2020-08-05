@@ -15,12 +15,11 @@ class AppCoordinator: Coordinator {
     var commsCoordinator: CommsCoordinator!
     var loginCoordinator: LoginCoordinator!
     
-    var keychainService: KeychainSwift // This should be a Protocol
-    // should be a let because setting in the init and not changing
+    let keychainService: KeychainSwift!
     
-    var userToken: Any! // This should be an optional & also a let
+    let userToken: Any?
     
-    var apiService: ApiServiceProtocol // Should be a let because setting in the init and not changing
+    let apiService: ApiServiceProtocol
     
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
@@ -32,24 +31,14 @@ class AppCoordinator: Coordinator {
     
     override func start() {
         
-        //
-        // if let userToken = userToken {
-        //  code
-        // }
-        // else {
-        //  code
-        // }
-        //
-        // Use if let/guard let to unwrap optionals safely and don't have to perform the != nil check
-        
-        if userToken != nil {
-            print(userToken!)
+        if let userToken = userToken {
+            print(userToken)
             showComms()
-            return // Can remove this, you have it wrapped in if else so else will not run
+            
         } else {
             showLogin()
-            return // Can remove this, you have it wrapped in if else so else will not run
         }
+        
     }
     
     func showLogin() {
