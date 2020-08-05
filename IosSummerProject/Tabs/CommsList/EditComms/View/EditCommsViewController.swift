@@ -68,7 +68,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.isUserInteractionEnabled = true
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
-        editCommsCategory.setTitle(oldCategory.category_name, for: .normal)
+        editCommsCategory.setTitle(oldCategory.categoryName, for: .normal)
         let result = oldHighlighted ? 0 : 1
         editCommsHighlighted.selectedSegmentIndex = result
 
@@ -79,7 +79,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
             oldHighlighted == editCommsHighlighted.isSelected &&
-            oldCategory.category_name == editCommsCategory.titleLabel!.text
+            oldCategory.categoryName == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ) {
             
@@ -100,7 +100,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        editCommsCategory.titleLabel?.text = comm.category.category_name
+        editCommsCategory.titleLabel?.text = comm.category.categoryName
         
         // Provide a default image if URL is bad
         guard let url = URL(string: comm.image) else {
@@ -132,7 +132,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 extension EditCommsViewController: EditCommsPresenterView {
     func setCategory(with category: Category) {
         selectedCategory = category
-        editCommsCategory.titleLabel?.text = selectedCategory.category_name
+        editCommsCategory.titleLabel?.text = selectedCategory.categoryName
     }
     
     func setCommsData(with article: Article) {

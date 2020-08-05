@@ -39,7 +39,7 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         
         self.commsImageView.downloaded(from: image)
         self.navigationItem.title = title
-        self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
+        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
         self.commsDescriptionView.text = description
         
         

@@ -117,7 +117,7 @@ class CommsListViewController: UIViewController, Storyboarded {
         } else {
             pickerView.isHidden = true
         }
-        let doesCategoryMatch = (chosenCategory == "All") || comm.category.category_name == chosenCategory
+        let doesCategoryMatch = (chosenCategory == "All") || comm.category.categoryName == chosenCategory
 
         if isSearchBarEmpty {
             return doesCategoryMatch
@@ -179,7 +179,7 @@ extension CommsListViewController: UITableViewDataSource {
         cell.commsTitleLabel.text = currentComms.title
         cell.commsDescription.text = currentComms.content
 
-        cell.commsCategoryLabel.setTitle(currentComms.category.category_name, for: .normal)
+        cell.commsCategoryLabel.setTitle(currentComms.category.categoryName, for: .normal)
         cell.downLoadImage(from: currentComms.image)
         cell.highlightedImageView.isHidden = !currentComms.highlighted
         

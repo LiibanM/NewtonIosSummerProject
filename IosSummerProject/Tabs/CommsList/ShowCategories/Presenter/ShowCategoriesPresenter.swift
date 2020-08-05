@@ -30,10 +30,10 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         self.view = view
         self.apiService = apiService
         self.categories = [
-            Category(category_id: 1, category_name: "abc"),
-            Category(category_id: 2, category_name: "3245353453453534"),
-            Category(category_id: 3, category_name: "456"),
-            Category(category_id: 4, category_name: "879")
+            Category(categoryId: 1, categoryName: "abc"),
+            Category(categoryId: 2, categoryName: "3245353453453534"),
+            Category(categoryId: 3, categoryName: "456"),
+            Category(categoryId: 4, categoryName: "879")
         ]
     }
     

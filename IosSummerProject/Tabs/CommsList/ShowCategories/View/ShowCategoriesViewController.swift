@@ -43,7 +43,7 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
         
         // Hard coded category Id
         // SendCategory should take an optional string on category name so you don't force unwrap here
-        showCategoriesPresenter.sendCategory(with: Category(category_id: 66, category_name: categoryTextField.text!))
+        showCategoriesPresenter.sendCategory(with: Category(categoryId: 66, categoryName: categoryTextField.text!))
         
         // This should be reset in a function in the ShowCategoriesPresenterView protocol not here
         categoryTextField.text = ""
@@ -97,7 +97,7 @@ extension ShowCategoriesViewController: UICollectionViewDataSource {
         // Use CategoryCell constant
         let categoryCell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCell
         
-        categoryCell.categoryLabel.text = currentCategory.category_name
+        categoryCell.categoryLabel.text = currentCategory.categoryName
         return categoryCell
      
     }
