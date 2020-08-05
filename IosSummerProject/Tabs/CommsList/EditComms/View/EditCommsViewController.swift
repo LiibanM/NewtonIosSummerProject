@@ -110,7 +110,12 @@ class EditCommsViewController: UIViewController, Storyboarded {
 
     @IBAction func selectCategoryTapped(_ sender: Any) {
         editCommsPresenter.didTapSelectCategory()
-    } 
+    }
+    
+    @IBAction func previewCommsTapped(_ sender: Any) {
+        editCommsPresenter.didTapPreviewComms(on: comm)
+    }
+    
     
 }
 
