@@ -19,10 +19,10 @@ protocol ShowCategoriesPresenterDelegate {
 
 class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
    
-    var currentPage: String! // Should be optional
-    var delegate: ShowCategoriesPresenterDelegate // Let not var
-    var view: ShowCategoriesPresenterView // Let not var
-    var apiService: ApiServiceProtocol // Let not var
+    var currentPage: String?
+    let delegate: ShowCategoriesPresenterDelegate
+    let view: ShowCategoriesPresenterView
+    let apiService: ApiServiceProtocol
     var categories = [Category]()
     
     init(with view: ShowCategoriesPresenterView, delegate: ShowCategoriesPresenterDelegate, _ apiService: ApiServiceProtocol) {
