@@ -6,6 +6,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Regular.ttf">
+            <string>Poppins-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Preview Comms View Controller-->
         <scene sceneID="hNS-Yg-yu1">
@@ -14,13 +19,86 @@
                     <view key="view" contentMode="scaleToFill" id="LVO-to-8oQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5X6-6m-KoM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LoJ-EM-ec0">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="wp4-sF-7kF">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="270"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="270" id="4J7-7P-r7Y"/>
+                                                    <constraint firstAttribute="width" constant="414" id="4bg-n3-ZEq"/>
+                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="414" id="PG2-0b-dZq"/>
+                                                    <constraint firstAttribute="height" constant="270" id="Qr2-bs-cqu"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uCn-Dt-alk" customClass="LabelButton" customModule="IosSummerProject" customModuleProvider="target">
+                                                <rect key="frame" x="15" y="290" width="55" height="40"/>
+                                                <color key="backgroundColor" red="0.23137254900000001" green="0.52549019610000003" blue="0.79607843140000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wRD-qZ-7nU">
+                                                <rect key="frame" x="10" y="340" width="394" height="262"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="15"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="wp4-sF-7kF" secondAttribute="trailing" id="3Sz-Dp-bBc"/>
+                                            <constraint firstAttribute="trailing" secondItem="wRD-qZ-7nU" secondAttribute="trailing" constant="10" id="GOj-Ms-awx"/>
+                                            <constraint firstItem="uCn-Dt-alk" firstAttribute="top" secondItem="wp4-sF-7kF" secondAttribute="bottom" constant="20" id="GRf-Ds-k42"/>
+                                            <constraint firstItem="wp4-sF-7kF" firstAttribute="leading" secondItem="LoJ-EM-ec0" secondAttribute="leading" id="Ozf-06-0YW"/>
+                                            <constraint firstItem="uCn-Dt-alk" firstAttribute="leading" secondItem="LoJ-EM-ec0" secondAttribute="leading" constant="15" id="RO5-p3-iU0"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="wRD-qZ-7nU" secondAttribute="bottom" constant="25" id="VdQ-MH-vSV"/>
+                                            <constraint firstItem="wRD-qZ-7nU" firstAttribute="top" secondItem="uCn-Dt-alk" secondAttribute="bottom" constant="10" id="bXI-Sf-CeI"/>
+                                            <constraint firstItem="wp4-sF-7kF" firstAttribute="top" secondItem="LoJ-EM-ec0" secondAttribute="top" id="ih2-Ga-pDi"/>
+                                            <constraint firstItem="wRD-qZ-7nU" firstAttribute="leading" secondItem="LoJ-EM-ec0" secondAttribute="leading" constant="10" id="udw-JX-GC6"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="LoJ-EM-ec0" secondAttribute="bottom" id="Awc-85-ZF4"/>
+                                    <constraint firstItem="LoJ-EM-ec0" firstAttribute="leading" secondItem="5X6-6m-KoM" secondAttribute="leading" id="B5w-Av-Xe3"/>
+                                    <constraint firstItem="LoJ-EM-ec0" firstAttribute="width" secondItem="5X6-6m-KoM" secondAttribute="width" id="MGJ-hZ-yT3"/>
+                                    <constraint firstItem="LoJ-EM-ec0" firstAttribute="height" secondItem="5X6-6m-KoM" secondAttribute="height" priority="250" id="QdX-E4-myI"/>
+                                    <constraint firstItem="LoJ-EM-ec0" firstAttribute="top" secondItem="5X6-6m-KoM" secondAttribute="top" id="ehv-F2-MdP"/>
+                                    <constraint firstAttribute="trailing" secondItem="LoJ-EM-ec0" secondAttribute="trailing" id="tTn-sg-aow"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ZWa-R3-WgP"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="eWi-JD-C4Y"/>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="E8M-x1-PCk" firstAttribute="trailing" secondItem="5X6-6m-KoM" secondAttribute="trailing" id="9Jk-cC-UeK"/>
+                            <constraint firstItem="5X6-6m-KoM" firstAttribute="bottom" secondItem="E8M-x1-PCk" secondAttribute="bottom" constant="34" id="h3U-Jg-A99"/>
+                            <constraint firstItem="5X6-6m-KoM" firstAttribute="leading" secondItem="E8M-x1-PCk" secondAttribute="leading" id="n9a-qz-9mo"/>
+                            <constraint firstItem="E8M-x1-PCk" firstAttribute="top" secondItem="5X6-6m-KoM" secondAttribute="top" constant="44" id="zU5-nz-o76"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="E8M-x1-PCk"/>
                     </view>
+                    <connections>
+                        <outlet property="categoryView" destination="uCn-Dt-alk" id="b1h-0V-5P5"/>
+                        <outlet property="descriptionView" destination="wRD-qZ-7nU" id="p4X-q9-TE5"/>
+                        <outlet property="imageView" destination="wp4-sF-7kF" id="f2z-VG-RJF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fg-Fb-nLP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="264" y="297"/>
+            <point key="canvasLocation" x="263.768115942029" y="296.65178571428572"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="128" height="128"/>
+    </resources>
 </document>

@@ -7,14 +7,25 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PreviewCommsViewController: UIViewController, Storyboarded {
     var previewCommsPresenter: PreviewCommsPresenterProtocol!
     var comm: Article!
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var categoryView: LabelButton!
+    @IBOutlet weak var descriptionView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         previewCommsPresenter.loadComm()
+        guard let url = URL(string: comm.image) else {
+            print("bad url")
+            return
+        }
+        self.imageView.kf.setImage(with: url)
+        self.categoryView.titleLabel?.text = comm.category.category_name
+        self.descriptionView.text = comm.content
     }
 }
 
