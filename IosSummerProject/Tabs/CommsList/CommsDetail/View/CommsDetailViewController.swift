@@ -72,54 +72,35 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     
     // Don't know what this function is for, but, if it were to be used it should be on your presenter not your view controller
     // Your VC should only update UI, all other functionality should be dealt with on your presenter
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    //FILIP: I believe it is unneccessary ?
+    /*func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
+    }*/
 
     // Not used
     // If downloading an image, this should be handled by your presenter and passed to the vc through presenters view protocol
-    func downloadImage(from url: URL) {
+    //FILIP - not required as a piece of functionality as far as I'm aware and unused
+    /*func downloadImage(from url: URL) {
         commsImageView.kf.setImage(with: url)
-//        print("Download Started")
-//        getData(from: url) { data, response, error in
-//            guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
-//            DispatchQueue.main.async() { [weak self] in
-//                self?.commsImageView.image = UIImage(data: data)
-//            }
-//        }
-    }
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.commsImageView.image = UIImage(data: data)
+            }
+        }
+    }*/
 }
 
-// Extensions of any default object types should go into a common extensions folder
-// This is because this extension is available everywhere and not just this file
-extension UIImageView {
-    
-    // Looks like a job for your presenter
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
 
 extension CommsDetailViewController: CommsDetailPresenterView {
     func errorOccured(message: String) {
-        // Display an alert
+        let alert = UIAlertController(title: "Error", message: "An unexpected error occured", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         print(message)
     }
     
