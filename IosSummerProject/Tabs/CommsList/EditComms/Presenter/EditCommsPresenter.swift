@@ -27,10 +27,11 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
     var articleId: Int?
     
     // This never gets set so will always be nil?
+    
     var comm: Article?
-    var delegate: EditCommsPresenterDelegate! // Let not var and remove !
-    var view: EditCommsPresenterView! // Let not var and remove !
-    var apiService: ApiServiceProtocol! // Let not var and remove !
+    let delegate: EditCommsPresenterDelegate
+    let view: EditCommsPresenterView
+    let apiService: ApiServiceProtocol
     
     init(with view: EditCommsPresenterView, delegate: EditCommsPresenterDelegate, _ apiService: ApiServiceProtocol) {
         self.apiService = apiService
@@ -39,9 +40,8 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
     }
     
     func loadComm() {
-        // Passed Comm doesn't make sense to me - rename the let to a more descriptive name
-        if let passedComm = comm {
-            view.setCommsData(with: passedComm)
+        if let currentlyEditedComm = comm {
+            view.setCommsData(with: currentlyEditedComm)
         } else {
             loadCommFromId()
 //            fetchCommFromId()
@@ -108,7 +108,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         }
     }
     
-    // I assume this will be removed once you get the backend working
+    // I assume this will be removed once you get the backend working ?
     func loadCommFromId() {
         let articles = [
                 Article(article_id: 1, title: "Covid-19", content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non risus sed mauris maximus semper. Nulla auctor consequat ligula, et feugiat nibh imperdiet in. Nunc id lectus ut ligula pharetra iaculis ac in ex. Nullam vestibulum et erat vel efficitur. Nunc et purus diam. Proin scelerisque odio a vulputate dictum. Curabitur luctus nisi elementum condimentum pellentesque. Morbi hendrerit nulla dolor, sed facilisis velit vestibulum non. Donec lacinia sodales justo, et varius dolor ullamcorper ut. Duis malesuada lacus nec velit finibus, id facilisis nisi tincidunt. Donec molestie sem aliquam tristique viverra. Aenean in quam ultrices, viverra urna eu, euismod quam. Fusce vel lacus iaculis, dictum arcu eu, volutpat lectus. Proin interdum, nibh sed molestie vulputate, est ipsum iaculis neque, dignissim volutpat nisl ligula vel nunc.\n\nFusce iaculis neque id dui sollicitudin, vitae mattis tellus sagittis. Donec porta laoreet dolor a bibendum. Suspendisse potenti. Curabitur venenatis porttitor elit sit amet pulvinar. Etiam ligula augue, consequat non suscipit non, vulputate et dolor.", category: Category(category_id: 1, category_name: "COVID-19") , date: Date(timeIntervalSinceNow: 86400), highlighted: true, image: "https://i2.wp.com/neurosciencenews.com/files/2020/06/27-biomarkers-covid19-nuroscienrw-public.jpg?fit=1400%2C933&ssl=1"),
