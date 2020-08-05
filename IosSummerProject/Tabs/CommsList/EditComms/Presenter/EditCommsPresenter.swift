@@ -24,6 +24,7 @@ protocol EditCommsPresenterDelegate {
 
 class EditCommsPresenter: EditCommsPresenterProtocol {
     
+    
     var articleId: Int?
     
     // This never gets set so will always be nil?
@@ -58,6 +59,18 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
     
     func didTapSelectCategory() {
         delegate.goToCategoriesFromEdit(currentPage: "edit")
+    }
+    
+    func checkForChanges(oldComm: Article, editedComm: Article) -> Bool {
+        if(oldComm.title == editedComm.title &&
+            oldComm.content == editedComm.content &&
+            oldComm.highlighted == editedComm.highlighted &&
+            oldComm.category.categoryName == editedComm.category.categoryName) {
+            
+            return false;
+        } else {
+            return true;
+        }
     }
     
     func saveEdittedPost(_ article: Article) {

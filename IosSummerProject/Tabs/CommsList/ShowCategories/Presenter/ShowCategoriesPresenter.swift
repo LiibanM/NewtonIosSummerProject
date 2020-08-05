@@ -98,7 +98,14 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         mockSendCategory(with: category)
     }
        
-       
+
+    func checkIfCategoryFieldIsEmpty(with categoryName: String) -> Bool{
+        if(categoryName == "") {
+            self.view.errorOccured(message: "No input in category field")
+            return true
+        }
+        return false
+    }
     
     
 }

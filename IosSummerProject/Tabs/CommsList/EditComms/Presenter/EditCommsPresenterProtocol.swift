@@ -14,4 +14,5 @@ protocol EditCommsPresenterProtocol {
     func didTapSave(for article: Article)
     func didTapSelectCategory()
     func selectedCategory(with category: Category)
+    func checkForChanges(oldComm: Article, editedComm: Article) -> Bool
 }

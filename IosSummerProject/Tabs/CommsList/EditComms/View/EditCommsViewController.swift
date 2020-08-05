@@ -74,8 +74,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
 
     }
     
+    //FILIP - The checkforchanges() function from the presenter needs to be implemented here to make the transition
     @objc func saveEdittedCommTapped() {
-        // This code should be in your presenter
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
             oldHighlighted == editCommsHighlighted.isSelected &&
@@ -83,10 +83,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
             //oldImage == editCommsImage.
             ) {
             
-            // This should be displayed via your errorOcurred function with the message and title coming from the presenter
-            let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            errorOccured(message: "No changes made")
+            
         } else {
             // This function should just have this one line in
             editCommsPresenter.didTapSave(for: comm)
@@ -141,6 +139,9 @@ extension EditCommsViewController: EditCommsPresenterView {
     }
     
     func errorOccured(message: String) {
+        let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
         print(message)
     }
     
@@ -150,9 +151,8 @@ extension EditCommsViewController: EditCommsPresenterView {
 
 extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImagePickerControllerActionSheet() {
-        // Spacing between alert =  UIAler (2 spaces on right of =)
         // Should really have a AlertService that you can call instead of creating these everywhere
-        let alert =  UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
+        let alert = UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
 
         let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
             self.showImagePickerController(sourceType: .photoLibrary)

@@ -41,13 +41,12 @@ class ShowCategoriesViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func addCategoryButtonTapped(_ sender: Any) {
-        // This logic should be dealt with in the presenter so you can show an error to the user
-        if categoryTextField.text == "" { return }
-        
-        // Hard coded category Id
-        // SendCategory should take an optional string on category name so you don't force unwrap here
-        //FILIP: Unsure how to handle this, why is the category id hardcoded ?
-        showCategoriesPresenter.sendCategory(with: Category(categoryId: 66, categoryName: categoryTextField.text!))
+        if(!showCategoriesPresenter.checkIfCategoryFieldIsEmpty(with: categoryTextField.text!)){
+           // Hard coded category Id
+           // SendCategory should take an optional string on category name so you don't force unwrap here
+           //FILIP: Unsure how to handle this, why is the category id hardcoded ?
+           showCategoriesPresenter.sendCategory(with: Category(categoryId: 66, categoryName: categoryTextField.text!))
+        }
         
     }
 }
