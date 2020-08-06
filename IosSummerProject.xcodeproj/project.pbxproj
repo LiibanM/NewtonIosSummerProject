@@ -81,7 +81,6 @@
 		A4E8F11124C5C68D00B7A26F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4E8F11024C5C68D00B7A26F /* PostRequest.swift */; };
 		D282019E24C59FE100CD15DD /* ComsContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019D24C59FE100CD15DD /* ComsContent.swift */; };
 		D28201A024C71F3800CD15DD /* CustomActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = D282019F24C71F3800CD15DD /* CustomActionSheet.swift */; };
-		D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */; };
 		D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */; };
 		D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */; };
 		D2ACCDE324D07B40000A4C2B /* LabelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2ACCDE224D07B40000A4C2B /* LabelButton.swift */; };
@@ -178,7 +177,6 @@
 		A4E8F11024C5C68D00B7A26F /* PostRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
 		D282019D24C59FE100CD15DD /* ComsContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComsContent.swift; sourceTree = "<group>"; };
 		D282019F24C71F3800CD15DD /* CustomActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomActionSheet.swift; sourceTree = "<group>"; };
-		D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsViewControllerTests.swift; sourceTree = "<group>"; };
 		D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAddCommsPresenter.swift; sourceTree = "<group>"; };
 		D28201AB24C8462100CD15DD /* AddCommsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommsPresenterTests.swift; sourceTree = "<group>"; };
 		D2ACCDE224D07B40000A4C2B /* LabelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelButton.swift; sourceTree = "<group>"; };
@@ -306,7 +304,6 @@
 			children = (
 				71ABAD7F24C324CF00E48992 /* AddCommsViewController.swift */,
 				71ABAD8124C324E700E48992 /* AddComms.storyboard */,
-				D28201A124C842D900CD15DD /* AddCommsViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -350,7 +347,6 @@
 		71ABADAC24C57EDF00E48992 /* IosSummerProjectTests */ = {
 			isa = PBXGroup;
 			children = (
-				D28201A624C8455800CD15DD /* Tabs */,
 				71ABADBA24C8833A00E48992 /* Tabs */,
 				71ABADAD24C57EDF00E48992 /* IosSummerProjectTests.swift */,
 				71ABADAF24C57EDF00E48992 /* Info.plist */,
@@ -378,6 +374,8 @@
 		71ABADBB24C8835100E48992 /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DEF1D24D851E0009DCC84 /* EditComms */,
+				D28201A824C8456F00CD15DD /* AddComms */,
 				71ABADC024C8847900E48992 /* Mocks */,
 				71ABADBD24C8836E00E48992 /* Presenter */,
 				71ABADBC24C8836800E48992 /* View */,
@@ -730,24 +728,10 @@
 			isa = PBXGroup;
 			children = (
 				D28201A424C8447E00CD15DD /* MockAddCommsPresenter.swift */,
+				3CA89C1B24D1BB70008DE29C /* MockAddCommsPresenterView.swift */,
+				3CA89C1924D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		D28201A624C8455800CD15DD /* Tabs */ = {
-			isa = PBXGroup;
-			children = (
-				D28201A724C8456300CD15DD /* CommsList */,
-			);
-			path = Tabs;
-			sourceTree = "<group>";
-		};
-		D28201A724C8456300CD15DD /* CommsList */ = {
-			isa = PBXGroup;
-			children = (
-				D28201A824C8456F00CD15DD /* AddComms */,
-			);
-			path = CommsList;
 			sourceTree = "<group>";
 		};
 		D28201A824C8456F00CD15DD /* AddComms */ = {
@@ -771,6 +755,7 @@
 		D28201AA24C845C600CD15DD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -969,14 +954,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */,
-				D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */,
+				3C3FC73B24D836C70049E9D8 /* AddCommsViewControllerTests.swift in Sources */,
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
 				702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */,
 				702C117024CECB2100799497 /* MockApiService.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
+				3C6DEF2724D85235009DCC84 /* MockEditCommsPresenterView.swift in Sources */,
+				3C06E8DA24DC38C40058B80B /* EditCommsViewControllerTests.swift in Sources */,
+				3C06E8DC24DC38D90058B80B /* EditCommsPresenterTests.swift in Sources */,
+				3C6DEF2324D8521B009DCC84 /* MockEditCommsPresenter.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
 				702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */,
 				702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */,
+				3C6DEF2524D85226009DCC84 /* MockEditCommsPresenterDelegate.swift in Sources */,
+				3CA89C1C24D1BB70008DE29C /* MockAddCommsPresenterView.swift in Sources */,
+				3CA89C1A24D1BA1A008DE29C /* MockAddCommsPresenterDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
