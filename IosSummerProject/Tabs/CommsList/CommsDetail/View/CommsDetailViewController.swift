@@ -37,7 +37,12 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         let tag = comm.category
         let description = comm.content
         
-        self.commsImageView.downloaded(from: image)
+        //self.commsImageView.downloaded(from: image)
+        guard let url = URL(string: comm.image) else {
+            print("bad url")
+            return
+        }
+        self.commsImageView.kf.setImage(with: url)
         self.navigationItem.title = title
         self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
         self.commsDescriptionView.text = description

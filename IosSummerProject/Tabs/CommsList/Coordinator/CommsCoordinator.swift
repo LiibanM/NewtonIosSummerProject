@@ -12,7 +12,7 @@ import UIKit
 protocol CommsCoordinatorDelegate {
 }
 
-class CommsCoordinator: Coordinator {
+class CommsCoordinator: Coordinator, PreviewCommsPresenterDelegate {
     
     var apiService: ApiServiceProtocol
     var addCommsViewController: AddCommsViewController
@@ -73,9 +73,16 @@ class CommsCoordinator: Coordinator {
         let showCategoriesPresenter = ShowCategoriesPresenter(with: showCategoriesViewController, delegate: self, apiService)
         showCategoriesViewController.showCategoriesPresenter = showCategoriesPresenter
         self.navigationController.showDetailViewController(showCategoriesViewController, sender: nil)
-        
-        
     }
+    
+    func showPreviewComms(_ article: Article) {
+        let previewCommsViewController = PreviewCommsViewController.instantiate(storyboard: "PreviewComms")
+        let previewCommsPresenter = PreviewCommsPresenter(with: previewCommsViewController, delegate: self, apiService)
+        previewCommsPresenter.comm = article
+        previewCommsViewController.previewCommsPresenter = previewCommsPresenter
+        self.navigationController.showDetailViewController(previewCommsViewController, sender: nil)
+    }
+    
     func showEditComms(with id: Int?, or article: Article?) {
         editViewController = EditCommsViewController.instantiate(storyboard: "EditComms")
 
@@ -148,6 +155,11 @@ extension CommsCoordinator: EditCommsPresenterDelegate {
     func goToCategoriesFromEdit(currentPage: String) {
         modalDisplayedOn = currentPage
         showCategories()
+    }
+    
+    func goToPreviewCommsFromEdit(currentPage: String, article: Article) {
+        modalDisplayedOn = currentPage
+        showPreviewComms(article)
     }
     
     func goToCommsListAfterSave() {
