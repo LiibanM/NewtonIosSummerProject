@@ -40,6 +40,11 @@
 		71ABADB924C5A99400E48992 /* CommsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 71ABADB724C5A99400E48992 /* CommsCell.xib */; };
 		71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */; };
 		71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */; };
+		A4376A8424DC36E8007BD38F /* MockShowCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4376A8324DC36E8007BD38F /* MockShowCategoriesPresenter.swift */; };
+		A4376A8624DC370D007BD38F /* MockShowCategoriesPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4376A8524DC370D007BD38F /* MockShowCategoriesPresenterDelegate.swift */; };
+		A4376A8824DC3731007BD38F /* MockShowCategoriesPresenterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4376A8724DC3731007BD38F /* MockShowCategoriesPresenterView.swift */; };
+		A4376A8A24DC3A95007BD38F /* ShowCategoriesPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4376A8924DC3A95007BD38F /* ShowCategoriesPresenterTests.swift */; };
+		A4376A8C24DC3AAC007BD38F /* ShowCategoriesViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4376A8B24DC3AAC007BD38F /* ShowCategoriesViewControllerTests.swift */; };
 		A491B82A24CED8060069559A /* ShowCategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82924CED8060069559A /* ShowCategoriesViewController.swift */; };
 		A491B82C24CED8190069559A /* ShowCategories.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A491B82B24CED8190069559A /* ShowCategories.storyboard */; };
 		A491B82E24CED82F0069559A /* ShowCategoriesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */; };
@@ -135,6 +140,11 @@
 		71ABADB724C5A99400E48992 /* CommsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CommsCell.xib; sourceTree = "<group>"; };
 		71ABADBE24C883CF00E48992 /* CommsListViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommsListViewControllerTests.swift; sourceTree = "<group>"; };
 		71ABADC124C8849500E48992 /* MockCommsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCommsListPresenter.swift; sourceTree = "<group>"; };
+		A4376A8324DC36E8007BD38F /* MockShowCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShowCategoriesPresenter.swift; sourceTree = "<group>"; };
+		A4376A8524DC370D007BD38F /* MockShowCategoriesPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShowCategoriesPresenterDelegate.swift; sourceTree = "<group>"; };
+		A4376A8724DC3731007BD38F /* MockShowCategoriesPresenterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockShowCategoriesPresenterView.swift; sourceTree = "<group>"; };
+		A4376A8924DC3A95007BD38F /* ShowCategoriesPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenterTests.swift; sourceTree = "<group>"; };
+		A4376A8B24DC3AAC007BD38F /* ShowCategoriesViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesViewControllerTests.swift; sourceTree = "<group>"; };
 		A491B82924CED8060069559A /* ShowCategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesViewController.swift; sourceTree = "<group>"; };
 		A491B82B24CED8190069559A /* ShowCategories.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ShowCategories.storyboard; sourceTree = "<group>"; };
 		A491B82D24CED82F0069559A /* ShowCategoriesPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCategoriesPresenter.swift; sourceTree = "<group>"; };
@@ -378,6 +388,7 @@
 		71ABADBB24C8835100E48992 /* CommsList */ = {
 			isa = PBXGroup;
 			children = (
+				A4376A7F24DC3634007BD38F /* CategoriesTest */,
 				71ABADC024C8847900E48992 /* Mocks */,
 				71ABADBD24C8836E00E48992 /* Presenter */,
 				71ABADBC24C8836800E48992 /* View */,
@@ -410,6 +421,42 @@
 				702C116F24CECB2100799497 /* MockApiService.swift */,
 			);
 			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A4376A7F24DC3634007BD38F /* CategoriesTest */ = {
+			isa = PBXGroup;
+			children = (
+				A4376A8024DC365B007BD38F /* Mocks */,
+				A4376A8124DC3664007BD38F /* Presenter */,
+				A4376A8224DC3672007BD38F /* View */,
+			);
+			path = CategoriesTest;
+			sourceTree = "<group>";
+		};
+		A4376A8024DC365B007BD38F /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				A4376A8324DC36E8007BD38F /* MockShowCategoriesPresenter.swift */,
+				A4376A8524DC370D007BD38F /* MockShowCategoriesPresenterDelegate.swift */,
+				A4376A8724DC3731007BD38F /* MockShowCategoriesPresenterView.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		A4376A8124DC3664007BD38F /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				A4376A8924DC3A95007BD38F /* ShowCategoriesPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		A4376A8224DC3672007BD38F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A4376A8B24DC3AAC007BD38F /* ShowCategoriesViewControllerTests.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		A491B82624CED7CB0069559A /* ShowCategories */ = {
@@ -969,11 +1016,16 @@
 			files = (
 				D28201AC24C8462100CD15DD /* AddCommsPresenterTests.swift in Sources */,
 				D28201A224C842D900CD15DD /* AddCommsViewControllerTests.swift in Sources */,
+				A4376A8A24DC3A95007BD38F /* ShowCategoriesPresenterTests.swift in Sources */,
 				71ABADBF24C883CF00E48992 /* CommsListViewControllerTests.swift in Sources */,
 				702C116C24CECAF600799497 /* MockCommsListPresenterDelegate.swift in Sources */,
 				702C117024CECB2100799497 /* MockApiService.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
+				A4376A8424DC36E8007BD38F /* MockShowCategoriesPresenter.swift in Sources */,
+				A4376A8C24DC3AAC007BD38F /* ShowCategoriesViewControllerTests.swift in Sources */,
+				A4376A8824DC3731007BD38F /* MockShowCategoriesPresenterView.swift in Sources */,
+				A4376A8624DC370D007BD38F /* MockShowCategoriesPresenterDelegate.swift in Sources */,
 				702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */,
 				702C117224CECB9000799497 /* CommsListPresenterTests.swift in Sources */,
 			);
