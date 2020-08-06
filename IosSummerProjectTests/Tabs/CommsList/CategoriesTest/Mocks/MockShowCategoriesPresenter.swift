@@ -12,14 +12,16 @@ import UIKit
 
 class MockShowCategoriesPresenter: ShowCategoriesPresenterProtocol
 {
-    func checkIfCategoryFieldIsEmpty(with categoryName: String) -> Bool {
-        return true
-    }
+    
     
     
        var didSendCategory = 0
        var didLoadDataCount = 0
        var didselectCategoryCount = 0
+   
+    func checkIfCategoryFieldIsEmpty(with categoryName: String) -> Bool {
+        return false
+    }
     
     func loadCategories() {
         didLoadDataCount+=1
