@@ -10,6 +10,10 @@ import Foundation
 @testable import IosSummerProject
 
 class MockShowCategoriesPresenterView: ShowCategoriesPresenterView {
+    func emptyCategoryTextField() {
+        
+    }
+    
     
     func errorOccured(message: String) {
         

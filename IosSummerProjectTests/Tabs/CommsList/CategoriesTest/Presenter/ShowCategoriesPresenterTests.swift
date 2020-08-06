@@ -38,22 +38,22 @@ class ShowCategoriesPresenterTests: XCTestCase {
     func testAddCategory() throws {
         
         let newCategories = [
-            Category(category_id: 1, category_name: "abc"),
-            Category(category_id: 2, category_name: "3245353453453534"),
-            Category(category_id: 3, category_name: "456"),
-            Category(category_id: 4, category_name: "879"),
-            Category(category_id: 5, category_name: "im new")
+            Category(categoryId: 1, categoryName: "abc"),
+            Category(categoryId: 2, categoryName: "3245353453453534"),
+            Category(categoryId: 3, categoryName: "456"),
+            Category(categoryId: 4, categoryName: "879"),
+            Category(categoryId: 5, categoryName: "im new")
         ]
         
         var testCategories = [
-            Category(category_id: 1, category_name: "abc"),
-            Category(category_id: 2, category_name: "3245353453453534"),
-            Category(category_id: 3, category_name: "456"),
-            Category(category_id: 4, category_name: "879")
+            Category(categoryId: 1, categoryName: "abc"),
+            Category(categoryId: 2, categoryName: "3245353453453534"),
+            Category(categoryId: 3, categoryName: "456"),
+            Category(categoryId: 4, categoryName: "879")
         ]
         
         
-        testCategories.append(Category(category_id: 1, category_name: "abc"))
+        testCategories.append(Category(categoryId: 1, categoryName: "abc"))
         
         XCTAssertEqual(newCategories.count, testCategories.count)
         
