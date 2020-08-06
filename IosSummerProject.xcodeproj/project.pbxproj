@@ -540,6 +540,7 @@
 		A4E8F0A424C0FCF600B7A26F /* Reuseables */ = {
 			isa = PBXGroup;
 			children = (
+				3C6DEF2C24DAB99C009DCC84 /* Default Object Extensions */,
 				D2ACCDDF24D07ABB000A4C2B /* UIComponents */,
 				A4E8F0A524C0FD1000B7A26F /* Protocols */,
 				A4E8F0AD24C0FD5B00B7A26F /* Constants */,
@@ -1042,6 +1043,7 @@
 				A4E8F0A824C0FD3300B7A26F /* Coordinator.swift in Sources */,
 				A491B82E24CED82F0069559A /* ShowCategoriesPresenter.swift in Sources */,
 				D28201A524C8447E00CD15DD /* MockAddCommsPresenter.swift in Sources */,
+				3C6DEF2E24DAB9E1009DCC84 /* UIImageView.swift in Sources */,
 				A4E8F0EC24C107B800B7A26F /* EditTagsViewController.swift in Sources */,
 				A4E8F0EA24C107A000B7A26F /* EditTagsPresenterProtocol.swift in Sources */,
 				71ABAD8524C3254000E48992 /* AddCommsPresenter.swift in Sources */,
