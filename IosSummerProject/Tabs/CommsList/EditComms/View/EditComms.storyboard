@@ -39,27 +39,30 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-fe-SCO">
-                                                <rect key="frame" x="10" y="310" width="394" height="34"/>
-                                                <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="9lp-J9-4Rz">
-                                                <rect key="frame" x="10" y="394" width="394" height="100"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="100" id="o53-GC-dYx"/>
-                                                </constraints>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BiN-fe-SCO">
+                                                <rect key="frame" x="10" y="305" width="394" height="34"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oyX-PL-fUZ">
-                                                <rect key="frame" x="10" y="364" width="394" height="20"/>
+                                                <rect key="frame" x="10" y="349" width="394" height="20"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkm-2z-mof">
+                                                <rect key="frame" x="10" y="374" width="394" height="100"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="100" id="EOj-gn-k9B"/>
+                                                </constraints>
+                                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="eHo-h5-bIH">
-                                                <rect key="frame" x="10" y="514" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="494" width="394" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aD9-Mu-3zY">
                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="40"/>
@@ -84,7 +87,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Smh-NY-Rca">
-                                                <rect key="frame" x="10" y="574" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="554" width="394" height="40"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Highlight Post" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eg9-DR-hzF">
                                                         <rect key="frame" x="0.0" y="0.0" width="186" height="40"/>
@@ -106,7 +109,7 @@
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRn-D9-gJP">
-                                                <rect key="frame" x="10" y="634" width="394" height="40"/>
+                                                <rect key="frame" x="10" y="614" width="394" height="40"/>
                                                 <color key="backgroundColor" red="0.23137254900000001" green="0.52941176469999995" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="7FZ-IC-mmz"/>
@@ -114,6 +117,9 @@
                                                 <fontDescription key="fontDescription" name="Poppins-Regular" family="Poppins" pointSize="17"/>
                                                 <color key="tintColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <state key="normal" title="Preview"/>
+                                                <connections>
+                                                    <action selector="previewCommsTapped:" destination="U0O-av-cLW" eventType="touchUpInside" id="ZXl-31-kZb"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleAspectFit" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JMO-pN-zsF">
                                                 <rect key="frame" x="1" y="0.0" width="414" height="270"/>
@@ -134,9 +140,9 @@
                                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="qRn-D9-gJP" secondAttribute="bottom" constant="25" id="A9a-Li-FOM"/>
                                             <constraint firstAttribute="trailing" secondItem="qRn-D9-gJP" secondAttribute="trailing" constant="10" id="BCG-Rz-PUj"/>
                                             <constraint firstAttribute="trailing" secondItem="BiN-fe-SCO" secondAttribute="trailing" constant="10" id="CHA-FR-6Fe"/>
-                                            <constraint firstAttribute="trailing" secondItem="9lp-J9-4Rz" secondAttribute="trailing" constant="10" id="I0b-mX-qZv"/>
                                             <constraint firstAttribute="trailing" secondItem="JMO-pN-zsF" secondAttribute="trailing" id="JrZ-8j-CyR"/>
                                             <constraint firstItem="qRn-D9-gJP" firstAttribute="top" secondItem="Smh-NY-Rca" secondAttribute="bottom" constant="20" id="KFQ-M1-imE"/>
+                                            <constraint firstItem="eHo-h5-bIH" firstAttribute="top" secondItem="lkm-2z-mof" secondAttribute="bottom" constant="20" id="KFo-eh-F2g"/>
                                             <constraint firstItem="Smh-NY-Rca" firstAttribute="top" secondItem="eHo-h5-bIH" secondAttribute="bottom" constant="20" id="RgH-RY-OJe"/>
                                             <constraint firstItem="9w6-dH-hVx" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="TKb-4D-uHm"/>
                                             <constraint firstItem="9w6-dH-hVx" firstAttribute="top" secondItem="JMO-pN-zsF" secondAttribute="bottom" constant="10" id="VzQ-Q3-EbG"/>
@@ -147,14 +153,14 @@
                                             <constraint firstAttribute="trailing" secondItem="oyX-PL-fUZ" secondAttribute="trailing" constant="10" id="bga-I0-q8Z"/>
                                             <constraint firstItem="Smh-NY-Rca" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="cPP-tC-V9b"/>
                                             <constraint firstItem="Hiq-KU-EG4" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" id="cSd-bP-Eni"/>
-                                            <constraint firstItem="9lp-J9-4Rz" firstAttribute="top" secondItem="oyX-PL-fUZ" secondAttribute="bottom" constant="10" id="dhO-an-yqD"/>
-                                            <constraint firstItem="BiN-fe-SCO" firstAttribute="top" secondItem="9w6-dH-hVx" secondAttribute="bottom" constant="10" id="ep7-Oy-BJy"/>
-                                            <constraint firstItem="eHo-h5-bIH" firstAttribute="top" secondItem="9lp-J9-4Rz" secondAttribute="bottom" constant="20" id="fgs-hU-8Km"/>
-                                            <constraint firstItem="oyX-PL-fUZ" firstAttribute="top" secondItem="BiN-fe-SCO" secondAttribute="bottom" constant="20" id="iw6-o3-PDW"/>
-                                            <constraint firstItem="9lp-J9-4Rz" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="leG-UM-DIQ"/>
+                                            <constraint firstItem="BiN-fe-SCO" firstAttribute="top" secondItem="9w6-dH-hVx" secondAttribute="bottom" constant="5" id="ep7-Oy-BJy"/>
+                                            <constraint firstItem="lkm-2z-mof" firstAttribute="top" secondItem="oyX-PL-fUZ" secondAttribute="bottom" constant="5" id="hZ6-w4-gJ8"/>
+                                            <constraint firstItem="oyX-PL-fUZ" firstAttribute="top" secondItem="BiN-fe-SCO" secondAttribute="bottom" constant="10" id="iw6-o3-PDW"/>
                                             <constraint firstItem="qRn-D9-gJP" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="nvi-Zd-GsN"/>
                                             <constraint firstAttribute="trailing" secondItem="Hiq-KU-EG4" secondAttribute="trailing" id="o9l-Uy-65T"/>
+                                            <constraint firstItem="lkm-2z-mof" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="sWI-GW-7YQ"/>
                                             <constraint firstItem="oyX-PL-fUZ" firstAttribute="leading" secondItem="Qzn-dZ-N4V" secondAttribute="leading" constant="10" id="thg-a3-tUs"/>
+                                            <constraint firstAttribute="trailing" secondItem="lkm-2z-mof" secondAttribute="trailing" constant="10" id="zIb-Il-Sta"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -181,7 +187,7 @@
                     </view>
                     <connections>
                         <outlet property="editCommsCategory" destination="eBh-pF-YNF" id="NbQ-cj-PW6"/>
-                        <outlet property="editCommsDescription" destination="9lp-J9-4Rz" id="uA6-OM-9Az"/>
+                        <outlet property="editCommsDescription" destination="lkm-2z-mof" id="FcM-T0-HsW"/>
                         <outlet property="editCommsHighlighted" destination="ic7-LL-ggR" id="u8F-pq-C9y"/>
                         <outlet property="editCommsImage" destination="Hiq-KU-EG4" id="sPb-sh-7iR"/>
                         <outlet property="editCommsTitle" destination="BiN-fe-SCO" id="c3S-SB-QCz"/>

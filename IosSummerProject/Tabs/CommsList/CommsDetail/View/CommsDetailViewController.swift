@@ -17,6 +17,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     @IBOutlet weak var commsDescriptionView: UITextView!
     @IBOutlet weak var commsTagLabelButton: UIButton!
     var commsDetailPresenter: CommsDetailPresenterProtocol!
+    
+    // This should be stored on your CommsDetailPresenter and passed as needed through the presenter view protocol
     var comm: Article!
     
     override func viewDidLoad() {
@@ -35,9 +37,14 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         let tag = comm.category
         let description = comm.content
         
-        self.commsImageView.downloaded(from: image)
+        //self.commsImageView.downloaded(from: image)
+        guard let url = URL(string: comm.image) else {
+            print("bad url")
+            return
+        }
+        self.commsImageView.kf.setImage(with: url)
         self.navigationItem.title = title
-        self.commsTagLabelButton.setTitle(tag.category_name, for: .normal)
+        self.commsTagLabelButton.setTitle(tag.categoryName, for: .normal)
         self.commsDescriptionView.text = description
         
         
@@ -57,6 +64,8 @@ class CommsDetailViewController: UIViewController, Storyboarded {
     @objc func handleRefreshControl() {
        // Fetch the comm data from database & update elements
        // Dismiss the refresh control.
+        
+        // Don't believe you need to call this on the main queue
        DispatchQueue.main.async {
           self.commsScrollView.refreshControl?.endRefreshing()
        }
@@ -66,47 +75,37 @@ class CommsDetailViewController: UIViewController, Storyboarded {
         commsDetailPresenter.didTapEdit(on: comm)
        }
     
-    func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
+    // Don't know what this function is for, but, if it were to be used it should be on your presenter not your view controller
+    // Your VC should only update UI, all other functionality should be dealt with on your presenter
+    //FILIP: I believe it is unneccessary ?
+    /*func getData(from url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url, completionHandler: completion).resume()
-    }
+    }*/
 
-    func downloadImage(from url: URL) {
+    // Not used
+    // If downloading an image, this should be handled by your presenter and passed to the vc through presenters view protocol
+    //FILIP - not required as a piece of functionality as far as I'm aware and unused
+    /*func downloadImage(from url: URL) {
         commsImageView.kf.setImage(with: url)
-//        print("Download Started")
-//        getData(from: url) { data, response, error in
-//            guard let data = data, error == nil else { return }
-//            print(response?.suggestedFilename ?? url.lastPathComponent)
-//            print("Download Finished")
-//            DispatchQueue.main.async() { [weak self] in
-//                self?.commsImageView.image = UIImage(data: data)
-//            }
-//        }
-    }
+        print("Download Started")
+        getData(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            print("Download Finished")
+            DispatchQueue.main.async() { [weak self] in
+                self?.commsImageView.image = UIImage(data: data)
+            }
+        }
+    }*/
 }
 
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: UIView.ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: UIView.ContentMode = .scaleAspectFill) {  // for swift 4.2 syntax just use ===> mode: UIView.ContentMode
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
 
 extension CommsDetailViewController: CommsDetailPresenterView {
     func errorOccured(message: String) {
+        let alert = UIAlertController(title: "Error", message: "An unexpected error occured", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
         print(message)
     }
     
