@@ -28,7 +28,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 
     var oldTitle: String = ""
     var oldDescription: String = ""
-    var oldHighlighted: Bool = false;
+    var oldHighlighted: Int = 1;
     var oldCategory: Category!
     //var oldImage: UIImage = ""
     
@@ -45,7 +45,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
         oldTitle = comm.title
         oldDescription = comm.content
-        oldHighlighted = comm.highlighted
+        if(comm.highlighted){
+            oldHighlighted = 0
+        } else {
+            oldHighlighted = 1
+        }
         oldCategory = comm.category
         //oldImage = comm.image
         // TO HERE
@@ -69,20 +73,24 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
         editCommsCategory.setTitle(oldCategory.categoryName, for: .normal)
-        let result = oldHighlighted ? 0 : 1
+        let result = oldHighlighted
         editCommsHighlighted.selectedSegmentIndex = result
 
     }
     
     //FILIP - The checkforchanges() function from the presenter needs to be implemented here to make the transition
+    //FILIP - The didTapSave function should call the checkforchanges()
     @objc func saveEdittedCommTapped() {
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
-            oldHighlighted == editCommsHighlighted.isSelected &&
+            oldHighlighted == editCommsHighlighted.selectedSegmentIndex  &&
             oldCategory.categoryName == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ) {
             
+            let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
             errorOccured(message: "No changes made")
             
         } else {
@@ -139,9 +147,6 @@ extension EditCommsViewController: EditCommsPresenterView {
     }
     
     func errorOccured(message: String) {
-        let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
         print(message)
     }
     

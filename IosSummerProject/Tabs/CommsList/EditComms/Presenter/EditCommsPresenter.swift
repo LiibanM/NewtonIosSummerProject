@@ -61,6 +61,7 @@ class EditCommsPresenter: EditCommsPresenterProtocol {
         delegate.goToCategoriesFromEdit(currentPage: "edit")
     }
     
+    //FILIP - The didTapSave function should call the checkforchanges()
     func checkForChanges(oldComm: Article, editedComm: Article) -> Bool {
         if(oldComm.title == editedComm.title &&
             oldComm.content == editedComm.content &&
