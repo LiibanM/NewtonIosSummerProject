@@ -30,6 +30,7 @@ class AddCommsPresenterTests: XCTestCase {
         mockApiService = nil
         mockAddCommsPresenterDelegate = nil
         mockAddCommsPresenterView = nil
+        addCommsPresenter = nil
     }
     
     //Need to test for posting

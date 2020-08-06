@@ -34,7 +34,11 @@ class EditCommsViewController: UIViewController, Storyboarded {
         super.viewDidLoad()
         setUpEditableFields()
         
-       self.navigationController!.navigationBar.prefersLargeTitles = false
+       guard let navController = self.navigationController else {
+           print("Navigation Controller was nil! This should only happen when testing")
+           return
+       }
+       navController.navigationBar.prefersLargeTitles = false
         
         editCommsTitle.text = comm.title
         

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C06E8DA24DC38C40058B80B /* EditCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06E8D924DC38C40058B80B /* EditCommsViewControllerTests.swift */; };
+		3C06E8DC24DC38D90058B80B /* EditCommsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C06E8DB24DC38D90058B80B /* EditCommsPresenterTests.swift */; };
 		3C3FC73B24D836C70049E9D8 /* AddCommsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */; };
 		3C6DEF2324D8521B009DCC84 /* MockEditCommsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DEF2224D8521B009DCC84 /* MockEditCommsPresenter.swift */; };
 		3C6DEF2524D85226009DCC84 /* MockEditCommsPresenterDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C6DEF2424D85226009DCC84 /* MockEditCommsPresenterDelegate.swift */; };
@@ -100,6 +102,8 @@
 
 /* Begin PBXFileReference section */
 		1E04CAA0DF92A24A31A88343 /* Pods-IosSummerProject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IosSummerProject.debug.xcconfig"; path = "Target Support Files/Pods-IosSummerProject/Pods-IosSummerProject.debug.xcconfig"; sourceTree = "<group>"; };
+		3C06E8D924DC38C40058B80B /* EditCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsViewControllerTests.swift; sourceTree = "<group>"; };
+		3C06E8DB24DC38D90058B80B /* EditCommsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditCommsPresenterTests.swift; sourceTree = "<group>"; };
 		3C3FC73A24D836C70049E9D8 /* AddCommsViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AddCommsViewControllerTests.swift; path = IosSummerProjectTests/Tabs/CommsList/View/AddCommsViewControllerTests.swift; sourceTree = SOURCE_ROOT; };
 		3C6DEF2224D8521B009DCC84 /* MockEditCommsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditCommsPresenter.swift; sourceTree = "<group>"; };
 		3C6DEF2424D85226009DCC84 /* MockEditCommsPresenterDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEditCommsPresenterDelegate.swift; sourceTree = "<group>"; };
@@ -214,11 +218,27 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		3C06E8D724DC38A90058B80B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3C06E8D924DC38C40058B80B /* EditCommsViewControllerTests.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		3C06E8D824DC38B00058B80B /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				3C06E8DB24DC38D90058B80B /* EditCommsPresenterTests.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		3C6DEF1D24D851E0009DCC84 /* EditComms */ = {
 			isa = PBXGroup;
 			children = (
-				3C6DEF2124D85202009DCC84 /* View */,
-				3C6DEF2024D851FA009DCC84 /* Presenter */,
+				3C06E8D724DC38A90058B80B /* View */,
+				3C06E8D824DC38B00058B80B /* Presenter */,
 				3C6DEF1E24D851E7009DCC84 /* Mocks */,
 			);
 			path = EditComms;
@@ -232,20 +252,6 @@
 				3C6DEF2624D85235009DCC84 /* MockEditCommsPresenterView.swift */,
 			);
 			path = Mocks;
-			sourceTree = "<group>";
-		};
-		3C6DEF2024D851FA009DCC84 /* Presenter */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Presenter;
-			sourceTree = "<group>";
-		};
-		3C6DEF2124D85202009DCC84 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		702C115524C5B5CB00799497 /* Models */ = {
@@ -968,6 +974,8 @@
 				702C117024CECB2100799497 /* MockApiService.swift in Sources */,
 				71ABADAE24C57EDF00E48992 /* IosSummerProjectTests.swift in Sources */,
 				3C6DEF2724D85235009DCC84 /* MockEditCommsPresenterView.swift in Sources */,
+				3C06E8DA24DC38C40058B80B /* EditCommsViewControllerTests.swift in Sources */,
+				3C06E8DC24DC38D90058B80B /* EditCommsPresenterTests.swift in Sources */,
 				3C6DEF2324D8521B009DCC84 /* MockEditCommsPresenter.swift in Sources */,
 				71ABADC224C8849500E48992 /* MockCommsListPresenter.swift in Sources */,
 				702C116E24CECB1000799497 /* MockCommsListPresenterView.swift in Sources */,

@@ -13,8 +13,13 @@ import Foundation
 class MockEditCommsPresenterDelegate: EditCommsPresenterDelegate {
     
     var didGoToCommsListAfterSave = 0
+    var didGoToCategoriesFromEdit = 0
     
     func goToCommsListAfterSave() {
         didGoToCommsListAfterSave += 1
+    }
+    
+    func goToCategoriesFromEdit(currentPage: String) {
+        didGoToCategoriesFromEdit += 1
     }
 }

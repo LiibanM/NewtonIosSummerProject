@@ -10,6 +10,9 @@ import Foundation
 @testable import IosSummerProject
 
 class MockEditCommsPresenterView: EditCommsPresenterView {
+    func setCategory(with category: IosSummerProject.Category) {
+    }
+    
     func setCommsData(with article: Article) {
     }
     
