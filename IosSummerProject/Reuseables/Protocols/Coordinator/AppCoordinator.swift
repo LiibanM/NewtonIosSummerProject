@@ -14,11 +14,12 @@ class AppCoordinator: Coordinator {
     
     var commsCoordinator: CommsCoordinator!
     var loginCoordinator: LoginCoordinator!
-    var keychainService: KeychainSwift
     
-    var userToken: Any!
+    let keychainService: KeychainSwift!
     
-    var apiService: ApiServiceProtocol
+    let userToken: Any?
+    
+    let apiService: ApiServiceProtocol
     
     init(_ navigationController: UINavigationController) {
         self.apiService = ApiService()
@@ -29,14 +30,15 @@ class AppCoordinator: Coordinator {
     }
     
     override func start() {
-        if userToken != nil {
-            print(userToken!)
+        
+        if let userToken = userToken {
+            print(userToken)
             showComms()
-            return
+            
         } else {
             showLogin()
-            return
         }
+        
     }
     
     func showLogin() {

@@ -22,11 +22,13 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     var selectedCategory: Category!
     var editCommsPresenter: EditCommsPresenterProtocol!
+    
+    // This should only be stored on your presenter, not your vc and using your presenters view delegate you can pass info as needed to display
     var comm: Article!
 
     var oldTitle: String = ""
     var oldDescription: String = ""
-    var oldHighlighted: Bool = false;
+    var oldHighlighted: Int = 1;
     var oldCategory: Category!
     //var oldImage: UIImage = ""
     
@@ -36,16 +38,26 @@ class EditCommsViewController: UIViewController, Storyboarded {
         
        self.navigationController!.navigationBar.prefersLargeTitles = false
         
+        // FROM HERE
+        // This should be returned to you via your presenter view
+        // You should have a function that returns the object to your vc so it can update as needed
         editCommsTitle.text = comm.title
         
         oldTitle = comm.title
         oldDescription = comm.content
-        oldHighlighted = comm.highlighted
+        if(comm.highlighted){
+            oldHighlighted = 0
+        } else {
+            oldHighlighted = 1
+        }
         oldCategory = comm.category
         //oldImage = comm.image
+        // TO HERE
         
         self.navigationItem.title = "Edit"
         
+        // There should not be ?'s here because your outlets use a ! in their denotion meaning it will never be nil
+        // Remove them
         self.editCommsCategory?.layer.cornerRadius = editCommsCategory.frame.size.height/5.0
         self.editCommsCategory?.layer.masksToBounds = true
         self.previewButton?.layer.cornerRadius = previewButton.frame.size.height/5.0
@@ -60,23 +72,29 @@ class EditCommsViewController: UIViewController, Storyboarded {
         editOverlayButton.isUserInteractionEnabled = true
         editOverlayButton.addGestureRecognizer(tapGestureRecognizer)
         
-        editCommsCategory.setTitle(oldCategory.category_name, for: .normal)
-        let result = oldHighlighted ? 0 : 1
+        editCommsCategory.setTitle(oldCategory.categoryName, for: .normal)
+        let result = oldHighlighted
         editCommsHighlighted.selectedSegmentIndex = result
 
     }
     
+    //FILIP - The checkforchanges() function from the presenter needs to be implemented here to make the transition
+    //FILIP - The didTapSave function should call the checkforchanges()
     @objc func saveEdittedCommTapped() {
         if(oldTitle == editCommsTitle.text &&
             oldDescription == editCommsDescription.text &&
-            oldHighlighted == editCommsHighlighted.isSelected &&
-            oldCategory.category_name == editCommsCategory.titleLabel!.text
+            oldHighlighted == editCommsHighlighted.selectedSegmentIndex  &&
+            oldCategory.categoryName == editCommsCategory.titleLabel!.text
             //oldImage == editCommsImage.
             ) {
+            
             let alert = UIAlertController(title: "Error", message: "No changes made! Please ensure that you make changes before you click save!", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: NSLocalizedString("OK", comment: "Remove alert"), style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
+            errorOccured(message: "No changes made")
+            
         } else {
+            // This function should just have this one line in
             editCommsPresenter.didTapSave(for: comm)
         }
     }
@@ -88,11 +106,14 @@ class EditCommsViewController: UIViewController, Storyboarded {
     
     func setUpEditableFields() {
         editCommsPresenter.loadComm()
-        editCommsCategory.titleLabel?.text = comm.category.category_name
+        editCommsCategory.titleLabel?.text = comm.category.categoryName
+        
+        // Provide a default image if URL is bad
         guard let url = URL(string: comm.image) else {
             print("bad url")
             return
         }
+        
         editCommsImage.kf.setImage(with: url)
         editCommsTitle.layer.borderWidth = 1
         editCommsTitle.layer.borderColor =  UIColor.lightGray.cgColor
@@ -122,7 +143,7 @@ class EditCommsViewController: UIViewController, Storyboarded {
 extension EditCommsViewController: EditCommsPresenterView {
     func setCategory(with category: Category) {
         selectedCategory = category
-        editCommsCategory.titleLabel?.text = selectedCategory.category_name
+        editCommsCategory.titleLabel?.text = selectedCategory.categoryName
     }
     
     func setCommsData(with article: Article) {
@@ -140,7 +161,8 @@ extension EditCommsViewController: EditCommsPresenterView {
 
 extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func showImagePickerControllerActionSheet() {
-        let alert =  UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
+        // Should really have a AlertService that you can call instead of creating these everywhere
+        let alert = UIAlertController(title: "Choose your image", message: nil, preferredStyle: .actionSheet)
 
         let photoLibraryAction = UIAlertAction(title: "Choose from library", style: .default) { (action) in
             self.showImagePickerController(sourceType: .photoLibrary)
@@ -173,6 +195,9 @@ extension EditCommsViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
         if let editedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            // Get the URL of the image and store that
+            // In your presenter you can then go and grab the ImageContent if you need it
+            // Use the InfoKey.imageURL
             editCommsImage.image = editedImage
             let imageData = editedImage.pngData()
             print(imageData!.base64EncodedString(options: Data.Base64EncodingOptions.lineLength64Characters))

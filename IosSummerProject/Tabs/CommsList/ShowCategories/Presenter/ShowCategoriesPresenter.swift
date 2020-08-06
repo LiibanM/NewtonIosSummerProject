@@ -11,6 +11,7 @@ import Foundation
 protocol ShowCategoriesPresenterView {
     func errorOccured(message: String)
     func setCategories(with categories: [Category])
+    func emptyCategoryTextField()
 }
 
 protocol ShowCategoriesPresenterDelegate {
@@ -19,10 +20,10 @@ protocol ShowCategoriesPresenterDelegate {
 
 class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
    
-    var currentPage: String!
-    var delegate: ShowCategoriesPresenterDelegate
-    var view: ShowCategoriesPresenterView
-    var apiService: ApiServiceProtocol
+    var currentPage: String?
+    let delegate: ShowCategoriesPresenterDelegate
+    let view: ShowCategoriesPresenterView
+    let apiService: ApiServiceProtocol
     var categories = [Category]()
     
     init(with view: ShowCategoriesPresenterView, delegate: ShowCategoriesPresenterDelegate, _ apiService: ApiServiceProtocol) {
@@ -30,10 +31,10 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         self.view = view
         self.apiService = apiService
         self.categories = [
-            Category(category_id: 1, category_name: "abc"),
-            Category(category_id: 2, category_name: "3245353453453534"),
-            Category(category_id: 3, category_name: "456"),
-            Category(category_id: 4, category_name: "879")
+            Category(categoryId: 1, categoryName: "abc"),
+            Category(categoryId: 2, categoryName: "3245353453453534"),
+            Category(categoryId: 3, categoryName: "456"),
+            Category(categoryId: 4, categoryName: "879")
         ]
     }
     
@@ -97,7 +98,14 @@ class ShowCategoriesPresenter: ShowCategoriesPresenterProtocol {
         mockSendCategory(with: category)
     }
        
-       
+
+    func checkIfCategoryFieldIsEmpty(with categoryName: String) -> Bool{
+        if(categoryName == "") {
+            self.view.errorOccured(message: "No input in category field")
+            return true
+        }
+        return false
+    }
     
     
 }

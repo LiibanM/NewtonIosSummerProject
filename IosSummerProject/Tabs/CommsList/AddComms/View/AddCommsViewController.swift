@@ -133,7 +133,7 @@ extension AddCommsViewController: UIImagePickerControllerDelegate, UINavigationC
 extension AddCommsViewController: AddCommsPresenterView {
     func updateCategory(with new: Category) {
         selectedCategory = new
-        categoryButton.titleLabel?.text = selectedCategory.category_name
+        categoryButton.titleLabel?.text = selectedCategory.categoryName
         categoryButton.backgroundColor = .lightGray
     }
     
