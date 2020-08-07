@@ -134,7 +134,8 @@ class EditCommsViewController: UIViewController, Storyboarded {
     }
     
     @IBAction func previewCommsTapped(_ sender: Any) {
-        editCommsPresenter.didTapPreviewComms(on: comm)
+        let newComm = Article(article_id: comm.article_id, title: comm.title, content: editCommsDescription.text, category: comm.category, date: comm.date, highlighted: comm.highlighted, image: comm.image)
+        editCommsPresenter.didTapPreviewComms(on: newComm)
     }
     
     

@@ -24,7 +24,7 @@ class PreviewCommsViewController: UIViewController, Storyboarded {
             return
         }
         self.imageView.kf.setImage(with: url)
-        self.categoryView.titleLabel?.text = comm.category.categoryName
+        self.categoryView.setTitle(comm.category.categoryName, for: .normal)
         self.descriptionView.text = comm.content
     }
 }
